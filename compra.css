@@ -1,0 +1,69 @@
+
+.container2 {
+    width: 1280px; /* largura do retângulo */
+    height: 720px; /* altura do retângulo */
+    border: 1px solid #000000; /* borda para visualização */
+    border-radius: 10px;
+    overflow: hidden; /* para garantir que a imagem não vaze para fora */
+}
+.container2 img {
+    width: 100%; /* faz com que a imagem ocupe todo o espaço disponível */
+    height: auto; /* mantém a proporção da imagem */
+    display: block; /* remove espaço extra causado por display inline */
+}
+.product-container {
+    display: flex;
+    background-color: #ffffff;
+    
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.product-image {
+    flex: 1;
+    background: url('https://s.zst.com.br/cms-assets/2021/12/melhor-placa-de-v-deo-barata.webp') no-repeat center center;
+    background-size: cover;
+    height: 500px; /* Altura da imagem */
+}
+.product-details {
+    flex: 1;
+    padding: 20px;
+    color: #333333; /* Cor do texto */
+}
+.seller-info {
+    font-size: 14px;
+    color: #666666; /* Cor do texto da informação do vendedor */
+    margin-bottom: 10px;
+}
+.price-original {
+    font-size: 24px;
+    text-decoration: line-through;
+    color: #333333; /* Cor do preço original */
+    margin: 5px 0;
+}
+.price-sale {
+    font-size: 36px;
+    color: blueviolet; /* Cor do preço de venda */
+    margin: 5px 0;
+}
+.discount-info {
+    font-size: 14px;
+    color: #666666; /* Cor do texto das informações de desconto */
+    margin-bottom: 10px;
+}
+.buy-now {
+    background-color: blueviolet;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.installment-info {
+    font-size: 14px;
+    color: #666666; /* Cor do texto das informações de parcelamento */
+    margin-top: 10px;
+}

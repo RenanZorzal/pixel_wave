@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
+  margin: 0;
+  padding: 0;
+}
+.navbar-estilo{
+    background-color: blueviolet;
+    font-family: sans-serif;
+}
+.tamanho{
+    display: flex;
+    justify-content: end;
+}
+.coricones{
+    color: white;
+}
+
+  .navbar.navbar-inverse {
+    border: none;
+  }
+  .navbar .navbar-brand {
+    padding-top: 0px;
+  }
+  .navbar .navbar-brand img {
+    height: 50px;
+  }
+.navbar-thin {
+    height: 30px;
+    font-size: 14px;
+    padding: 0;
+}
+.navbar-thin .nav-link {
+    padding: 0 10px;
+}
+
+
+.carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.category-title {
+  margin: 30px 0 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.product-carousel .carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: black;
+}
+.carousel-control-prev2, .carousel-control-next2 {
+  width: 5%;
+}
+.carousel-control-prev2 {
+  left: -5%;
+}
+.carousel-control-next2 {
+  right: -5%;
+}
+
+
+
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
+.card {
+  height: 100%;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.price {
+  margin-top: auto;
+}
+
+.custom{
+  font-size: 300%;
+}
+.price{
+  color: blueviolet;
+}
