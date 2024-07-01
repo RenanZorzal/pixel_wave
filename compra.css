@@ -14,7 +14,6 @@
 .product-container {
     display: flex;
     background-color: #ffffff;
-    
     width: 80%;
     margin: 20px auto;
     border-radius: 8px;
@@ -29,6 +28,7 @@
 .product-details {
     flex: 1;
     padding: 20px;
+    justify-content: center;
     color: #333333; /* Cor do texto */
 }
 .seller-info {

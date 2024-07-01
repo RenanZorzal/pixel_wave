@@ -7,6 +7,7 @@ body {
 }
 .navbar-estilo{
     background-color: blueviolet;
+    font-size: 20px;
     font-family: sans-serif;
 }
 .tamanho{
@@ -24,7 +25,8 @@ body {
     padding-top: 0px;
   }
   .navbar .navbar-brand img {
-    height: 50px;
+    height: 90px;
+  
   }
 .navbar-thin {
     height: 30px;
