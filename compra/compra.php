@@ -10,10 +10,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="compra.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
+  <link rel="stylesheet" href="../home/home.css">
 </head>
 
 <?php
-require_once "navbar.php";
+require_once "../navbar/navbar.php";
 ?>
 <!--Página-->
 <h1 class="h1 d-flex justify-content-center m-4"> <b>Placa de Vídeo RX 6600 V2 ASUS Dual AMD Radeon, 8GB GDDR6 - 90YV0GP2-M0NA00</b></h1>

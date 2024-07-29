@@ -14,7 +14,7 @@
   <div class="container">
     <!-- Logo da empresa -->
     <a class="navbar-brand" href="#">
-      <img src="logo.png" alt="Logo da Empresa" height="50">
+      <img src="../navbar/logo.png" alt="Logo da Empresa" height="50">
     </a>
 
     <!-- Botão que aparece quando a navbar é colapsada -->
