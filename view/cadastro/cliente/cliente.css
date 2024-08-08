@@ -1,0 +1,23 @@
+.body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #502779;
+    display: flex;
+  }
+.cima{
+    width: 100%;
+    height: 20%;
+    border: 1px solid red;
+}   
+.esquerdo{
+    border: 1px solid red;
+    width: 70%; 
+    height: 100vh;
+}
+.direito{
+    border: 1px solid green;
+    width: 30%; 
+    height: 100vh;
+}

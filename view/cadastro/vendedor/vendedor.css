@@ -16,6 +16,7 @@
 }
 
 .esquerdo {
+    width: 1%;
     display: flex;
     flex-direction: column;
     flex: 2;
