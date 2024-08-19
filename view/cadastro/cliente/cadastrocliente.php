@@ -23,7 +23,7 @@
                       <div>
                           <form>
                               <div class="mb-3">
-                                  <label for="nome-empresa" class="form-label">Nome</label>
+                                  <label for="nome" class="form-label">Nome</label>
                                   <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
                               </div>
       
@@ -38,14 +38,14 @@
                                       <input type="text" class="form-control form-control-lg" id="cnpj" placeholder="">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                                      <label for="datanascimento" class="form-label">Data de Nascimento</label>
                                       <input type="date" class="form-control form-control-lg" id="data-abertura" placeholder="">
                                   </div>
                               </div>
       
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="telefone" class="form-label">Genêro</label>
+                                      <label for="genero" class="form-label">Genêro</label>
                                       
                                 <select class="form-control form-control-lg" id="exampleFormControlSelect1">
                                     <option>Masculino</option>
@@ -62,11 +62,11 @@
       
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="senha" class="form-label">Senha</label>
+                                      <label for="senha1" class="form-label">Senha</label>
                                       <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="confirmacao-senha" class="form-label">Confirmação de senha</label>
+                                      <label for="senha2" class="form-label">Confirmação de senha</label>
                                       <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
                                   </div>
                               </div>
@@ -77,7 +77,7 @@
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <button type="button" class="btn btn-secondary">Voltar</button>
+                                  <button type="button" class="btn btn-light">Voltar</button>
                                   <button type="submit" class="btn btn-primary">Enviar</button>
                               </div>
                           </form>
