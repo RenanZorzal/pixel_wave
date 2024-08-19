@@ -68,14 +68,14 @@
                                   </div>
                               </div>
       
-                              <div class="mb-3 form-check">
+                              <div class="mb-4 form-check">
                                   <input type="checkbox" class="form-check-input" id="terms">
                                   <label class="form-check-label" for="terms">Concordo com os termos</label>
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <button type="button" class="btn btn-light">Voltar</button>
-                                  <button type="submit" class="btn btn-primary" style="background-color: #69D1C5; border-color: #3BA99C; width: 20%" >Enviar</button>
+                                  <button type="submit" class="btn btn-primary" style="background-color: #4ABFB2; border-color: #3BA99C; width: 30%" >Enviar</button>
+                                  <button type="button" class="btn btn-light" style="background-color: #C1ECE7; border-color: #C1ECE7;" >Voltar</button>
                               </div>
                           </form>
                       </div>

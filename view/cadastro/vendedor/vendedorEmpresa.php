@@ -12,7 +12,7 @@
 </head>
 <body class="body2">
     <div class="esquerdo">
-        <div class="cima d-flex align-items-end" style="margin-left: 20%;">
+        <div class="cima d-flex align-items-end mb-5" style="margin-left: 20%;">
             <img src="header.png" alt="">
         </div>
         <div class="baixo d-flex justify-content-center align-items-center">
@@ -22,6 +22,12 @@
         
                       <div>
                           <form>
+
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="tipo-vendedor" id="vendedor2" value="2">
+                                    <label class="form-check-label" for="vendedor2">Empresa</label>
+                                    </div>
+                                </div>
 
                               <div class="mb-3">
                                   <label for="nome-empresa" class="form-label">Nome da Empresa</label>
@@ -76,14 +82,14 @@
                                   </div>
                               </div>
       
-                              <div class="mb-3 form-check">
+                              <div class="mb-4 form-check">
                                   <input type="checkbox" class="form-check-input" id="terms">
                                   <label class="form-check-label" for="terms">Concordo com os termos</label>
                               </div>
       
-                              <div class="d-flex justify-content-between">
-                                  <button type="button" class="btn btn-light">Voltar</button>
-                                  <button type="submit" class="btn btn-primary">Enviar</button>
+                              <div class="d-flex justify-content-between mb-5">
+                                  <button type="submit" class="btn btn-primary" style="background-color: #4ABFB2; border-color: #3BA99C; width: 30%" >Enviar</button>
+                                  <button type="button" class="btn btn-light" style="background-color: #C1ECE7; border-color: #C1ECE7;" >Voltar</button>
                               </div>
                           </form>
                       </div>
