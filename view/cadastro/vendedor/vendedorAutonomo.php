@@ -22,6 +22,7 @@
         
                       <div>
                           <form>
+
                               <div class="mb-3">
                                   <label for="nome-empresa" class="form-label">Nome da Empresa</label>
                                   <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
@@ -34,8 +35,8 @@
                           
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="cnpj" class="form-label">CNPJ</label>
-                                      <input type="text" class="form-control form-control-lg" id="cnpj" placeholder="">
+                                      <label for="cpf" class="form-label">CPF</label>
+                                      <input type="text" class="form-control form-control-lg" id="cpf" placeholder="">
                                   </div>
                                   <div class="col-md-6 mb-3">
                                       <label for="data-abertura" class="form-label">Data de Abertura</label>
