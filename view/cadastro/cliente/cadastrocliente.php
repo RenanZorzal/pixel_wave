@@ -23,7 +23,7 @@
                       <div>
                           <form>
                               <div class="mb-3">
-                                  <label for="nome" class="form-label">Nome</label>
+                                  <label for="nome" class="form-label">Nome Completo</label>
                                   <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
                               </div>
       
@@ -39,7 +39,7 @@
                                   </div>
                                   <div class="col-md-6 mb-3">
                                       <label for="datanascimento" class="form-label">Data de Nascimento</label>
-                                      <input type="date" class="form-control form-control-lg" id="data-abertura" placeholder="">
+                                      <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
                                   </div>
                               </div>
       

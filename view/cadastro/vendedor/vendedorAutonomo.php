@@ -23,8 +23,14 @@
                       <div>
                           <form>
 
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="tipo-vendedor" id="vendedor2" value="2">
+                                    <label class="form-check-label" for="vendedor2">Vendedor Autônomo</label>
+                                    </div>
+                                </div>
+
                               <div class="mb-3">
-                                  <label for="nome-empresa" class="form-label">Nome da Empresa</label>
+                                  <label for="nome-empresa" class="form-label">Nome Completo</label>
                                   <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
                               </div>
       
@@ -39,8 +45,8 @@
                                       <input type="text" class="form-control form-control-lg" id="cpf" placeholder="">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="data-abertura" class="form-label">Data de Abertura</label>
-                                      <input type="date" class="form-control form-control-lg" id="data-abertura" placeholder="">
+                                      <label for="data-abertura" class="form-label">Data de Nascimento</label>
+                                      <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
                                   </div>
                               </div>
       
@@ -49,20 +55,6 @@
                                       <label for="telefone" class="form-label">Telefone</label>
                                       <input type="text" class="form-control form-control-lg" id="telefone" placeholder="">
                                   </div>
-                                  <div class="col-md-6 mb-3">
-                                      <label for="celular" class="form-label">Celular</label>
-                                      <input type="text" class="form-control form-control-lg" id="celular" placeholder="">
-                                  </div>
-                              </div>
-      
-                              <div class="mb-3">
-                                  <label for="razao-social" class="form-label">Razão Social</label>
-                                  <input type="text" class="form-control form-control-lg" id="razao-social" placeholder="">
-                              </div>
-                      
-                              <div class="mb-3">
-                                  <label for="inscricao-estadual" class="form-label">Inscrição Estadual</label>
-                                  <input type="text" class="form-control form-control-lg" id="inscricao-estadual" placeholder="">
                               </div>
       
                               <div class="row">
@@ -83,7 +75,7 @@
       
                               <div class="d-flex justify-content-between">
                                   <button type="button" class="btn btn-light">Voltar</button>
-                                  <button type="submit" class="btn btn-primary">Enviar</button>
+                                  <button type="submit" class="btn btn-primary" style="background-color: #69D1C5; border-color: #3BA99C; width: 20%" >Enviar</button>
                               </div>
                           </form>
                       </div>
