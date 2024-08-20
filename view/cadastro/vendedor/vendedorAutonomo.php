@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastre-se</title>
      <link rel="stylesheet" href="vendedor.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,28 +24,28 @@
                           <form>
 
                                 <div class="form-check form-check-inline mb-3">
-                                    <input class="form-check-input" type="radio" name="tipo-vendedor" id="vendedor2" value="2">
-                                    <label class="form-check-label" for="vendedor2">Vendedor Autônomo</label>
+                                    <input class="form-check-input" type="radio" name="tipo-vendedor" id="tipo-vendedor" value="2">
+                                    <label class="form-check-label" for="tipo-vendedor">Vendedor Autônomo</label>
                                     </div>
                                 </div>
 
                               <div class="mb-3">
-                                  <label for="nome-empresa" class="form-label">Nome Completo</label>
-                                  <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
+                                  <label for="nome-vendedor" class="form-label">Nome Completo</label>
+                                  <input type="text" class="form-control form-control-lg" id="nome-vendedor" placeholder="">
                               </div>
       
                               <div class="mb-3">
-                                  <label for="email" class="form-label">Email</label>
-                                  <input type="email" class="form-control form-control-lg" id="email" placeholder="">
+                                  <label for="email-vendedor" class="form-label">Email</label>
+                                  <input type="email" class="form-control form-control-lg" id="email-vendedor" placeholder="">
                               </div>
                           
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="cpf" class="form-label">CPF</label>
-                                      <input type="text" class="form-control form-control-lg" id="cpf" placeholder="">
+                                      <label for="cpf-vendedor" class="form-label">CPF</label>
+                                      <input type="text" class="form-control form-control-lg" id="cpf-vendedor" placeholder="">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="data-abertura" class="form-label">Data de Nascimento</label>
+                                      <label for="data-nascimento" class="form-label">Data de Nascimento</label>
                                       <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
                                   </div>
                               </div>
