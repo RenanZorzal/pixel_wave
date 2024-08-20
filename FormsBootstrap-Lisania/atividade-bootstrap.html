@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdotaPet</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body id="pagina">
+
+    <!--NavBar-->
+
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(209, 169, 247);">
+        <div class="container-fluid">
+
+            <img src="img/logoSite.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top m-lg-2">
+            <span class="navbar-brand mb-0 h1">AdotaPet</span>
+            
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="atividade-bootstrap.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="Formulario.html">Contato</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Adoção
+                </a>
+                <ul class="dropdown-menu" style="background-color: rgb(200, 150, 247);">
+                  <li><a class="dropdown-item" href="#">O que é Adoção Consciente?</a></li>
+                  <li><a class="dropdown-item" href="#">Que animais se dão bem?</a></li>
+                  <li><a class="dropdown-item" href="#">Ambiente adequado para Adoção</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Sobre o Projeto</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div id="header-pag">
+        <img src="img/logoSite.png" alt="Logo" width="40" height="40" class="d-inline-block mt-5">
+        <h1 class="mt-5 mb-5 ms-1" id="titulo-pag">AdotaPet</h1>
+      </div>
+
+
+        <!--Card-->
+
+        <div class="container mt-3 mb-5">
+
+            <div class="row">
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg" class="card-img-top" alt="Gato">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Olivia</h5>
+                          <p class="card-text">Fêmea, 2 anos.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-01" class="btn align-items-end" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://images.theconversation.com/files/541015/original/file-20230803-19-fmuwe.jpg?ixlib=rb-1.1.0&rect=10%2C0%2C6647%2C4626&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip" class="card-img-top" alt="Gato">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Rodolfo</h5>
+                          <p class="card-text">Macho, 1 ano.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-02" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" class="card-img-top" alt="Cachorro">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Pedro</h5>
+                          <p class="card-text">Macho, 5 meses.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-03" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-4 col-sm-6 mt-5">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" class="card-img-top" alt="Cachorro">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Luma</h5>
+                          <p class="card-text">Fêmea, 1 ano.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-04" class="btn align-items-end" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mt-5">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://www.clubedosbichos.com.br/wp-content/uploads/2020/03/huron-1120505_1280.jpg" class="card-img-top" alt="Furão">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Sparkle</h5>
+                          <p class="card-text">Fêmea, 10 meses.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-05" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 mt-5">
+                    <div class="card" style="width: 18rem; height: 28rem;">
+                        <img src="https://fotos.amomeupet.org/uploads/fotos/1659446786_62e9260253f91_hd.jpg" class="card-img-top" alt="Cachorro">
+                        <div class="card-body">
+                          <h5 class="card-title roxo">Loki</h5>
+                          <p class="card-text">Macho, 2 meses.</p>
+                          <a href="#" data-bs-toggle="modal" data-bs-target="#modal-06" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Conhecer</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--Modal-->
+
+            <div class="modal fade" tabindex="-1" id="modal-01">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Olivia </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Está a procura de uma gatinha carinhosa e divertida? Então Olívia é perfeita para você. Um pouco bagunceira, mas cheia de amor para dar.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" id="modal-02">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Rodolfo </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>A procura de um gatinho para brincar? Rodolfo é perfeito para você, um gato brincalhão, esperto e super companheiro. Nunca mais se sintirá sozinho em casa.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" id="modal-03">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Pedro </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Um filhotinho quieto, carinhoso, amoroso e tranquilo, essa é definição de Pedro. Se queres alguém para assistir um bom filme juntos, debaixo da coberta, ele será sua companhia perfeita.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" id="modal-04">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Luma </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Agitada, mas obediente, brincalhona, mas ama um colo tranquilo, essa é a Luma. Se está a procura de uma boa companhia que te faça dar muitas rizadas, a Luma é perfeita</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" id="modal-05">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Sparkle </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Sparkle é uma furão super curiosa, um pouco medrosa e muito amorosa. Ama bricar com os outros bixinhos e adora uma companhia humana. Você irá amar trabalhar em casa com Sparkle em seu colo.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="modal fade" tabindex="-1" id="modal-06">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" style="color: purple;"> Loki </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Esse filhotnho é tão destemido quanto o Loki do MRU!! Ama correr pela casa e brincar de se esconder. Mas quando chega a hora de comer, aparece em um piscar de olhos. Carinhoso, mas na medida certa. Um gatinho independente que te fará questionar se foi você que o adotou, ou o contrário.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                      <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Adotar</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+
+      <!--Accordion-->
+
+      <div class="accordion" id="accordionPanelsStayOpenExample" >
+        <div class="accordion-item" style="background-color: rgb(209, 169, 247);">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Sobre os Gatos
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <strong>Coisas que precisa saber antes de adotar um gato.</strong> Antes de trazer um gatinho para morar em casa, é importante preparar o ambiente para que ele se sinta acolhido e esteja seguro. Vale ressaltar que essas dicas servem para gatos filhotes e gatos adultos.
+
+              Antes de qualquer coisa, é importante deixar o local seguro, por isso, instale telas em todas as janelas do seu apartamento. Em casas, verifique todas as rotas de fuga e coloque telas nos locais onde o gato poderia sair. Os gatos domésticos não devem ter acesso à rua, pois ficam suscetíveis à diversas doenças, aos maus-tratos e à acidentes.
+              
+              Se seu lar está seguro, você já pode adotar um gato!
+              <a href="https://blog.cobasi.com.br/dicas-para-adotar-gato/">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item"  style="background-color: rgb(209, 169, 247);">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Sobre os Cachorros
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>Coisas que precisa saber antes de adotar um cachorro.</strong> Na hora da adoção, a contribuição costuma ser simbólica, apenas para repor os gastos no resgate e manutenção do animal.
+
+              Mas é importante lembrar que, depois, manter um cachorro bem cuidado custa dinheiro, sem falar que podem acontecer gastos imprevistos.
+              
+              Para ficar nos desembolsos essenciais, cães saudáveis precisam de boa ração, banhos e tosas regulares, vermífugos e vacinação em dia. Tudo isso deve entrar na conta antes da adoção!
+              <a href="https://www.petz.com.br/blog/adocao/quero-adotar-um-cachorro/">Saiba mais.</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: rgb(209, 169, 247);">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Sobre os Furões
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>Coisas que precisa saber antes de adotar um Furão.</strong> O primeiro passo é procurar um criador registrado e autorizado pelo Ibama. Mas isso não basta. O furão doméstico é um pet muito diferente do que estamos acostumados e é necessário realizar muita pesquisa para avaliar se você terá tempo e dinheiro para cuidar dele.
+
+              Diferentemente do hamster, o ferret precisa ser vacinado com a vacina antirrábica anualmente. E não basta ir em qualquer clínica veterinária. Apenas um médico-veterinário de animais exóticos pode atender esse bichinho da forma adequada.
+              
+              Além disso, a gaiola para furão deve ser grande e, por isso, ela ocupa um espaço maior dentro de casa. Seu alimento também é diferenciado, bem como os itens que serão utilizados na sua rotina, como comedouro, coleira para passeio e cama.
+              <a href="https://blog.cobasi.com.br/furao-ferret/">Saiba mais.</a>
+            </div>
+          </div>
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+#pagina{
+    background-color: rgb(238, 220, 255);
+}
+
+#header-pag{
+    display: flex;
+    justify-content: center;
+}
+
+.roxo{
+    color: purple;
+}

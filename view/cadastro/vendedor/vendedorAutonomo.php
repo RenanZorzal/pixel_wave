@@ -74,8 +74,8 @@
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <button type="submit" class="btn btn-primary" style="background-color: #4ABFB2; border-color: #3BA99C; width: 30%" >Enviar</button>
-                                  <button type="button" class="btn btn-light" style="background-color: #C1ECE7; border-color: #C1ECE7;" >Voltar</button>
+                                  <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+                                  <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                               </div>
                           </form>
                       </div>

@@ -31,6 +31,16 @@ label{
     
 }
 
-.btn{
+#enviar{
+
+    background-color: #4ABFB2; 
+    border-color: #3BA99C; 
+    width: 30%;
+}
+
+#voltar{
+
+    background-color: #C1ECE7; 
+    border-color: #C1ECE7;
     width: 20%;
 }
