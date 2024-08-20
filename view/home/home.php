@@ -101,54 +101,28 @@ require_once "../navbar/navbar.php";
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-<!-- Seção de Categorias -->
-<div style="display: flex; justify-content: center;">
-  <div class="ms-5 me-5 mt-5" style="width: 80%;">
-    <h2 class="mb-4">Categoria 2</h2>
-    
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card">
-                <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
-                <div class="card-body">
-                  <h5 class="card-title">Produto 1</h5>
-                  <p class="price">R$ 100,00</p>
-                </div>
+                    <div class="col-md-3 mt-5">
+            <div class="card">
+              <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
+              <div class="card-body">
+                <h5 class="card-title">Produto 1</h5>
+                <p class="price">R$ 100,00</p>
               </div>
             </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_702635-MLB49142278395_022022-O.webp" class="card-img-top" alt="Produto 2">
-                <div class="card-body">
-                  <h5 class="card-title">Produto 2</h5>
-                  <p class="price">R$ 200,00</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="https://tm.ibxk.com.br/materias/9709/40192.jpg" class="card-img-top" alt="Produto 3">
-                <div class="card-body">
-                  <h5 class="card-title">Produto 3</h5>
-                  <p class="price">R$ 300,00</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <img src="https://tm.ibxk.com.br/materias/9709/40192.jpg" class="card-img-top" alt="Produto 3">
-                <div class="card-body">
-                  <h5 class="card-title">Produto 3</h5>
-                  <p class="price">R$ 300,00</p>
-                </div>
+          </div>
+          <div class="col-md-3 mt-5">
+            <div class="card">
+              <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
+              <div class="card-body">
+                <h5 class="card-title">Produto 1</h5>
+                <p class="price">R$ 100,00</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
 
 <!--Suporte-->
 <div class="dropup" style="position: fixed; bottom: 20px; right: 30px;">
