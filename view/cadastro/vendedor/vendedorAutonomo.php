@@ -22,60 +22,61 @@
         
                       <div>
                           <form>
-
-                                <div class="form-check form-check-inline mb-3">
-                                    <input class="form-check-input" type="radio" name="tipo-vendedor" id="tipo-vendedor" value="2">
-                                    <label class="form-check-label" for="tipo-vendedor">Vendedor Autônomo</label>
+                                <div>
+                                    <div class="form-check form-check-inline mb-3">
+                                        <input class="form-check-input" type="radio" name="tipo-vendedor" id="tipo-vendedor" value="2">
+                                        <label class="form-check-label" for="tipo-vendedor">Vendedor Autônomo</label>
+                                        </div>
                                     </div>
-                                </div>
 
-                              <div class="mb-3">
-                                  <label for="nome-vendedor" class="form-label">Nome Completo</label>
-                                  <input type="text" class="form-control form-control-lg" id="nome-vendedor" placeholder="">
-                              </div>
-      
-                              <div class="mb-3">
-                                  <label for="email-vendedor" class="form-label">Email</label>
-                                  <input type="email" class="form-control form-control-lg" id="email-vendedor" placeholder="">
-                              </div>
-                          
-                              <div class="row">
-                                  <div class="col-md-6 mb-3">
-                                      <label for="cpf-vendedor" class="form-label">CPF</label>
-                                      <input type="text" class="form-control form-control-lg" id="cpf-vendedor" placeholder="">
-                                  </div>
-                                  <div class="col-md-6 mb-3">
-                                      <label for="data-nascimento" class="form-label">Data de Nascimento</label>
-                                      <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
-                                  </div>
-                              </div>
-      
-                              <div class="row">
-                                  <div class="col-md-6 mb-3">
-                                      <label for="telefone" class="form-label">Telefone</label>
-                                      <input type="text" class="form-control form-control-lg" id="telefone" placeholder="">
-                                  </div>
-                              </div>
-      
-                              <div class="row">
-                                  <div class="col-md-6 mb-3">
-                                      <label for="senha" class="form-label">Senha</label>
-                                      <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
-                                  </div>
-                                  <div class="col-md-6 mb-3">
-                                      <label for="confirmacao-senha" class="form-label">Confirmação de senha</label>
-                                      <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
-                                  </div>
-                              </div>
-      
-                              <div class="mb-4 form-check">
-                                  <input type="checkbox" class="form-check-input" id="terms">
-                                  <label class="form-check-label" for="terms">Concordo com os termos</label>
-                              </div>
-      
-                              <div class="d-flex justify-content-between">
-                                  <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
-                                  <button type="button" class="btn btn-light" id="voltar">Voltar</button>
+                                    <div class="mb-3">
+                                        <label for="nome-vendedor" class="form-label">Nome Completo</label>
+                                        <input type="text" class="form-control form-control-lg" id="nome-vendedor" placeholder="">
+                                    </div>
+            
+                                    <div class="mb-3">
+                                        <label for="email-vendedor" class="form-label">Email</label>
+                                        <input type="email" class="form-control form-control-lg" id="email-vendedor" placeholder="">
+                                    </div>
+                                
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cpf-vendedor" class="form-label">CPF</label>
+                                            <input type="text" class="form-control form-control-lg" id="cpf-vendedor" placeholder="">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                                            <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="telefone" class="form-label">Telefone</label>
+                                            <input type="text" class="form-control form-control-lg" id="telefone" placeholder="">
+                                        </div>
+                                    </div>
+            
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="senha" class="form-label">Senha</label>
+                                            <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="confirmacao-senha" class="form-label">Confirmação de senha</label>
+                                            <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
+                                        </div>
+                                    </div>
+            
+                                    <div class="mb-4 form-check">
+                                        <input type="checkbox" class="form-check-input" id="terms">
+                                        <label class="form-check-label" for="terms">Concordo com os termos</label>
+                                    </div>
+            
+                                    <div class="d-flex justify-content-between">
+                                        <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+                                        <button type="button" class="btn btn-light" id="voltar">Voltar</button>
+                                    </div>
                               </div>
                           </form>
                       </div>

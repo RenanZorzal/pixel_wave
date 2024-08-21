@@ -44,3 +44,11 @@ label{
     border-color: #C1ECE7;
     width: 20%;
 }
+
+#formDiv1{
+    display: none;
+}
+
+#formDiv2{
+    display: none;
+}
