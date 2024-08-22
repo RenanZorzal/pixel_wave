@@ -5,7 +5,6 @@ function validarCampos($nome, $email, $cpf, $datanascimento, $celular, $senha1, 
     if ( empty($nome) ) {
         $msgErro = $msgErro . "Informe o nome.<br>";        
     }        
-    
 
     if (maiorIdade($datanascimento) == false) {
         $msgErro = $msgErro . "Data de nascimento inválida!.<br>";
@@ -32,10 +31,6 @@ function validarCampos($nome, $email, $cpf, $datanascimento, $celular, $senha1, 
     
     return $msgErro;
 
-}
-
-function validarCPF($cpf) {
-    return true;
 }
 
 function maiorIdade($data) {

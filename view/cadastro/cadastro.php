@@ -37,50 +37,50 @@
             <div class="container-fluid">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-6">
-                        <div id="formDiv1">
-                            <form>
+                        <div id="formDiv1" style="display: none"> 
+                            <form method="post" name="formVendedor" action="../control/cadastro/vendedor/cadVendedor.php" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label for="nome-vendedor" class="form-label">Nome Completo</label>
-                                    <input type="text" class="form-control form-control-lg" id="nome-vendedor" placeholder="">
+                                    <label for="nomeVendedor" class="form-label">Nome Completo</label>
+                                    <input type="text" class="form-control form-control-lg" name="nomeVendedor" id="nomeVendedor" placeholder="" required="">
                                 </div>
         
                                 <div class="mb-3">
-                                    <label for="email-vendedor" class="form-label">Email</label>
-                                    <input type="email" class="form-control form-control-lg" id="email-vendedor" placeholder="">
+                                    <label for="emailVendedor" class="form-label">Email</label>
+                                    <input type="email" class="form-control form-control-lg" name="emailVendedor" id="emailVendedor" placeholder="" required="">
                                 </div>
                             
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="cpf-vendedor" class="form-label">CPF</label>
-                                        <input type="text" class="form-control form-control-lg" id="cpf-vendedor" placeholder="">
+                                        <label for="cpfVendedor" class="form-label">CPF</label>
+                                        <input type="text" class="form-control form-control-lg" name="cpfVendedor" id="cpfVendedor" placeholder="" required="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="data-nascimento" class="form-label">Data de Nascimento</label>
-                                        <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
+                                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                                        <input type="date" class="form-control form-control-lg" name="dataNascimento" id="dataNascimento" placeholder="" required="">
                                     </div>
                                 </div>
         
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="telefone" class="form-label">Telefone</label>
-                                        <input type="text" class="form-control form-control-lg" id="telefone" placeholder="">
+                                        <input type="text" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" required="">
                                     </div>
                                 </div>
         
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="senha" class="form-label">Senha</label>
-                                        <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
+                                        <input type="password" class="form-control form-control-lg" name="senha" id="senha" placeholder="Digite sua senha" required="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="confirmacao-senha" class="form-label">Confirmação de senha</label>
-                                        <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
+                                        <label for="confirmacaoSenha" class="form-label">Confirmação de senha</label>
+                                        <input type="password" class="form-control form-control-lg" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Confirme sua senha" required="">
                                     </div>
                                 </div>
         
                                 <div class="mb-4 form-check">
-                                    <input type="checkbox" class="form-check-input" id="terms">
-                                    <label class="form-check-label" for="terms">Concordo com os termos</label>
+                                    <input type="checkbox" class="form-check-input" name="termos" id="termos" required="">
+                                    <label class="form-check-label" for="termos">Concordo com os termos</label>
                                 </div>
         
                                 <div class="d-flex justify-content-between">
@@ -91,67 +91,67 @@
                         </div>
 
                         <div id="formDiv2">
-                                <form>
+                                <form method="post" name="formEmpresa" action="../control/cadastro/empresa/cadEmpresa.php" enctype="multipart/form-data">
 
                                     <div class="mb-3">
-                                        <label for="nome-empresa" class="form-label">Nome da Empresa</label>
-                                        <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
+                                        <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
+                                        <input type="text" class="form-control form-control-lg" name="nomeEmpresa" id="nomeEmpresa" placeholder="" required="">
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control form-control-lg" id="email" placeholder="">
+                                        <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="" required="">
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="cnpj" class="form-label">CNPJ</label>
-                                            <input type="text" class="form-control form-control-lg" id="cnpj" placeholder="">
+                                            <input type="text" class="form-control form-control-lg" name="cnpj" id="cnpj" placeholder="" required="">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
-                                            <label for="data-abertura" class="form-label">Data de Abertura</label>
-                                            <input type="date" class="form-control form-control-lg" id="data-abertura" placeholder="">
+                                            <label for="dataAbertura" class="form-label">Data de Abertura</label>
+                                            <input type="date" class="form-control form-control-lg" name="dataAbertura" id="dataAbertura" placeholder="" required="">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="telefone" class="form-label">Telefone</label>
-                                            <input type="text" class="form-control form-control-lg" id="telefone" placeholder="">
+                                            <input type="text" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" required="">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label for="celular" class="form-label">Celular</label>
-                                            <input type="text" class="form-control form-control-lg" id="celular" placeholder="">
+                                            <input type="text" class="form-control form-control-lg" name="celular" id="celular" placeholder="" required="">
                                         </div>
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="razao-social" class="form-label">Razão Social</label>
-                                        <input type="text" class="form-control form-control-lg" id="razao-social" placeholder="">
+                                        <label for="razaoSocial" class="form-label">Razão Social</label>
+                                        <input type="text" class="form-control form-control-lg" name="razaoSocial" id="razaoSocial" placeholder="" required="">
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="inscricao-estadual" class="form-label">Inscrição Estadual</label>
-                                        <input type="text" class="form-control form-control-lg" id="inscricao-estadual" placeholder="">
+                                        <label for="inscricaoEstadual" class="form-label">Inscrição Estadual</label>
+                                        <input type="text" class="form-control form-control-lg" name="inscricaoEstadual" id="inscricaoEstadual" placeholder="" required="">
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="senha" class="form-label">Senha</label>
-                                            <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
+                                            <input type="password" class="form-control form-control-lg" name="senha" id="senha" placeholder="Digite sua senha" required="">
                                         </div>
 
                                         <div class="col-md-6 mb-3">
-                                            <label for="confirmacao-senha" class="form-label">Confirmação de senha</label>
-                                            <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
+                                            <label for="confirmacaoSenha" class="form-label">Confirmação de senha</label>
+                                            <input type="password" class="form-control form-control-lg" name="confirmacaoSenha" id="confirmacaoSenha" placeholder="Confirme sua senha" required="">
                                         </div>
                                     </div>
 
                                     <div class="mb-4 form-check">
-                                        <input type="checkbox" class="form-check-input" id="terms">
-                                        <label class="form-check-label" for="terms">Concordo com os termos</label>
+                                        <input type="checkbox" class="form-check-input" id="termos" name="termos" required="">
+                                        <label class="form-check-label" for="termos">Concordo com os termos</label>
                                     </div>
 
                                     <div class="d-flex justify-content-between mb-4">
@@ -162,10 +162,10 @@
                         </div>
 
                         <div id="formDiv3">
-                            <form>
+                            <form method="post" name="formCliente" action="../control/cadastro/cliente/cadCliente.php" enctype="multipart/form-data">
                               <div class="mb-3">
                                   <label for="nome" class="form-label">Nome Completo</label>
-                                  <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
+                                  <input type="text" class="form-control form-control-lg" id="nome" placeholder="">
                               </div>
       
                               <div class="mb-3">
@@ -256,7 +256,15 @@
                 }
             }
 
-         </script>
+        </script>
+
+        <?php
+            // Exibir a mensagem de ERRO caso OCORRA
+            if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+                $mensagem = $_GET["msg"];
+                echo "<FONT color=red>$mensagem</FONT>";
+            }
+        ?>
 
 
 

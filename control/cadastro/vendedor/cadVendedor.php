@@ -1,22 +1,37 @@
 <?php
 
-require "funcoes-uteis.php";
+    require "funcoes-vendedor.php";
     
-    // PASSO 1 - Receber os campos
+    // Receber os campos
 
     //POST
-    $tipo_vendedor = $_POST["tipo-vendedor"];
-    $nome = $_POST["nome-vendedor"];
-    $email = $_POST["email-vendedor"];
-    $cpf = $_POST["cpf-vendedor"];
-    $data_nasc = $_POST["data-nascimento"];
+    $tipo = $_POST["inlineRadioOptions"];
+    $nome = $_POST["nomeVendedor"];
+    $email = $_POST["emailVendedor"];
+    $cpf = $_POST["cpfVendedor"];
+    $data_nasc = $_POST["dataNascimento"];
     $telefone = $_POST["telefone"];
     $senha = $_POST["senha"];
-    $confimacao_senha = $_POST["confirmacao-senha"];
+    $confirmacao_senha = $_POST["confirmacaoSenha"];
 
-    // PASSO 2 - Validação dos dados 
-    $msgErro = validarCampos($tipo_vendedor, $nome, $email, $cpf, $data_nasc, $telefonee, $senha, $confimacao_senha);
+    // Validação dos dados 
+    $msgErro = validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha, $confirmacao_senha);
 
 
+    // Main
+    
+    if(empty($msgErro)){ //caso não tenha erro
+
+        require_once "../model/vendedorDAO.php";
+
+        $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha, $confirmacao_senha);
+
+        // Devolver uma mensagem ou página HTML
+        header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
+
+    } else { //caso tenha erro
+
+        header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+    }
 
 ?>

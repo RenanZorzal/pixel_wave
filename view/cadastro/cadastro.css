@@ -51,8 +51,6 @@ label{
 
 #formDiv1{
     display: none;
-    display: flex;
-    align-items: flex-start;
 }
 
 #formDiv2{
