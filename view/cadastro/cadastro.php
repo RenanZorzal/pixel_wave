@@ -13,7 +13,7 @@
     </head>
     <body class="body2">
         <div class="esquerdo">
-            <div class="cima d-flex align-items-end" style="margin-left: 20%;">
+            <div class="cima d-flex align-items-end" style="margin-left: 10%;">
                 <img src="header.png" alt="">
             </div>
 
@@ -93,7 +93,7 @@
                         <div id="formDiv2">
                                 <form>
 
-                                    <div class="mb-4">
+                                    <div class="mb-3">
                                         <label for="nome-empresa" class="form-label">Nome da Empresa</label>
                                         <input type="text" class="form-control form-control-lg" id="nome-empresa" placeholder="">
                                     </div>
@@ -154,7 +154,7 @@
                                         <label class="form-check-label" for="terms">Concordo com os termos</label>
                                     </div>
 
-                                    <div class="d-flex justify-content-between mb-5">
+                                    <div class="d-flex justify-content-between mb-4">
                                         <button type="submit" class="btn btn-primary" id="enviar" >Enviar</button>
                                         <button type="button" class="btn btn-light" id="voltar" >Voltar</button>
                                     </div>
