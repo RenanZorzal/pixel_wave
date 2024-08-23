@@ -2,27 +2,25 @@
     require "funcoesuteis.php";
     
     // PASSO 1 - Receber os campos POST
-    $nome = $_POST["txtNome"];
-    $cpf = $_POST["txtCPF"];
-    $email = $_POST["txtEmail"];
-    $telefone = $_POST["txtTelefone"];
-    $dtNasc = $_POST["txtData"];
-    $sexo = $_POST["txtSexo"];
-    $senha1 = $_POST["txtSenha1"];
-    $senha2 = $_POST["txtSenha2"];
+    $nomeCliente = $_POST["nomeCliente"];
+    $cpfCliente = $_POST["cpfCliente"];
+    $emailCliente = $_POST["emailCliente"];
+    $telefoneCliente = $_POST["telefoneCliente"];
+    $dtNascCliente = $_POST["dtNascCliente"];
+    $senha1Cliente = $_POST["senha1Cliente"];
+    $senha2Cliente = $_POST["senha2Cliente"];
 
     // PASSO 2 - Validação dos dados
-    $msgErro = validarCampos($nome, $cpf, $email, $telefone, $dtNasc, $sexo, $senha1, $senha2);
+    $msgErro = validarCampos($nomeCliente, $cpfCliente, $emailCliente, $telefoneCliente, $senha1Cliente, $senha2Cliente);
     if ( empty($msgErro) ) {
         // PASSO 3 - Inserir/Alterar dados no banco
                
         // INSERIR
-        require_once '../model/clienteDAO.php';
-        $id = inserirCliente ($nome, $cpf, $email, $telefone, 
-                        $dtNasc, $sexo, $senha1);
+        require_once '../../../model/clienteDAO.php';
+        $id = inserirCliente ($nomeCliente, $emailCliente,$telefoneCliente, $dtNascCliente,  $cpfCliente, $senha1Cliente);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../view/cadastro/cliente/cadastrocliente.php?msg=Cliente $id inserido com sucesso.");
+        header("Location:../../../view/cadastro/concluido.php");
 
 
 
@@ -42,8 +40,10 @@
         */
     } else {
         // echo $msgErro;
-        header("Location:../view/formulario.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/error.php?msg=$msgErro");
+       
     }
+  
 
 
 ?>

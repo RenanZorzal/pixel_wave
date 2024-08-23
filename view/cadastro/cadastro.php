@@ -32,13 +32,13 @@
                 </div>
 
             </div>
-
-            <div class="baixo d-flex justify-content-center align-items-center">
+            <!--Vendedor autonomo-->
+            <div class="baixo d-flex justify-content-center">
             <div class="container-fluid">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-6">
                         <div id="formDiv1" style="display: none"> 
-                            <form method="post" name="formVendedor" action="../control/cadastro/vendedor/cadVendedor.php" enctype="multipart/form-data">
+                            <form method="post" name="formVendedor" action="../../control/cadastro/vendedor/cadVendedor.php" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="nomeVendedor" class="form-label">Nome Completo</label>
                                     <input type="text" class="form-control form-control-lg" name="nomeVendedor" id="nomeVendedor" placeholder="" required="">
@@ -89,7 +89,7 @@
                                 </div>
                             </form>
                         </div>
-
+                        <!--Empresa-->
                         <div id="formDiv2">
                                 <form method="post" name="formEmpresa" action="../control/cadastro/empresa/cadEmpresa.php" enctype="multipart/form-data">
 
@@ -160,55 +160,58 @@
                                     </div>
                                 </form>
                         </div>
-
+                        <!--Cliente-->
                         <div id="formDiv3">
-                            <form method="post" name="formCliente" action="../control/cadastro/cliente/cadCliente.php" enctype="multipart/form-data">
+                            <form method="post" name="formCliente" action="../../control/cadastro/cliente/cadCliente.php" enctype="multipart/form-data">
                               <div class="mb-3">
-                                  <label for="nome" class="form-label">Nome Completo</label>
-                                  <input type="text" class="form-control form-control-lg" id="nome" placeholder="">
+                                  <label for="nomeCliente" class="form-label">Nome Completo</label>
+                                  <input type="text" class="form-control form-control-lg" id="nomeCliente" name="nomeCliente" placeholder="">
                               </div>
       
                               <div class="mb-3">
-                                  <label for="email" class="form-label">Email</label>
-                                  <input type="email" class="form-control form-control-lg" id="email" placeholder="">
+                                  <label for="emailCliente" class="form-label">Email</label>
+                                  <input type="email" class="form-control form-control-lg" id="emailCliente" name="emailCliente" placeholder="">
                               </div>
                           
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="cpf" class="form-label">CPF</label>
-                                      <input type="text" class="form-control form-control-lg" id="cnpj" placeholder="">
+                                      <label for="cpfCliente" class="form-label">CPF</label>
+                                      <input type="text" class="form-control form-control-lg" id="cpfCliente" name="cpfCliente" placeholder="">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="datanascimento" class="form-label">Data de Nascimento</label>
-                                      <input type="date" class="form-control form-control-lg" id="data-nascimento" placeholder="">
+                                      <label for="dtNascCliente" class="form-label">Data de Nascimento</label>
+                                      <input type="date" class="form-control form-control-lg" id="dtNascCliente" name="dtNascCliente" placeholder="" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>" required>
                                   </div>
                               </div>
-      
+      <!--
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="genero" class="form-label">Genêro</label>
+                                      <label for="sexoCliente" class="form-label">Genêro</label>
                                       
-                                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                                <select class="form-control form-control-lg" id="sexoCliente" name="sexoCliente">
                                     <option>Masculino</option>
                                     <option>Feminino</option>
                                     <option>Prefiro não informar</option>
                                 </select>
                                   </div>
-                                  <div class="col-md-6 mb-3">
-                                      <label for="celular" class="form-label">Celular</label>
-                                      <input type="text" class="form-control form-control-lg" id="celular" placeholder="">
-                                  </div>
+                                  
                               </div>
-      
+      -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                      <label for="telefoneCliente" class="form-label">Celular</label>
+                                      <input type="text" class="form-control form-control-lg" id="telefoneCliente" name="telefoneCliente" placeholder="">
+                                    </div>
+                                </div>
       
                               <div class="row">
                                   <div class="col-md-6 mb-3">
-                                      <label for="senha1" class="form-label">Senha</label>
-                                      <input type="password" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
+                                      <label for="senha1Cliente" class="form-label">Senha</label>
+                                      <input type="password" class="form-control form-control-lg" id="senha1Cliente" name="senha1Cliente" placeholder="Digite sua senha">
                                   </div>
                                   <div class="col-md-6 mb-3">
-                                      <label for="senha2" class="form-label">Confirmação de senha</label>
-                                      <input type="password" class="form-control form-control-lg" id="confirmacao-senha" placeholder="Confirme sua senha">
+                                      <label for="senha2Cliente" class="form-label">Confirmação de senha</label>
+                                      <input type="password" class="form-control form-control-lg" id="senha2Cliente" name="senha2Cliente" placeholder="Confirme sua senha">
                                   </div>
                               </div>
       

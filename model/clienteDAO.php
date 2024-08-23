@@ -3,17 +3,17 @@
 require "conexaoBD.php";    
 static $conexao;
 
-function inserirCliente ($nome, $cpf, $email, $telefone, $dtNasc, $sexo, $senha) {
+function inserirCliente ($nome, $email, $telefone, $dtNasc, $cpf, $senhaComprador) {
 
     $conexao = conectarBD();    
 
     // Converter data. Se necessário
-    $dataConvertida = converterData($dtNasc);
+    
     
     // Montar SQL
-    $sql = "INSERT INTO Cliente 
-        (nome, cpf, email, telefone, dtNasc, sexo, senha)
-        VALUES ('$nome' , '$cpf', '$email','$telefone','$dataConvertida','$sexo','$senha')";
+    $sql = "INSERT INTO comprador 
+        (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, senhaComprador)
+        VALUES ('$nome', '$email', '$telefone', '$dtNasc', '$cpf', '$senhaComprador')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     

@@ -3,7 +3,7 @@
 function conectarBD(){
     
     // CONEXÃO COM O BANCO
-    $conexao = mysqli_connect("127.0.0.1:3306", "root", "", "tipim15" ) or 
+    $conexao = mysqli_connect("127.0.0.1:3306", "root", "", "tcc24ifes" ) or 
                     die("Erro ao conectar com o banco de dados.");
     
    

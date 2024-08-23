@@ -1,14 +1,12 @@
 <?php
 
-function validarCampos($nome, $email, $cpf, $datanascimento, $celular, $senha1, $senha2) {
+function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     $msgErro = "";
     if ( empty($nome) ) {
         $msgErro = $msgErro . "Informe o nome.<br>";        
     }        
 
-    if (maiorIdade($datanascimento) == false) {
-        $msgErro = $msgErro . "Data de nascimento inválida!.<br>";
-    }
+
 
     if (verificarCPF($cpf) == false) {
         $msgErro = $msgErro . "CPF inválida.<br>";
@@ -16,7 +14,7 @@ function validarCampos($nome, $email, $cpf, $datanascimento, $celular, $senha1, 
     if (validarEmail($email) == false) {
         $msgErro = $msgErro . "Email inválido.<br>";
     }
-    if (validarNumero($celular) == false) {
+    if (validarNumero($telefone) == false) {
         $msgErro = $msgErro . "Celular inválido.<br>";
     }
 
@@ -33,18 +31,22 @@ function validarCampos($nome, $email, $cpf, $datanascimento, $celular, $senha1, 
 
 }
 
-function maiorIdade($data) {
-    // Converte a data de nascimento para o formato de DateTime
-    $data = new DateTime($data);
+function verificarMaioridade($dataNascimento) {
+    // Converte a data de nascimento para o formato DateTime
+    $dataNascimento = new DateTime($dataNascimento);
     
     // Obtém a data atual
-    $hoje = new DateTime();
-
-    // Calcula a diferença de idade
-    $idade = $hoje->diff($data)->y;
-
-    // Verifica se a idade é maior ou igual a 18
-    return $data >= 18;
+    $dataAtual = new DateTime();
+    
+    // Calcula a diferença entre a data atual e a data de nascimento
+    $idade = $dataAtual->diff($dataNascimento);
+    
+    // Verifica se a pessoa tem 18 anos ou mais
+    if ($idade->y >= 18) {
+        return true; // A pessoa é maior de idade
+    } else {
+        return false; // A pessoa é menor de idade
+    }
 }
 
 function verificarCPF($cpf) {
