@@ -226,8 +226,9 @@
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <!-- <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button> -->
-                                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalFeedback" class="btn" id="enviar">Enviar</a>
+                                  <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+                                  <!--<button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>-->
+                                  <!--<a href="#" data-bs-toggle="modal" data-bs-target="#modalFeedback" class="btn" id="enviar">Enviar</a>-->
                                   <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                               </div>
                           </form>
@@ -316,11 +317,11 @@
 
         
         <?php
-            // Exibir a mensagem de ERRO caso OCORRA
-            //if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
-            //    $mensagem = $_GET["msg"];
-            //    echo "<FONT color=red>$mensagem</FONT>";
-            //}
+            //Exibir a mensagem de ERRO caso OCORRA
+            if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+                $mensagem = $_GET["msg"];
+                echo "<FONT color=red>$mensagem</FONT>";
+            }
         ?> 
         
 

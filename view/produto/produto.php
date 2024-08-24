@@ -40,52 +40,65 @@ require_once "../navbar/navbar.php";
             <div class="row mb-3">
                 <div class="col-md-8">
                     <label for="anoLancamento" class="form-label"><b>Ano de lançamento</b></label>
-                    <input type="text" class="form-control" id="anoLancamento">
+                    <input type="number" class="form-control" id="anoLancamento" name="anoLancamento">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-8">
                     <label for="descricao" class="form-label"><b>Descrição da peça</b></label>
-                    <input type="text" class="form-control" id="descricao">
+                    <input type="text" class="form-control" id="descricao" name="descricao">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-8">
                     <label for="categoria" class="form-label"><b>Categoria</b></label>
-                    <input type="text" class="form-control" id="categoria">
+                    <input type="text" class="form-control" id="categoria" name = "categoria">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <label for="preco" class="form-label"><b>Preço</b></label>
-                    <input type="text" class="form-control" id="preco">
+                    <label  for="preco" class="form-label"><b>Preço</b></label>
+                    <input type="number" class="form-control" id="preco" name = "preco">
                 </div>
             </div>
 
-            <div class="row mb-3">
+          
+            <div class="row mb-3 mt-3">
                 <div class="col-md-8">
-                    <label for="status" class="form-label"><b>Status</b></label>
-                    <input type="text" class="form-control" id="status">
+                    <label class="form-label"><b>Status</b></label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="status" id="disp" value="disponivel">
+                        <label class="form-check-label" for="disp">Disponível</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="status" id="sestoque" value="sem estoque">
+                        <label class="form-check-label" for="sestoque">Sem estoque</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="status" id="ind" value="indisponivel">
+                        <label class="form-check-label" for="ind">Indisponível</label>
+                    </div>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-8">
                     <label for="imagem" class="form-label"><b>Adicionar imagem</b></label>
                     
-                    <input type="file" class="form-control" id="imageUpload">
+                    <input type="file" class="form-control" id="arquvio" name="arquivo">
 
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-8">
-                    <button type="submit" class="btn btn-primary w-100" style="backgroun-color: #502779">Avançar</button>
+                    <button type="submit" class="btn btn-primary w-100" style="background-color: #502779; border-color:#502779 ">Avançar</button>
                 </div>
                 
             </div>
+            
         </form>
     </div>
 

@@ -20,8 +20,8 @@
         $id = inserirCliente ($nomeCliente, $emailCliente,$telefoneCliente, $dtNascCliente,  $cpfCliente, $senha1Cliente);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        //header("Location:../../../view/cadastro/concluido.php");
-        header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
+        header("Location:../../../view/cadastro/concluido.php");
+       // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
 
 
@@ -41,8 +41,8 @@
         */
     } else {
         // echo $msgErro;
-        //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
-        header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/error.php?msg=$msgErro");
+        //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }
   
