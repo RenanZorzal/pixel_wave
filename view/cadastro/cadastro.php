@@ -32,6 +32,7 @@
                 </div>
 
             </div>
+
             <!--Vendedor autonomo-->
             <div class="baixo d-flex justify-content-center">
             <div class="container-fluid">
@@ -84,14 +85,15 @@
                                 </div>
         
                                 <div class="d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+                                    <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
                                     <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                                 </div>
                             </form>
                         </div>
+
                         <!--Empresa-->
                         <div id="formDiv2">
-                                <form method="post" name="formEmpresa" action="../control/cadastro/empresa/cadEmpresa.php" enctype="multipart/form-data">
+                                <form method="post" name="formEmpresa" action="../../control/cadastro/empresa/cadEmpresa.php" enctype="multipart/form-data">
 
                                     <div class="mb-3">
                                         <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
@@ -155,11 +157,12 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between mb-4">
-                                        <button type="submit" class="btn btn-primary" id="enviar" >Enviar</button>
+                                        <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
                                         <button type="button" class="btn btn-light" id="voltar" >Voltar</button>
                                     </div>
                                 </form>
                         </div>
+
                         <!--Cliente-->
                         <div id="formDiv3">
                             <form method="post" name="formCliente" action="../../control/cadastro/cliente/cadCliente.php" enctype="multipart/form-data">
@@ -215,13 +218,13 @@
                                   </div>
                               </div>
       
-                              <div class="mb-3 form-check">
+                              <div class="mb-4 form-check">
                                   <input type="checkbox" class="form-check-input" id="terms">
                                   <label class="form-check-label" for="terms">Concordo com os termos</label>
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <button type="submit" class="btn btn-primary" id="enviar">Enviar</button>
+                                  <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
                                   <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                               </div>
                           </form>
@@ -235,6 +238,35 @@
 
         <div class="direito">
             <img src="arte.png" alt="" style="width: 100%; height: 100vh;" class=img-fluid>
+        </div>
+
+
+        <!-- Modal -->
+
+        <div class="modal-dialog modal-dialog-centered" id="modalFeedback" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalLabel">Feedback de seu Cadastro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <?php
+                    // Exibir a mensagem de ERRO caso OCORRA
+                    if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+                    $mensagem = $_GET["msg"];
+                    echo "<FONT>$mensagem</FONT>";
+                    }
+                ?> 
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Continuar</button>
+            </div>
+            </div>
+        </div>
         </div>
         
         <script>
@@ -261,14 +293,15 @@
 
         </script>
 
+        
         <?php
             // Exibir a mensagem de ERRO caso OCORRA
-            if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
-                $mensagem = $_GET["msg"];
-                echo "<FONT color=red>$mensagem</FONT>";
-            }
-        ?>
-
+            //if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+            //    $mensagem = $_GET["msg"];
+            //    echo "<FONT color=red>$mensagem</FONT>";
+            //}
+        ?> 
+        
 
 
     </body>
