@@ -85,7 +85,8 @@
                                 </div>
         
                                 <div class="d-flex justify-content-between">
-                                    <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
+                                    <!-- <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button> -->
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalFeedback" class="btn" id="enviar">Enviar</a>
                                     <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                                 </div>
                             </form>
@@ -157,7 +158,8 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between mb-4">
-                                        <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
+                                        <!-- <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button> -->
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalFeedback" class="btn" id="enviar">Enviar</a>
                                         <button type="button" class="btn btn-light" id="voltar" >Voltar</button>
                                     </div>
                                 </form>
@@ -224,7 +226,8 @@
                               </div>
       
                               <div class="d-flex justify-content-between">
-                                  <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button>
+                                  <!-- <button type="submit" class="btn btn-primary" id="enviar" data-bs-toggle="modal" data-bs-target="#modalFeedback">Enviar</button> -->
+                                  <a href="#" data-bs-toggle="modal" data-bs-target="#modalFeedback" class="btn" id="enviar">Enviar</a>
                                   <button type="button" class="btn btn-light" id="voltar">Voltar</button>
                               </div>
                           </form>
@@ -243,30 +246,48 @@
 
         <!-- Modal -->
 
-        <div class="modal-dialog modal-dialog-centered" id="modalFeedback" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalLabel">Feedback de seu Cadastro</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <div class="modal-dialog-centered modal fade" id="modalFeedback" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLabel">Feedback de seu Cadastro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Continuar</button>
+                </div>
+                </div>
             </div>
-            <div class="modal-body">
+        </div> -->
 
-                <?php
-                    // Exibir a mensagem de ERRO caso OCORRA
-                    if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
-                    $mensagem = $_GET["msg"];
-                    echo "<FONT>$mensagem</FONT>";
-                    }
-                ?> 
-                
+        <div class="modal fade" tabindex="-1" id="modalFeedback">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: purple;"> Feedback de seu Cadastro </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <?php
+                            // Exibir a mensagem de ERRO caso OCORRA
+                            if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+                            $mensagem = $_GET["msg"];
+                            echo "<FONT>$mensagem</FONT>";
+                            }
+                        ?> 
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(226, 206, 245); color: black;">Fechar</button>
+                    <a href="formulario-contato.html" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Continuar</a>
+                </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Continuar</button>
-            </div>
-            </div>
-        </div>
         </div>
         
         <script>
