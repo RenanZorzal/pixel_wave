@@ -3,22 +3,17 @@
 require "conexaoBD.php";    
 static $conexao;
 
-function inserirVendedor ($nome, $cpf, $email, $telefone, $dtNasc, $sexo, $senha, $status, $descricao, $arquivo) {
+function inserirVendedor ($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha) {
 
     $conexao = conectarBD();    
 
     // Converter data. Se necessário
-    $dataConvertida = converterData($dtNasc);
-
-    // Transformar a imagem
-    $tamanhoImg = $arquivo["size"]; 
-    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
-    $foto = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+    $dataConvertida = converterData($data_nasc);
 
     // Montar SQL
-    $sql = "INSERT INTO Vendedor 
-        (nome, cpf, email, telefone, dtNasc, sexo, senha, status, descricao, foto)
-        VALUES ('$nome' , '$cpf', '$email','$telefone','$dataConvertida','$sexo','$senha','$status','$descricao','$foto')";
+    $sql = "INSERT INTO userVendedor 
+        (tipoVendedor, nomeVendedor, emailVendedor, CNPJ_CPF, dtNasc, telefoneVendedor, senhaVendedor)
+        VALUES ('$tipo' ,'$nome' , '$email', '$cpf', '$dataConvertida','$telefone','$senha')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
