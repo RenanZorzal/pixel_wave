@@ -3,20 +3,19 @@
 require "a.conexaoBD.php";    
 static $conexao;
 
-function inserirProduto($vendedor, $status, $ano, $preco, $imagem, $descricao, $subcategoria, $condicao) {
+function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria, $condicao) {
 
     $conexao = conectarBD();    
 
-    $tamanhoImg = $imagem["size"]; 
-    $arqAberto = fopen ( $imagem["tmp_name"], "r" );
-    $img = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+    $tamanhoImg = $arquivo["size"]; 
+    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
+    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
 
     
     // Montar SQL
-    $sql = "INSERT INTO Produto 
-        (user_Vendedor_idVendedor, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubvategoria, condicaoProduto)
-        VALUES (null, '$status', '$ano', '$preco', '$img', '$descricao', '$subcategoria', '$condicao') {
-)";
+    $sql = "INSERT INTO produto 
+        (statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, categoria, condicaoProduto)
+        VALUES ('$status', $ano, $preco, '$arquivo', '$descricao', $categoria, '$condicao')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     

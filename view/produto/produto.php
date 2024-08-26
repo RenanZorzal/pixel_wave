@@ -22,12 +22,12 @@ require_once "../navbar/navbar.php";
 <!--Página-->
 <div class="container mt-5">
         <h1>ANUNCIAR PRODUTO</h1>
-        <form method="post" name="formProduto" action="../produto/cadProduto.php" enctype="multipart/form-data">
+        <form method="post" name="formProduto" action="cadProduto.php" enctype="multipart/form-data">
             <div class="row mb-3 mt-3">
                 <div class="col-md-8">
                     <label class="form-label"><b>Condição</b></label><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="condicao" id="novo" value="novo">
+                        <input class="form-check-input" type="radio" name="condicao" id="novo" value="novo" required>
                         <label class="form-check-label" for="novo">Novo</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -53,7 +53,7 @@ require_once "../navbar/navbar.php";
         
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <label for="Categoria" class="form-label"><b>Categoria</b></label>
+                    <label for="categoria" class="form-label"><b>Categoria</b></label>
                     <select class="form-control" id="categoria" name="categoria">
                     <option value="1">Placa-mãe</option>
                     <option value="2">Memoria</option>
@@ -67,7 +67,7 @@ require_once "../navbar/navbar.php";
             <div class="row mb-3">
                 <div class="col-md-8">
                     <label  for="preco" class="form-label"><b>Preço</b></label>
-                    <input type="number" class="form-control" id="preco" name = "preco">
+                    <input type="number" class="form-control" id="preco" name="preco">
                 </div>
             </div>
 
@@ -76,24 +76,24 @@ require_once "../navbar/navbar.php";
                 <div class="col-md-8">
                     <label class="form-label"><b>Status</b></label><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="disp" value="disponivel">
+                        <input class="form-check-input" type="radio" name="status" id="disp" value="Disponivel" required>
                         <label class="form-check-label" for="disp">Disponível</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="sestoque" value="sem estoque">
+                        <input class="form-check-input" type="radio" name="status" id="sestoque" value="Sem estoque">
                         <label class="form-check-label" for="sestoque">Sem estoque</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="ind" value="indisponivel">
+                        <input class="form-check-input" type="radio" name="status" id="ind" value="Indisponivel">
                         <label class="form-check-label" for="ind">Indisponível</label>
                     </div>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <label for="imagem" class="form-label"><b>Adicionar imagem</b></label>
+                    <label for="arquivo" class="form-label"><b>Adicionar imagem</b></label>
                     
-                    <input type="file" class="form-control" id="arquvio" name="arquivo">
+                    <input type="file" class="form-control" id="arquivo" name="arquivo">
 
                 </div>
             </div>
@@ -106,6 +106,13 @@ require_once "../navbar/navbar.php";
             </div>
             
         </form>
+        <?php
+                            // Exibir a mensagem de ERRO caso OCORRA
+                            if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
+                            $mensagem = $_GET["msg"];
+                            echo "<br><FONT>$mensagem</FONT>";
+                            }
+                        ?> 
     </div>
 
 </body>

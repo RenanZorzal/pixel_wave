@@ -8,11 +8,11 @@
     $categoria = $_POST["categoria"];
     $preco = $_POST["preco"];
     $status = $_POST["status"];
-    $arquivo = $_POST["arquivo"];
+    $arquivo = $_FILES["arquivo"];
     
 
     // PASSO 2 - Validação dos dados
-    $msgErro = validarCampos($anoLancamento, $descricao, $categoria, $preco, $arquivo);
+    $msgErro = validarCampos($anoLancamento,$descricao, $preco, $arquivo);
     if ( empty($msgErro) ) {
         // PASSO 3 - Inserir/Alterar dados no banco
                
@@ -21,12 +21,12 @@
         $id = inserirProduto ($status, $anoLancamento, $preco, $arquivo, $descricao, $categoria, $condicao);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../view/produto/produto.php?msg=Produto inserido com sucesso.");
+        header("Location:produto.php?msg=Produto inserido com sucesso.");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
         // echo $msgErro;
-        header("Location:../view/produto/produto.php?msg=$msgErro");
+        header("Location:produto.php?msg=$msgErro");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }

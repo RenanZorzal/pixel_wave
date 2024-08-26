@@ -1,19 +1,17 @@
-<?
-function validarCampos($ano, $descricao, $categoria, $preco, $arquivo) {
+<?php
+function validarCampos($ano, $descricao, $preco, $arquivo) {
     $msgErro = "";
-    if ( $ano < 1900 && $ano > 2025) {
+    if ( $ano < 1900 || $ano > 2025 || $ano = "") {
         $msgErro = $msgErro . "Informe um ano de lançamento válido.<br>";        
     }        
 
 
 
-    if (strlen($descricao) > 100) {
+    if (strlen($descricao) > 1000) {
         $msgErro = $msgErro . "Descrição muito grande.<br>";
     }
-    if (strlen($categoria) > 20) {
-        $msgErro = $msgErro . "Categoria muito grande.<br>";
-    }
-    if ($preco <= 0) {
+  
+    if ($preco <= 0 || $preco > 100000) {
         $msgErro = $msgErro . "Preço inválido.<br>";
     }
     if ( $arquivo["error"] != 0 ) {
