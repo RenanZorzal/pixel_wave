@@ -41,7 +41,7 @@ function validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha
         $msgErro = $msgErro . "Informe sua senha novamente. <br>";
     }
 
-    if ( confirmarSenha($confirmacao_senha) == false ) {
+    if ( confirmarSenha($senha, $confirmacao_senha) == false ) {
         $msgErro = $msgErro . "Suas senhas não correspondem. <br>";
     }
 
@@ -118,7 +118,7 @@ function validarNumero($numero) {
 }
 
 function validarSenha($senha){
-    if(strlen($senha) <= 8){
+    if(strlen($senha) < 8){
         return false;
     } else {
         return true;

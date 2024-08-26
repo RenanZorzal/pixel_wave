@@ -49,7 +49,7 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
         $msgErro = $msgErro . "Informe sua senha novamente. <br>";
     }
 
-    if ( confirmarSenha($confirmacao_senha) == false ) {
+    if ( confirmarSenha($senha, $confirmacao_senha) == false ) {
         $msgErro = $msgErro . "Suas senhas não correspondem. <br>";
     }
 

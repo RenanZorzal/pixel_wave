@@ -63,3 +63,8 @@ label{
     display: none;
 
 }
+
+#camposFlutuantes{
+    color: #502779;
+    font-weight: bold;
+}
