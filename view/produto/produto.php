@@ -55,11 +55,11 @@ require_once "../navbar/navbar.php";
                 <div class="col-md-8">
                     <label for="categoria" class="form-label"><b>Categoria</b></label>
                     <select class="form-control" id="categoria" name="categoria">
-                    <option value="1">Placa-mãe</option>
-                    <option value="2">Memoria</option>
-                    <option value="3">Processador</option>
-                    <option value="4">Placa de vídeo</option>
-                    <option value="5">Fonte</option>
+                    <option>Placa-mãe</option>
+                    <option>Memoria</option>
+                    <option>Processador</option>
+                    <option>Placa de vídeo</option>
+                    <option>Fonte</option>
                     </select>
                 </div>
             </div>

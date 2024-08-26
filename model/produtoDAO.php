@@ -15,7 +15,7 @@ function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria,
     // Montar SQL
     $sql = "INSERT INTO produto 
         (statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, categoria, condicaoProduto)
-        VALUES ('$status', $ano, $preco, '$arquivo', '$descricao', $categoria, '$condicao')";
+        VALUES ('$status', $ano, $preco, '$arquivo', '$descricao', '$categoria', '$condicao')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
