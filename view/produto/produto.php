@@ -22,7 +22,7 @@ require_once "../navbar/navbar.php";
 <!--Página-->
 <div class="container mt-5">
         <h1>ANUNCIAR PRODUTO</h1>
-        <form>
+        <form method="post" name="formProduto" action="../produto/cadProduto.php" enctype="multipart/form-data">
             <div class="row mb-3 mt-3">
                 <div class="col-md-8">
                     <label class="form-label"><b>Condição</b></label><br>
@@ -50,11 +50,17 @@ require_once "../navbar/navbar.php";
                     <input type="text" class="form-control" id="descricao" name="descricao">
                 </div>
             </div>
-
+        
             <div class="row mb-3">
                 <div class="col-md-8">
-                    <label for="categoria" class="form-label"><b>Categoria</b></label>
-                    <input type="text" class="form-control" id="categoria" name = "categoria">
+                    <label for="Categoria" class="form-label"><b>Categoria</b></label>
+                    <select class="form-control" id="categoria" name="categoria">
+                    <option value="1">Placa-mãe</option>
+                    <option value="2">Memoria</option>
+                    <option value="3">Processador</option>
+                    <option value="4">Placa de vídeo</option>
+                    <option value="5">Fonte</option>
+                    </select>
                 </div>
             </div>
 
