@@ -37,3 +37,7 @@ body {
     padding: 0 10px;
 }
 
+#navbarNav{
+  display: flex;
+  justify-content: space-between;
+}

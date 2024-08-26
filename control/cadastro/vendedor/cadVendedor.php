@@ -5,7 +5,7 @@
     // Receber os campos
 
     //POST
-    $tipo = $_POST["inlineRadioOptions"];
+    $tipo = 1;
     $nome = $_POST["nomeVendedor"];
     $email = $_POST["emailVendedor"];
     $cpf = $_POST["cpfVendedor"];
@@ -22,16 +22,20 @@
     
     if(empty($msgErro)){ //caso não tenha erro
 
-        require_once "../model/vendedorDAO.php";
+        require_once "../../../model/vendedorDAO.php";
 
         $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha);
 
         // Devolver uma mensagem ou página HTML
-        header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
+        //header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
+        header("Location:../../../view/cadastro/concluido.php");
+
 
     } else { //caso tenha erro
 
-        header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+        //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/error.php?msg=$msgErro");
+
     }
 
 ?>

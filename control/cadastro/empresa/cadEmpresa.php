@@ -5,7 +5,7 @@
     // Receber os campos
 
     //POST
-    $tipo = $_POST["inlineRadioOptions"];
+    $tipo = 2;
     $nome = $_POST["nomeEmpresa"];
     $email = $_POST["email"];
     $cnpj = $_POST["cnpj"];
@@ -25,16 +25,20 @@
     
     if(empty($msgErro)){ //caso não tenha erro
 
-        require_once "../model/empresaDAO.php";
+        require_once "../../../model/empresaDAO.php";
 
         $id = inserirEmpresa($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha);
 
         // Devolver uma mensagem ou página HTML
-        header("Location:../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");
+        //header("Location:../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");
+        header("Location:../../../view/cadastro/concluido.php");
+
 
     } else { //caso tenha erro
 
-        header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+        //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/error.php?msg=$msgErro");
+
     }
 
 ?>

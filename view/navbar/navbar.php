@@ -10,74 +10,92 @@
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-dark navbar-estilo">
-  <div class="container">
-    <!-- Logo da empresa -->
-    <a class="navbar-brand" href="#">
-      <img src="../navbar/logo.png" alt="Logo da Empresa" height="50">
-    </a>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-estilo">
+    <div class="container">
 
-    <!-- Botão que aparece quando a navbar é colapsada -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Logo da empresa -->
 
-    <!-- Itens da navbar -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">PIXEL WAVE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Produtos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre Nós</a>
-        </li>
-      </ul>
+      <a class="navbar-brand" href="#">
+        <img src="../navbar/logo.png" alt="Logo da Empresa" height="50">
+      </a>
 
-      <!-- Formulário de pesquisa -->
-      <form class="d-flex">
+
+      <!-- Botão que aparece quando a navbar é colapsada -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <!-- Itens da navbar -->
+
+      <div class="collapse navbar-collapse" id="navbarNav">
         
-        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="width: 500px;">
-        <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-      </form>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">PIXEL WAVE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre Nós</a>
+          </li>
+        </ul>
 
-      <!-- Ícone de carrinho -->
-      <a class="nav-link text-light ms-3" href="#"><i class="bi bi-cart3 fs-3"></i></a>
 
-      <!-- Foto de perfil -->
-      <div class="dropdown ms-3">
-        <a class="nav-link dropdown-toggle text-light" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-person-circle fs-3"></i>
-        </a>
+        <!-- Formulário de pesquisa -->
 
-        <div class="dropdown-menu">
-          <form class="px-4 py-3">
-            <div class="form-group">
-              <label for="exampleDropdownFormEmail1">Email</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-            </div>
-            <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Senha</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownCheck">
-              <label class="form-check-label" for="dropdownCheck">
-                Lembre-me
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
-          </form>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Novo por aqui? Registre-se</a>
-          <a class="dropdown-item" href="#">Esqueci minha senha</a>
+        <form class="d-flex">
+          
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="width: 500px;">
+          <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+
+
+        <!-- Ícone de carrinho -->
+
+        <a class="nav-link text-light ms-3" href="#"><i class="bi bi-cart3 fs-3"></i></a>
+
+
+        <!-- Foto de perfil -->
+
+        <div class="dropdown ms-3 p-4">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle fs-3"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <form class="px-4 py-3" id="dropdown">
+              <div class="form-group mb-3">
+                <label for="exampleDropdownFormEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+              </div>
+              <div class="form-group mb-3">
+                <label for="exampleDropdownFormPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Senha">
+              </div>
+              <div class="mb-3 form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                  <label class="form-check-label" for="dropdownCheck2">
+                    Lembre-me
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item nav-link" aria-current="page" href="../cadastro/cadastro.php">Novo por aqui? Registre-se</a>
+              <a class="dropdown-item" href="#">Esqueci minha senha</a>
         </div>
 
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
     <!-- Segunda Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin">
       <div class="container-fluid justify-content-center">

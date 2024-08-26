@@ -20,6 +20,7 @@ require_once "../navbar/navbar.php";
 
 
 <!--Página-->
+
     <!-- Carousel de Destaques -->
     <div id="highlightCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -60,6 +61,7 @@ require_once "../navbar/navbar.php";
     </div>
 
 <!-- Seção de Categorias -->
+ 
 <div style="display: flex; justify-content: center;">
 <div class="ms-5 me-5 mt-5" style="width: 80%;">
   <h2 class="mb-4 h2">Categoria 1</h2>
