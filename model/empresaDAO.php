@@ -1,19 +1,16 @@
 <?php
 
-require "conexaoBD.php";    
+require "a.conexaoBD.php";    
 static $conexao;
 
 function inserirEmpresa ($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha) {
 
-    $conexao = conectarBD();    
+    $conexao = conectarBD();   
 
-    // Converter data. Se necessário
-    $dataConvertida = converterData($data_abertura);
-    
     // Montar SQL
     $sql = "INSERT INTO userVendedor 
-        (tipoVendedor, nomeVendedor, emailVendedor, CNPJ_CPF, dataVendedor, telefoneVendedor, celularVendedor, razaoSocial, inscricaoEstadual, senhaVendedor)
-        VALUES ('$tipo', '$nome', '$email', '$cnpj', '$data_abertura', '$telefone', '$celular', '$razaoSocial', '$inscricaoEstadual', '$senha')";
+        (tipoVendedor, nomeVendedor, emailVendedor, CNPJ_CPF, dataVendedor, telefoneVendedor, celularVendedor, razaoSocial, inscricaoEstadual, senhaVendedor, imgVendedor)
+        VALUES ('$tipo', '$nome', '$email', '$cnpj', '$data_abertura', '$telefone', '$celular', '$razaoSocial', '$inscricaoEstadual', '$senha', null)";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
@@ -44,3 +41,5 @@ function getEmpresa () {
     //$tamanhoImg = $arquivo["size"]; 
     //$arqAberto = fopen ( $arquivo["tmp_name"], "r" );
     //$logo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+
+    ?>

@@ -1,17 +1,15 @@
 <?php
 
-require "conexaoBD.php";    
+require "a.conexaoBD.php";    
 static $conexao;
 
 function inserirCliente ($nome, $email, $telefone, $dtNasc, $cpf, $senhaComprador) {
 
-    $conexao = conectarBD();    
-
-    // Converter data. Se necessário
-    
+    $conexao = conectarBD();        
     
     // Montar SQL
-    $sql = "INSERT INTO comprador 
+    $sql = "INSERT INTO Comprador
+        ()
         (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, senhaComprador)
         VALUES ('$nome', '$email', '$telefone', '$dtNasc', '$cpf', '$senhaComprador')";
 
@@ -37,3 +35,4 @@ function pesquisarClientePorNome () {
 function getCliente () {
 
 }
+?>

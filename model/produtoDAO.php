@@ -1,6 +1,6 @@
 <?php
 
-require "conexaoBD.php";    
+require "a.conexaoBD.php";    
 static $conexao;
 
 function inserirProduto($vendedor, $status, $ano, $preco, $imagem, $descricao, $subcategoria, $condicao) {
@@ -40,3 +40,4 @@ function pesquisarProdutoPorNome() {
 function getProduto() {
 
 }
+?>

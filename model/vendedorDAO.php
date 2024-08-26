@@ -1,19 +1,16 @@
 <?php
 
-require "conexaoBD.php";    
+require "a.conexaoBD.php";    
 static $conexao;
 
 function inserirVendedor ($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha) {
 
     $conexao = conectarBD();    
 
-    // Converter data. Se necessário
-    $dataConvertida = converterData($data_nasc);
-
     // Montar SQL
     $sql = "INSERT INTO userVendedor 
         (tipoVendedor, nomeVendedor, emailVendedor, CNPJ_CPF, dtNasc, telefoneVendedor, senhaVendedor)
-        VALUES ('$tipo' ,'$nome' , '$email', '$cpf', '$dataConvertida','$telefone','$senha')";
+        VALUES ('$tipo' ,'$nome' , '$email', '$cpf', '$data_nasc','$telefone','$senha')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
@@ -37,3 +34,10 @@ function pesquisarVendedorPorNome () {
 function getVendedor () {
 
 }
+
+//códigos se necessário
+
+//$dataConvertida = converterData($data_nasc);
+
+
+?>
