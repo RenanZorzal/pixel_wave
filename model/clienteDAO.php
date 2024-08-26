@@ -9,9 +9,8 @@ function inserirCliente ($nome, $email, $telefone, $dtNasc, $cpf, $senhaComprado
     
     // Montar SQL
     $sql = "INSERT INTO Comprador
-        ()
-        (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, senhaComprador)
-        VALUES ('$nome', '$email', '$telefone', '$dtNasc', '$cpf', '$senhaComprador')";
+        (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, imgComprador, senhaComprador)
+        VALUES ('$nome', '$email', '$telefone', '$dtNasc', '$cpf', null ,'$senhaComprador')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
