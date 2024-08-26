@@ -25,20 +25,6 @@
 
 
 
-        //TESTE
-        /*
-        echo "NOME: $nome <br>";
-        echo "CPF: $cpf <br>";
-        echo "ENDEREÇO: $ender <br>";
-        echo "ESTADO: $estado <br>";
-        echo "DT. NASC.: $dtNasc <br>";
-        echo "SEXO: $sexo <br>";
-        echo "CINEMA: $cinema <br>";
-        echo "INFORMÁTICA: $info <br>";
-        echo "MÚSICA: $musica <br>";
-        echo "SENHA 1: $senha1 <br>";
-        echo "SENHA 2: $senha2 <br>";
-        */
     } else {
         // echo $msgErro;
         //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
