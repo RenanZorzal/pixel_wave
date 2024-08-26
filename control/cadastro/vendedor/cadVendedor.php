@@ -28,7 +28,7 @@
 
         // Devolver uma mensagem ou página HTML
         //header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
-        header("Location:../../../view/cadastro/concluido.php");
+        header("Location:../../../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
 
 
     } else { //caso tenha erro

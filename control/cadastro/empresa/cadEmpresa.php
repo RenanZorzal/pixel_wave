@@ -31,13 +31,13 @@
 
         // Devolver uma mensagem ou página HTML
         //header("Location:../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");
-        header("Location:../../../view/cadastro/concluido.php");
+        header("Location:../../../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");
 
 
     } else { //caso tenha erro
 
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
-        header("Location:../../../view/cadastro/error.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/cadastro.php?msgErro=$msgErro");
 
     }
 
