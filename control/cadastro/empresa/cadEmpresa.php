@@ -27,7 +27,7 @@
 
         require_once "../model/empresaDAO.php";
 
-        $id = inserirEmpresa($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha, $confirmacao_senha);
+        $id = inserirEmpresa($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha);
 
         // Devolver uma mensagem ou página HTML
         header("Location:../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");

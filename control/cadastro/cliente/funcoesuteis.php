@@ -18,8 +18,8 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
         $msgErro = $msgErro . "Celular inválido.<br>";
     }
 
-    if ( strlen($senha1) < 6 ) {
-        $msgErro = $msgErro . "A senha deve ter mais que 6 caracteres.<br>";
+    if ( strlen($senha1) <= 8 ) {
+        $msgErro = $msgErro . "A senha deve ter mais que 8 caracteres.<br>";
     }
     
     if ( strcmp ($senha1, $senha2) != 0 ) {

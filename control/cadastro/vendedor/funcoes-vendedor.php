@@ -118,7 +118,7 @@ function validarNumero($numero) {
 }
 
 function validarSenha($senha){
-    if(strlen($senha) < 8){
+    if(strlen($senha) <= 8){
         return false;
     } else {
         return true;

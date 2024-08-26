@@ -24,7 +24,7 @@
 
         require_once "../model/vendedorDAO.php";
 
-        $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha, $confirmacao_senha);
+        $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha);
 
         // Devolver uma mensagem ou página HTML
         header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
