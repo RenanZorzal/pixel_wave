@@ -8,9 +8,9 @@ function inserirVendedor ($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $se
     $conexao = conectarBD();    
 
     // Montar SQL
-    $sql = "INSERT INTO userVendedor 
-        (tipoVendedor, nomeVendedor, emailVendedor, CNPJ_CPF, dtNasc, telefoneVendedor, senhaVendedor)
-        VALUES ('$tipo' ,'$nome' , '$email', '$cpf', '$data_nasc','$telefone','$senha')";
+    $sql = "INSERT INTO Vendedor 
+        (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVendedor, celularVendedor, tipoVendedor, CNPJ_CPF, imgVendedor, razaoSocial, senhaVendedor, data_nascimentoVendedor, inscricaoEstadual)
+        VALUES ('$nome', null, '$email', '$telefone', null, '$tipo', '$cpf', null, null, '$senha', '$data_nasc', null)";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
