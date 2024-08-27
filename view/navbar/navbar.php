@@ -36,7 +36,7 @@
             <a class="nav-link active" aria-current="page" href="#">PIXEL WAVE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Produtos</a>
+            <a class="nav-link active" href="../produto/produto.php">Produtos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre Nós</a>

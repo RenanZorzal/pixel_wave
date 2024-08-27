@@ -34,7 +34,7 @@
     } else { //caso tenha erro
 
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
-        header("Location:../../../view/cadastro/cadastro.php?msg=$msgErro");
+        header("Location:../../../view/cadastro/cadastro.php?msgErro=$msgErro");
 
     }
 

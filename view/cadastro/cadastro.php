@@ -62,7 +62,7 @@
                                         <input type="text" class="form-control form-control-lg" name="cpfVendedor" id="cpfVendedor" placeholder="" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                                        <label for="dataNascimento" class="form-label" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>">Data de Nascimento</label>
                                         <input type="date" class="form-control form-control-lg" name="dataNascimento" id="dataNascimento" placeholder="" required>
                                     </div>
                                 </div>
