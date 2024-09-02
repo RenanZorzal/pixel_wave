@@ -70,7 +70,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="telefone" class="form-label">Telefone</label>
-                                        <input type="text" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" required>
+                                        <input type="tel" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" onkeyup="handlePhone(event)" oninput="contarCaracteres()" required>
                                     </div>
                                 </div>
         
@@ -128,12 +128,12 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="telefone" class="form-label">Telefone</label>
-                                            <input type="text" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" required>
+                                            <input type="tel" class="form-control form-control-lg" name="telefone" id="telefone" placeholder="" onkeyup="handlePhone(event)" required>
                                         </div>
 
                                         <div class="col-md-6 mb-3">
                                             <label for="celular" class="form-label">Celular</label>
-                                            <input type="text" class="form-control form-control-lg" name="celular" id="celular" placeholder="" required>
+                                            <input type="text" class="form-control form-control-lg" name="celular" id="celular" placeholder="" onkeyup="handlePhone(event)" required>
                                         </div>
                                     </div>
 
@@ -178,22 +178,22 @@
                             <form method="post" name="formCliente" action="../../control/cadastro/cliente/cadCliente.php" enctype="multipart/form-data">
                               <div class="mb-3">
                                   <label for="nomeCliente" class="form-label">Nome Completo</label>
-                                  <input type="text" class="form-control form-control-lg" id="nomeCliente" name="nomeCliente" placeholder="">
+                                  <input type="text" class="form-control form-control-lg" id="nomeCliente" name="nomeCliente" placeholder="" require>
                               </div>
       
                               <div class="mb-3">
                                   <label for="emailCliente" class="form-label">Email</label>
-                                  <input type="email" class="form-control form-control-lg" id="emailCliente" name="emailCliente" placeholder="">
+                                  <input type="email" class="form-control form-control-lg" id="emailCliente" name="emailCliente" placeholder="" require>
                               </div>
                           
                               <div class="row">
                                   <div class="col-md-6 mb-3">
                                       <label for="cpfCliente" class="form-label">CPF</label>
-                                      <input type="text" class="form-control form-control-lg" id="cpfCliente" name="cpfCliente" placeholder="">
+                                      <input type="text" class="form-control form-control-lg" id="cpfCliente" name="cpfCliente" placeholder="" require>
                                   </div>
                                   <div class="col-md-6 mb-3">
                                       <label for="dtNascCliente" class="form-label">Data de Nascimento</label>
-                                      <input type="date" class="form-control form-control-lg" id="dtNascCliente" name="dtNascCliente" placeholder="" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>" >
+                                      <input type="date" class="form-control form-control-lg" id="dtNascCliente" name="dtNascCliente" placeholder="" max="<?php echo date('Y-m-d', strtotime('-18 year')); ?>" require>
                                   </div>
                               </div>
       <!--
@@ -213,7 +213,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                       <label for="telefoneCliente" class="form-label">Celular</label>
-                                      <input type="text" class="form-control form-control-lg" id="telefoneCliente" name="telefoneCliente" placeholder="">
+                                      <input type="tel" class="form-control form-control-lg" id="telefoneCliente" name="telefoneCliente" placeholder="" onkeyup="handlePhone(event)">
                                     </div>
                                 </div>
       
@@ -324,6 +324,48 @@
                 } else{
                     document.getElementById(radios[2].value).style.display = "block";
                 }
+            }
+
+            //função que mascara o numero de telefone 
+            const handlePhone = (event) => {
+                let input = event.target
+                input.value = phoneMask(input.value)
+            }
+
+            const phoneMask = (value) => {
+                if (!value) return ""
+                value = value.replace(/\D/g,'')
+                value = value.replace(/(\d{2})(\d)/,"($1) $2")
+                value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+                return value
+            }
+
+            // Função para contar a quantidade de caracteres
+            function contarCaracteres() {
+
+                // Limite de caracteres permitido no campo
+                const limiteCaracteres = 11;
+
+                // Recuperar o seletor com id "mensagem"
+                var mensagem = document.getElementById("mensagem");
+
+                // Recuperar o conteúdo do campo "mensagem"
+                // value - valor que o campo possui
+                var mensagemConteudo = mensagem.value;
+
+                // Verificar se o conteúdo digitado pelo usuário é maior que o limite de caracteres permitido no campo
+                // length - quantidade de caracteres
+                if(mensagemConteudo.length > limiteCaracteres){
+
+                    // Enviar para o campo mensagem somente os primeiros 120 caracteres
+                    // mensagemConteudo - POssui o valor atual do campo de texto
+                    // A função slice() permite extrair uma parte da string com base nos índices especificados. No exemplo, é utilizado o intervalo de 0 a 120. 
+                    mensagem.value = mensagemConteudo.slice(0, limiteCaracteres);
+                }
+
+                // Contar a quantidade de caracteres e enviar para o SELETOR "contador" no HTML
+                // mensagem.value.length - Contar a quantidade de caracteres
+                document.getElementById("contador").textContent = mensagem.value.length;
             }
 
         </script>
