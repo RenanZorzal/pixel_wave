@@ -1,3 +1,7 @@
+-- Desativar temporariamente algumas verificações para evitar erros durante a criação das tabelas
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+
 INSERT INTO categoria(nomeCategoria) VALUES
 ('dispositivos_móveis'),
 ('desktop'),
@@ -37,3 +41,12 @@ INSERT INTO comprador (nomeComprador, emailComprador, telefoneComprador, data_na
 
 INSERT INTO produto(userVendedor_idVendedor, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
 (1, 1, 2020, '2699' , null, 'smartphone motorola', 5, 1, 12);
+
+
+
+
+
+
+-- Restaurar as configurações anteriores
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
