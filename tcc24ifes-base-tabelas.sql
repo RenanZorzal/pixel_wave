@@ -11,9 +11,9 @@ CREATE TABLE IF NOT EXISTS Vendedor (
   nomeVendedor VARCHAR(45) NOT NULL, 
   descricaoVendedor VARCHAR(45) ,  
   emailVendedor VARCHAR(45) NOT NULL,  
-  telefoneVendedor INT NOT NULL,
-  celularVendedor INT,
-  tipoVendedor INT NOT NULL , 
+  telefoneVendedor VARCHAR(11) NOT NULL,
+  celularVendedor VARCHAR(11),
+  tipoVendedor VARCHAR(100) NOT NULL , 
   CNPJ_CPF VARCHAR(45) NOT NULL,  
   imgVendedor LONGBLOB , 
   razaoSocial VARCHAR(100) ,  
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Comprador (
 
 CREATE TABLE IF NOT EXISTS StatusCompra (
   idStatusCompra INT NOT NULL AUTO_INCREMENT,  
-  StatusCompracol VARCHAR(45),  
+  StatusCompra VARCHAR(45),  
   PRIMARY KEY (idStatusCompra), 
   UNIQUE (StatusCompracol)  
 );
@@ -82,16 +82,17 @@ CREATE TABLE IF NOT EXISTS Subcategoria (
 CREATE TABLE IF NOT EXISTS Produto (
   idProduto INT NOT NULL AUTO_INCREMENT, 
   userVendedor_idVendedor INT NOT NULL,  
-  statusProduto TINYINT(1),
+  statusProduto VARCHAR(100),
   anoProduto INT,
-  precoProduto INT,
+  precoProduto FLOAT,
   imagemProduto LONGBLOB ,
   descricaoProduto MEDIUMTEXT ,
   Subcategoria_idSubcategoria INT NOT NULL,
-  condicaoProduto TINYINT(1),
+  condicaoProduto VARCHAR(100),
   qtdEstoque INT,
   PRIMARY KEY (idProduto),
-  FOREIGN KEY (userVendedor_idVendedor) REFERENCES userVendedor(idVendedor),   FOREIGN KEY (Subcategoria_idSubcategoria) REFERENCES Subcategoria(idSubcategoria) 
+  FOREIGN KEY (userVendedor_idVendedor) REFERENCES userVendedor(idVendedor),
+  FOREIGN KEY (Subcategoria_idSubcategoria) REFERENCES Subcategoria(idSubcategoria) 
 );
 
 CREATE TABLE IF NOT EXISTS ItensVendaCompra ( 
