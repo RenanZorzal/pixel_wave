@@ -83,12 +83,13 @@ CREATE TABLE IF NOT EXISTS Produto (
   idProduto INT NOT NULL AUTO_INCREMENT, 
   userVendedor_idVendedor INT NOT NULL,  
   statusProduto TINYINT(1),
-  anoProduto INT ,
-  precoProduto INT ,
+  anoProduto INT,
+  precoProduto INT,
   imagemProduto LONGBLOB ,
   descricaoProduto MEDIUMTEXT ,
   Subcategoria_idSubcategoria INT NOT NULL,
   condicaoProduto TINYINT(1),
+  qtdEstoque INT,
   PRIMARY KEY (idProduto),
   FOREIGN KEY (userVendedor_idVendedor) REFERENCES userVendedor(idVendedor),   FOREIGN KEY (Subcategoria_idSubcategoria) REFERENCES Subcategoria(idSubcategoria) 
 );
