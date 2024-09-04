@@ -82,7 +82,8 @@ CREATE TABLE IF NOT EXISTS Subcategoria (
 
 CREATE TABLE IF NOT EXISTS Produto (
   idProduto INT NOT NULL AUTO_INCREMENT, 
-  userVendedor_idVendedor INT NOT NULL,  
+  userVendedor_idVendedor INT NOT NULL, 
+  nomeProduto VARCHAR(100),
   statusProduto VARCHAR(100),
   anoProduto INT,
   precoProduto FLOAT,
