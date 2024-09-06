@@ -1,8 +1,4 @@
 
--- Desativar temporariamente algumas verificações para evitar erros durante a criação das tabelas
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-
 CREATE DATABASE IF NOT EXISTS TCC24IFES;
 USE TCC24IFES;
 
@@ -52,13 +48,13 @@ CREATE TABLE IF NOT EXISTS StatusCompra (
 
 CREATE TABLE IF NOT EXISTS VendaCompra (
   idVendaCompra INT NOT NULL AUTO_INCREMENT,  
-  userComprador_idComprador INT NOT NULL,  
   dataHora TIMESTAMP, 
   nota_fiscal VARCHAR(250) , 
   valorTotal FLOAT , 
+  Comprador_idComprador INT NOT NULL,
   StatusCompra_idStatusCompra INT NOT NULL,  
   PRIMARY KEY (idVendaCompra),  
-  FOREIGN KEY (userComprador_idComprador) REFERENCES userComprador(idComprador),  
+  FOREIGN KEY (Comprador_idComprador ) REFERENCES Comprador(idComprador ),  
   FOREIGN KEY (StatusCompra_idStatusCompra) REFERENCES StatusCompra(idStatusCompra)  
 );
 
@@ -82,7 +78,7 @@ CREATE TABLE IF NOT EXISTS Subcategoria (
 
 CREATE TABLE IF NOT EXISTS Produto (
   idProduto INT NOT NULL AUTO_INCREMENT, 
-  userVendedor_idVendedor INT NOT NULL, 
+  Vendedor_idVendedor INT NOT NULL, 
   nomeProduto VARCHAR(100),
   statusProduto VARCHAR(100),
   anoProduto INT,
@@ -93,7 +89,7 @@ CREATE TABLE IF NOT EXISTS Produto (
   condicaoProduto VARCHAR(100),
   qtdEstoque INT,
   PRIMARY KEY (idProduto),
-  FOREIGN KEY (userVendedor_idVendedor) REFERENCES userVendedor(idVendedor),
+  FOREIGN KEY (Vendedor_idVendedor) REFERENCES Vendedor(idVendedor),
   FOREIGN KEY (Subcategoria_idSubcategoria) REFERENCES Subcategoria(idSubcategoria) 
 );
 
@@ -105,8 +101,4 @@ CREATE TABLE IF NOT EXISTS ItensVendaCompra (
   FOREIGN KEY (VendaCompra_idVendaCompra) REFERENCES VendaCompra(idVendaCompra),
   FOREIGN KEY (Produto_idProduto) REFERENCES Produto(idProduto) 
 );
-
--- Restaurar as configurações anteriores
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 
