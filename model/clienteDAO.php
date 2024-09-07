@@ -19,6 +19,44 @@ function inserirCliente ($nome, $email, $telefone, $dtNasc, $cpf, $senhaComprado
     return $id;
 }
 
+function pesquisar ($pesq, $tipo) {
+
+    $conexao = conectarBD(); 
+
+    $sql = "SELECT * FROM Comprador WHERE ";
+    switch ($tipo) {
+        case 1: // Por nome
+                $sql = $sql . "nomeComprador LIKE '$pesq%' ";
+                break;
+        case 2: // Por CPF
+                $sql = $sql . "CPF = '$pesq' ";
+                break;
+        case 3: // Por ID
+            $sql = $sql . "idComprador = '$pesq' ";
+    }
+
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+}
+
+function pesquisarCompradorPorNome ($pesq) {
+    return pesquisar($pesq,1);
+}
+
+function pesquisarCompradorPorCPF ($pesq) {
+    return pesquisar($pesq,2);
+}
+
+function pesquisarCompradorPorID ($pesq) {
+    return pesquisar($pesq,3);
+}
+
+
+
+
+
+
+
 function atualizarCliente () {
 
 }
@@ -27,11 +65,5 @@ function excluirCliente () {
 
 }
 
-function pesquisarClientePorNome () {
 
-}
-
-function getCliente () {
-
-}
 ?>

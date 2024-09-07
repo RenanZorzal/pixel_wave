@@ -19,6 +19,45 @@ function inserirEmpresa ($tipo, $nome, $email, $cnpj, $data_abertura, $telefone,
     return $id;
 }
 
+
+function pesquisar ($pesq, $tipo) {
+
+    $conexao = conectarBD(); 
+
+    $sql = "SELECT * FROM Vendedor WHERE ";
+    switch ($tipo) {
+        case 1: // Por nome
+                $sql = $sql . "nomeVendedor LIKE '$pesq%' ";
+                break;
+        case 2: // Por CNPJ
+                $sql = $sql . "CNPJ_CPF = '$pesq' ";
+                break;
+        case 3: // Por ID
+            $sql = $sql . "idVendedor = '$pesq' ";
+    }
+
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+}
+
+function pesquisarEmpresaPorNome ($pesq) {
+    return pesquisar($pesq,1);
+}
+
+function pesquisarEmpresaPorCNPJ_CPF ($pesq) {
+    return pesquisar($pesq,2);
+}
+
+function pesquisarEmpresaPorID ($pesq) {
+    return pesquisar($pesq,3);
+}
+
+
+
+
+
+
+
 function atualizarEmpresa () {
 
 }
@@ -26,20 +65,5 @@ function atualizarEmpresa () {
 function excluirEmpresa () {
 
 }
-
-function pesquisarEmpresaPorNome () {
-
-}
-
-function getEmpresa () {
-
-}
-
-//CODIGOS TALVEZ NECESSÁRIOS
-
-    // Transformar a imagem
-    //$tamanhoImg = $arquivo["size"]; 
-    //$arqAberto = fopen ( $arquivo["tmp_name"], "r" );
-    //$logo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
 
     ?>

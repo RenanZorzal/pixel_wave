@@ -19,6 +19,43 @@ function inserirVendedor ($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $se
     return $id;
 }
 
+
+function pesquisar ($pesq, $tipo) {
+
+    $conexao = conectarBD(); 
+
+    $sql = "SELECT * FROM Vendedor WHERE ";
+    switch ($tipo) {
+        case 1: // Por nome
+                $sql = $sql . "nomeVendedor LIKE '$pesq%' ";
+                break;
+        case 2: // Por CNPJ
+                $sql = $sql . "CNPJ_CPF = '$pesq' ";
+                break;
+        case 3: // Por ID
+            $sql = $sql . "idVendedor = '$pesq' ";
+    }
+
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+}
+
+function pesquisarVendedorPorNome ($pesq) {
+    return pesquisar($pesq,1);
+}
+
+function pesquisarVendedorPorCNPJ_CPF ($pesq) {
+    return pesquisar($pesq,2);
+}
+
+function pesquisarVendedorPorID ($pesq) {
+    return pesquisar($pesq,3);
+}
+
+
+
+
+
 function atualizarVendedor () {
 
 }
@@ -26,18 +63,6 @@ function atualizarVendedor () {
 function excluirVendedor () {
 
 }
-
-function pesquisarVendedorPorNome () {
-
-}
-
-function getVendedor () {
-
-}
-
-//códigos se necessário
-
-//$dataConvertida = converterData($data_nasc);
 
 
 ?>

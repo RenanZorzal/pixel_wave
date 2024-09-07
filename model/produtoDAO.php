@@ -24,6 +24,40 @@ function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria,
     return $id;
 }
 
+
+function pesquisar ($pesq, $tipo) {
+
+    $conexao = conectarBD(); 
+
+    $sql = "SELECT * FROM Produto WHERE ";
+    switch ($tipo) {
+        case 1: // Por nome
+                $sql = $sql . "nomeProdutoLIKE '$pesq%' ";
+                break;
+        case 2: // Por tipo
+                $sql = $sql . "Subcategoria_idSubcategoria = '$pesq' ";
+                break;
+        case 3: // Por ID
+            $sql = $sql . "idProduto = '$pesq' ";
+    }
+
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+}
+
+function pesquisaProdutoPorNome ($pesq) {
+    return pesquisar($pesq,1);
+}
+
+function pesquisarProdutoPorCategoria ($pesq) {
+    return pesquisar($pesq,2);
+}
+
+function pesquisarProdutoPorID ($pesq) {
+    return pesquisar($pesq,3);
+}
+
+
 function atualizarProduto() {
 
 }
@@ -32,11 +66,4 @@ function excluirProduto() {
 
 }
 
-function pesquisarProdutoPorNome() {
-
-}
-
-function getProduto() {
-
-}
 ?>
