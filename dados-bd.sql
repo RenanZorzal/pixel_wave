@@ -32,6 +32,15 @@ INSERT INTO subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Periféricos notebook', 3),
 ('Acessórios notebook', 3);
 
+INSERT INTO statuscompra(StatusCompra) VALUES 
+('Andamento'),
+('Realizada'),
+('Cancelada'),
+('A pagar'),
+('A caminho'),
+('Reembolso')
+;
+
 INSERT INTO vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVendedor, celularVendedor, tipoVendedor, CNPJ_CPF, imgVendedor, razaoSocial, senhaVendedor, data_nascimentoVendedor, inscricaoEstadual) VALUES
 ('Jão', NULL, 'jaobonito123456@gmail.com', '11111111111', '22222222222', 'Pessoa física', '111.111.222-23', NULL, NULL, '123456789', '2000-01-01','1212121212');
 
@@ -39,4 +48,4 @@ INSERT INTO comprador (nomeComprador, emailComprador, telefoneComprador, data_na
 ('Jãozin', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789');
 
 INSERT INTO produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
-(1, 'Motorola', 1, 2020, 2691.99 , null, 'smartphone motorola', 5, 1, 1);
+(1, 'Motorola', 'disponível', 2020, 2691.99 , null, 'smartphone motorola', 5, 'seminova', 1);

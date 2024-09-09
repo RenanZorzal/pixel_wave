@@ -3,7 +3,7 @@
 require "a.conexaoBD.php";    
 static $conexao;
 
-function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria, $condicao) {
+function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdestoque) {
 
     $conexao = conectarBD();    
 
@@ -13,9 +13,10 @@ function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria,
 
     
     // Montar SQL
-    $sql = "INSERT INTO Produto 
-        (statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, categoria, condicaoProduto)
-        VALUES ('$status', $ano, $preco, '$arquivo', '$descricao', '$categoria', '$condicao')";
+    $sql = "INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria,
+     condicaoProduto, qtdEstoque) VALUES
+      ('$vendedor', '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', '$subcategoria', '$condicao', '$qtdestoque')
+;
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
@@ -32,7 +33,7 @@ function pesquisar ($pesq, $tipo) {
     $sql = "SELECT * FROM Produto WHERE ";
     switch ($tipo) {
         case 1: // Por nome
-                $sql = $sql . "nomeProdutoLIKE '$pesq%' ";
+                $sql = $sql . "nomeProduto LIKE '$pesq%' ";
                 break;
         case 2: // Por tipo
                 $sql = $sql . "Subcategoria_idSubcategoria = '$pesq' ";
