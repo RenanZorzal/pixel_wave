@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../navbar/estilo.css">
   
 </head>
-<body style="background-color: rgb(246, 236, 255);">
+<body>
 
 <?php
 require_once "../navbar/navbar.php";
@@ -22,7 +22,10 @@ require_once "../navbar/navbar.php";
 <!--Página-->
 <div class="d-flex justify-content-center align-items-center">
 <div class="mt-5 shadow-box2" style="background-color: white">
-        <h1 style="text-align: center; color: #502779"><b>MINHA EMPRESA</b></h1>
+<div class="d-flex justify-contentet-center align-items-center">
+<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
+<h1 style="text-align: center; color: #502779" class="ms-5"><b>MINHA EMPRESA</b></h1>
+</div>
         <div class="container form-container">
     <form>
         <div class="row g-3">
@@ -72,11 +75,14 @@ require_once "../navbar/navbar.php";
         
         <div class="mt-4 d-flex justify-content-center">
             <button type="button" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
+            <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Alterar senha</u></a>
+            <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Meus anúncios</u></a>
  
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
-            <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Alterar senha</u></a>
-            <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Meus anúncios</u></a>
+            
+            
+        </div>
         </div>
     </form>
 

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../navbar/estilo.css">
   
 </head>
-<body style="background-color: rgb(246, 236, 255);">
+<body>
 
 <?php
 require_once "../navbar/navbar.php";
