@@ -5,29 +5,37 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .navbar-estilo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     background-color: #502779;
     font-size: 20px;
     font-family: sans-serif;
 }
+
 .tamanho{
     display: flex;
     justify-content: end;
+    
 }
 .coricones{
     color: white;
 }
 
-  .navbar.navbar-inverse {
-    border: none;
-  }
-  .navbar .navbar-brand {
-    padding-top: 0px;
-  }
-  .navbar .navbar-brand img {
-    height: 90px;
-  
-  }
+.navbar.navbar-inverse {
+  border: none;
+}
+
+.navbar .navbar-brand {
+  padding-top: 0px;
+}
+
+.navbar .navbar-brand img {
+  height: 6rem;
+}
+
 .navbar-thin {
     height: 30px;
     font-size: 14px;
@@ -41,3 +49,4 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
