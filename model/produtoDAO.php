@@ -3,7 +3,7 @@
 require "a.conexaoBD.php";    
 static $conexao;
 
-function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria, $condicao) {
+function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdestoque) {
 
     $conexao = conectarBD();    
 
