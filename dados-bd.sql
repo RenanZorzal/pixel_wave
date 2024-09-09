@@ -32,6 +32,15 @@ INSERT INTO subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Periféricos notebook', 3),
 ('Acessórios notebook', 3);
 
+INSERT INTO statuscompra(StatusCompra) VALUES 
+('Andamento'),
+('Realizada'),
+('Cancelada'),
+('A pagar'),
+('A caminho'),
+('Reembolso')
+;
+
 INSERT INTO vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVendedor, celularVendedor, tipoVendedor, CNPJ_CPF, imgVendedor, razaoSocial, senhaVendedor, data_nascimentoVendedor, inscricaoEstadual) VALUES
 ('Jão', NULL, 'jaobonito123456@gmail.com', '11111111111', '22222222222', 'Pessoa física', '111.111.222-23', NULL, NULL, '123456789', '2000-01-01','1212121212');
 
