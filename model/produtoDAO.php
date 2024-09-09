@@ -13,9 +13,10 @@ function inserirProduto($status, $ano, $preco, $arquivo, $descricao, $categoria,
 
     
     // Montar SQL
-    $sql = "INSERT INTO Produto 
-        (statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, categoria, condicaoProduto)
-        VALUES ('$status', $ano, $preco, '$arquivo', '$descricao', '$categoria', '$condicao')";
+    $sql = "INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria,
+     condicaoProduto, qtdEstoque) VALUES
+      ('$vendedor', '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', '$subcategoria', '$condicao', '$qtdestoque')
+;
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
