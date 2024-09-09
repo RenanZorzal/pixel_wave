@@ -21,8 +21,12 @@ require_once "../navbar/navbar.php";
 
 <!--Página-->
 <div class="d-flex justify-content-center align-items-center">
+    
 <div class="mt-5 shadow-box2" style="background-color: white">
-        <h1 style="text-align: center; color: #502779"><b>MEU PERFIL</b></h1>
+<div class="d-flex justify-contentet-center align-items-center">
+<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
+<h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
+</div>
         <div class="container form-container">
     <form>
         <div class="row g-3">

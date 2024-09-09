@@ -23,6 +23,12 @@ require_once "../navbar/navbar.php";
 <div class="container mt-5">
         <h1>ANUNCIAR PRODUTO</h1>
         <form method="post" name="formProduto" action="../../control/produto/cadProduto.php" enctype="multipart/form-data">
+        <div class="row mb-3">
+                <div class="col-md-8">
+                    <label for="nome" class="form-label"><b>Nome</b></label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+            </div>
             <div class="row mb-3 mt-3">
                 <div class="col-md-8">
                     <label class="form-label"><b>Condição</b></label><br>
