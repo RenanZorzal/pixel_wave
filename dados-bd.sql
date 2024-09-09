@@ -48,4 +48,4 @@ INSERT INTO comprador (nomeComprador, emailComprador, telefoneComprador, data_na
 ('Jãozin', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789');
 
 INSERT INTO produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
-(1, 'Motorola', 1, 2020, 2691.99 , null, 'smartphone motorola', 5, 1, 1);
+(1, 'Motorola', disponível, 2020, 2691.99 , null, 'smartphone motorola', 5, seminova, 1);
