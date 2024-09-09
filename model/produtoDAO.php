@@ -33,7 +33,7 @@ function pesquisar ($pesq, $tipo) {
     $sql = "SELECT * FROM Produto WHERE ";
     switch ($tipo) {
         case 1: // Por nome
-                $sql = $sql . "nomeProdutoLIKE '$pesq%' ";
+                $sql = $sql . "nomeProduto LIKE '$pesq%' ";
                 break;
         case 2: // Por tipo
                 $sql = $sql . "Subcategoria_idSubcategoria = '$pesq' ";
