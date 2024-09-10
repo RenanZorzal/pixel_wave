@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="home.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   
+  
 </head>
 <body>
 
@@ -70,15 +71,24 @@ require_once "../navbar/navbar.php";
 
               <div class="col-md-3">
 
-                <div class="card" style="">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
                   <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
                   <div class="card-body">
-                    <a href="#">
-                      <h5 class="card-title">Produto 1</h5>
-                    </a>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
-                  </div>
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                    </div>
                 </div>
 
               </div>

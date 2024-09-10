@@ -36,28 +36,44 @@ body {
   
   
   
-  .card-img-top {
-    margin-bottom: 2rem;
-    height: 18rem;
+  .teste {
     object-fit: cover;
   }
 
   .card {
     height: 100%;
   }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .price {
-    margin-top: auto;
-  }
-  
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+
+}
+
+#card-body-h3:hover{
+  color: blueviolet;
+}
+
+.card-footer{
+  display: flex;
+  flex-direction: column;
+}
+
   .custom{
     font-size: 300%;
   }
-  .price{
-    color: blueviolet;
-  }
+
+.item-price{
+  margin-top: auto;
+  color: blueviolet;
+}
+
+
   
