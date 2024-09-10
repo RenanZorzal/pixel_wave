@@ -84,10 +84,6 @@ require_once "../navbar/navbar.php";
       <div class="col-md-8">
         <label class="form-label"><b>Status</b></label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="status" id="disp" value="Disponivel" required>
-          <label class="form-check-label" for="disp">Disponível</label>
-        </div>
-        <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="status" id="sestoque" value="Sem estoque">
           <label class="form-check-label" for="sestoque">Sem estoque</label>
         </div>

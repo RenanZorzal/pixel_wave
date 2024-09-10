@@ -30,7 +30,7 @@ function pesquisar ($pesq, $tipo) {
 
     $conexao = conectarBD(); 
 
-    $sql = "SELECT * FROM Produto WHERE ";
+    $sql = "SELECT * FROM Produto WHERE";
     switch ($tipo) {
         case 1: // Por nome
                 $sql = $sql . "nomeProduto LIKE '$pesq%' ";
