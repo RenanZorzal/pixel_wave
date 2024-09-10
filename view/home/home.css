@@ -37,9 +37,12 @@ body {
   
   
   .card-img-top {
-    height: 400px;
+    width: 20rem;
+    margin-bottom: 2rem;
+    height: 20rem;
     object-fit: cover;
   }
+
   .card {
     height: 100%;
   }

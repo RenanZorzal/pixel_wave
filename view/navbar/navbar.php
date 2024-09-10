@@ -34,19 +34,19 @@
                 <a class="nav-link" href="" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
               </li>
 
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link active" href="../produto/produto.php" style="color: white">Produtos</a>
-              </li>
+              </li>-->
 
-              <!--<li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
                   Produtos
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">Por Empresa</a></li>
-                  <li><a class="dropdown-item" href="#">Todos os Produtos</a></li>
+                  <li><a class="dropdown-item" href="../produto/produto.php">Inserir Novo Produto</a></li>
+                  <li><a class="dropdown-item" href="#">Meus Produtos</a></li>
                 </ul>
-              </li>-->
+              </li>
             </ul>
 
             <form class="d-flex" action="../home/home.php">

@@ -64,16 +64,24 @@ require_once "../navbar/navbar.php";
  
   <div style="display: flex; justify-content: center;">
     <div class="ms-5 me-5 mt-5" style="width: 80%;">
-      <h2 class="mb-4 h3">Encontre o que você precisa:</h2>
+      <!--<h2 class="mb-4 h3">Em destaque:</h2>-->
       
             <div class="row" id = "resultado-pecas">
 
-              <?php
-                require_once "../../model/produtoDAO.php";
+              <div class="col-md-3">
 
+                <div class="card" style="">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <a href="#">
+                      <h5 class="card-title">Produto 1</h5>
+                    </a>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Adicionar ao Carrinho</a>
+                  </div>
+                </div>
 
-
-              ?>
+              </div>
 
               <!--<div class="col-md-3">
                 <div class="card">
