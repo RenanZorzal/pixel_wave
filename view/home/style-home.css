@@ -33,47 +33,61 @@ body {
   .carousel-control-next2 {
     right: -5%;
   }
-  
-  
-  
-  .teste {
-    object-fit: cover;
-  }
 
-  .card {
-    height: 100%;
-  }
+.main{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-logo img{
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+
+.div-logo img:hover{
+  transform: scale(1.1);
+}
+  
+.div-resultado{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  height: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
 
 .card:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 0.5rem;
+  align-items: center;
 
 }
 
-#card-body-h3:hover{
-  color: blueviolet;
+.card-body h3:hover{
+  color: #3f053f;
+  text-decoration: underline;
 }
 
-.card-footer{
-  display: flex;
-  flex-direction: column;
+.carrinho-btn{
+  background-color: #502779;
 }
 
-  .custom{
-    font-size: 300%;
-  }
 
-.item-price{
-  margin-top: auto;
-  color: blueviolet;
+.custom{
+  font-size: 300%;
 }
+
+
 
 
   

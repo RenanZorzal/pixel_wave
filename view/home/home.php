@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style-home.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   
   
@@ -61,16 +61,21 @@ require_once "../navbar/navbar.php";
         </button>
     </div>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin"></nav>
+
 <!-- Seção de Categorias -->
  
   <div style="display: flex; justify-content: center;">
-    <div class="ms-5 me-5 mt-5" style="width: 80%;">
+    <div class="ms-5 me-5 mt-5 main">
       <!--<h2 class="mb-4 h3">Em destaque:</h2>-->
+
+            <div class="div-logo">
+              <img src="catalogo-produtos.png" alt="Produtos">
+            </div>
       
-            <div class="row" id = "resultado-pecas">
+            <div class="row div-resultado" id = "resultado-pecas">
 
-              <div class="col-md-3">
-
+              <div class="col-sm-3 col-md-2">
                 <div class="card mb-5" style="width: 18rem; height: 28rem; ">
                   <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -81,16 +86,103 @@ require_once "../navbar/navbar.php";
                     </div>
 
                     <div>
-                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">$350.00</strike>
-                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">$330.00</span></p>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
                     </div>
                       
                     <div>
-                      <a href="#" class="btn btn-primary">Add to Cart</a>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
                     </div>
                     </div>
                 </div>
+              </div>
 
+              <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
               </div>
 
               <!--<div class="col-md-3">
