@@ -64,9 +64,9 @@ require_once "../navbar/navbar.php";
       <div class="col-md-8">
         <label for="categoria" class="form-label"><b>Categoria</b></label>
         <select class="form-control" id="categoria" name="categoria">
-          <option>Placa-mãe</option>
-          <option>Memoria</option>
-          <option>Processador</option>
+          <option name="categoria" value="1">Placa-mãe</option>
+          <option name="categoria" value="2">Memoria</option>
+          <option name="categoria" value="2">Processador</option>
           <option>Placa de vídeo</option>
           <option>Fonte</option>
         </select>
@@ -83,10 +83,6 @@ require_once "../navbar/navbar.php";
     <div class="row mb-3 mt-3">
       <div class="col-md-8">
         <label class="form-label"><b>Status</b></label><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="status" id="disp" value="Disponivel" required>
-          <label class="form-check-label" for="disp">Disponível</label>
-        </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="status" id="sestoque" value="Sem estoque">
           <label class="form-check-label" for="sestoque">Sem estoque</label>
