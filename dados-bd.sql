@@ -23,6 +23,7 @@ INSERT INTO subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Armazenamento desktop', 2),
 ('Periféricos desktop', 2),
 ('Acessórios desktop', 2),
+('Fonte desktop', 2),
 ('Placa de rede notebook', 3),
 ('Placa de vídeo notebook', 3),
 ('Memória notebook', 3),
@@ -30,7 +31,8 @@ INSERT INTO subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Gabinete notebook', 3),
 ('Armazenamento', 3),
 ('Periféricos notebook', 3),
-('Acessórios notebook', 3);
+('Acessórios notebook', 3),
+('Bateria', 3);
 
 INSERT INTO statuscompra(StatusCompra) VALUES 
 ('Andamento'),
