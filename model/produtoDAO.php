@@ -3,7 +3,7 @@
 require "a.conexaoBD.php";    
 static $conexao;
 
-function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdestoque) {
+function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $descricao, $categoria, $condicao, $qtdestoque) {
 
     $conexao = conectarBD();    
 
@@ -15,8 +15,7 @@ function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $desc
     // Montar SQL
     $sql = "INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria,
      condicaoProduto, qtdEstoque) VALUES
-      ('$vendedor', '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', '$subcategoria', '$condicao', '$qtdestoque')
-;
+      ('$vendedor', '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', $categoria, '$condicao', '$qtdestoque')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
@@ -25,12 +24,12 @@ function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $desc
     return $id;
 }
 
-
+/*
 function pesquisar ($pesq, $tipo) {
 
     $conexao = conectarBD(); 
 
-    $sql = "SELECT * FROM Produto WHERE";
+    $sql = "SELECT * FROM Produto WHERE"
     switch ($tipo) {
         case 1: // Por nome
                 $sql = $sql . "nomeProduto LIKE '$pesq%' ";
@@ -66,5 +65,5 @@ function atualizarProduto() {
 function excluirProduto() {
 
 }
-
+*/
 ?>

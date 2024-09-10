@@ -64,9 +64,9 @@ require_once "../navbar/navbar.php";
       <div class="col-md-8">
         <label for="categoria" class="form-label"><b>Categoria</b></label>
         <select class="form-control" id="categoria" name="categoria">
-          <option>Placa-mãe</option>
-          <option>Memoria</option>
-          <option>Processador</option>
+          <option name="categoria" value="1">Placa-mãe</option>
+          <option name="categoria" value="2">Memoria</option>
+          <option name="categoria" value="2">Processador</option>
           <option>Placa de vídeo</option>
           <option>Fonte</option>
         </select>

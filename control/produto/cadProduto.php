@@ -6,7 +6,7 @@
     $condicao = $_POST["condicao"];
     $anoLancamento = $_POST["anoLancamento"];
     $descricao = $_POST["descricao"];
-    $categoria = $_POST["categoria"];
+    $categoria = (int) $_POST["categoria"];
     $preco = $_POST["preco"];
     $status = $_POST["status"];
     $arquivo = $_FILES["arquivo"];
@@ -23,7 +23,7 @@
                
         // INSERIR
         require_once '../../model/produtoDAO.php';
-        $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $categoria, $condicao, $estoque);
+        $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $categoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
         header("Location:../../view/produto/produto.php?msg=Produto inserido com sucesso.");
