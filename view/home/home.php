@@ -16,7 +16,8 @@
 <body>
 
 <?php
-require_once "../navbar/navbar.php";
+require_once "../navbar/navbarCliente.php";
+//require_once "../navbar/navbarVendEmp.php";
 ?>
 
 

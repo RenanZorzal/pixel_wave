@@ -34,24 +34,23 @@
                 <a class="nav-link" href="" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
               </li>
 
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link active" href="../produto/produto.php" style="color: white">Produtos</a>
-              </li>
+              </li>-->
 
-              <!--<li class="nav-item dropdown">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
-                  Produtos
+                  Empresas
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">Por Empresa</a></li>
-                  <li><a class="dropdown-item" href="#">Todos os Produtos</a></li>
+                  <li><a class="dropdown-item" href="../pesquisa/pesquisaEmpresa.php">Buscar por Vendedores e Empresas</a></li>
                 </ul>
-              </li>-->
+              </li>
             </ul>
 
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Pesquisar uma peça" aria-label="Pesquisar" style="width: 400px;">
-              <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+            <form class="d-flex" action="../home/home.php">
+              <input class="form-control me-2" id = "campo-pesquisa" type="search" placeholder="Pesquisar uma peça" aria-label="Pesquisar" style="width: 400px;">
+              <button class="btn btn-outline-light" type="submit" onclick = "pesquisar()"><i class="bi bi-search"></i></button>
             </form>
 
             <a class="nav-link text-light ms-3" href="#"><i class="bi bi-cart3 fs-3"></i></a>
@@ -198,5 +197,7 @@
   </nav>
       </div>
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../home/app.js"></script>
 </body>
 </html>

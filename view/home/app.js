@@ -24,3 +24,35 @@ function pesquisar(){
         }
     });
 } 
+
+function renderCard(){
+    return `
+            <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
+              </div>
+        `;
+}
+
+let mainSection = document.getElementById("resultado-pecas");
+let mainCards = renderCard();
+mainSection.innerHTML = mainCards;
+
+console.log("Teste 1")
