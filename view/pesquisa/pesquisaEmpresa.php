@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="stylePesquisa.css">
     <link rel="stylesheet" href="../navbar/estilo.css">
+    <link rel="stylesheet" href="../footer/styleFooter.css">
 
     <title>Pixel Wave</title>
 </head>
@@ -68,6 +69,12 @@
         </section>
     </main>
 
+    <footer>
+    <?php
+        require_once "../footer/footer.php";
+
+    ?>
+    </footer>
 
 </body>
 

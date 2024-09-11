@@ -43,7 +43,7 @@
                   Empresas
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="../pesquisa/pesquisaEmpresa.php">Buscar por Vendedores e Empresas</a></li>
+                  <li><a class="dropdown-item" href="../pesquisa/pesquisaEmpresa.php">Buscar - Vendedores e Empresas Parceiras</a></li>
                 </ul>
               </li>
             </ul>
