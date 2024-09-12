@@ -14,6 +14,13 @@ footer{
 .link{
     text-decoration: none;
     /* Remove o sublinhado padrão dos links */
-    color: #501C74;
+    color: #e6cdf8;
+    /* Cor do texto dos links */
+}
+
+.link:hover{
+    text-decoration: underline;
+    /* Remove o sublinhado padrão dos links */
+    color: #e6cdf8;
     /* Cor do texto dos links */
 }

@@ -69,12 +69,12 @@
         </section>
     </main>
 
-    <footer>
+
     <?php
         require_once "../footer/footer.php";
 
     ?>
-    </footer>
+
 
 </body>
 
