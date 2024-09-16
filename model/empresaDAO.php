@@ -33,7 +33,10 @@ function pesquisar ($pesq, $tipo) {
                 $sql = $sql . "CNPJ_CPF = '$pesq' ";
                 break;
         case 3: // Por ID
-            $sql = $sql . "idVendedor = '$pesq' ";
+                $sql = $sql . "idVendedor = '$pesq' ";
+                break;
+        case 4: // Por email
+            $sql = $sql . "emailVendedor = '$pesq' ";
     }
 
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
@@ -52,6 +55,9 @@ function pesquisarEmpresaPorID ($pesq) {
     return pesquisar($pesq,3);
 }
 
+function pesquisarEmpresaPorEmail($pesq) {
+    return pesquisar($pesq,4);
+}
 
 
 
