@@ -15,7 +15,22 @@
 <body>
 
 <?php
-require_once "../navbar/navbar.php";
+require_once "../navbar/navbarCliente.php";
+
+        // ALTERAR
+        require_once '../../model/clienteDAO.php';
+        require_once '../../control/cadastro/cliente/funcoesuteis.php';
+        $id = 2;
+
+        $res = pesquisarCompradorPorID ($id);
+        if ( $res != null ) {
+            $registro = mysqli_fetch_assoc($res);
+            $nome = $registro["nomeComprador"];
+      
+
+            
+
+        }
 ?>
 
 
@@ -28,28 +43,30 @@ require_once "../navbar/navbar.php";
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
         <div class="container form-container">
-    <form>
+    <form action="altercliente.php" method="POST" 
+        enctype = "multipart/form-data" >
+    
         <div class="row g-3">
             <div class="col-md-6">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control shadow-box" id="nome" placeholder="Nome">
+                <label for="nomeCliente" class="form-label" value="<?php echo $nome; ?>">Nome</label>
+                <input type="text" class="form-control shadow-box" id="nomeCliente" name="nomeCliente">
             </div>
             <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-box" id="email" placeholder="teste@gmail.com">
+                <label for="emailCliente" class="form-label">Email</label>
+                <input type="email" class="form-control shadow-box" id="emailCliente" name="emailCliente"placeholder="teste@gmail.com">
                 
             </div>
             <div class="col-md-6">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control shadow-box" id="cpf" placeholder="111.111.111-11" disabled>
+                <label for="cpfCliente" class="form-label">CPF</label>
+                <input type="text" class="form-control shadow-box" id="cpfCliente" name="cpfCliente" placeholder="111.111.111-11" disabled>
             </div>
             <div class="col-md-6">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control shadow-box" id="telefone" placeholder="">
+                <label for="telefoneCliente" class="form-label">Telefone</label>
+                <input type="text" class="form-control shadow-box" id="telefoneCliente" name="telefoneCliente" placeholder="">
             </div>
             <div class="col-md-6">
-                <label for="data-nascimento" class="form-label">Data de nascimento</label>
-                <input type="date" class="form-control shadow-box" id="data-nascimento" placeholder="">
+                <label for="dtNascCliente" class="form-label">Data de nascimento</label>
+                <input type="date" class="form-control shadow-box" id="dtNascCliente" placeholder="">
             </div>
        
             <div class="col-md-6">

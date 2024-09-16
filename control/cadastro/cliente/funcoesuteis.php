@@ -14,9 +14,11 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     if (validarEmail($email) == false) {
         $msgErro = $msgErro . "Email inválido.<br>";
     }
+    /*
     if (validarNumero($telefone) == false) {
         $msgErro = $msgErro . "Celular inválido.<br>";
     }
+    */
 
     if ( strlen($senha1) <= 8 ) {
         $msgErro = $msgErro . "A senha deve ter mais que 8 caracteres.<br>";
@@ -81,7 +83,7 @@ function validarEmail($email) {
     // Valida o formato do email
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
-
+/*
 function validarNumero($numero) {
     // Converte o número para string para facilitar a verificação de comprimento
     $numeroStr = (string) $numero;
@@ -93,6 +95,7 @@ function validarNumero($numero) {
         return false;
     }
 }
+*/
 
 
 
