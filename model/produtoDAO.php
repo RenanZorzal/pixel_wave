@@ -24,12 +24,12 @@ function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $desc
     return $id;
 }
 
-/*
+
 function pesquisar ($pesq, $tipo) {
 
     $conexao = conectarBD(); 
 
-    $sql = "SELECT * FROM Produto WHERE"
+    $sql = "SELECT * FROM Produto WHERE";
     switch ($tipo) {
         case 1: // Por nome
                 $sql = $sql . "nomeProduto LIKE '$pesq%' ";
@@ -65,5 +65,5 @@ function atualizarProduto() {
 function excluirProduto() {
 
 }
-*/
+
 ?>
