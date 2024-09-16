@@ -27,28 +27,45 @@ require_once "../navbar/navbarVendEmp.php";
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
         <div class="container form-container">
+    <?php
+        require_once '../../model/vendedorDAO.php';
+        $resultado = pesquisarVendedorPorID(2);
+        $registro = mysqli_fetch_assoc($resultado);
+        $nome = $registro["nomeVendedor"];
+        $desc = $registro["descricaoVendedor"];
+        $email = $registro["emailVendedor"];
+        $telefone = $registro["telefoneVendedor"];
+        $celular = $registro["celularVendedor"];
+        $cnpj= $registro["CNPJ_CPF"];
+        $razaoSocial = $registro["razaoSocial"];
+        $dtNasc = $registro["data_nascimentoVendedor"];
+        $inscricaoEstadual = $registro["inscricaoEstadual"];
+        
+
+
+    ?>
     <form>
         <div class="row g-3">
             <div class="col-md-6">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control shadow-box" id="nome" placeholder="Nome">
+                <input type="text" class="form-control shadow-box" id="nome" value="<?php echo $nome; ?>">
             </div>
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-box" id="email" placeholder="teste@gmail.com">
+                <input type="email" class="form-control shadow-box" id="email" value="<?php echo $email; ?>">
                 
             </div>
             <div class="col-md-6">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control shadow-box" id="cpf" placeholder="111.111.111-11" disabled>
+                <input type="text" class="form-control shadow-box" id="cpf" value="<?php echo $cnpj; ?>" disabled>
             </div>
             <div class="col-md-6">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control shadow-box" id="telefone" placeholder="">
+                <input type="text" class="form-control shadow-box" id="telefone" value="<?php echo $telefone; ?>">
             </div>
             <div class="col-md-6">
                 <label for="data-nascimento" class="form-label">Data de nascimento</label>
-                <input type="date" class="form-control shadow-box" id="data-nascimento" placeholder="">
+                <input type="date" class="form-control shadow-box" id="data-nascimento" value="<?php echo $dtNasc; ?>">
             </div>
        
             <div class="col-md-6">

@@ -17,20 +17,6 @@
 <?php
 require_once "../navbar/navbarCliente.php";
 
-        // ALTERAR
-        require_once '../../model/clienteDAO.php';
-        require_once '../../control/cadastro/cliente/funcoesuteis.php';
-        $id = 2;
-
-        $res = pesquisarCompradorPorID ($id);
-        if ( $res != null ) {
-            $registro = mysqli_fetch_assoc($res);
-            $nome = $registro["nomeComprador"];
-      
-
-            
-
-        }
 ?>
 
 
@@ -42,38 +28,51 @@ require_once "../navbar/navbarCliente.php";
 <img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
-        <div class="container form-container">
-    <form action="altercliente.php" method="POST" 
-        enctype = "multipart/form-data" >
+<div class="container form-container">
+    <?php
+        require_once '../../model/clienteDAO.php';
+        $resultado = pesquisarCompradorPorID(1);
+        $registro = mysqli_fetch_assoc($resultado);
+        $nome = $registro["nomeComprador"];
+        $email = $registro["emailComprador"];
+        $cpf = $registro["CPF"];
+        $telefone = $registro["telefoneComprador"];
+        $dtNasc = $registro["data_nascimentoComprador"];
+        $imagem= $registro["imgComprador"];
+       
+
+
+    ?>
+    <form action="altercliente.php" method="POST" enctype = "multipart/form-data" >
     
         <div class="row g-3">
             <div class="col-md-6">
-                <label for="nomeCliente" class="form-label" value="<?php echo $nome; ?>">Nome</label>
-                <input type="text" class="form-control shadow-box" id="nomeCliente" name="nomeCliente">
+                <label for="nomeCliente" class="form-label">Nome</label>
+                <input type="text" class="form-control shadow-box" id="nomeCliente" name="nomeCliente" value="<?php echo $nome; ?>">
             </div>
             <div class="col-md-6">
                 <label for="emailCliente" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-box" id="emailCliente" name="emailCliente"placeholder="teste@gmail.com">
+                <input type="email" class="form-control shadow-box" id="emailCliente" name="emailCliente" value="<?php echo $email; ?>">
                 
             </div>
             <div class="col-md-6">
                 <label for="cpfCliente" class="form-label">CPF</label>
-                <input type="text" class="form-control shadow-box" id="cpfCliente" name="cpfCliente" placeholder="111.111.111-11" disabled>
+                <input type="text" class="form-control shadow-box" id="cpfCliente" name="cpfCliente" value="<?php echo $cpf; ?>" disabled>
             </div>
             <div class="col-md-6">
                 <label for="telefoneCliente" class="form-label">Telefone</label>
-                <input type="text" class="form-control shadow-box" id="telefoneCliente" name="telefoneCliente" placeholder="">
+                <input type="text" class="form-control shadow-box" id="telefoneCliente" name="telefoneCliente"value="<?php echo $telefone; ?>">
             </div>
             <div class="col-md-6">
                 <label for="dtNascCliente" class="form-label">Data de nascimento</label>
-                <input type="date" class="form-control shadow-box" id="dtNascCliente" placeholder="">
+                <input type="date" class="form-control shadow-box" id="dtNascCliente" value="<?php echo $dtNasc; ?>">
             </div>
        
             <div class="col-md-6">
                 <label for="imagem" class="form-label">Imagem <i class="bi bi-upload"></i></label>
                 <input type="file" class="form-control shadow-box" id="imagem" accept="image/*" onchange="previewImage(event)">
                 <!-- A imagem padrão exibida inicialmente -->
-                <img id="image-preview" class="image-preview mt-2 shadow-box" src="https://via.placeholder.com/100">
+                <img id="image-preview" class="image-preview mt-2 shadow-box" src="$imageBase64">
             </div>
         </div>
         
