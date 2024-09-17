@@ -57,3 +57,4 @@ INSERT INTO produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 #select * from nometabela; # mostrar dados da tabela
 #delete from nometabela where id = 79(condição desejada); # deleta uma linha afunilada pela condição
 #update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha afunilada pela condição
+#select produto.nomeProduto, subcategoria.idSubcategoria from produto join subcategoria on produto.Subcategoria_idSubcategoria = subcategoria.idSubcategoria and nomeSubcategoria = 'Celulares dispositivos móveis';
