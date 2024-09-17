@@ -55,5 +55,5 @@ INSERT INTO produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 (2, 'CPU Notebook', 'disponível', 2020, 23.99 , null, 'CPU para mini notebook', 20, 'nova', 43);
 
 #select * from nometabela; # mostrar dados da tabela
-#delete from nometabela where id = 79(condição desejada); # deleta uma linha afunidada pela condição
-#update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha
+#delete from nometabela where id = 79(condição desejada); # deleta uma linha afunilada pela condição
+#update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha afunilada pela condição
