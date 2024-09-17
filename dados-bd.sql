@@ -53,5 +53,7 @@ INSERT INTO produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 (1, 'Motorola', 'disponível', 2020, 2691.99 , null, 'Smartphone motorola', 5, 'seminova', 1),
 (2, 'Placa de vídeo', 'disponível', 2020, 5999.99 , null, 'Placa de vídeo para computadores', 10, 'nova', 700),
 (2, 'CPU Notebook', 'disponível', 2020, 23.99 , null, 'CPU para mini notebook', 20, 'nova', 43);
--- select * from produto; para aparecer todos os produtos listados
--- select * from vendedor; para aparecer todos os vendedores
+
+#select * from nometabela; # mostrar dados da tabela
+#delete from nometabela where id = 79(condição desejada); # deleta uma linha afunidada pela condição
+#update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha
