@@ -31,7 +31,7 @@
         <section class="section-pesquisa"> 
             <div class="input">
                 <input type="text" placeholder="Busque pelo nome de uma Empresa" id="campoPesquisa">
-                <button type="button" id="btnPesquisa" name="btnPesquisa">Pesquisar</button>
+                <button type="button" id="btnPesquisa" name="btnPesquisa" onclick="pesquisar()">Pesquisar</button>
             </div>
         </section>
     </header>

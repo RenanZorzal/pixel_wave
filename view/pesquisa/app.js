@@ -1,26 +1,17 @@
-$(document).ready(function () {
+function pesquisar(){
+    let pesq = document.getElementById(campoPesquisa).value;
+    console.log(pesq);
 
-    //Quando clicar no botão Pesquisar
+    if (pesq == "") {
 
-    $('#btnPesquisa').click(function (e) {
-
-        var pesq = $('#campoPesquisa').val();     // Pegar campo texto da pesquisa
-        console.log(pesq);
-
-        if (pesq == "") {
-
-            /*let dados = `
+        /*let dados = `
                 <div class="erro-pesquisa">
                 <img class="img-erro" src="busca-vazia.png" alt="Buca Vazia">
                 </div>
             `;
-            $('#section-resultado').html(dados).show();
-            console.log("Pesquisa Vazia")
-            return*/
-        }
+        $('#section-resultado').html(dados).show();*/
+        console.log("Pesquisa Vazia")
+        return
+    }
 
-        //pesquisar(pesq);
-
-    });
-
-});
+}
