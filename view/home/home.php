@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="home-style.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/styleFooter.css">
   
@@ -23,6 +23,43 @@ require_once "../navbar/navbarCliente.php";
 
 
 <!--Página-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin">
+      <div class="container-fluid justify-content-center">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="departmentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-list"></i> Departamentos
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
+                      <li><a class="dropdown-item" href="#">Processadores</a></li>
+                      <li><a class="dropdown-item" href="#">Placas Mãe</a></li>
+                      <li><a class="dropdown-item" href="#">Memórias RAM</a></li>
+                      <li><a class="dropdown-item" href="#">Placas de Vídeo</a></li>
+                      <li><a class="dropdown-item" href="#">Armazenamento</a></li>
+                      <li><a class="dropdown-item" href="#">Fontes</a></li>
+                      <li><a class="dropdown-item" href="#">Gabinetes</a></li>
+                      <li><a class="dropdown-item" href="#">Coolers</a></li>
+                      <li><a class="dropdown-item" href="#">Periféricos</a></li>
+                  </ul>
+              </li>
+              <!-- Outros links de categorias -->
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Ofertas</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Lançamentos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Mais Vendidos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Atendimento</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+    
 
     <!-- Carousel de Destaques -->
     <div id="highlightCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -64,14 +101,15 @@ require_once "../navbar/navbarCliente.php";
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin"></nav>
+    
 
 <!-- Seção de Categorias -->
  
   <div style="display: flex; justify-content: center;">
-    <div class="ms-5 me-5 mt-5 main">
+    <div class="ms-5 me-5 mt-5 main" id="section-resultado">
       <!--<h2 class="mb-4 h3">Em destaque:</h2>-->
 
-            <div class="div-logo">
+            <!--<div class="div-logo">
               <img src="catalogo-produtos.png" alt="Produtos">
             </div>
       
@@ -186,62 +224,7 @@ require_once "../navbar/navbarCliente.php";
                     </div>
                 </div>
               </div>
-
-              <!--<div class="col-md-3">
-                <div class="card">
-                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 1</h5>
-                    <p class="price">R$ 100,00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <img src="https://http2.mlstatic.com/D_NQ_NP_702635-MLB49142278395_022022-O.webp" class="card-img-top" alt="Produto 2">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 2</h5>
-                    <p class="price">R$ 200,00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <img src="https://tm.ibxk.com.br/materias/9709/40192.jpg" class="card-img-top" alt="Produto 3">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 3</h5>
-                    <p class="price">R$ 300,00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <img src="https://tm.ibxk.com.br/materias/9709/40192.jpg" class="card-img-top" alt="Produto 3">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 3</h5>
-                    <p class="price">R$ 300,00</p>
-                  </div>
-                </div>
-              </div>
-                        <div class="col-md-3 mt-5">
-                <div class="card">
-                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 1</h5>
-                    <p class="price">R$ 100,00</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 mt-5">
-                <div class="card">
-                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="Produto 1">
-                  <div class="card-body">
-                    <h5 class="card-title">Produto 1</h5>
-                    <p class="price">R$ 100,00</p>
-                  </div>
-                </div>
-              </div>-->
-            </div>
+            </div>-->
     </div>
   </div>
 
@@ -272,6 +255,8 @@ require_once "../navbar/navbarCliente.php";
   </ul>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="app.js"></script>
 

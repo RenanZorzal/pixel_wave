@@ -25,22 +25,22 @@
 
     <header>
         <div class="img-empresa">
-            <img src="empresas-parceiras.png" alt="">
+            <img src="img/empresas-parceiras.png" alt="">
         </div>
 
         <section class="section-pesquisa"> 
             <div class="input">
-                <input type="text" placeholder="Busque pelo nome de uma Empresa" id="campo-pesquisa">
-                <button>Pesquisar</button>
+                <input type="text" placeholder="Busque pelo nome de uma Empresa" id="campoPesquisa">
+                <button type="button" id="btnPesquisa" name="btnPesquisa">Pesquisar</button>
             </div>
         </section>
     </header>
 
     <main>
-        <section class="resultados-pesquisa">
+        <section class="resultados-pesquisa" id="section-resultado">
             <div class="item-resultado">
                 <div>
-                    <img class="img-resultado" src="logo-pixelWave.png" alt="">
+                    <img class="img-resultado" src="img/logo-pixelWave.png" alt="">
                 </div>
                 <div class="text-resultado"> 
                     <h2>
@@ -54,7 +54,7 @@
             </div>
             <div class="item-resultado">
                 <div>
-                    <img class="img-resultado" src="pixelWave.png" alt="">
+                    <img class="img-resultado" src="img/pixelWave.png" alt="">
                 </div>
                 <div class="text-resultado"> 
                     <h2>
@@ -75,7 +75,7 @@
 
     ?>
 
-
+    <script src="app.js"></script>
 </body>
 
 </html>

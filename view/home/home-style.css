@@ -87,6 +87,16 @@ body {
   font-size: 300%;
 }
 
+.erro-pesquisa{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.img-erro{
+  width: 40rem;
+}
+
 
 
 
