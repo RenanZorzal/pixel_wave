@@ -10,7 +10,7 @@ $(document).ready(function () {
             
             let dados = `
                 <div class="erro-pesquisa">
-                <img class="img-erro" src="busca-vazia.png" alt="Buca Vazia">
+                <img class="img-erro" src="busca-vazia.png" alt="Busca Vazia">
                 </div>
             `;
             $('#section-resultado').html(dados).show();

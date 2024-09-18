@@ -175,3 +175,18 @@ main{
     flex-direction: column;
     justify-content: center;
 }
+
+.erro-pesquisa{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.img-erro{
+    width: 40rem;
+}
+
+.img-erro:hover{
+    transform: scale(1.03);
+}
+  

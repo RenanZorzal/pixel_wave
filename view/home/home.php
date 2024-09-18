@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="home-style.css">
+  <link rel="stylesheet" href="styleHome.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/styleFooter.css">
   
@@ -109,7 +109,7 @@ require_once "../navbar/navbarCliente.php";
     <div class="ms-5 me-5 mt-5 main" id="section-resultado">
       <!--<h2 class="mb-4 h3">Em destaque:</h2>-->
 
-            <!--<div class="div-logo">
+            <div class="div-logo">
               <img src="catalogo-produtos.png" alt="Produtos">
             </div>
       
@@ -224,7 +224,7 @@ require_once "../navbar/navbarCliente.php";
                     </div>
                 </div>
               </div>
-            </div>-->
+            </div>
     </div>
   </div>
 

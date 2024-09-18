@@ -97,6 +97,10 @@ body {
   width: 40rem;
 }
 
+.img-erro:hover{
+  transform: scale(1.03);
+}
+
 
 
 

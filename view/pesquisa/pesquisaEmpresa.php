@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons CSS (opcional, para ícones) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylePesquisa.css">
+    <link rel="stylesheet" href="pesquisa-style.css">
     <link rel="stylesheet" href="../navbar/estilo.css">
     <link rel="stylesheet" href="../footer/styleFooter.css">
 
@@ -30,8 +30,8 @@
 
         <section class="section-pesquisa"> 
             <div class="input">
-                <input type="text" placeholder="Busque pelo nome de uma Empresa" id="campoPesquisa">
-                <button type="button" id="btnPesquisa" name="btnPesquisa" onclick="pesquisar()">Pesquisar</button>
+                <input type="text" placeholder="Busque pelo nome de uma Empresa" id="campoPesqEmp" name="campoPesqEmp">
+                <button type="button" id="btnPesqEmp" name="btnPesqEmp">Pesquisar</button>
             </div>
         </section>
     </header>
@@ -75,6 +75,8 @@
 
     ?>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
 
