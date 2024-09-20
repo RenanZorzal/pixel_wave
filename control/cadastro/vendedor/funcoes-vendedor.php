@@ -105,6 +105,9 @@ function maiorIdade($data) {
     return $data >= 18;
 }
 
+function removerMascaraTelefone($telefone) {
+    return preg_replace('/\D/', '', $telefone);
+}
 function validarNumero($numero) {
     // Converte o número para string para facilitar a verificação de comprimento
     $numeroStr = (string) $numero;

@@ -107,12 +107,16 @@ function validarCNPJ($cnpj) {
 	return $cnpj[13] == ($resto < 2 ? 0 : 11 - $resto);
 }
 
+function removerMascaraTelefone($telefone) {
+    return preg_replace('/\D/', '', $telefone);
+}
+
 function validarNumero($numero) {
     // Converte o número para string para facilitar a verificação de comprimento
     $numeroStr = (string) $numero;
 
     // Verifica se o número tem 10 ou 11 dígitos
-    if (strlen($numeroStr) === 10 || strlen($numeroStr) === 11) {
+    if (strlen($numeroStr) == 10 || strlen($numeroStr) == 11) {
         return true;
     } else {
         return false;

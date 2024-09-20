@@ -17,8 +17,11 @@
     $senha = $_POST["senha"];
     $confirmacao_senha = $_POST["confirmacaoSenha"];
 
+    $telefone_convertido = removerMascaraTelefone($telefone);
+    $celular_convertido = removerMascaraTelefone($celular);
+    
     // Validação dos dados 
-    $msgErro = validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha, $confirmacao_senha);
+    $msgErro = validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone_convertido, $celular_convertido, $razaoSocial, $inscricaoEstadual, $senha, $confirmacao_senha);
 
 
     // Main
@@ -27,7 +30,7 @@
 
         require_once "../../../model/empresaDAO.php";
 
-        $id = inserirEmpresa($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha);
+        $id = inserirEmpresa($tipo, $nome, $email, $cnpj, $data_abertura, $telefone_convertido, $celular_convertido, $razaoSocial, $inscricaoEstadual, $senha);
 
         // Devolver uma mensagem ou página HTML
         //header("Location:../view/cadastro/cadastro.php?msg=Empresa inserida com sucesso.");

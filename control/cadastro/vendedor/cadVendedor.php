@@ -14,8 +14,10 @@
     $senha = $_POST["senha"];
     $confirmacao_senha = $_POST["confirmacaoSenha"];
 
+    $telefone_convertido = removerMascaraTelefone($telefone);
+
     // Validação dos dados 
-    $msgErro = validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha, $confirmacao_senha);
+    $msgErro = validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone_convertido, $senha, $confirmacao_senha);
 
 
     // Main
@@ -24,7 +26,7 @@
 
         require_once "../../../model/vendedorDAO.php";
 
-        $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha);
+        $id = inserirVendedor($tipo, $nome, $email, $cpf, $data_nasc, $telefone_convertido, $senha);
 
         // Devolver uma mensagem ou página HTML
         //header("Location:../view/cadastro/cadastro.php?msg=Vendedor inserido com sucesso.");
