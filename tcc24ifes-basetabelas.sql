@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Vendedor (
   razaoSocial VARCHAR(100) ,  
   senhaVendedor VARCHAR(45) NOT NULL,
   data_nascimentoVendedor DATE ,
-  inscricaoEstadual varchar(45) NOT NULL,
+  inscricaoEstadual varchar(45) ,
   PRIMARY KEY (idVendedor), 
   UNIQUE (CNPJ_CPF),  
   UNIQUE (emailVendedor)  
