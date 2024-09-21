@@ -59,7 +59,7 @@ function pesquisarCompradorPorEmail ($pesq) {
     return pesquisar($pesq,4);
 }
 
-function atualizarComprador ($tipo, $id, $nomeAlterado, $emailAlterado, $telefoneAlterado, $dtNascAlterada, $cpfAlterado, $imgAlterada, $senhaAlterada) {
+function atualizarComprador ($tipo, $id, $nomeAlterado, $emailAlterado, $telefoneAlterado, $imgAlterada, $senhaAlterada) {
     
     $conexao = conectarBD();  
     
