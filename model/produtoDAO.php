@@ -57,11 +57,44 @@ function pesquisarProdutoPorID ($pesq) {
     return pesquisar($pesq,3);
 }
 
+function atualizarProduto ($tipo, $id, $nomeAlterado, $statusAlterado, $anoAlterado, $precoAlterado, $imagemAlterada, $descricaoAlterada, $subcategoriaAlterada, $condicaoAlterada, $qtdEstoqueAlterada) {
+    
+    $conexao = conectarBD(); 
+    
+    $sql = "UPDATE Produto SET  ";
+    switch ($tipo) {
+        case 1: // Alterar nome
+                $sql = $sql . " nomeProduto = '$nomeAlterado' WHERE idProduto = $id";
+                break;
+        case 2: // Alterar status
+                $sql = $sql . " statusProduto = '$statusAlterado' WHERE idProduto = $id";
+                break;
+        case 3: // Alterar ano
+                $sql = $sql . " anoProduto = $anoAlterado WHERE idProduto = $id";
+                break;
+        case 4: // Alterar preço
+                $sql = $sql . " precoProduto = $precoAlterado WHERE idProduto = $id";
+                break;
+        case 5: // Alterar imagem
+            $sql = $sql . " imagemProduto = $imagemAlterada WHERE idProduto = $id";
+            break;
+        case 6: // Alterar descrição
+                $sql = $sql ." descricaoProduto = '$descricaoAlterada' WHERE idProduto = $id";
+                break;
+        case 7: // Alterar subcategoria
+               $sql = $sql ." Subcategoria_idSubcategoria = $subcategoriaAlterada WHERE idProduto = $id";
+               break;
+        case 8: // Alterar condição
+               $sql = $sql ." condicao = '$condicaoAlterada' WHERE idProduto = $id";
+               break;
+        case 9: // Alterar qtdEstoque
+               $sql = $sql ." qtdEstoque = $qtdEstoqueAlterada WHERE idProduto = $id";                
+    }
 
-function atualizarProduto() {
-
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+    
 }
-
 function excluirProduto() {
 
 }
