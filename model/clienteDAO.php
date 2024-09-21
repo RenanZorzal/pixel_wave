@@ -59,14 +59,37 @@ function pesquisarCompradorPorEmail ($pesq) {
     return pesquisar($pesq,4);
 }
 
+function atualizarComprador ($tipo, $id, $nomeAlterado, $emailAlterado, $telefoneAlterado, $dtNascAlterada, $cpfAlterado, $imgAlterada, $senhaAlterada) {
+    
+    $conexao = conectarBD();  
+    
+    $sql = "UPDATE comprador SET  ";
+    switch ($tipo) {
+        case 1: // Alterar nome
+                $sql = $sql . " nomeComprador = '$nomeAlterado' WHERE idComprador = $id";
+                break;
+        case 2: // Alterar email
+                $sql = $sql . " emailComprador = '$emailAlterado' WHERE idComprador = $id";
+                break;
+        case 3: // Alterar telefone
+                $sql = $sql . " telefoneComprador = '$telefoneAlterado' WHERE idComprador = $id";
+                break;
+        case 4: // Alterar data de nascimento
+                $sql = $sql . " data_nascimentoComprador = '$dtNascAlterada' WHERE idComprador = $id";
+                break;
+        case 5: // Alterar cpf
+                $sql = $sql . " CPF = '$cpfAlterado' WHERE idComprador = $id";
+                break;
+        case 6: // Alterar imagem
+                $sql = $sql . " imgComprador = '$imgAlterada' WHERE idComprador = $id";
+                break;
+        case 7: // Alterar senha
+                $sql = $sql ." senhaComprador = '$senhaAlterada' WHERE idComprador = $id";
+            
+    }
 
-
-
-
-
-
-function atualizarCliente () {
-
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
 }
 
 function excluirCliente () {
