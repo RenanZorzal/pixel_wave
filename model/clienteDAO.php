@@ -73,17 +73,10 @@ function atualizarComprador ($tipo, $id, $nomeAlterado, $emailAlterado, $telefon
                 break;
         case 3: // Alterar telefone
                 $sql = $sql . " telefoneComprador = $telefoneAlterado WHERE idComprador = $id";
-                break;
-        case 4: // Alterar data de nascimento
-                $sql = $sql . " data_nascimentoComprador = '$dtNascAlterada' WHERE idComprador = $id";
-                break;
-        case 5: // Alterar cpf
-                $sql = $sql . " CPF = '$cpfAlterado' WHERE idComprador = $id";
-                break;
-        case 6: // Alterar imagem
+        case 4: // Alterar imagem
                 $sql = $sql . " imgComprador = $imgAlterada WHERE idComprador = $id";
                 break;
-        case 7: // Alterar senha
+        case 5: // Alterar senha
                 $sql = $sql ." senhaComprador = '$senhaAlterada' WHERE idComprador = $id";
             
     }
