@@ -16,6 +16,21 @@
 
 <?php
 require_once "../navbar/navbarVendEmp.php";
+require_once '../../model/vendedorDAO.php';
+$resultado = pesquisarVendedorPorID(1);
+$registro = mysqli_fetch_assoc($resultado);
+$nome = $registro["nomeVendedor"];
+$desc = $registro["descricaoVendedor"];
+$email = $registro["emailVendedor"];
+$telefone = $registro["telefoneVendedor"];
+$celular = $registro["celularVendedor"];
+$cnpj= $registro["CNPJ_CPF"];
+$razaoSocial = $registro["razaoSocial"];
+$dtNasc = $registro["data_nascimentoVendedor"];
+$inscricaoEstadual = $registro["inscricaoEstadual"];
+$arquivo = $registro["imgVendedor"];
+$fotoImg = base64_encode($arquivo);
+
 ?>
 
 
@@ -23,28 +38,14 @@ require_once "../navbar/navbarVendEmp.php";
 <div class="d-flex justify-content-center align-items-center">
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded">
+<?php
+echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:image/jpeg;base64,' . $fotoImg . '">';
+?>
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
         <div class="container form-container">
-    <?php
-        require_once '../../model/vendedorDAO.php';
-        $resultado = pesquisarVendedorPorID(1);
-        $registro = mysqli_fetch_assoc($resultado);
-        $nome = $registro["nomeVendedor"];
-        $desc = $registro["descricaoVendedor"];
-        $email = $registro["emailVendedor"];
-        $telefone = $registro["telefoneVendedor"];
-        $celular = $registro["celularVendedor"];
-        $cnpj= $registro["CNPJ_CPF"];
-        $razaoSocial = $registro["razaoSocial"];
-        $dtNasc = $registro["data_nascimentoVendedor"];
-        $inscricaoEstadual = $registro["inscricaoEstadual"];
-        
-
-
-    ?>
-    <form action="alterVendedor.php" method="POST" enctype = "multipart/form-data" >
+ 
+    <form action="../../control/cadastro/vendedor/alterVendedor.php" method="POST" enctype = "multipart/form-data" >
         <div class="row g-3">
             <div class="col-md-6">
                 <label for="nomeVendedor" class="form-label">Nome</label>
