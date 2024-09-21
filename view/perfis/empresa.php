@@ -16,6 +16,19 @@
 
 <?php
 require_once "../navbar/navbarVendEmp.php";
+require_once '../../model/empresaDAO.php';
+$resultado = pesquisarEmpresaPorID(1);
+$registro = mysqli_fetch_assoc($resultado);
+$nome = $registro["nomeVendedor"];
+$desc = $registro["descricaoVendedor"];
+$email = $registro["emailVendedor"];
+$telefone = $registro["telefoneVendedor"];
+$celular = $registro["celularVendedor"];
+$cnpj= $registro["CNPJ_CPF"];
+$razaoSocial = $registro["razaoSocial"];
+$dtNasc = $registro["data_nascimentoVendedor"];
+$inscricaoEstadual = $registro["inscricaoEstadual"];
+
 ?>
 
 
@@ -23,36 +36,20 @@ require_once "../navbar/navbarVendEmp.php";
 <div class="d-flex justify-content-center align-items-center">
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
+<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded">
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MINHA EMPRESA</b></h1>
 </div>
         <div class="container form-container">
-    <?php
-        require_once '../../model/empresaDAO.php';
-        $resultado = pesquisarEmpresaPorID(2);
-        $registro = mysqli_fetch_assoc($resultado);
-        $nome = $registro["nomeVendedor"];
-        $desc = $registro["descricaoVendedor"];
-        $email = $registro["emailVendedor"];
-        $telefone = $registro["telefoneVendedor"];
-        $celular = $registro["celularVendedor"];
-        $cnpj= $registro["CNPJ_CPF"];
-        $razaoSocial = $registro["razaoSocial"];
-        $dtNasc = $registro["data_nascimentoVendedor"];
-        $inscricaoEstadual = $registro["inscricaoEstadual"];
-        
 
-
-    ?>
     <form action="alterEmpresa.php" method="POST" enctype = "multipart/form-data" >
         <div class="row g-3">
             <div class="col-md-6">
                 <label for="nome" class="form-label">Nome da empresa</label>
-                <input type="text" class="form-control shadow-box" id="nome" value="<?php echo $nome; ?>">
+                <input type="text" class="form-control shadow-box" id="nome" name="nomeEmpresa" value="<?php echo $nome; ?>">
             </div>
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-box" id="email" value="<?php echo $email; ?>">
+                <input type="email" class="form-control shadow-box" id="email" name="emailEmpresa" value="<?php echo $email; ?>">
                 
             </div>
             <div class="col-md-6">
@@ -60,38 +57,37 @@ require_once "../navbar/navbarVendEmp.php";
                 <input type="text" class="form-control shadow-box" id="cpnj" name="cnpj" value="<?php echo $cnpj; ?>" disabled>
             </div>
             <div class="col-md-6">
-                <label for="data-abertura" class="form-label">Data de abertura</label>
-                <input type="date" class="form-control shadow-box" id="data-nascimento" value="<?php echo $dtNasc; ?>">
+                <label for="dataabertura" class="form-label">Data de abertura</label>
+                <input type="date" class="form-control shadow-box" id="dataabertura" name="dataAbertura" value="<?php echo $dtNasc; ?>">
             </div>
             <div class="col-md-6">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control shadow-box" id="telefone" value="<?php echo $telefone; ?>">
+                <input type="text" class="form-control shadow-box" id="telefone" name="telefoneEmp" value="<?php echo $telefone; ?>">
             </div>
             <div class="col-md-6">
                 <label for="celular" class="form-label">Celular</label>
-                <input type="text" class="form-control shadow-box" id="celular" value="<?php echo $celular; ?>">
+                <input type="text" class="form-control shadow-box" id="celular" name="celularEmp" na value="<?php echo $celular; ?>">
             </div>
             <div class="col-md-6">
                 <label for="razaosocial" class="form-label">Razão Social</label>
-                <input type="text" class="form-control shadow-box" id="razaosocial" value="<?php echo $razaoSocial; ?>">
+                <input type="text" class="form-control shadow-box" id="razaosocial" name="razaosocial" value="<?php echo $razaoSocial; ?>">
             </div>
             <div class="col-md-6">
                 <label for="inscricao" class="form-label">Inscrição Estadual</label>
-                <input type="text" class="form-control shadow-box" id="inscricao" value="<?php echo $inscricaoEstadual; ?>">
+                <input type="text" class="form-control shadow-box" id="inscricao" name="inscricao" value="<?php echo $inscricaoEstadual; ?>">
             </div>
 
         <div class="d-flex justify-content-center">
             <div class="col-md-6">
                 <label for="imagem" class="form-label">Imagem <i class="bi bi-upload"></i></label>
-                <input type="file" class="form-control shadow-box" id="imagem" accept="image/*" onchange="previewImage(event)">
-                <!-- A imagem padrão exibida inicialmente -->
-                <img id="image-preview" class="image-preview mt-2 shadow-box" src="https://via.placeholder.com/100">
+                <input type="file" class="form-control shadow-box" id="imagem" name="arquivoEmp" accept="image/*" onchange="previewImage(event)">
+
             </div>
         </div>
         </div>
         
         <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
+            <button type="submit" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
             <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Alterar senha</u></a>
             <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Meus anúncios</u></a>
  
@@ -108,7 +104,7 @@ require_once "../navbar/navbarVendEmp.php";
 </div>
 <script>
     function previewImage(event) {
-        const preview = document.getElementById('image-preview');
+        const preview = document.getElementById('image-profile');
         const file = event.target.files[0];
         const reader = new FileReader();
 

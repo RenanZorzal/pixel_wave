@@ -64,8 +64,31 @@ function pesquisarVendedorPorEmail ($pesq) {
 
 
 
-function atualizarVendedor () {
+function alterarVendedor ($id, $nome, $email, $telefone, $dtNasc, 
+                         $arquivo) {
 
+    $conexao = conectarBD();   
+    
+    // Converter data. Se necessário
+    
+
+    // Transformar a imagem
+    $tamanhoImg = $arquivo["size"]; 
+    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
+    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+
+    // Montar SQL
+    $sql = "UPDATE Vendedor SET "
+    . "nomeVendedor = '$nome', "
+    . "emailVendedor = '$email', "
+    . "telefoneVendedor = '$telefone', "
+    . "imgVendedor = '$arquivo', "
+    . "data_nascimentoVendedor = '$dtNasc'"
+    . "WHERE idVendedor = $id";
+
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+    return $id;
 }
 
 function excluirVendedor () {

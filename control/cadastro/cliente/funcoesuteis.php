@@ -32,7 +32,24 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     return $msgErro;
 
 }
+function validarCampos2($nome, $email, $telefone, $arquivo) {
+    $msgErro = "";
+    if ( empty($nome) ) {
+        $msgErro = $msgErro . "Informe o nome.<br>";        
+    }        
 
+    if (validarEmail($email) == false) {
+        $msgErro = $msgErro . "Email inválido.<br>";
+    }
+ 
+    if ( $arquivo["error"] != 0 ) {
+        $msgErro = $msgErro . "ERRO no upload do arquivo!";
+    }
+ 
+
+    return $msgErro;
+
+}
 function verificarMaioridade($dataNascimento) {
     // Converte a data de nascimento para o formato DateTime
     $dataNascimento = new DateTime($dataNascimento);

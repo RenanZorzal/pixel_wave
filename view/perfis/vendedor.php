@@ -23,13 +23,13 @@ require_once "../navbar/navbarVendEmp.php";
 <div class="d-flex justify-content-center align-items-center">
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
+<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded">
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
         <div class="container form-container">
     <?php
         require_once '../../model/vendedorDAO.php';
-        $resultado = pesquisarVendedorPorID(2);
+        $resultado = pesquisarVendedorPorID(1);
         $registro = mysqli_fetch_assoc($resultado);
         $nome = $registro["nomeVendedor"];
         $desc = $registro["descricaoVendedor"];
@@ -44,15 +44,15 @@ require_once "../navbar/navbarVendEmp.php";
 
 
     ?>
-    <form>
+    <form action="alterVendedor.php" method="POST" enctype = "multipart/form-data" >
         <div class="row g-3">
             <div class="col-md-6">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control shadow-box" id="nome" value="<?php echo $nome; ?>">
+                <label for="nomeVendedor" class="form-label">Nome</label>
+                <input type="text" class="form-control shadow-box" id="nomeVendedor" name="nomeVendedor" value="<?php echo $nome; ?>">
             </div>
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control shadow-box" id="email" value="<?php echo $email; ?>">
+                <input type="email" class="form-control shadow-box" id="email" name="emailVendedor" value="<?php echo $email; ?>">
                 
             </div>
             <div class="col-md-6">
@@ -61,23 +61,23 @@ require_once "../navbar/navbarVendEmp.php";
             </div>
             <div class="col-md-6">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control shadow-box" id="telefone" value="<?php echo $telefone; ?>">
+                <input type="text" class="form-control shadow-box" id="telefone" name="telefoneVendedor" value="<?php echo $telefone; ?>">
             </div>
             <div class="col-md-6">
-                <label for="data-nascimento" class="form-label">Data de nascimento</label>
-                <input type="date" class="form-control shadow-box" id="data-nascimento" value="<?php echo $dtNasc; ?>">
+                <label for="datanascimento" class="form-label">Data de nascimento</label>
+                <input type="date" class="form-control shadow-box" id="datanascimento" name="dtNascVendedor" value="<?php echo $dtNasc; ?>">
             </div>
        
             <div class="col-md-6">
                 <label for="imagem" class="form-label">Imagem <i class="bi bi-upload"></i></label>
-                <input type="file" class="form-control shadow-box" id="imagem" accept="image/*" onchange="previewImage(event)">
+                <input type="file" class="form-control shadow-box" id="imagem" name="arquivoVend" accept="image/*" onchange="previewImage(event)">
                 <!-- A imagem padrão exibida inicialmente -->
-                <img id="image-preview" class="image-preview mt-2 shadow-box" src="https://via.placeholder.com/100">
+              
             </div>
         </div>
         
         <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
+            <button type="submit    " class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
  
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
@@ -91,7 +91,7 @@ require_once "../navbar/navbarVendEmp.php";
 </div>
 <script>
     function previewImage(event) {
-        const preview = document.getElementById('image-preview');
+        const preview = document.getElementById('image-profile');
         const file = event.target.files[0];
         const reader = new FileReader();
 

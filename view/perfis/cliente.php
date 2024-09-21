@@ -10,12 +10,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="cliente.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
-  
+<!--
+    CTRL + F5 carregar css
+-->
 </head>
 <body>
 
 <?php
 require_once "../navbar/navbarCliente.php";
+require_once '../../model/clienteDAO.php';
+$resultado = pesquisarCompradorPorID(1);
+$registro = mysqli_fetch_assoc($resultado);
+$nome = $registro["nomeComprador"];
+$email = $registro["emailComprador"];
+$cpf = $registro["CPF"];
+$telefone = $registro["telefoneComprador"];
+$dtNasc = $registro["data_nascimentoComprador"];
+$imagem= $registro["imgComprador"];
+
 
 ?>
 
@@ -25,24 +37,12 @@ require_once "../navbar/navbarCliente.php";
     
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded" src="https://via.placeholder.com/100">
+<img id="image-profile" class="image-preview mt-2 shadow-box" style="rounded">
+
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
 <div class="container form-container">
-    <?php
-        require_once '../../model/clienteDAO.php';
-        $resultado = pesquisarCompradorPorID(1);
-        $registro = mysqli_fetch_assoc($resultado);
-        $nome = $registro["nomeComprador"];
-        $email = $registro["emailComprador"];
-        $cpf = $registro["CPF"];
-        $telefone = $registro["telefoneComprador"];
-        $dtNasc = $registro["data_nascimentoComprador"];
-        $imagem= $registro["imgComprador"];
-       
 
-
-    ?>
     <form action="altercliente.php" method="POST" enctype = "multipart/form-data" >
     
         <div class="row g-3">
@@ -65,19 +65,18 @@ require_once "../navbar/navbarCliente.php";
             </div>
             <div class="col-md-6">
                 <label for="dtNascCliente" class="form-label">Data de nascimento</label>
-                <input type="date" class="form-control shadow-box" id="dtNascCliente" value="<?php echo $dtNasc; ?>">
+                <input type="date" class="form-control shadow-box" id="dtNascCliente" name="dtNascCliente" value="<?php echo $dtNasc; ?>">
             </div>
        
             <div class="col-md-6">
-                <label for="imagem" class="form-label">Imagem <i class="bi bi-upload"></i></label>
-                <input type="file" class="form-control shadow-box" id="imagem" accept="image/*" onchange="previewImage(event)">
-                <!-- A imagem padrão exibida inicialmente -->
-                <img id="image-preview" class="image-preview mt-2 shadow-box" src="$imageBase64">
+                <label for="arquivo" class="form-label">Imagem <i class="bi bi-upload"></i></label>
+                <input type="file" class="form-control shadow-box" id="arquivo" name="arquivo" accept="image/*" onchange="previewImage(event)" >
+
             </div>
         </div>
         
         <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
+            <button type="submit" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
  
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
@@ -91,7 +90,7 @@ require_once "../navbar/navbarCliente.php";
 </div>
 <script>
     function previewImage(event) {
-        const preview = document.getElementById('image-preview');
+        const preview = document.getElementById('image-profile');
         const file = event.target.files[0];
         const reader = new FileReader();
 

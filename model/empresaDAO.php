@@ -64,8 +64,33 @@ function pesquisarEmpresaPorEmail($pesq) {
 
 
 
-function atualizarEmpresa () {
+function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $razao, $dataAbertura, $inscricaoEstadual) {
 
+    $conexao = conectarBD();   
+    
+    // Converter data. Se necessário
+    
+
+    // Transformar a imagem
+    $tamanhoImg = $arquivo["size"]; 
+    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
+    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+
+    // Montar SQL
+    $sql = "UPDATE Vendedor SET "
+    . "nomeVendedor = '$nome', "
+    . "emailVendedor = '$email', "
+    . "telefoneVendedor = '$telefone', "
+    . "celularVendedor = '$celular', "
+    . "imgVendedor = '$arquivo', "
+    . "razaoSocial = '$razao', "
+    . "data_nascimentoVendedor = '$dataAbertura', "
+    . "inscricaoEstadual = '$inscricaoEstadual'"
+    . "WHERE idVendedor = $id";
+
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+    return $id;
 }
 
 function excluirEmpresa () {

@@ -1,21 +1,22 @@
 <?php
-    require_once("../cadastro/cliente/funcoesuteis.php");
+    require_once("../../control/cadastro/cliente/funcoesuteis.php");
 
      // PASSO 1 - Receber os campos POST
      $nomeCliente = $_POST["nomeCliente"];
      $emailCliente = $_POST["emailCliente"];
      $telefoneCliente = $_POST["telefoneCliente"];
      $dtNascCliente = $_POST["dtNascCliente"];
+     $arquivo = $_FILES["arquivo"];
 
  
      // PASSO 2 - Validação dos dados
-     $msgErro = validarCampos($nomeCliente,$emailCliente, $telefoneCliente);
+     $msgErro = validarCampos2($nomeCliente, $emailCliente, $telefoneCliente, $arquivo);
      if ( empty($msgErro) ) {
          // PASSO 3 - Inserir/Alterar dados no banco
                 
          // ALTERAR
-         require_once '../../../model/clienteDAO.php';
-         $id = alterarCliente ($nomeCliente, $emailCliente,$telefoneCliente, $dtNascCliente,  $cpfCliente, $senha1Cliente);
+         require_once '../../model/clienteDAO.php';
+         $id = alterarCliente (1,$nomeCliente, $emailCliente,$telefoneCliente, $dtNascCliente, $arquivo);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

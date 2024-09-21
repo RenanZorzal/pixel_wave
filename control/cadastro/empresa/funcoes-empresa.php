@@ -57,6 +57,46 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
     return $msgErro; //retorna todos os erros
 
 }
+function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual) {
+    $msgErro = "";
+
+    // Validação if is empty
+
+    if ( empty($nome) || validarNome($nome) == false) {
+        $msgErro = $msgErro . "Informe o seu nome corretamente.<br>";        
+    }        
+    
+   
+    if ( empty($email) || validarEmail($email) == false) {
+        $msgErro = $msgErro . "Informe seu e-mail no formato correto.<br>";
+    } 
+
+ 
+    if ( empty($data_abertura)) {
+        $msgErro = $msgErro . "Informe sua data de abertura.<br>";
+    }
+
+    if ( empty($telefone) || validarNumero($telefone) == false) {
+        $msgErro = $msgErro . "Informe seu telefone corretamente.<br>";
+    }
+
+    if ( empty($celular) || validarNumero($celular) == false) {
+        $msgErro = $msgErro . "Informe seu celular corretamente.<br>";
+    }
+
+    if ( empty($razaoSocial) ) {
+        $msgErro = $msgErro . "Informe sua Razão Social. <br>";
+    }
+
+    if ( empty($inscricaoEstadual) ) {
+        $msgErro = $msgErro . "Informe sua Inscrição Estadual. <br>";
+    }
+
+
+
+    return $msgErro; //retorna todos os erros
+
+}
 
 function validarNome($nome){
     if(strlen($nome) < 8){

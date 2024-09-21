@@ -49,6 +49,54 @@ function validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha
     return $msgErro; //retorna todos os erros
 
 }
+function validarCampos2($nome, $email, $data_nasc, $telefone, $arquivo) {
+    $msgErro = "";
+
+    // Validação if is empty
+
+    if ( empty($nome)) {
+        $msgErro = $msgErro . "Informe o seu nome corretamente.<br>";        
+    }        
+    
+
+
+    if ( empty($email) || validarEmail($email) == false) {
+        $msgErro = $msgErro . "Informe seu e-mail no formato correto.<br>";
+    } 
+
+ 
+
+    if ( empty($data_nasc)) {
+        $msgErro = $msgErro . "Informe sua data de nascimento.<br>";
+    }
+
+    if ( maiorIdade($data_nasc == false)) {
+        $msgErro = $msgErro . "Desculpe, é preciso ser maior de idade para fazer seu cadastro como Vendedor Autônomo.<br>";
+    }
+
+    if ( empty($telefone) || validarNumero($telefone) == false) {
+        $msgErro = $msgErro . "Informe seu telefone corretamente.<br>";
+    }
+    if ( $arquivo["error"] != 0 ) {
+        $msgErro = $msgErro . "ERRO no upload do arquivo!";
+    }
+ 
+
+    if ( ( $arquivo["type"] != "image/gif" ) &&
+    	( $arquivo["type"] != "image/jpeg" ) &&
+        ( $arquivo["type"] != "image/pjpeg" ) &&
+        ( $arquivo["type"] != "image/png" ) &&
+        ( $arquivo["type"] != "image/x-png" ) &&
+        ( $arquivo["type"] != "image/bmp" )  ) {
+
+       $msgErro = $msgErro . "Tipo não permitido!";
+    }
+
+
+
+    return $msgErro; //retorna todos os erros
+
+}
 
 function validarNome($nome){
     if(strlen($nome) < 8){

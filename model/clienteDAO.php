@@ -65,9 +65,33 @@ function pesquisarCompradorPorEmail ($pesq) {
 
 
 
-function atualizarCliente () {
+function alterarCliente ($id, $nome, $email, $telefone, $dtNasc, 
+                         $arquivo) {
 
+    $conexao = conectarBD();   
+    
+    // Converter data. Se necessário
+    
+
+    // Transformar a imagem
+    $tamanhoImg = $arquivo["size"]; 
+    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
+    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+
+    // Montar SQL
+    $sql = "UPDATE Comprador SET "
+    . "nomeComprador = '$nome', "
+    . "emailComprador = '$email', "
+    . "telefoneComprador = '$telefone', "
+    . "data_nascimentoComprador = '$dtNasc', "
+    . "imgComprador = '$arquivo'"
+    . "WHERE idComprador = $id";
+
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+    return $id;
 }
+
 
 function excluirCliente () {
 
