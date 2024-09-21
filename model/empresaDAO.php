@@ -59,7 +59,7 @@ function pesquisarEmpresaPorEmail($pesq) {
     return pesquisar($pesq,4);
 }
 
-function atualizarVendedor ($tipo, $id, $nomeAlterado, $emailAlterado, $telefoneAlterado, $dtNascAlterada, $cpfcnpjAlterado, $imgAlterada, $senhaAlterada, $descricaoAlterada, $celularAlterado, $razaoAlterado, $inscricaoAlterado) {
+function atualizarVendedor ($tipo, $id, $nomeAlterado, $emailAlterado, $telefoneAlterado, $imgAlterada, $senhaAlterada, $descricaoAlterada, $celularAlterado, $razaoAlterado, $inscricaoAlterado) {
     
     $conexao = conectarBD(); 
     
@@ -74,25 +74,19 @@ function atualizarVendedor ($tipo, $id, $nomeAlterado, $emailAlterado, $telefone
         case 3: // Alterar telefone
                 $sql = $sql . " telefoneVendedor = '$telefoneAlterado' WHERE idVendedor = $id";
                 break;
-        case 4: // Alterar data de nascimento
-                $sql = $sql . " data_nascimentoVendedor = $dtNascAlterada WHERE idVendedor = $id";
-                break;
-        case 5: // Alterar cpf cnpj
-                $sql = $sql . " CPF_CNPJ = $cpfcnpjAlterado WHERE idVendedor = $id";
-                break;
-        case 6: // Alterar imagem
+        case 4: // Alterar imagem
                 $sql = $sql . " imgVendedor = $imgAlterada WHERE idVendedor = $id";
                 break;
-        case 7: // Alterar senha
+        case 5: // Alterar senha
                 $sql = $sql ." senhaVendedor = '$senhaAlterada' WHERE idVendedor = $id";
                 break;         
-        case 8: // Alterar descrição
+        case 6: // Alterar descrição
                 $sql = $sql ." descricaoVendedor = '$descricaoAlterada' WHERE idVendedor = $id";
                 break;
-        case 9: // Alterar celular
+        case 7: // Alterar celular
                $sql = $sql ." celularVendedor = $celularAlterado WHERE idVendedor = $id";
                break;
-        case 10: // Alterar razão social
+        case 8: // Alterar razão social
                $sql = $sql ." razaoSocial = '$razaoAlterado' WHERE idVendedor = $id";
                break;
         case 11: // Alterar inscricaoEstadual
