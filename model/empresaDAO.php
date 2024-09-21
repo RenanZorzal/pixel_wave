@@ -75,13 +75,13 @@ function atualizarVendedor ($tipo, $id, $nomeAlterado, $emailAlterado, $telefone
                 $sql = $sql . " telefoneVendedor = '$telefoneAlterado' WHERE idVendedor = $id";
                 break;
         case 4: // Alterar data de nascimento
-                $sql = $sql . " data_nascimentoVendedor = '$dtNascAlterada' WHERE idVendedor = $id";
+                $sql = $sql . " data_nascimentoVendedor = $dtNascAlterada WHERE idVendedor = $id";
                 break;
         case 5: // Alterar cpf cnpj
-                $sql = $sql . " CPF_CNPJ = '$cpfcnpjAlterado' WHERE idVendedor = $id";
+                $sql = $sql . " CPF_CNPJ = $cpfcnpjAlterado WHERE idVendedor = $id";
                 break;
         case 6: // Alterar imagem
-                $sql = $sql . " imgVendedor = '$imgAlterada' WHERE idVendedor = $id";
+                $sql = $sql . " imgVendedor = $imgAlterada WHERE idVendedor = $id";
                 break;
         case 7: // Alterar senha
                 $sql = $sql ." senhaVendedor = '$senhaAlterada' WHERE idVendedor = $id";
@@ -90,13 +90,13 @@ function atualizarVendedor ($tipo, $id, $nomeAlterado, $emailAlterado, $telefone
                 $sql = $sql ." descricaoVendedor = '$descricaoAlterada' WHERE idVendedor = $id";
                 break;
         case 9: // Alterar celular
-               $sql = $sql ." celularVendedor = '$celularAlterado' WHERE idVendedor = $id";
+               $sql = $sql ." celularVendedor = $celularAlterado WHERE idVendedor = $id";
                break;
         case 10: // Alterar razão social
                $sql = $sql ." razaoSocial = '$razaoAlterado' WHERE idVendedor = $id";
                break;
         case 11: // Alterar inscricaoEstadual
-               $sql = $sql ." inscricaoEstadual = '$inscricaoAlterado' WHERE idVendedor = $id";                
+               $sql = $sql ." inscricaoEstadual = $inscricaoAlterado WHERE idVendedor = $id";                
     }
 
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
