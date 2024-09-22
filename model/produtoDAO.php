@@ -25,20 +25,20 @@ function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $desc
 }
 
 
-function pesquisar ($pesq, $tipo) {
+function pesquisar($pesq, $tipo) {
 
     $conexao = conectarBD(); 
 
     $sql = "SELECT * FROM Produto WHERE";
     switch ($tipo) {
         case 1: // Por nome
-                $sql = $sql . "nomeProduto LIKE '$pesq%' ";
+                $sql = $sql . " nomeProduto LIKE '%$pesq%' ";
                 break;
         case 2: // Por tipo
-                $sql = $sql . "Subcategoria_idSubcategoria = '$pesq' ";
+                $sql = $sql . " Subcategoria_idSubcategoria = '$pesq' ";
                 break;
         case 3: // Por ID
-            $sql = $sql . "idProduto = '$pesq' ";
+            $sql = $sql . " idProduto = '$pesq' ";
     }
 
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );

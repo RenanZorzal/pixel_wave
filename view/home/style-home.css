@@ -101,6 +101,14 @@ body {
   transform: scale(1.03);
 }
 
+.img-erroProduto{
+  width: 50rem;
+}
+
+.img-erroProduto:hover{
+  transform: scale(1.03);
+}
+
 
 
 

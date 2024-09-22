@@ -29,11 +29,12 @@ function pesquisar(pesq){
     // Chamar o PHP do servidor com AJAX
 
     $.ajax({
-        url: '../../control/pesqProduto.php',
+        url: '../../control/produto/pesqProduto.php',
         type: 'POST',
         data: { pesq: pesq },       // Envio do texto de pesquisa
         dataType: 'json',
         success: function (data) {
+            console.log("entrou");
             // data == dados de retorno no formato JSON
             // O JSON foi criado com dois campos "erro" e "produtos", onde "produtos" é um array de dados
 
@@ -52,28 +53,52 @@ function pesquisar(pesq){
                 // Percorre todos os produtos do array "produtos", 
                 //    onde i é o índice e obj são os dados do produto
                 data.produtos.forEach(function (obj, i) {
-                    mostrar += "<div class='col-sm-4'>";
-                    mostrar += "<img src='data:image/jpeg;base64," + obj.imagem + "' height='100' width='100'>";
-                    mostrar += "<h4 class='margin'>" + obj.nomeProduto + "</h4>";
-                    mostrar += "<h5 class='margin'>R$ " + obj.preco + "</h5>";
-                    mostrar += "<A href='../controlador/carrinho.php?id=" + obj.idProduto + "'><IMG src='../imagens/add_cart.png' height='30' width='30'></A>";
+                    mostrar += "<div class='col-sm-3 col-md-2'>";
+                    mostrar += "<div class='card mb-5' style='width: 18rem; height: 28rem;'>";
+                    mostrar += "<img src='"+ obj.imagem +"' class='card-img-top' alt='Imagem do Produto'>";
+                    mostrar += "<div class='card-body'>";
+                    mostrar += "<div>";
+                    mostrar += "<a href='#' style='text-decoration: none; color: purple;'>";
+                    mostrar += "<h3 class='card-title' id='card-body.h3'>"+ obj.nomeProduto +"</h3>";
+                    mostrar += "</a>";
                     mostrar += "</div>";
+                    mostrar += "<div>";
+                    mostrar += "<strike style='color: gray; font-size: 1.2rem; margin-bottom: 0;'>"+ (obj.preco + (0.3*obj.preco)) +"</strike>";
+                    mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'>"+ obj.preco +"</span></p>";
+                    mostrar += "</div>";
+                    mostrar += "<div>";
+                    mostrar += "<a href='#' class='btn btn-dark'>Adicionar ao Carrinho</a>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
+                    //mostrar += "<A href='../controlador/carrinho.php?id=" + obj.idProduto + "'><IMG src='../imagens/add_cart.png' height='30' width='30'></A>";
                 });
 
 
             } else {
+                if(data.erro == 'Produto não encontrado.'){
+                    console.log("entrou no erro")
+                    mostrar += `
+                        <div class="erro-pesquisa">
+                        <img class="img-erroProduto" src="produto-nao-encontrado.png" alt="Busca Vazia">
+                        </div>
+                    `;
+                }
+
                 // Sem registros no banco
-                mostrar += "<h4 class='margin'>" + data.erro + "</h4>";
+                //mostrar += "<h4 class='margin'>" + data.erro + "</h4>";
             }
 
             // Colocar no DIV "resultado" acima
-            $('#resultado').html(mostrar).show();
+            $('#resultado-pecas').html(mostrar).show();
         },
         error: function () {
+            console.log("error")
             // ERRO ao pesquisar
             var mostrar = "";
             mostrar += "<h4 class='margin'>Erro ao chamar o pesquisar do servidor.</h4>";
-            $('#resultado').html(mostrar).show();
+            $('#section-resultado').html(mostrar).show();
         }
     });
 }

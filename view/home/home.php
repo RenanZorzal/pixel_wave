@@ -6,9 +6,10 @@
   <title>Pixel Wave</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="styleHome.css">
+  <link rel="stylesheet" href="style-home.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/styleFooter.css">
   
@@ -103,7 +104,7 @@ require_once "../navbar/navbarCliente.php";
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin"></nav>
     
 
-<!-- Seção de Categorias -->
+<!-- Seção de Produtos -->
  
   <div style="display: flex; justify-content: center;">
     <div class="ms-5 me-5 mt-5 main" id="section-resultado">
@@ -254,19 +255,19 @@ require_once "../navbar/navbarCliente.php";
     </div>
   </ul>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script src="app.js"></script>
 
 </body>
 </html>
 <!-- Bootstrap JavaScript (opcional, necessário para funcionalidades como o dropdown) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
