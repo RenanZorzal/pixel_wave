@@ -27,7 +27,7 @@
      } else {
          // echo $msgErro;
          //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
-         header("Location:../../../view/perfis/cliente.php?msgErro=$msgErro");
+         header("Location:../../../view/perfis/cliente.php?msg=$msgErro");
         
      }
 

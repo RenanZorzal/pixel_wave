@@ -101,10 +101,18 @@ echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:im
         </div>
         </div>
     </form>
+    <?php
+        // Mostrar a mensagem 
+        if ( isset($_GET["msg"])  ) {
+            $mensagem = $_GET["msg"];
+            echo "<p>$mensagem</p>";
+        }
 
+    ?>
 </div>
 </div>
 </div>
+
 <script>
     function previewImage(event) {
         const preview = document.getElementById('image-profile');
