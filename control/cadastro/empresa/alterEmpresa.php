@@ -1,5 +1,5 @@
 <?php
-    require_once("../../control/cadastro/empresa/funcoes-empresa.php");
+    require_once("funcoes-empresa.php");
 
      // PASSO 1 - Receber os campos POST
      $nomeEmpresa = $_POST["nomeEmpresa"];
@@ -18,19 +18,19 @@
          // PASSO 3 - Inserir/Alterar dados no banco
                 
          // ALTERAR
-         require_once '../../model/empresaDAO.php';
-         $id = alterarEmpresa (1, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao);
+         require_once '../../../model/empresaDAO.php';
+         $id = alterarEmpresa (2, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");
-        header("Location:empresa.php?msg=Empresa alterado com sucesso.");
+        header("Location:../../../view/perfis/empresa.php?msg=Empresa alterado com sucesso.");
  
  
  
      } else {
          // echo $msgErro;
          //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
-         header("Location:empresa.php?msgErro=$msgErro");
+         header("Location:../../../view/perfis/empresa.php?msgErro=$msgErro");
         
      }
 

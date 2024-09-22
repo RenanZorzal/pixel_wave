@@ -90,6 +90,17 @@ function alterarVendedor ($id, $nome, $email, $telefone, $dtNasc,
     
     return $id;
 }
+function alterarSenha($id, $senha1){
+    $conexao = conectarBD();
+
+    $sql = "UPDATE Vendedor SET "
+    . "senhaVendedor = '$senha1' "
+    . "WHERE idVendedor = $id";
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+    return $id;
+}
+
 
 function excluirVendedor () {
 

@@ -84,7 +84,7 @@ function alterarCliente ($id, $nome, $email, $telefone, $dtNasc,
     . "emailComprador = '$email', "
     . "telefoneComprador = '$telefone', "
     . "data_nascimentoComprador = '$dtNasc', "
-    . "imgComprador = '$arquivo'"
+    . "imgComprador = '$arquivo' "
     . "WHERE idComprador = $id";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
@@ -92,6 +92,16 @@ function alterarCliente ($id, $nome, $email, $telefone, $dtNasc,
     return $id;
 }
 
+function alterarSenha($id, $senha1){
+    $conexao = conectarBD();
+
+    $sql = "UPDATE Comprador SET "
+    . "senhaComprador = '$senha1' "
+    . "WHERE idComprador = $id";
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+    return $id;
+}
 
 function excluirCliente () {
 

@@ -27,7 +27,8 @@ $cpf = $registro["CPF"];
 $telefone = $registro["telefoneComprador"];
 $dtNasc = $registro["data_nascimentoComprador"];
 $imagem= $registro["imgComprador"];
-
+$arquivo = $registro["imgComprador"];
+$fotoImg = base64_encode($arquivo);
 
 ?>
 
@@ -37,13 +38,15 @@ $imagem= $registro["imgComprador"];
     
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-preview mt-2 shadow-box" style="rounded">
+<?php
+echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:image/jpeg;base64,' . $fotoImg . '">';
+?>
 
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MEU PERFIL</b></h1>
 </div>
 <div class="container form-container">
 
-    <form action="altercliente.php" method="POST" enctype = "multipart/form-data" >
+    <form action="../../control/cadastro/cliente/alterCliente.php" method="POST" enctype = "multipart/form-data" >
     
         <div class="row g-3">
             <div class="col-md-6">
@@ -80,11 +83,18 @@ $imagem= $registro["imgComprador"];
  
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
-            <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Alterar senha</u></a>
+            <a href="senhacliente.php" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Alterar senha</u></a>
             <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Minhas compras</u></a>
         </div>
     </form>
+    <?php
+        // Mostrar a mensagem 
+        if ( isset($_GET["msg"])  ) {
+            $mensagem = $_GET["msg"];
+            echo "<p>$mensagem</p>";
+        }
 
+    ?>
 </div>
 </div>
 </div>

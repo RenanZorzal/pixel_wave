@@ -113,6 +113,17 @@ function validarNumero($numero) {
     }
 }
 */
+function verificarSenha($senha1,$senha2){
+    $msgErro = "";
+    if ( strlen($senha1) <= 8 ) {
+        $msgErro = $msgErro . "A senha deve ter mais que 8 caracteres.<br>";
+    }
+    
+    if ( strcmp ($senha1, $senha2) != 0 ) {
+        $msgErro = $msgErro . "As senhas não conferem.<br>";
+    }
+    return $msgErro;
+}
 
 
 

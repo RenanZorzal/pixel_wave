@@ -15,7 +15,7 @@
 <body>
 
 <?php
-require_once "../navbar/navbar.php";
+require_once "../navbar/navbarCliente.php";
 ?>
 
 <div class="d-flex justify-content-center align-items-center">
@@ -28,26 +28,34 @@ require_once "../navbar/navbar.php";
 <h1 style="color: #502779"><b>ALTERAR SENHA</b></h1>
 </div>
 <div class="container form-container">
-    <form>
+    <form action="../../control/cadastro/cliente/altersenhacliente.php" method="POST" enctype = "multipart/form-data" >
         <div>
-            <div >
-                <label for="nome" class="form-label">Nova senha</label>
-                <input type="text" class="form-control shadow-box" id="nome" placeholder="">
+            <div>
+                <label for="senha1" class="form-label">Nova senha</label>
+                <input type="password" class="form-control shadow-box" id="senha1" name="senha1" placeholder="">
             </div>
             <div>
-                <label for="email" class="form-label">Confirmar senha</label>
-                <input type="email" class="form-control shadow-box" id="email" placeholder="">
+                <label for="senha2" class="form-label">Confirmar senha</label>
+                <input type="password" class="form-control shadow-box" id="senha2" name="senha2" placeholder="">
                 
             </div>
            
         
         <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
+            <button type="submit" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
  
         </div>
 
     </form>
+    <?php
+        // Mostrar a mensagem 
+        if ( isset($_GET["msg"])  ) {
+            $mensagem = $_GET["msg"];
+            echo "<p></p>";
+            echo "<p>$mensagem</p>";
+        }
 
+    ?>
 </div>
 </div>
 </div>

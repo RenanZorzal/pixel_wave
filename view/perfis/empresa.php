@@ -17,7 +17,7 @@
 <?php
 require_once "../navbar/navbarVendEmp.php";
 require_once '../../model/empresaDAO.php';
-$resultado = pesquisarEmpresaPorID(1);
+$resultado = pesquisarEmpresaPorID(2);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeVendedor"];
 $desc = $registro["descricaoVendedor"];
@@ -28,7 +28,8 @@ $cnpj= $registro["CNPJ_CPF"];
 $razaoSocial = $registro["razaoSocial"];
 $dtNasc = $registro["data_nascimentoVendedor"];
 $inscricaoEstadual = $registro["inscricaoEstadual"];
-
+$arquivo = $registro["imgVendedor"];
+$fotoImg = base64_encode($arquivo);
 ?>
 
 
@@ -36,12 +37,14 @@ $inscricaoEstadual = $registro["inscricaoEstadual"];
 <div class="d-flex justify-content-center align-items-center">
 <div class="mt-5 shadow-box2" style="background-color: white">
 <div class="d-flex justify-contentet-center align-items-center">
-<img id="image-profile" class="image-profile mt-2 shadow-box" style="rounded">
+<?php
+echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:image/jpeg;base64,' . $fotoImg . '">';
+?>
 <h1 style="text-align: center; color: #502779" class="ms-5"><b>MINHA EMPRESA</b></h1>
 </div>
         <div class="container form-container">
 
-    <form action="alterEmpresa.php" method="POST" enctype = "multipart/form-data" >
+    <form action="../../control/cadastro/empresa/alterEmpresa.php" method="POST" enctype = "multipart/form-data" >
         <div class="row g-3">
             <div class="col-md-6">
                 <label for="nome" class="form-label">Nome da empresa</label>
@@ -98,10 +101,18 @@ $inscricaoEstadual = $registro["inscricaoEstadual"];
         </div>
         </div>
     </form>
+    <?php
+        // Mostrar a mensagem 
+        if ( isset($_GET["msg"])  ) {
+            $mensagem = $_GET["msg"];
+            echo "<p>$mensagem</p>";
+        }
 
+    ?>
 </div>
 </div>
 </div>
+
 <script>
     function previewImage(event) {
         const preview = document.getElementById('image-profile');
