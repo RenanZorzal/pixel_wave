@@ -24,6 +24,16 @@ function carregarComboCategoria( $categoria ) {
     return $options;
 
 }
+
+function pesquisarPorCategoria() {
+    $sql = "SELECT * FROM Categoria";
+    $conexao = conectarBD();    
+    $resultado = mysqli_query($conexao, $sql );
+
+    return $resultado;
+
+}
+
 function carregarComboSubCategoria($subcategoriaSelecionada, $categoria) {
     $sql = "SELECT * FROM subcategoria WHERE Categoria_idCategoria = '$categoria'";
     $conexao = conectarBD();    

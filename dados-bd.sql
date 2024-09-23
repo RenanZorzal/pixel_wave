@@ -43,7 +43,7 @@ INSERT INTO StatusCompra(StatusCompra) VALUES
 ;
 INSERT INTO Vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVendedor, celularVendedor, tipoVendedor, CNPJ_CPF, imgVendedor, razaoSocial, senhaVendedor, data_nascimentoVendedor, inscricaoEstadual) VALUES
 ('Jão', 'Vendo peças usadas pelo meu filho', 'jaobonito123456@gmail.com', '11111111111', '22222222222', 'Pessoa física', '111.111.222-23', NULL, NULL, '123456789', '2000-01-01','1212121212'),
-('Maria', 'Vnedo peças utilizadas', 'maria.vendedora@gmail.com', '11111111112', '22222222221', 'Pessoa física', '111.111.222-21', NULL, NULL, '123456789', '2000-01-07','1212161212'),
+('Maria', 'Venedo peças utilizadas', 'maria.vendedora@gmail.com', '11111111112', '22222222221', 'Pessoa física', '111.111.222-21', NULL, NULL, '123456789', '2000-01-07','1212161212'),
 ('Joana Marina', 'Quero vender pra ganhar dinheiro', 'joaninha1988@gmail.com', '11111111212', '22222222121', 'Pessoa física', '111.111.212-21', NULL, NULL, '123456789', '2000-08-07','1212166212'),
 ('Augusto Mario Matheus', 'Prucuro vender minhas peças usadas que estão em bom estado', 'Augusto_M&M_@hotmail.com', '12111111112', '21222222221', 'Pessoa física', '111.121.222-21', NULL, NULL, '123456789', '1998-01-07','1212162212'),
 ('Marcia Célia', 'Vender :)', 'celiamarcia672@gmail.com', '11811111323', '22122522323', 'Pessoa física', '911.111.214-24', NULL, NULL, '123456789', '2014-06-30', '8454383434');

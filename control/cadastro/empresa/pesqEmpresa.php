@@ -39,7 +39,7 @@ if ( isset($_POST["pesq"])  ) {
             $registros["empresas"][] = array(
                     "idEmpresa" => $idEmpresa,
                     "nomeEmpresa" => $nomeEmpresa,
-                    "descriao" => $descriao,
+                    "descricao" => $descricao,
                     "email" => $email,
                     "telefone" => $telefone,
                     "celular" => $celular,

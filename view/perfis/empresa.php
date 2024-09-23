@@ -17,7 +17,7 @@
 <?php
 require_once "../navbar/navbarVendEmp.php";
 require_once '../../model/empresaDAO.php';
-$resultado = pesquisarEmpresaPorID(2);
+$resultado = pesquisarEmpresaPorID(10);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeVendedor"];
 $desc = $registro["descricaoVendedor"];

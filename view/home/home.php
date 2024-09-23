@@ -33,14 +33,15 @@ require_once "../navbar/navbarCliente.php";
                       <i class="bi bi-list"></i> Departamentos
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
-                      <select class="form-control" id="categoria" name="categoria" onchange="carregarSubcategorias(this.value)">
-                        <option>Categoria</option>
-                        <?php
-                          require "../../model/categoriaDAO.php";
-                          $options = carregarComboCategoria($categoria);              
-                          echo '<li><a class="dropdown-item" href="#">'. $options .'</a></li>';
-                        ?>
-                      </select>
+                    <?php
+                      require "../../model/categoriaDAO.php";
+                      $resultado = pesquisarPorCategoria();  
+                      while ($registro = mysqli_fetch_assoc($resultado)) {        
+                        $idcategoria = $registro["idCategoria"];
+                        $categoria = $registro["nomeCategoria"];    
+                        echo "<li><a class='dropdown-item dropdown-cat' href='$idCategoria'>$categoria</a></li>";
+                      }
+                    ?>
                   </ul>
               </li>
               <!-- Outros links de categorias -->
@@ -115,28 +116,6 @@ require_once "../navbar/navbarCliente.php";
       
             <div class="row div-resultado" id = "resultado-pecas">
 
-              <!--<div class="col-sm-3 col-md-2">
-                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
-                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <div>
-                      <a href="#" style="text-decoration: none; color: purple;">
-                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
-                      </a>
-                    </div>
-
-                    <div>
-                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
-                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
-                    </div>
-                      
-                    <div>
-                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
-                    </div>
-                    </div>
-                </div>
-              </div>
-
               <div class="col-sm-3 col-md-2">
                 <div class="card mb-5" style="width: 18rem; height: 28rem; ">
                   <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
@@ -223,7 +202,29 @@ require_once "../navbar/navbarCliente.php";
                     </div>
                     </div>
                 </div>
-              </div>-->
+              </div>
+
+              <div class="col-sm-3 col-md-2">
+                <div class="card mb-5" style="width: 18rem; height: 28rem; ">
+                  <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" style="text-decoration: none; color: purple;">
+                        <h3 class="card-title" id="card-body.h3">Google Pixel</h3>
+                      </a>
+                    </div>
+
+                    <div>
+                      <strike style="color: gray; font-size: 1.2rem; margin-bottom: 0;">R$350.00</strike>
+                      <p><span style="color: purple; font-size: 1.5rem; margin-top: 0;">R$330.00</span></p>
+                    </div>
+                      
+                    <div>
+                      <a href="#" class="btn btn-dark">Adicionar ao Carrinho</a>
+                    </div>
+                    </div>
+                </div>
+              </div>
             </div>
     </div>
   </div>

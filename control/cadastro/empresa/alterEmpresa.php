@@ -20,7 +20,7 @@
                 
          // ALTERAR
          require_once '../../../model/empresaDAO.php';
-         $id = alterarEmpresa (2, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
+         $id = alterarEmpresa (10, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

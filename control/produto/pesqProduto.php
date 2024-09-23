@@ -31,7 +31,7 @@
                 $precoSemDesconto = ($preco + 200);
                 $imagem = $row["imagemProduto"];
                 $imageBase64 = base64_encode($imagem);      // Converter a imagem em binário para Base64
-                $descriao = $row["descricaoProduto"];
+                $descricao = $row["descricaoProduto"];
                 $subcategoria = $row["Subcategoria_idSubcategoria"];
                 $condicao = $row["condicaoProduto"];
                 $estoque = $row["qtdEstoque"];
