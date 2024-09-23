@@ -69,13 +69,12 @@ function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $raza
     $conexao = conectarBD();   
     
     // Converter data. Se necessário
-    
+    if ($arquivo) {
+        $tamanhoImg = $arquivo["size"]; 
+        $arqAberto = fopen($arquivo["tmp_name"], "r");
+        $arquivo = addslashes(fread($arqAberto, $tamanhoImg));
 
-    // Transformar a imagem
-    $tamanhoImg = $arquivo["size"]; 
-    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
-    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
-
+ 
     // Montar SQL
     $sql = "UPDATE Vendedor SET "
     . "nomeVendedor = '$nome', "
@@ -89,11 +88,23 @@ function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $raza
     . "inscricaoEstadual = '$inscricaoEstadual'"
     . "WHERE idVendedor = $id";
 
-    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
-    
-    return $id;
+  
+}else{
+    $sql = "UPDATE Vendedor SET "
+    . "nomeVendedor = '$nome', "
+    . "descricaoVendedor = '$descricao', "
+    . "emailVendedor = '$email', "
+    . "telefoneVendedor = '$telefone', "
+    . "celularVendedor = '$celular', "
+    . "razaoSocial = '$razao', "
+    . "data_nascimentoVendedor = '$dataAbertura', "
+    . "inscricaoEstadual = '$inscricaoEstadual'"
+    . "WHERE idVendedor = $id";
 }
-
+mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    
+return $id;
+}
 function excluirEmpresa () {
 
 }

@@ -32,37 +32,40 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     return $msgErro;
 
 }
-function validarCampos2($nome, $email, $telefone, $arquivo) {
+function validarCampos2($nome, $email, $telefone, $arquivo = null) {
     $msgErro = "";
-    if ( empty($nome) ) {
-        $msgErro = $msgErro . "Informe o nome.<br>";        
+    
+    // Valida o nome
+    if (empty($nome)) {
+        $msgErro .= "Informe o nome.<br>";
     }        
 
+    // Valida o email
     if (validarEmail($email) == false) {
-        $msgErro = $msgErro . "Email inválido.<br>";
+        $msgErro .= "Email inválido.<br>";
     }
+
+    // Verifica se um arquivo foi enviado para validar a imagem
+    if ($arquivo && $arquivo["error"] != 0) {
+        $msgErro .= "ERRO no upload do arquivo!<br>";
+    }
+
+    // Validação do telefone (se aplicável)
+    /*
+    if (validarNumero($telefone) == false) {
+        $msgErro .= "Telefone inválido.<br>";
+    }
+    */
     if ( $arquivo["size"] > 500000   ) {
         $msgErro = $msgErro . "Arquivo muito grande!";
 } 
-if ( $arquivo["error"] != 0 ) {
-    $msgErro = $msgErro . "ERRO no upload do arquivo!";
-}
-
-
-if ( ( $arquivo["type"] != "image/gif" ) &&
-    ( $arquivo["type"] != "image/jpeg" ) &&
-    ( $arquivo["type"] != "image/pjpeg" ) &&
-    ( $arquivo["type"] != "image/png" ) &&
-    ( $arquivo["type"] != "image/x-png" ) &&
-    ( $arquivo["type"] != "image/bmp" )  ) {
-
-   $msgErro = $msgErro . "Tipo não permitido!";
-}
-
+    if ( $arquivo["error"] != 0 ) {
+        $msgErro = $msgErro . "ERRO no upload do arquivo!";
+    }
  
 
-    return $msgErro;
 
+    return $msgErro;
 }
 function verificarMaioridade($dataNascimento) {
     // Converte a data de nascimento para o formato DateTime

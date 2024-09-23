@@ -7,29 +7,21 @@
      $telefoneVendedor = $_POST["telefoneVendedor"];
      $dtNascVendedor = $_POST["dtNascVendedor"];
      $descricao = $_POST["descricaoVendA"];
-     $arquivo = $_FILES["arquivoVend"];
+     $arquivo = isset($_FILES["arquivoVend"]) && $_FILES["arquivoVend"]["error"] == 0 ? $_FILES["arquivoVend"] : null;
 
- 
      // PASSO 2 - Validação dos dados
      $msgErro = validarCampos2($nomeVendedorAu, $emailVendedor, $dtNascVendedor, $telefoneVendedor, $arquivo);
-     if ( empty($msgErro) ) {
+     if (empty($msgErro)) {
          // PASSO 3 - Inserir/Alterar dados no banco
-                
-         // ALTERAR
          require_once '../../../model/vendedorDAO.php';
-         $id = alterarVendedor (1,$nomeVendedorAu, $emailVendedor,$telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
+         
+         // Passa null como arquivo se não for enviado
+         $id = alterarVendedor(1, $nomeVendedorAu, $emailVendedor, $telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
-         //header("Location:../../../view/cadastro/concluido.php");
-        header("Location:../../../view/perfis/vendedor.php?msg=Vendedor alterado com sucesso.");
- 
- 
+         header("Location:../../../view/perfis/vendedor.php?msg=Vendedor alterado com sucesso.");
  
      } else {
-         // echo $msgErro;
-         //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
          header("Location:../../../view/perfis/vendedor.php?msg=$msgErro");
-        
      }
-
 ?>

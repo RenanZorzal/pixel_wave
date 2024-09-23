@@ -64,33 +64,42 @@ function pesquisarVendedorPorEmail ($pesq) {
 
 
 
-function alterarVendedor ($id, $nome, $email, $telefone, $dtNasc, 
-                         $arquivo, $descricao) {
 
+
+function alterarVendedor($id, $nome, $email, $telefone, $dtNasc, $arquivo, $descricao) {
     $conexao = conectarBD();   
     
-    // Converter data. Se necessário
-    
+    // Parte condicional para tratar a imagem
+    if ($arquivo) {
+        $tamanhoImg = $arquivo["size"]; 
+        $arqAberto = fopen($arquivo["tmp_name"], "r");
+        $arquivo = addslashes(fread($arqAberto, $tamanhoImg));
+        
+        // Se o arquivo for enviado, atualiza o campo da imagem
+        $sql = "UPDATE Vendedor SET "
+        . "nomeVendedor = '$nome', "
+        . "descricaoVendedor = '$descricao', "
+        . "emailVendedor = '$email', "
+        . "telefoneVendedor = '$telefone', "
+        . "imgVendedor = '$arquivo', "
+        . "data_nascimentoVendedor = '$dtNasc' "
+        . "WHERE idVendedor = $id";
+    } else {
+        // Se o arquivo não for enviado, não atualiza o campo da imagem
+        $sql = "UPDATE Vendedor SET "
+        . "nomeVendedor = '$nome', "
+        . "descricaoVendedor = '$descricao', "
+        . "emailVendedor = '$email', "
+        . "telefoneVendedor = '$telefone', "
+        . "data_nascimentoVendedor = '$dtNasc' "
+        . "WHERE idVendedor = $id";
+    }
 
-    // Transformar a imagem
-    $tamanhoImg = $arquivo["size"]; 
-    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
-    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
-
-    // Montar SQL
-    $sql = "UPDATE Vendedor SET "
-    . "nomeVendedor = '$nome', "
-    . "descricaoVendedor = '$descricao', "
-    . "emailVendedor = '$email', "
-    . "telefoneVendedor = '$telefone', "
-    . "imgVendedor = '$arquivo', "
-    . "data_nascimentoVendedor = '$dtNasc'"
-    . "WHERE idVendedor = $id";
-
-    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
-    
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao));     
     return $id;
 }
+
+
 function alterarSenha($id, $senha1){
     $conexao = conectarBD();
 

@@ -60,61 +60,50 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
 function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $arquivo) {
     $msgErro = "";
 
-    // Validação if is empty
-
-    if ( empty($nome) || validarNome($nome) == false) {
-        $msgErro = $msgErro . "Informe o seu nome corretamente.<br>";        
-    }        
-    
-   
-    if ( empty($email) || validarEmail($email) == false) {
-        $msgErro = $msgErro . "Informe seu e-mail no formato correto.<br>";
-    } 
-
- 
-    if ( empty($data_abertura)) {
-        $msgErro = $msgErro . "Informe sua data de abertura.<br>";
+    // Validação de campos vazios e formatos
+    if (empty($nome) || !validarNome($nome)) {
+        $msgErro .= "Informe o seu nome corretamente.<br>";
     }
 
-    if ( empty($telefone) || validarNumero($telefone) == false) {
-        $msgErro = $msgErro . "Informe seu telefone corretamente.<br>";
+    if (empty($email) || !validarEmail($email)) {
+        $msgErro .= "Informe seu e-mail no formato correto.<br>";
     }
 
-    if ( empty($celular) || validarNumero($celular) == false) {
-        $msgErro = $msgErro . "Informe seu celular corretamente.<br>";
+    if (empty($data_abertura)) {
+        $msgErro .= "Informe sua data de abertura.<br>";
     }
 
-    if ( empty($razaoSocial) ) {
-        $msgErro = $msgErro . "Informe sua Razão Social. <br>";
+    if (empty($telefone) || !validarNumero($telefone)) {
+        $msgErro .= "Informe seu telefone corretamente.<br>";
     }
 
-    if ( empty($inscricaoEstadual) ) {
-        $msgErro = $msgErro . "Informe sua Inscrição Estadual. <br>";
+    if (empty($celular) || !validarNumero($celular)) {
+        $msgErro .= "Informe seu celular corretamente.<br>";
     }
-    if ( $arquivo["size"] > 500000   ) {
-        $msgErro = $msgErro . "Arquivo muito grande!";
-} 
-if ( $arquivo["error"] != 0 ) {
-    $msgErro = $msgErro . "ERRO no upload do arquivo!";
+
+    if (empty($razaoSocial)) {
+        $msgErro .= "Informe sua Razão Social.<br>";
+    }
+
+    if (empty($inscricaoEstadual)) {
+        $msgErro .= "Informe sua Inscrição Estadual.<br>";
+    }
+
+    // Validação de arquivo (se foi enviado)
+    if (!empty($arquivo) && $arquivo["error"] == 0) {
+        if ($arquivo["size"] > 500000) {
+            $msgErro .= "Arquivo muito grande! O tamanho máximo permitido é 500KB.<br>";
+        }
+    } else if ($arquivo["error"] != 0) {
+        $msgErro .= "Erro no upload do arquivo!<br>";
+    }
+
+    return $msgErro; // Retorna todas as mensagens de erro
 }
 
-
-if ( ( $arquivo["type"] != "image/gif" ) &&
-    ( $arquivo["type"] != "image/jpeg" ) &&
-    ( $arquivo["type"] != "image/pjpeg" ) &&
-    ( $arquivo["type"] != "image/png" ) &&
-    ( $arquivo["type"] != "image/x-png" ) &&
-    ( $arquivo["type"] != "image/bmp" )  ) {
-
-   $msgErro = $msgErro . "Tipo não permitido!";
-}
-
-    return $msgErro; //retorna todos os erros
-
-}
 
 function validarNome($nome){
-    if(strlen($nome) < 8){
+    if(strlen($nome) < 2){
         return false;
         
     } else {
