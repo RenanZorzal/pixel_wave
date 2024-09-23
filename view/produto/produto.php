@@ -36,11 +36,11 @@ require_once "../navbar/navbarVendEmp.php";
       <div class="col-md-8">
         <label class="form-label"><b>Condição</b></label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="condicao" id="novo" value="novo" required>
+          <input class="form-check-input" type="radio" name="condicao" id="novo" value="nova" required>
           <label class="form-check-label" for="novo">Novo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="condicao" id="usado" value="usado">
+          <input class="form-check-input" type="radio" name="condicao" id="usado" value="usada">
           <label class="form-check-label" for="usado">Usado</label>
         </div>
       </div>

@@ -57,43 +57,33 @@ function pesquisarProdutoPorID ($pesq) {
     return pesquisar($pesq,3);
 }
 
-function atualizarProduto ($tipo, $id, $nomeAlterado, $statusAlterado, $anoAlterado, $precoAlterado, $imagemAlterada, $descricaoAlterada, $subcategoriaAlterada, $condicaoAlterada, $qtdEstoqueAlterada) {
+function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdEstoque) {
     
-    $conexao = conectarBD(); 
+    $conexao = conectarBD();   
     
-    $sql = "UPDATE Produto SET  ";
-    switch ($tipo) {
-        case 1: // Alterar nome
-                $sql = $sql . " nomeProduto = '$nomeAlterado' WHERE idProduto = $id";
-                break;
-        case 2: // Alterar status
-                $sql = $sql . " statusProduto = '$statusAlterado' WHERE idProduto = $id";
-                break;
-        case 3: // Alterar ano
-                $sql = $sql . " anoProduto = $anoAlterado WHERE idProduto = $id";
-                break;
-        case 4: // Alterar preço
-                $sql = $sql . " precoProduto = $precoAlterado WHERE idProduto = $id";
-                break;
-        case 5: // Alterar imagem
-            $sql = $sql . " imagemProduto = $imagemAlterada WHERE idProduto = $id";
-            break;
-        case 6: // Alterar descrição
-                $sql = $sql ." descricaoProduto = '$descricaoAlterada' WHERE idProduto = $id";
-                break;
-        case 7: // Alterar subcategoria
-               $sql = $sql ." Subcategoria_idSubcategoria = $subcategoriaAlterada WHERE idProduto = $id";
-               break;
-        case 8: // Alterar condição
-               $sql = $sql ." condicao = '$condicaoAlterada' WHERE idProduto = $id";
-               break;
-        case 9: // Alterar qtdEstoque
-               $sql = $sql ." qtdEstoque = $qtdEstoqueAlterada WHERE idProduto = $id";                
-    }
+    // Converter data. Se necessário
+    
 
-    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
-    return $res;
+    // Transformar a imagem
+    $tamanhoImg = $arquivo["size"]; 
+    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
+    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+
+    // Montar SQL
+    $sql = "UPDATE Produto SET "
+    . "nomeProduto = '$nome', "
+    . "statusProduto = '$status', "
+    . "anoProduto = '$ano', "
+    . "precoProduto = '$preco', "
+    . "descricaoProduto = '$descricao', "
+    . "Subcategoria_idSubcategoria = '$subcategoria', "
+    . "condicaoProduto = '$condicao', "
+    . "qtdEstoque = '$qtdEstoque' "
+    . "WHERE idProduto = $id";
+
+    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
+    return $id;
 }
 function excluirProduto() {
 

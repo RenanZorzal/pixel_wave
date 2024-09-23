@@ -12,7 +12,11 @@
     $status = $_POST["status"];
     $arquivo = $_FILES["arquivo"];
     $estoque = $_POST["quantidade"];
-
+    
+    
+    
+    
+ 
     // PASSO 2 - Validação dos dados
     $msgErro = validarCampos($anoLancamento,$descricao, $preco, $arquivo,$estoque, $status, $subcategoria);
     if ( empty($msgErro) ) {
@@ -20,21 +24,19 @@
                
         // INSERIR
         require_once '../../model/produtoDAO.php';
-        $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
+        $id = alterarProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../../view/produto/produto.php?msg=Produto inserido com sucesso.");
+        header("Location:../../view/produto/alterarproduto.php?msg=Produto alterado com sucesso.");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
         // echo $msgErro;
-        header("Location:../../view/produto/produto.php?msg=$msgErro");
+        header("Location:../../view/produto/alterarproduto.php?msg=$msgErro");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }
-
+  
     
-
-
 
 ?>

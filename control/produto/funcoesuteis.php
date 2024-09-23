@@ -1,5 +1,5 @@
 <?php
-function validarCampos($ano, $descricao, $preco, $arquivo) {
+function validarCampos($ano, $descricao, $preco, $arquivo, $estoque,$status, $subcategoria) {
     $msgErro = "";
     if ( $ano < 1900 || $ano > 2025 || $ano = "") {
         $msgErro = $msgErro . "Informe um ano de lançamento válido.<br>";        
@@ -25,6 +25,13 @@ function validarCampos($ano, $descricao, $preco, $arquivo) {
         ( $arquivo["type"] != "image/bmp" )  ) {
 
        $msgErro = $msgErro . "Tipo não permitido!";
+    }
+    if($status == "Sem estoque" && $estoque != 0){
+        $msgErro = "Erro estoque invalido!";
+    }
+    if(empty($subcategoria)){
+        $msgErro = "Erro escolha uma subcategoria!";
+        
     }
     
     return $msgErro;

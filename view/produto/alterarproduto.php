@@ -35,7 +35,7 @@ $estoque = $registro["qtdEstoque"];
 <!--Página-->
 <div class="container mt-5">
   <h1>ALTERAR PRODUTO</h1>
-  <form method="post" name="formProduto" action="../../control/produto/cadProduto.php" enctype="multipart/form-data">
+  <form method="post" name="formProduto" action="../../control/produto/alterProduto.php" enctype="multipart/form-data">
     <div class="row mb-3">
       <div class="col-md-8">
         <label for="nome" class="form-label"><b>Nome</b></label>
@@ -46,11 +46,11 @@ $estoque = $registro["qtdEstoque"];
       <div class="col-md-8">
         <label class="form-label"><b>Condição</b></label><br>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="condicao" id="novo" value="novo" <?php if ($condicao == 'nova') echo 'checked'; ?> required>
+          <input class="form-check-input" type="radio" name="condicao" id="novo" value="nova" <?php if ($condicao == 'nova') echo 'checked'; ?> required>
           <label class="form-check-label" for="novo">Novo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="condicao" id="usado" value="usado" <?php if ($condicao == 'seminova') echo 'checked'; ?>>
+          <input class="form-check-input" type="radio" name="condicao" id="usado" value="seminova" <?php if ($condicao == 'seminova') echo 'checked'; ?>>
           <label class="form-check-label" for="usado">Usado</label>
         </div>
       </div>
@@ -125,9 +125,9 @@ $estoque = $registro["qtdEstoque"];
           <label class="form-check-label" for="ind">Disponível</label>
         </div>
         
-        <div id="quantidade-campo" class="mt-3 <?php echo ($status == 'Sem estoque') ? 'hidden' : ''; ?>">
+        <div id="quantidade-campo" class="mt-3">
           <label for="quantidade" class="form-label"><b>Quantidade</b></label>
-          <input type="number" id="quantidade" class="form-control" name="quantidade" placeholder="Digite a quantidade" value="<?php echo $estoque; ?>">
+          <input type="number" id="quantidade" class="form-control" name="quantidade" placeholder="Digite a quantidade">
         </div>
       </div>
     </div>
