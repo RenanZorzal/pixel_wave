@@ -31,7 +31,7 @@
      } else {
          // echo $msgErro;
          //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
-         header("Location:../../../view/perfis/empresa.php?msgErro=$msgErro");
+         header("Location:../../../view/perfis/empresa.php?msg=$msgErro");
         
      }
 
