@@ -47,7 +47,7 @@ INSERT INTO Vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVe
 ('LTDA Vendas Peças', NULL, 'empresavendaspecas@gmail.com', '11111111121', '22222222223', 'Pessoa jurídica', '111.111.222-24', NULL, NULL, '123456789', '2020-01-21', '3434343434'),
 ('Maria', NULL, 'maria.vendedora@gmail.com', '11111111112', '22222222221', 'Pessoa física', '111.111.222-21', NULL, NULL, '123456789', '2000-01-07','1212161212'),
 ('Empresa Informática', NULL, 'empresainformatica@gmail.com', '11111111123', '22122222223', 'Pessoa jurídica', '111.111.212-24', NULL, NULL, '123456789', '2020-06-21', '8434343434'),
-('Joana Marina', NULL, 'joaninhavendedora@gmail.com', '11111111212', '22222222121', 'Pessoa física', '111.111.212-21', NULL, NULL, '123456789', '2000-08-07','1212166212'),
+('Joana Marina', NULL, 'joaninha1988@gmail.com', '11111111212', '22222222121', 'Pessoa física', '111.111.212-21', NULL, NULL, '123456789', '2000-08-07','1212166212'),
 ('InforTec', NULL, 'InforTec@gmail.com', '11111111323', '22122222323', 'Pessoa jurídica', '111.111.214-24', NULL, NULL, '123456789', '2012-06-21', '8434383434'),
 ('Augusto Mario Matheus', NULL, 'Augusto_M&M_@hotmail.com', '12111111112', '21222222221', 'Pessoa física', '111.121.222-21', NULL, NULL, '123456789', '1998-01-07','1212162212'),
 ('PixelWave', NULL, 'melhorempresadomundo@gmail.com', '11111911123', '21122222223', 'Pessoa jurídica', '111.411.212-24', NULL, NULL, '123456789', '2020-02-21', '8634343434'),
