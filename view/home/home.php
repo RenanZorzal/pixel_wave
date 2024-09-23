@@ -33,15 +33,14 @@ require_once "../navbar/navbarCliente.php";
                       <i class="bi bi-list"></i> Departamentos
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
-                      <li><a class="dropdown-item" href="#">Processadores</a></li>
-                      <li><a class="dropdown-item" href="#">Placas Mãe</a></li>
-                      <li><a class="dropdown-item" href="#">Memórias RAM</a></li>
-                      <li><a class="dropdown-item" href="#">Placas de Vídeo</a></li>
-                      <li><a class="dropdown-item" href="#">Armazenamento</a></li>
-                      <li><a class="dropdown-item" href="#">Fontes</a></li>
-                      <li><a class="dropdown-item" href="#">Gabinetes</a></li>
-                      <li><a class="dropdown-item" href="#">Coolers</a></li>
-                      <li><a class="dropdown-item" href="#">Periféricos</a></li>
+                      <select class="form-control" id="categoria" name="categoria" onchange="carregarSubcategorias(this.value)">
+                        <option>Categoria</option>
+                        <?php
+                          require "../../model/categoriaDAO.php";
+                          $options = carregarComboCategoria($categoria);              
+                          echo '<li><a class="dropdown-item" href="#">'. $options .'</a></li>';
+                        ?>
+                      </select>
                   </ul>
               </li>
               <!-- Outros links de categorias -->
@@ -116,7 +115,7 @@ require_once "../navbar/navbarCliente.php";
       
             <div class="row div-resultado" id = "resultado-pecas">
 
-              <div class="col-sm-3 col-md-2">
+              <!--<div class="col-sm-3 col-md-2">
                 <div class="card mb-5" style="width: 18rem; height: 28rem; ">
                   <img src="https://zh.rbsdirect.com.br/imagesrc/21718277.jpg?w=700" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -224,7 +223,7 @@ require_once "../navbar/navbarCliente.php";
                     </div>
                     </div>
                 </div>
-              </div>
+              </div>-->
             </div>
     </div>
   </div>
