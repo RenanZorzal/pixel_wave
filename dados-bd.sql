@@ -29,10 +29,10 @@ INSERT INTO Subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Memória notebook', 3),
 ('CPU notebook', 3),
 ('Gabinete notebook', 3),
-('Armazenamento', 3),
+('Armazenamento notebook', 3),
 ('Periféricos notebook', 3),
 ('Acessórios notebook', 3),
-('Bateria', 3);
+('Bateria notebook', 3);
 
 INSERT INTO StatusCompra(StatusCompra) VALUES 
 ('Andamento'),
