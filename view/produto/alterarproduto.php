@@ -20,11 +20,22 @@
 
 <?php
 require_once "../navbar/navbarVendEmp.php";
+require_once '../../model/produtoDAO.php';
+$resultado = pesquisarProdutoPorID(1);
+$registro = mysqli_fetch_assoc($resultado);
+$nome = $registro["nomeProduto"];
+$status = $registro["statusProduto"];
+$ano = $registro["anoProduto"];
+$preco = $registro["precoProduto"];
+$descricaoProduto = $registro["descricaoProduto"];
+$condicao = $registro["condicaoProduto"];
+$estoque = $registro 
+
 ?>
 
 <!--Página-->
 <div class="container mt-5">
-  <h1>ANUNCIAR PRODUTO</h1>
+  <h1>ALTERAR PRODUTO</h1>
   <form method="post" name="formProduto" action="../../control/produto/cadProduto.php" enctype="multipart/form-data">
     <div class="row mb-3">
       <div class="col-md-8">
@@ -116,7 +127,7 @@ require_once "../navbar/navbarVendEmp.php";
         </div>
         
         <!-- Campo para inserir a quantidade -->
-        <div id="quantidade-campo" class="hidden mt-3">
+        <div id="quantidade-campo" class="mt-3">
           <label for="quantidade" class="form-label"><b>Quantidade</b></label>
           <input type="number" id="quantidade" class="form-control" name="quantidade" placeholder="Digite a quantidade">
         </div>
@@ -146,23 +157,7 @@ require_once "../navbar/navbarVendEmp.php";
   ?> 
 </div>
 
-<!-- JavaScript para exibir/ocultar o campo de quantidade -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const quantidadeCampo = document.getElementById('quantidade-campo');
-    const radios = document.querySelectorAll('input[name="status"]');
 
-    radios.forEach(radio => {
-      radio.addEventListener('change', function() {
-        if (document.getElementById('ind').checked) {
-          quantidadeCampo.classList.remove('hidden');
-        } else {
-          quantidadeCampo.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
