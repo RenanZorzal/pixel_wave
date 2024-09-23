@@ -44,7 +44,12 @@ INSERT INTO StatusCompra(StatusCompra) VALUES
 ;
 INSERT INTO Vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVendedor, celularVendedor, tipoVendedor, CNPJ_CPF, imgVendedor, razaoSocial, senhaVendedor, data_nascimentoVendedor, inscricaoEstadual) VALUES
 ('Jão', NULL, 'jaobonito123456@gmail.com', '11111111111', '22222222222', 'Pessoa física', '111.111.222-23', NULL, NULL, '123456789', '2000-01-01','1212121212'),
-('LTDA Vendas Peças', NULL, 'empresavendaspecas@gmail.com', '11111111121', '22222222223', 'Pessoa jurídica', '111.111.222-24', NULL, NULL, '123456789', '2020-01-21', '3434343434');
+('LTDA Vendas Peças', NULL, 'empresavendaspecas@gmail.com', '11111111121', '22222222223', 'Pessoa jurídica', '111.111.222-24', NULL, NULL, '123456789', '2020-01-21', '3434343434'),
+('Maria', NULL, 'maria.vendedora@gmail.com', '11111111112', '22222222221', 'Pessoa física', '111.111.222-21', NULL, NULL, '123456789', '2000-01-07','1212161212'),
+('Empresa informatica', NULL, 'empresainformatica@gmail.com', '11111111123', '22122222223', 'Pessoa jurídica', '111.111.212-24', NULL, NULL, '123456789', '2020-06-21', '8434343434'),
+('Joana marina', NULL, 'joaninhavendedora@gmail.com', '11111111212', '22222222121', 'Pessoa física', '111.111.212-21', NULL, NULL, '123456789', '2000-08-07','1212166212'),
+('InforTec', NULL, 'InforTec@gmail.com', '11111111323', '22122222323', 'Pessoa jurídica', '111.111.214-24', NULL, NULL, '123456789', '2012-06-21', '8434383434');
+;
 
 INSERT INTO Comprador (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, imgComprador, senhaComprador) VALUES 
 ('Jãozin', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789');
