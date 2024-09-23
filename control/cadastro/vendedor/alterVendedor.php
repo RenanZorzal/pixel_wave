@@ -16,7 +16,7 @@
                 
          // ALTERAR
          require_once '../../../model/vendedorDAO.php';
-         $id = alterarVendedor (1,$nomeVendedorAu, $emailVendedor,$telefoneVendedor, $dtNascVendedor, $arquivo);
+         $id = alterarVendedor (3, $nomeVendedorAu, $emailVendedor,$telefoneVendedor, $dtNascVendedor, $arquivo);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

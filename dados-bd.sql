@@ -2,9 +2,9 @@
 USE TCC24IFES;
 
 INSERT INTO Categoria(nomeCategoria) VALUES
-('dispositivos_móveis'),
-('desktop'),
-('notebook');
+('Dispositivos_móveis'),
+('Desktop'),
+('Notebook');
 
 INSERT INTO Subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
 ('Placa de rede dispositivos móveis', 1),

@@ -9,9 +9,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="homeStyle.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
-  <link rel="stylesheet" href="../footer/styleFooter.css">
+  <link rel="stylesheet" href="../footer/footer-style.css">
   
   
 </head>
@@ -101,7 +101,7 @@ require_once "../navbar/navbarCliente.php";
         </button>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin"></nav>
+  <nav id="dark-nav" class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin"></nav>
     
 
 <!-- Seção de Produtos -->

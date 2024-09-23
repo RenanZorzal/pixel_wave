@@ -23,8 +23,8 @@ if ( isset($_POST["pesq"])  ) {
         // Percorre todos os resultados e os adiciona ao array
         while ( $row = mysqli_fetch_assoc($resultado) ) {
             $idEmpresa = $row["idVendedor"];
-            $nome = $row["nomeVendedor"];
-            $descriao = $row["descricaoVendedor"];
+            $nomeEmpresa = $row["nomeVendedor"];
+            $descricao = $row["descricaoVendedor"];
             $email = $row["emailVendedor"];
             $telefone = $row["telefoneVendedor"];
             $celular = $row["celularVendedor"];
@@ -34,20 +34,22 @@ if ( isset($_POST["pesq"])  ) {
             $imageBase64 = base64_encode($imagem);      // Converter a imagem em binário para Base64
             $razaoSocial = $row["razaoSocial"];
             $dataNascimento = $row["data_nascimentoVendedor"];
+            $inscricaoEstadual = $row["inscricaoEstadual"];
 
-            /*$registros["produtos"][] = array(
-                    "idProduto" => $idProduto,
-                    "idVendedor" => $idVendedor,
-                    "nomeProduto" => $nome,
-                    "statusProdudo" => $status,
-                    "ano" => $anoLancamento,
-                    "preco" => $preco,
+            $registros["empresas"][] = array(
+                    "idEmpresa" => $idEmpresa,
+                    "nomeEmpresa" => $nomeEmpresa,
+                    "descriao" => $descriao,
+                    "email" => $email,
+                    "telefone" => $telefone,
+                    "celular" => $celular,
+                    "tipo" => $tipo,
+                    "cpf_cnpj" => $cpf_cnpj,
                     "imagem" => $imageBase64,
-                    "descricao" => $descricao,
-                    "subcategoria" => $subcategoria,
-                    "condicao" => $condicao,
-                    "estoque" => $estoque
-                    );*/
+                    "razaoSocial" => $razaoSocial,
+                    "dataNascimento" => $dataNascimento,
+                    "inscricaoEstadual" => $inscricaoEstadual
+                    );
 
         }
 
@@ -57,12 +59,12 @@ if ( isset($_POST["pesq"])  ) {
     } else {
         // Produto não encontrado
         header('Content-Type: application/json');
-        echo json_encode(['erro' => 'Produto não encontrado.']);
+        echo json_encode(['erro' => 'Vendedor não encontrado.']);
     }
         
    
 } else {
     header('Content-Type: application/json');
-    echo json_encode(['erro' => 'ERRO ao pesquisar produtos.']);
+    echo json_encode(['erro' => 'ERRO ao pesquisar empresas.']);
 }
 ?>

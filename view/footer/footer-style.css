@@ -1,5 +1,4 @@
 footer{
-    width: 100%;
     background-color: #59377e; /* Cor de fundo do rodapé */
     color: #e2eafc; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
@@ -9,6 +8,7 @@ footer{
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 0.8rem; /* Tamanho da fonte */
     margin-top: 2rem;
+
 }
 
 .link{

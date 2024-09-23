@@ -1,0 +1,22 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #45474B;
+    margin: 0;
+    padding: 0;
+}
+
+.image-profile {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
