@@ -49,6 +49,8 @@ body {
 .div-resultado{
   display: flex;
   justify-content: space-evenly;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
 }
 
 .card {

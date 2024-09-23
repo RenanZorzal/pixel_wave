@@ -28,7 +28,7 @@
                 $status = $row["statusProduto"];
                 $anoLancamento = $row["anoProduto"];
                 $preco = $row["precoProduto"];
-                $precoSemDesconto = ($preco + round((0.5*$preco), 2));
+                $precoSemDesconto = ($preco + 200);
                 $imagem = $row["imagemProduto"];
                 $imageBase64 = base64_encode($imagem);      // Converter a imagem em binário para Base64
                 $descriao = $row["descricaoProduto"];

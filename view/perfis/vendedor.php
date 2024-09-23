@@ -16,6 +16,7 @@
 
 <body>
 
+
     <?php
     require_once "../navbar/navbarVendEmp.php";
     require_once '../../model/vendedorDAO.php';
