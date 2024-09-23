@@ -41,10 +41,24 @@ function validarCampos2($nome, $email, $telefone, $arquivo) {
     if (validarEmail($email) == false) {
         $msgErro = $msgErro . "Email inválido.<br>";
     }
- 
-    if ( $arquivo["error"] != 0 ) {
-        $msgErro = $msgErro . "ERRO no upload do arquivo!";
-    }
+    if ( $arquivo["size"] > 500000   ) {
+        $msgErro = $msgErro . "Arquivo muito grande!";
+} 
+if ( $arquivo["error"] != 0 ) {
+    $msgErro = $msgErro . "ERRO no upload do arquivo!";
+}
+
+
+if ( ( $arquivo["type"] != "image/gif" ) &&
+    ( $arquivo["type"] != "image/jpeg" ) &&
+    ( $arquivo["type"] != "image/pjpeg" ) &&
+    ( $arquivo["type"] != "image/png" ) &&
+    ( $arquivo["type"] != "image/x-png" ) &&
+    ( $arquivo["type"] != "image/bmp" )  ) {
+
+   $msgErro = $msgErro . "Tipo não permitido!";
+}
+
  
 
     return $msgErro;

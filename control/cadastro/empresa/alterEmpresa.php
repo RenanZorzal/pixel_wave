@@ -10,16 +10,17 @@
      $razaosocial = $_POST["razaosocial"];
      $inscricao = $_POST["inscricao"];
      $arquivo = $_FILES["arquivoEmp"];
+     $descricao = $_POST["descEmpresa"];
 
  
      // PASSO 2 - Validação dos dados
-     $msgErro = validarCampos2($nomeEmpresa, $emailEmpresa, $dataAbertura, $telefoneEmp, $celularEmp, $razaosocial, $inscricao);
+     $msgErro = validarCampos2($nomeEmpresa, $emailEmpresa, $dataAbertura, $telefoneEmp, $celularEmp, $razaosocial, $inscricao, $arquivo);
      if ( empty($msgErro) ) {
          // PASSO 3 - Inserir/Alterar dados no banco
                 
          // ALTERAR
          require_once '../../../model/empresaDAO.php';
-         $id = alterarEmpresa (2, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao);
+         $id = alterarEmpresa (2, $nomeEmpresa,$emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

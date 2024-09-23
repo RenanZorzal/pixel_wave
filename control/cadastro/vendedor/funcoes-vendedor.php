@@ -77,6 +77,9 @@ function validarCampos2($nome, $email, $data_nasc, $telefone, $arquivo) {
     if ( empty($telefone) || validarNumero($telefone) == false) {
         $msgErro = $msgErro . "Informe seu telefone corretamente.<br>";
     }
+    if ( $arquivo["size"] > 500000   ) {
+        $msgErro = $msgErro . "Arquivo muito grande!";
+} 
     if ( $arquivo["error"] != 0 ) {
         $msgErro = $msgErro . "ERRO no upload do arquivo!";
     }
