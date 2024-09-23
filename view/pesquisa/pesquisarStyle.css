@@ -118,18 +118,13 @@ main{
     /* Sombra leve */
 }
 
-/* Estiliza os títulos dentro dos itens de resultado */
-.item-resultado h2 {
-    font-size: 1.7rem;
-    /* Tamanho da fonte */
-}
-
 /* Estiliza os links dentro dos itens de resultado */
-.item-resultado a {
+.item-resultado a{
     text-decoration: none;
     /* Remove o sublinhado padrão dos links */
     color: #501C74;
     /* Cor do texto dos links */
+    font-size: 1.6rem;
 }
 
 /* Estiliza os links quando são passados o mouse sobre */
@@ -186,7 +181,8 @@ main{
     width: 40rem;
 }
 
-.img-erro:hover{
-    transform: scale(1.03);
+.img-erroEmpresa {
+    width: 40rem;
 }
+
   

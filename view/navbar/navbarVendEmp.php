@@ -160,43 +160,6 @@
     </div>
   </nav> -->
 
-    <!-- Segunda Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-thin">
-      <div class="container-fluid justify-content-center">
-          <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="departmentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="bi bi-list"></i> Departamentos
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
-                      <li><a class="dropdown-item" href="#">Processadores</a></li>
-                      <li><a class="dropdown-item" href="#">Placas Mãe</a></li>
-                      <li><a class="dropdown-item" href="#">Memórias RAM</a></li>
-                      <li><a class="dropdown-item" href="#">Placas de Vídeo</a></li>
-                      <li><a class="dropdown-item" href="#">Armazenamento</a></li>
-                      <li><a class="dropdown-item" href="#">Fontes</a></li>
-                      <li><a class="dropdown-item" href="#">Gabinetes</a></li>
-                      <li><a class="dropdown-item" href="#">Coolers</a></li>
-                      <li><a class="dropdown-item" href="#">Periféricos</a></li>
-                  </ul>
-              </li>
-              <!-- Outros links de categorias -->
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Ofertas</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Lançamentos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Mais Vendidos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Atendimento</a>
-              </li>
-          </ul>
-      </div>
-  </nav>
-      </div>
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="../home/app.js"></script>

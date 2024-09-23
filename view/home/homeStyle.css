@@ -1,7 +1,7 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.6;
-  
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -45,10 +45,6 @@ body {
   width: 10rem;
   margin-bottom: 2rem;
 }
-
-.div-logo img:hover{
-  transform: scale(1.1);
-}
   
 .div-resultado{
   display: flex;
@@ -78,6 +74,10 @@ body {
   text-decoration: underline;
 }
 
+.img-card{
+  height: 20rem;
+}
+
 .carrinho-btn{
   background-color: #502779;
 }
@@ -87,7 +87,7 @@ body {
   font-size: 300%;
 }
 
-.erro-pesquisa{
+.erro-pesquisa {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -103,10 +103,17 @@ body {
 
 .img-erroProduto{
   width: 50rem;
+  margin: 7.5rem;
 }
 
 .img-erroProduto:hover{
   transform: scale(1.03);
+}
+
+.produtosEncontrados{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
 }
 
 

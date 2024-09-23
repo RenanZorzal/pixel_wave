@@ -1,3 +1,9 @@
+/*document.getElementById("btnPesquisa").addEventListener("click", function () {
+
+    document.getElementById("highlightCarousel").style.display = "none";
+    document.getElementById("dark-nav").style.display = "none";
+});*/
+
 $(document).ready(function () {
 
     //Quando clicar no botão Pesquisar
@@ -13,8 +19,11 @@ $(document).ready(function () {
                 <img class="img-erro" src="busca-vazia.png" alt="Busca Vazia">
                 </div>
             `;
-            $('#section-resultado').html(dados).show();
+            $('#resultado-pecas').html(dados).show();
             console.log("Pesquisa Vazia")
+            document.getElementById("highlightCarousel").style.display = "block";
+            document.getElementById("dark-nav").style.display = "block";
+
             return
         }
 
@@ -45,9 +54,9 @@ function pesquisar(pesq){
                 // Se NÃO tiver erros
 
                 if (data.produtos.length == 1) {
-                    mostrar += "<h4>Foi encontrado 1 produto.</h4>";
+                    mostrar += "<div class='produtosEncontrados'> <h4>Foi encontrado 1 produto.</h4> </div>";
                 } else {
-                    mostrar += "<h4>Foram encontrados " + data.produtos.length + " produtos.</h4>";
+                    mostrar += "<div class='produtosEncontrados'> <h4>Foram encontrados " + data.produtos.length + " produtos.</h4> </div>";
                 }
 
                 // Percorre todos os produtos do array "produtos", 
@@ -55,7 +64,7 @@ function pesquisar(pesq){
                 data.produtos.forEach(function (obj, i) {
                     mostrar += "<div class='col-sm-3 col-md-2'>";
                     mostrar += "<div class='card mb-5' style='width: 18rem; height: 28rem;'>";
-                    mostrar += "<img src='"+ obj.imagem +"' class='card-img-top' alt='Imagem do Produto'>";
+                    mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem +"' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
                     mostrar += "<a href='#' style='text-decoration: none; color: purple;'>";
@@ -63,8 +72,8 @@ function pesquisar(pesq){
                     mostrar += "</a>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<strike style='color: gray; font-size: 1.2rem; margin-bottom: 0;'>"+ (obj.preco + (0.3*obj.preco)) +"</strike>";
-                    mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'>"+ obj.preco +"</span></p>";
+                    mostrar += "<strike style='color: gray; font-size: 1.2rem; margin-bottom: 0;'> R$ "+ obj.precoSemDesconto +"</strike>";
+                    mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ "+ obj.preco +"</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
                     mostrar += "<a href='#' class='btn btn-dark'>Adicionar ao Carrinho</a>";
@@ -89,6 +98,9 @@ function pesquisar(pesq){
                 // Sem registros no banco
                 //mostrar += "<h4 class='margin'>" + data.erro + "</h4>";
             }
+
+            document.getElementById("highlightCarousel").style.display = "none";
+            document.getElementById("dark-nav").style.display = "none";
 
             // Colocar no DIV "resultado" acima
             $('#resultado-pecas').html(mostrar).show();

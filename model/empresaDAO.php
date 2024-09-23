@@ -27,7 +27,7 @@ function pesquisar ($pesq, $tipo) {
     $sql = "SELECT * FROM Vendedor WHERE ";
     switch ($tipo) {
         case 1: // Por nome
-                $sql = $sql . "nomeVendedor LIKE '$pesq%' ";
+                $sql = $sql . "nomeVendedor LIKE '%$pesq%' ";
                 break;
         case 2: // Por CNPJ
                 $sql = $sql . "CNPJ_CPF = '$pesq' ";
