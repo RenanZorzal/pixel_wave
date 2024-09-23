@@ -46,12 +46,12 @@ INSERT INTO Vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVe
 ('Maria', 'Venedo peças utilizadas', 'maria.vendedora@gmail.com', '11111111112', '22222222221', 'Pessoa física', '111.111.222-21', NULL, NULL, '123456789', '2000-01-07','1212161212'),
 ('Joana Marina', 'Quero vender pra ganhar dinheiro', 'joaninha1988@gmail.com', '11111111212', '22222222121', 'Pessoa física', '111.111.212-21', NULL, NULL, '123456789', '2000-08-07','1212166212'),
 ('Augusto Mario Matheus', 'Prucuro vender minhas peças usadas que estão em bom estado', 'Augusto_M&M_@hotmail.com', '12111111112', '21222222221', 'Pessoa física', '111.121.222-21', NULL, NULL, '123456789', '1998-01-07','1212162212'),
-('Marcia Célia', 'Vender :)', 'celiamarcia672@gmail.com', '11811111323', '22122522323', 'Pessoa física', '911.111.214-24', NULL, NULL, '123456789', '2014-06-30', '8454383434');
+('Marcia Célia', 'Vender :)', 'celiamarcia672@gmail.com', '11811111323', '22122522323', 'Pessoa física', '911.111.214-24', NULL, NULL, '123456789', '2014-06-30', '8454383434'),
 ('LTDA Vendas Peças', 'Loja física agora virtual', 'empresavendaspecas@gmail.com', '11111111121', '22222222223', 'Pessoa jurídica', '111.111.222-24', NULL, NULL, '123456789', '2020-01-21', '3434343434'),
 ('Empresa Informática', 'Empresa com 10 anos no ramo', 'empresainformatica@gmail.com', '11111111123', '22122222223', 'Pessoa jurídica', '111.111.212-24', NULL, NULL, '123456789', '2020-06-21', '8434343434'),
 ('InforTec', 'Vendemos as melhores peças pelo melhor preço', 'InforTec@gmail.com', '11111111323', '22122222323', 'Pessoa jurídica', '111.111.214-24', NULL, NULL, '123456789', '2012-06-21', '8434383434'),
 ('PixelWave', 'O melhor site de venda de peças de informática', 'melhorempresadomundo@gmail.com', '11111911123', '21122222223', 'Pessoa jurídica', '111.411.212-24', NULL, NULL, '123456789', '2020-02-21', '8634343434'),
-('MiraclePeças', 'Fazemos milagres por você!', 'miraclepecas34@hotmail.com', '11111711212', '22224222121', 'Pessoa jurídica', '811.111.212-21', NULL, NULL, '123456789', '2000-12-07','1292166212'),
+('MiraclePeças', 'Fazemos milagres por você!', 'miraclepecas34@hotmail.com', '11111711212', '22224222121', 'Pessoa jurídica', '811.111.212-21', NULL, NULL, '123456789', '2000-12-07','1292166212');
 
 INSERT INTO Comprador (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, imgComprador, senhaComprador) VALUES 
 ('Jão', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789'),

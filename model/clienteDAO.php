@@ -65,32 +65,38 @@ function pesquisarCompradorPorEmail ($pesq) {
 
 
 
-function alterarCliente ($id, $nome, $email, $telefone, $dtNasc, 
-                         $arquivo) {
+function alterarCliente($id, $nome, $email, $telefone, $dtNasc, $arquivo = null) {
+    $conexao = conectarBD();
 
-    $conexao = conectarBD();   
-    
-    // Converter data. Se necessário
-    
+    // Se um novo arquivo foi enviado, converte a imagem
+    if ($arquivo) {
+        $tamanhoImg = $arquivo["size"];
+        $arqAberto = fopen($arquivo["tmp_name"], "r");
+        $arquivo = addslashes(fread($arqAberto, $tamanhoImg));
 
-    // Transformar a imagem
-    $tamanhoImg = $arquivo["size"]; 
-    $arqAberto = fopen ( $arquivo["tmp_name"], "r" );
-    $arquivo = addslashes( fread ( $arqAberto , $tamanhoImg ) );
+        // Montar SQL com a imagem
+        $sql = "UPDATE Comprador SET 
+                nomeComprador = '$nome', 
+                emailComprador = '$email', 
+                telefoneComprador = '$telefone', 
+                data_nascimentoComprador = '$dtNasc', 
+                imgComprador = '$arquivo'
+                WHERE idComprador = $id";
+    } else {
+        // Montar SQL sem a imagem
+        $sql = "UPDATE Comprador SET 
+                nomeComprador = '$nome', 
+                emailComprador = '$email', 
+                telefoneComprador = '$telefone', 
+                data_nascimentoComprador = '$dtNasc'
+                WHERE idComprador = $id";
+    }
 
-    // Montar SQL
-    $sql = "UPDATE Comprador SET "
-    . "nomeComprador = '$nome', "
-    . "emailComprador = '$email', "
-    . "telefoneComprador = '$telefone', "
-    . "data_nascimentoComprador = '$dtNasc', "
-    . "imgComprador = '$arquivo' "
-    . "WHERE idComprador = $id";
-
-    mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao)); // Executa a query
     
     return $id;
 }
+
 
 function alterarSenha($id, $senha1){
     $conexao = conectarBD();
