@@ -1,4 +1,3 @@
-
 USE TCC24IFES;
 
 INSERT INTO Categoria(nomeCategoria) VALUES
@@ -61,9 +60,32 @@ INSERT INTO Comprador (nomeComprador, emailComprador, telefoneComprador, data_na
 ('Margarete Alicia', 'paracomprinhasonline@gmail.com', '2211111161', '1979-01-01', '111.222.353-44', null, '123456789');
 
 INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
+(1, 'Placa de rede dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede dispositivos móveis', 1, 'seminova', 1),
+(2, 'Placa de vídeo dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição placa de vídeo dispositivos móveis', 2, 'seminova', 1),
+(3, 'Memória dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição memória dispositivos móveis', 3, 'seminova', 1),
+(4, 'CPU dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição CPU dispositivos móveis', 4, 'seminova', 1),
 (1, 'Motorola', 'disponível', 2020, 2691.99 , null, 'Smartphone motorola', 5, 'seminova', 1),
+(5, 'Tablets dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição tablets dispositivos móveis', 6, 'seminova', 1),
+(1, 'Periféricos dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Periféricos dispositivos móveis', 7, 'seminova', 1),
+(4, 'Acessórios dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Acessórios dispositivos móveis', 8, 'seminova', 1),
+(5, 'Placa de rede desktop', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede desktop', 9, 'seminova', 1),
 (2, 'Placa de vídeo', 'disponível', 2020, 5999.99 , null, 'Placa de vídeo para computadores', 10, 'nova', 700),
-(2, 'CPU Notebook', 'disponível', 2020, 23.99 , null, 'CPU para mini notebook', 20, 'nova', 43);
+(7, 'Memória desktop', 'disponível', 2020, 23.99 , null, 'Descrição Memória desktop', 11, 'nova', 43),
+(8, 'CPU desktop', 'disponível', 2020, 5999.99 , null, 'Descrição CPU desktop', 12, 'nova', 700),
+(9, 'Gabinete desktop', 'disponível', 2020, 23.99 , null, 'Descrição Gabinete desktop', 13, 'nova', 43),
+(7, 'Armazenamento desktop', 'disponível', 2020, 5999.99 , null, 'Descrição Armazenamento desktop', 14, 'nova', 700),
+(8, 'Periféricos desktop', 'disponível', 2020, 23.99 , null, 'Descrição Periféricos desktop', 15, 'nova', 43),
+(9, 'Acessórios desktop', 'disponível', 2020, 5999.99 , null, 'Descrição Acessórios desktop', 16, 'nova', 700),
+(10, 'Fonte desktop', 'disponível', 2020, 23.99 , null, 'Descrição Fonte desktop', 17, 'nova', 43),
+(7, 'Placa de rede notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Placa de rede notebook', 18, 'nova', 700),
+(8, 'Placa de vídeo notebook', 'disponível', 2020, 23.99 , null, 'Descrição Placa de vídeo notebook', 19, 'nova', 43),
+(2, 'CPU Notebook', 'disponível', 2020, 23.99 , null, 'CPU para mini notebook', 20, 'nova', 43),
+(6, 'CPU notebook', 'disponível', 2020, 23.99 , null, 'Descrição CPU notebook', 21, 'nova', 43),
+(10, 'Gabinete notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Gabinete notebook', 22, 'nova', 700),
+(3, 'Armazenamento notebook', 'disponível', 2020, 2691.99 , null, 'Descrição Armazenamento notebook', 23, 'seminova', 1),
+(6, 'Periféricos notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Periféricos notebook', 24, 'nova', 700);
+
+
 
 #select * from nometabela; # mostrar dados da tabela
 #delete from nometabela where id = 79(condição desejada); # deleta uma linha afunilada pela condição
