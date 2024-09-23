@@ -55,7 +55,10 @@ INSERT INTO Vendedor (nomeVendedor, descricaoVendedor, emailVendedor, telefoneVe
 ('Marcia Célia', NULL, 'celiamarcia672@gmail.com', '11811111323', '22122522323', 'Pessoa física', '911.111.214-24', NULL, NULL, '123456789', '2014-06-30', '8454383434');
 
 INSERT INTO Comprador (nomeComprador, emailComprador, telefoneComprador, data_nascimentoComprador, CPF, imgComprador, senhaComprador) VALUES 
-('Jãozin', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789');
+('Jão', 'jaobonitininho123456@gmail.com', '2211111111', '2000-01-01', '111.222.333-44', null, '123456789'),
+('Joana Marina', 'joaninha1988@gmail.com', '11111111212', '1988-08-07', '111.111.212-21', NULL, '123456789'),
+('Andre Marcos', 'ursinhoandre42@gmail.com', '2218111111', '2000-05-01', '111.226.333-44', null, '123456789'),
+('Margarete Alicia', 'paracomprinhasonline@gmail.com', '2211111161', '1979-01-01', '111.222.353-44', null, '123456789');
 
 INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
 (1, 'Motorola', 'disponível', 2020, 2691.99 , null, 'Smartphone motorola', 5, 'seminova', 1),
