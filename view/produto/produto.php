@@ -111,12 +111,12 @@ require_once "../navbar/navbarVendEmp.php";
           <label class="form-check-label" for="sestoque">Sem estoque</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="status" id="ind" value="quantidade">
+          <input class="form-check-input" type="radio" name="status" id="ind" value="disponível">
           <label class="form-check-label" for="ind">Em estoque</label>
         </div>
         
         <!-- Campo para inserir a quantidade -->
-        <div id="quantidade-campo" class="hidden mt-3">
+        <div id="quantidade-campo" class="mt-3">
           <label for="quantidade" class="form-label"><b>Quantidade</b></label>
           <input type="number" id="quantidade" class="form-control" name="quantidade" placeholder="Digite a quantidade">
         </div>
@@ -146,23 +146,7 @@ require_once "../navbar/navbarVendEmp.php";
   ?> 
 </div>
 
-<!-- JavaScript para exibir/ocultar o campo de quantidade -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const quantidadeCampo = document.getElementById('quantidade-campo');
-    const radios = document.querySelectorAll('input[name="status"]');
 
-    radios.forEach(radio => {
-      radio.addEventListener('change', function() {
-        if (document.getElementById('ind').checked) {
-          quantidadeCampo.classList.remove('hidden');
-        } else {
-          quantidadeCampo.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -12,6 +12,7 @@
     $status = $_POST["status"];
     $arquivo = $_FILES["arquivo"];
     $estoque = $_POST["quantidade"];
+    
 
     // PASSO 2 - Validação dos dados
     $msgErro = validarCampos($anoLancamento,$descricao, $preco, $arquivo,$estoque, $status, $subcategoria);
