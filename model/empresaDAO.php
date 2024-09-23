@@ -64,7 +64,7 @@ function pesquisarEmpresaPorEmail($pesq) {
 
 
 
-function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $razao, $dataAbertura, $inscricaoEstadual) {
+function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $razao, $dataAbertura, $inscricaoEstadual, $descricao) {
 
     $conexao = conectarBD();   
     
@@ -79,6 +79,7 @@ function alterarEmpresa ($id, $nome,$email, $telefone, $celular, $arquivo, $raza
     // Montar SQL
     $sql = "UPDATE Vendedor SET "
     . "nomeVendedor = '$nome', "
+    . "descricaoVendedor = '$descricao', "
     . "emailVendedor = '$email', "
     . "telefoneVendedor = '$telefone', "
     . "celularVendedor = '$celular', "

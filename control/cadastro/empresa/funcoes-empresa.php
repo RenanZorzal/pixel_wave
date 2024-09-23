@@ -57,7 +57,7 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
     return $msgErro; //retorna todos os erros
 
 }
-function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual) {
+function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $arquivo) {
     $msgErro = "";
 
     // Validação if is empty
@@ -91,8 +91,23 @@ function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $raz
     if ( empty($inscricaoEstadual) ) {
         $msgErro = $msgErro . "Informe sua Inscrição Estadual. <br>";
     }
+    if ( $arquivo["size"] > 500000   ) {
+        $msgErro = $msgErro . "Arquivo muito grande!";
+} 
+if ( $arquivo["error"] != 0 ) {
+    $msgErro = $msgErro . "ERRO no upload do arquivo!";
+}
 
 
+if ( ( $arquivo["type"] != "image/gif" ) &&
+    ( $arquivo["type"] != "image/jpeg" ) &&
+    ( $arquivo["type"] != "image/pjpeg" ) &&
+    ( $arquivo["type"] != "image/png" ) &&
+    ( $arquivo["type"] != "image/x-png" ) &&
+    ( $arquivo["type"] != "image/bmp" )  ) {
+
+   $msgErro = $msgErro . "Tipo não permitido!";
+}
 
     return $msgErro; //retorna todos os erros
 

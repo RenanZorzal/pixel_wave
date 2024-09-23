@@ -65,7 +65,7 @@ function pesquisarVendedorPorEmail ($pesq) {
 
 
 function alterarVendedor ($id, $nome, $email, $telefone, $dtNasc, 
-                         $arquivo) {
+                         $arquivo, $descricao) {
 
     $conexao = conectarBD();   
     
@@ -80,6 +80,7 @@ function alterarVendedor ($id, $nome, $email, $telefone, $dtNasc,
     // Montar SQL
     $sql = "UPDATE Vendedor SET "
     . "nomeVendedor = '$nome', "
+    . "descricaoVendedor = '$descricao', "
     . "emailVendedor = '$email', "
     . "telefoneVendedor = '$telefone', "
     . "imgVendedor = '$arquivo', "

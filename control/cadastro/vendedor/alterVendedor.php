@@ -6,6 +6,7 @@
      $emailVendedor = $_POST["emailVendedor"];
      $telefoneVendedor = $_POST["telefoneVendedor"];
      $dtNascVendedor = $_POST["dtNascVendedor"];
+     $descricao = $_POST["descricaoVendA"];
      $arquivo = $_FILES["arquivoVend"];
 
  
@@ -16,7 +17,7 @@
                 
          // ALTERAR
          require_once '../../../model/vendedorDAO.php';
-         $id = alterarVendedor (1,$nomeVendedorAu, $emailVendedor,$telefoneVendedor, $dtNascVendedor, $arquivo);
+         $id = alterarVendedor (1,$nomeVendedorAu, $emailVendedor,$telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");
@@ -27,7 +28,7 @@
      } else {
          // echo $msgErro;
          //header("Location:../../../view/cadastro/error.php?msg=$msgErro");
-         header("Location:../../../view/perfis/vendedor.php?msgErro=$msgErro");
+         header("Location:../../../view/perfis/vendedor.php?msg=$msgErro");
         
      }
 

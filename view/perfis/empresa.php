@@ -80,18 +80,22 @@ echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:im
                 <input type="text" class="form-control shadow-box" id="inscricao" name="inscricao" value="<?php echo $inscricaoEstadual; ?>">
             </div>
 
-        <div class="d-flex justify-content-center">
+        
             <div class="col-md-6">
                 <label for="imagem" class="form-label">Imagem <i class="bi bi-upload"></i></label>
                 <input type="file" class="form-control shadow-box" id="imagem" name="arquivoEmp" accept="image/*" onchange="previewImage(event)">
 
             </div>
+            <div class="col-md-6">
+                <label for="descEmpresa" class="form-label">Descrição</label>
+                <input type="text" class="form-control shadow-box" id="descEmpresa" name="descEmpresa" value="<?php echo $desc; ?>">
+            </div>
         </div>
-        </div>
+    
         
         <div class="mt-4 d-flex justify-content-center">
             <button type="submit" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
-            <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Alterar senha</u></a>
+            <a href="senhavendedor.php" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Alterar senha</u></a>
             <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Meus anúncios</u></a>
  
         </div>
