@@ -7,6 +7,7 @@
     $anoLancamento = $_POST["anoLancamento"];
     $descricao = $_POST["descricao"];
     $categoria = (int) $_POST["categoria"];
+    $subcategoria = (int) $_POST["subcategoria"];
     $preco = $_POST["preco"];
     $status = $_POST["status"];
     $arquivo = $_FILES["arquivo"];
@@ -16,6 +17,11 @@
     }else{
         $estoque = $_POST["quantidade"];
     }
+    if($subcategoria == ""){
+        $msgErro = "Erro escolha uma subcategoria!";
+        header("Location:../../view/produto/produto.php?msg=$msgErro");
+    }
+    else{
     // PASSO 2 - Validação dos dados
     $msgErro = validarCampos($anoLancamento,$descricao, $preco, $arquivo);
     if ( empty($msgErro) ) {
@@ -23,7 +29,7 @@
                
         // INSERIR
         require_once '../../model/produtoDAO.php';
-        $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $categoria , $condicao, $estoque);
+        $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
         header("Location:../../view/produto/produto.php?msg=Produto inserido com sucesso.");
@@ -34,7 +40,7 @@
         header("Location:../../view/produto/produto.php?msg=$msgErro");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
-    }
+    }}
   
 
 

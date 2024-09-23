@@ -61,17 +61,40 @@ require_once "../navbar/navbarVendEmp.php";
     </div>
     
     <div class="row mb-3">
-      <div class="col-md-8">
-        <label for="categoria" class="form-label"><b>Categoria</b></label>
-        <select class="form-control" id="categoria" name="categoria">
-          <option name="categoria" value="1">Placa-mãe</option>
-          <option name="categoria" value="2">Memoria</option>
-          <option name="categoria" value="2">Processador</option>
-          <option>Placa de vídeo</option>
-          <option>Fonte</option>
-        </select>
-      </div>
-    </div>
+  <div class="col-md-8">
+    <label for="categoria" class="form-label"><b>Categoria</b></label>
+    <select class="form-control" id="categoria" name="categoria" onchange="carregarSubcategorias(this.value)">
+      <option>Selecione uma categoria</option>
+      <?php
+        require "../../model/categoriaDAO.php";
+        $options = carregarComboCategoria($categoria);              
+        echo $options;
+      ?>
+    </select>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-8">
+    <label for="subcategoria" class="form-label"><b>Sub-Categoria</b></label>
+    <select class="form-control" id="subcategoria" name="subcategoria">
+      <!-- Subcategorias serão carregadas aqui via AJAX -->
+    </select>
+  </div>
+</div>
+
+<script>
+  function carregarSubcategorias(categoriaId) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "../../control/produto/carregar_subcategorias.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById("subcategoria").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send("categoria=" + categoriaId);
+  }
+</script>
 
     <div class="row mb-3">
       <div class="col-md-8">
