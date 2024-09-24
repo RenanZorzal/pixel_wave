@@ -26,6 +26,10 @@ main{
     transform: scale(1.02);
 }
 
+.descricao{
+    width: 80%;
+}
+
 .perfil{
     display: flex;
     flex-direction: column;

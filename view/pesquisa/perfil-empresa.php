@@ -9,7 +9,7 @@
     <!-- Bootstrap Icons CSS (opcional, para ícones) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stylePerfil.css">
+    <link rel="stylesheet" href="style-perfil.css">
     <link rel="stylesheet" href="../navbar/estilo.css">
     <link rel="stylesheet" href="../footer/footer-style.css">
 
@@ -47,8 +47,10 @@ $fotoImg = base64_encode($arquivo);
                 <div class="d-flex justify-contentet-center align-items-center perfil">
                     <?php
                     echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:image/jpeg;base64,' . $fotoImg . '">';
-                    echo '<h1 style="text-align: center; color: #502779" class="ms-5"><b>'. $nome .'</b></h1>';
-                    echo '<p>'. $desc .'</p>';
+                    echo '<h1 style="text-align: center; color: #502779; margin-bottom: 1rem" class="ms-5"><b>'. $nome .'</b></h1>';
+                    echo '<div class="descricao">';
+                    echo '<p style="text-align: center">'. $desc .'</p>';
+                    echo '</div>';
                     ?>
                 </div>
             </div>

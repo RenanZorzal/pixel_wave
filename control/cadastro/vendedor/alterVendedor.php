@@ -22,6 +22,6 @@
          header("Location:../../../view/perfis/vendedor.php?msg=Vendedor alterado com sucesso.");
  
      } else {
-         header("Location:../../../view/perfis/vendedor.php?msg=$msgErro");
+         header("Location:../../../view/perfis/vendedor.php?msgErro=$msgErro");
      }
 ?>

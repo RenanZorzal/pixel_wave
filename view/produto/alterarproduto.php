@@ -7,7 +7,12 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="produto.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CSS (opcional, para ícones) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="style-produto.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <style>
     .hidden {
@@ -21,7 +26,7 @@
 require_once "../navbar/navbarVendEmp.php";
 require_once '../../model/produtoDAO.php';
 
-$resultado = pesquisarProdutoPorID(5);
+$resultado = pesquisarProdutoPorID(6);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeProduto"];
 $status = $registro["statusProduto"];
@@ -141,19 +146,102 @@ $estoque = $registro["qtdEstoque"];
 
     <div class="row mt-3">
       <div class="col-md-8">
-        <button type="submit" class="btn btn-primary w-100" style="background-color: #502779; border-color:#502779">Avançar</button>
+        <button type="submit" class="botao btn btn-primary w-100" style="background-color: #502779; border-color:#502779">Alterar</button>
       </div>
     </div>
   </form>
 
   <?php
-  // Exibir a mensagem de ERRO caso OCORRA
-  if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
-    $mensagem = $_GET["msg"];
-    echo "<br><FONT>$mensagem</FONT>";
-  }
-  ?> 
+    // Verifica se há uma mensagem de erro passada via GET
+    $mensagem = '';
+    $mensagemErro = '';
+
+    if (isset($_GET["msg"])) {
+        $mensagem = $_GET["msg"];
+
+    } else if(isset($_GET["msgErro"])){
+        $mensagemErro = $_GET["msgErro"];
+    }
+  ?>
+
+  <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: #FF6565; font-weight: bold">Feedback de Alteração</h5>
+                </div>
+                <div class="modal-body">
+                    <?php if (!empty($mensagemErro)) {  // Verifica se tem mensagem de ERRO
+                        echo "<FONT color=#FF6565>$mensagemErro</FONT>";
+                    } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="acertoModal" tabindex="-1" aria-labelledby="acertoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: purple; font-weight: bold">Feedback de Alteração</h5>
+                </div>
+                <div class="modal-body">
+                    <?php if (!empty($mensagem)) {  // Verifica se tem mensagem de ERRO
+                        echo "<FONT color=black>$mensagem</FONT>";
+                    } ?>
+                </div>
+                <div class="modal-footer">
+                    <a href="../home/home.php" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<?php
+          
+  if (!empty($mensagemErro)) {
+
+      // Exibe o modal se houver uma mensagem de erro
+      echo '<script type="text/javascript">
+                  window.onload = function() {
+                      var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                      errorModal.show();
+                  }
+              </script>';
+
+      // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
+      echo '<script type="text/javascript">
+              window.onload = function() {
+                  var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                  errorModal.show();
+                  history.replaceState(null, "", window.location.href.split("?")[0]);
+              }
+          </script>';
+  }
+
+  if (!empty($mensagem)) {
+
+      // Exibe o modal se houver uma mensagem de erro
+      echo '<script type="text/javascript">
+                  window.onload = function() {
+                      var acertoModal = new bootstrap.Modal(document.getElementById("acertoModal"));
+                      acertoModal.show();
+                  }
+              </script>';
+
+      // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
+      echo '<script type="text/javascript">
+              window.onload = function() {
+                  var acertoModal = new bootstrap.Modal(document.getElementById("acertoModal"));
+                  acertoModal.show();
+                  history.replaceState(null, "", window.location.href.split("?")[0]);
+              }
+          </script>';
+  }
+
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

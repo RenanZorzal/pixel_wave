@@ -30,6 +30,6 @@
         header("Location:../../../view/perfis/cliente.php?msg=Cliente alterado com sucesso.");
     } else {
         // Caso tenha erro, redireciona com a mensagem de erro
-        header("Location:../../../view/perfis/cliente.php?msg=$msgErro");
+        header("Location:../../../view/perfis/cliente.php?msgErro=$msgErro");
     }
 ?>

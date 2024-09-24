@@ -25,6 +25,6 @@ if (empty($msgErro)) {
     header("Location:../../../view/perfis/empresa.php?msg=Empresa alterada com sucesso.");
 } else {
     // Em caso de erro, retorna a mensagem de erro
-    header("Location:../../../view/perfis/empresa.php?msg=$msgErro");
+    header("Location:../../../view/perfis/empresa.php?msgErro=$msgErro");
 }
 ?>

@@ -87,17 +87,103 @@ echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:im
             <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Minhas compras</u></a>
         </div>
     </form>
-    <?php
-        // Mostrar a mensagem 
-        if ( isset($_GET["msg"])  ) {
-            $mensagem = $_GET["msg"];
-            echo "<p>$mensagem</p>";
-        }
+    
+</div>
+</div>
+</div>
 
-    ?>
+<?php
+    // Verifica se há uma mensagem de erro passada via GET
+    $mensagem = '';
+    $mensagemErro = '';
+
+    if (isset($_GET["msg"])) {
+        $mensagem = $_GET["msg"];
+
+    } else if(isset($_GET["msgErro"])){
+        $mensagemErro = $_GET["msgErro"];
+    }
+  ?>
+
+  <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: #FF6565; font-weight: bold">Feedback de Alteração</h5>
+                </div>
+                <div class="modal-body">
+                    <?php if (!empty($mensagemErro)) {  // Verifica se tem mensagem de ERRO
+                        echo "<FONT color=#FF6565>$mensagemErro</FONT>";
+                    } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="acertoModal" tabindex="-1" aria-labelledby="acertoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: purple; font-weight: bold">Feedback de Alteração</h5>
+                </div>
+                <div class="modal-body">
+                    <?php if (!empty($mensagem)) {  // Verifica se tem mensagem de ERRO
+                        echo "<FONT color=black>$mensagem</FONT>";
+                    } ?>
+                </div>
+                <div class="modal-footer">
+                    <a href="../home/home.php" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+
+<?php
+          
+  if (!empty($mensagemErro)) {
+
+      // Exibe o modal se houver uma mensagem de erro
+      echo '<script type="text/javascript">
+                  window.onload = function() {
+                      var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                      errorModal.show();
+                  }
+              </script>';
+
+      // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
+      echo '<script type="text/javascript">
+              window.onload = function() {
+                  var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                  errorModal.show();
+                  history.replaceState(null, "", window.location.href.split("?")[0]);
+              }
+          </script>';
+  }
+
+  if (!empty($mensagem)) {
+
+      // Exibe o modal se houver uma mensagem de erro
+      echo '<script type="text/javascript">
+                  window.onload = function() {
+                      var acertoModal = new bootstrap.Modal(document.getElementById("acertoModal"));
+                      acertoModal.show();
+                  }
+              </script>';
+
+      // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
+      echo '<script type="text/javascript">
+              window.onload = function() {
+                  var acertoModal = new bootstrap.Modal(document.getElementById("acertoModal"));
+                  acertoModal.show();
+                  history.replaceState(null, "", window.location.href.split("?")[0]);
+              }
+          </script>';
+  }
+
+?>
+
 <script>
     function previewImage(event) {
         const preview = document.getElementById('image-profile');
