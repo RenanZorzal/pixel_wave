@@ -85,7 +85,8 @@ function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao
     . "descricaoProduto = '$descricao', "
     . "Subcategoria_idSubcategoria = '$subcategoria', "
     . "condicaoProduto = '$condicao', "
-    . "qtdEstoque = '$qtdEstoque' "
+    . "qtdEstoque = '$qtdEstoque', "
+    . "imagemProduto = '$arquivo' "
     . "WHERE idProduto = $id";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
