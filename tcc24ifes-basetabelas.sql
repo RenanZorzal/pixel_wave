@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS Produto (
   anoProduto INT,
   precoProduto FLOAT,
   imagemProduto LONGBLOB ,
-  descricaoProduto VATCHAR(450) ,
+  descricaoProduto VARCHAR(450) ,
   Subcategoria_idSubcategoria INT NOT NULL,
   condicaoProduto VARCHAR(450),
   qtdEstoque INT,
