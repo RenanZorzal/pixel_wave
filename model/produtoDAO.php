@@ -38,7 +38,10 @@ function pesquisar($pesq, $tipo) {
                 $sql = $sql . " Subcategoria_idSubcategoria = '$pesq' ";
                 break;
         case 3: // Por ID
-            $sql = $sql . " idProduto = '$pesq' ";
+                $sql = $sql . " idProduto = '$pesq' ";
+                break;
+        case 4: // Por ID Vemdedor
+            $sql = $sql . " Vendedor_idVendedor = '$pesq' ";
     }
 
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
@@ -46,15 +49,19 @@ function pesquisar($pesq, $tipo) {
 }
 
 function pesquisaProdutoPorNome ($pesq) {
-    return pesquisar($pesq,1);
+    return pesquisar($pesq, 1);
 }
 
 function pesquisarProdutoPorCategoria ($pesq) {
-    return pesquisar($pesq,2);
+    return pesquisar($pesq, 2);
 }
 
 function pesquisarProdutoPorID ($pesq) {
-    return pesquisar($pesq,3);
+    return pesquisar($pesq, 3);
+}
+
+function pesquisarProdutoPorIdVendedor ($pesq) {
+    return pesquisar($pesq, 4);
 }
 
 function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdEstoque) {

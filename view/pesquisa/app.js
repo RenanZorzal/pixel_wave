@@ -54,7 +54,7 @@ function pesquisar(pesq){
                     mostrar += "<div class='text-resultado' ";
                     mostrar += "<h2 class='titulo'>";
                     mostrar += "<b>";
-                    mostrar += "<a href='perfil-empresa.php?id=" + obj.idVendedor + "'>" + obj.nomeEmpresa +"</a>";
+                    mostrar += "<a href='perfil-empresa.php?id=" + obj.idEmpresa + "'>" + obj.nomeEmpresa +"</a>";
                     mostrar += "</b>";
                     mostrar += "</h2>";
                     mostrar += "<p class='descricao - meta'>" + obj.descricao +"</p>";
@@ -90,3 +90,5 @@ function pesquisar(pesq){
         }
     });
 }
+
+

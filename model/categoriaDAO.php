@@ -35,7 +35,7 @@ function pesquisarPorCategoria() {
 }
 
 function carregarComboSubCategoria($subcategoriaSelecionada, $categoria) {
-    $sql = "SELECT * FROM subcategoria WHERE Categoria_idCategoria = '$categoria'";
+    $sql = "SELECT * FROM Subcategoria WHERE Categoria_idCategoria = '$categoria'";
     $conexao = conectarBD();    
     $resultado = mysqli_query($conexao, $sql);
 

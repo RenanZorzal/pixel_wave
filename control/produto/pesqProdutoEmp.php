@@ -1,15 +1,11 @@
 <?php
 
-//Documento para pesquisa de Produtos no Banco de Dados
-
- // Esse programa é chamado pelo JSON no front-end
-
-if ( isset($_POST["pesq"])  ) {
-    $pesq = $_POST["pesq"];
+if ( isset($_POST["id"])  ) {
+    $id = $_POST["id"];
 
     require_once '../../model/produtoDAO.php';              
     
-    $resultado = pesquisaProdutoPorNome($pesq);
+    $resultado = pesquisarProdutoPorIdVendedor($id);
     
     //Se houver alguma resposta de produtos com aquele nome
     if ( mysqli_num_rows($resultado) > 0) {
@@ -67,3 +63,4 @@ if ( isset($_POST["pesq"])  ) {
     header('Content-Type: application/json');
     echo json_encode(['erro' => 'ERRO ao pesquisar produtos.']);
 }
+
