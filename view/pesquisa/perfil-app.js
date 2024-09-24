@@ -31,11 +31,11 @@ function pesquisarPorId(id) {
                 //    onde i é o índice e obj são os dados do produto
                 data.produtos.forEach(function (obj, i) {
                     mostrar += "<div class='col-sm-3 col-md-2'>";
-                    mostrar += "<div class='card mb-5' style='width: 18rem; height: 28rem;'>";
+                    mostrar += "<div class='card mb-5' style='width: 18rem; height: 30rem;'>";
                     mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem + "' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' style='text-decoration: none; color: purple;'>";
+                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center;'>";
                     mostrar += "<h3 class='card-title' id='card-body.h3'>" + obj.nomeProduto + "</h3>";
                     mostrar += "</a>";
                     mostrar += "</div>";

@@ -9,7 +9,7 @@
     <!-- Bootstrap Icons CSS (opcional, para ícones) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="estilo-perfil.css">
+    <link rel="stylesheet" href="stylePerfil.css">
     <link rel="stylesheet" href="../navbar/estilo.css">
     <link rel="stylesheet" href="../footer/footer-style.css">
 
@@ -68,6 +68,14 @@ $fotoImg = base64_encode($arquivo);
         require_once "../footer/footer.php";
 
     ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="perfil-app.js"></script>
     

@@ -24,7 +24,7 @@
                
         // INSERIR
         require_once '../../model/produtoDAO.php';
-        $id = alterarProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
+        $id = alterarProduto (5, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
         header("Location:../../view/produto/alterarproduto.php?msg=Produto alterado com sucesso.");
