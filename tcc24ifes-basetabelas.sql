@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Vendedor (
   tipoVendedor VARCHAR(100) NOT NULL , 
   CNPJ_CPF VARCHAR(45) NOT NULL,  
   imgVendedor LONGBLOB , 
-  razaoSocial VARCHAR(100) ,  
+  razaoSocial VARCHAR(450) ,  
   senhaVendedor VARCHAR(45) NOT NULL,
   data_nascimentoVendedor DATE ,
   inscricaoEstadual varchar(45) ,
