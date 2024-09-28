@@ -21,7 +21,7 @@
 <?php
 require_once "../navbar/navbarCliente.php";
 
-if (isset($_GET["id"])) {  // Verifica se tem mensagem de ERRO
+if (isset($_GET["id"])) { 
     $idEmpresa = $_GET["id"];
 }
 
@@ -55,6 +55,13 @@ $fotoImg = base64_encode($arquivo);
                 </div>
             </div>
         </div>
+
+        <section class="section-pesquisa"> 
+            <div class="input">
+                <input type="text" placeholder="Pesquise por um produto deste vendedor" id="campoPesqEmp" name="campoPesqEmp">
+                <button type="button" id="btnPesqEmp" name="btnPesqEmp">Pesquisar</button>
+            </div>
+        </section>
 
         <div clas="class-img" style="width: 100%; display: flex; justify-content: center">
             <img src="img/catalogo-produtos.png" class="img-produtos" alt="Produtos da Empresa">
