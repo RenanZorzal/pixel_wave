@@ -34,8 +34,8 @@ function pesquisarPorCategoria() {
 
 }
 
-function pesquisarPorSubcategoria($categoria) {
-    $sql = "SELECT * FROM Subcategoria WHERE Categoria_idCategoria = '$categoria'";
+function pesquisarPorSubcategoria($idCategoria) {
+    $sql = "SELECT * FROM Subcategoria WHERE Categoria_idCategoria = '$idCategoria'";
     $conexao = conectarBD();    
     $resultado = mysqli_query($conexao, $sql);
 

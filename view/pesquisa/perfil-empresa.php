@@ -9,7 +9,7 @@
     <!-- Bootstrap Icons CSS (opcional, para ícones) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style-perfil.css">
+    <link rel="stylesheet" href="stylePerfil.css">
     <link rel="stylesheet" href="../navbar/estilo.css">
     <link rel="stylesheet" href="../footer/footer-style.css">
 
@@ -58,8 +58,8 @@ $fotoImg = base64_encode($arquivo);
 
         <section class="section-pesquisa"> 
             <div class="input">
-                <input type="text" placeholder="Pesquise por um produto deste vendedor" id="campoPesqEmp" name="campoPesqEmp">
-                <button type="button" id="btnPesqEmp" name="btnPesqEmp">Pesquisar</button>
+                <input type="text" placeholder="Pesquise por um produto deste vendedor" id="campoPesqProduto" name="campoPesqProduto">
+                <button type="button" id="btnPesqProdutoVendedor" name="btnPesqProdutoVendedor">Pesquisar</button>
             </div>
         </section>
 

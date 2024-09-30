@@ -108,17 +108,33 @@ $(document).ready(function () {
 
     //Quando uma categoria for escolhida 
 
-    $('.categoria').on({
-        mouseover: function () {
-            // Obtém o URL do link clicado
+    $('.categ').on({
+
+        click: function (event) {
+            event.preventDefault();
             var href = $(this).attr('href');
             console.log("O id da categoria é:", href);
-            
-            buscarSubcategorias(href);
+        },
+        mouseover: function () {
             $(this).next('.dropdown-subcategoria').addClass('show');
         },
         mouseout: function () {
             $(this).next('.dropdown-subcategoria').removeClass('show');
+        }
+    });
+
+    $('.subcateg').on({
+
+        click: function (event) {
+            event.preventDefault();
+            console.log("subcateg");
+
+            var href = $(this).attr('href');
+            console.log("O id da categoria é:", href);
+
+            const textLink = $(this).text();
+
+            pesquisarPorSubcategoria(href, textLink);
         }
     });
 
@@ -206,7 +222,7 @@ function pesquisar(pesq){
     });
 }
 
-function buscarSubcategorias(cat) {
+function pesquisarPorSubcategoria(cat, textLink) {
     console.log(cat)
     // Chamar o PHP do servidor com AJAX
 
@@ -218,6 +234,7 @@ function buscarSubcategorias(cat) {
         success: function (data) {
             console.log("entrou");
             // data == dados de retorno no formato JSON
+            // O JSON foi criado com dois campos "erro" e "produtos", onde "produtos" é um array de dados
 
             // Montar o HTML/DIV com os dados de retorno
             var mostrar = '';
@@ -225,25 +242,62 @@ function buscarSubcategorias(cat) {
             if (data.erro == "") {
                 // Se NÃO tiver erros
 
+                if (data.produtos.length > 0) {
+                    mostrar += "<div class='produtosEncontrados'> <h3>" + textLink +"</h3> </div>";
+                } 
+
+                // Percorre todos os produtos do array "produtos", 
                 //    onde i é o índice e obj são os dados do produto
                 data.produtos.forEach(function (obj, i) {
-                    mostrar += "<li> < a class='dropdown-item dropdown-cat categoria' href =" + obj.idSubcategoria + ">" + obj.nomeSubcategoria +"</a ></li >";
+                    mostrar += "<div class='col-sm-3 col-md-2'>";
+                    mostrar += "<div class='card mb-5' style='width: 18rem; height: 30rem'>";
+                    mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem + "' class='card-img-top img-card' alt='Imagem do Produto'>";
+                    mostrar += "<div class='card-body'>";
+                    mostrar += "<div>";
+                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center'>";
+                    mostrar += "<h3 class='card-title' id='card-body.h3'>" + obj.nomeProduto + "</h3>";
+                    mostrar += "</a>";
+                    mostrar += "</div>";
+                    mostrar += "<div>";
+                    mostrar += "<strike style='color: gray; font-size: 1.2rem; margin-bottom: 0;'> R$ " + obj.precoSemDesconto + "</strike>";
+                    mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
+                    mostrar += "</div>";
+                    mostrar += "<div>";
+                    mostrar += "<a href='#' class='btn btn-dark'>Adicionar ao Carrinho</a>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
+                    mostrar += "</div>";
                     //mostrar += "<A href='../controlador/carrinho.php?id=" + obj.idProduto + "'><IMG src='../imagens/add_cart.png' height='30' width='30'></A>";
                 });
 
 
             } else {
+                if (data.erro == 'Produto não encontrado.') {
+                    console.log("entrou no erro")
+                    mostrar += `
+                        <div class="erro-pesquisa">
+                        <img class="img-erroProduto" src="produto-nao-encontrado.png" alt="Busca Vazia">
+                        </div>
+                    `;
+                }
 
-                console.log("ERRO: ", data.erro)
                 // Sem registros no banco
                 //mostrar += "<h4 class='margin'>" + data.erro + "</h4>";
             }
 
+            document.getElementById("highlightCarousel").style.display = "none";
+            document.getElementById("dark-nav").style.display = "none";
+
             // Colocar no DIV "resultado" acima
-            $('.dropdown-subcategoria').html(mostrar).show();
+            $('#resultado-pecas').html(mostrar).show();
         },
         error: function () {
-            console.log("erro total")
+            console.log("error")
+            // ERRO ao pesquisar
+            var mostrar = "";
+            mostrar += "<h4 class='margin'>Erro ao chamar o pesquisar do servidor.</h4>";
+            $('#section-resultado').html(mostrar).show();
         }
     });
 }

@@ -1,11 +1,12 @@
 <?php
 
-if ( isset($_POST["cat"])  ) {
-    $cat = $_POST["cat"];
+if ( isset($_POST["pesq"]) && isset($_POST["id"])) {
+    $pesq = $_POST["pesq"];
+    $idVendedor = $_POST["id"];
 
     require_once '../../model/produtoDAO.php';              
     
-    $resultado = pesquisarProdutoPorCategoria($cat);
+    $resultado = pesquisarProdutoEmIdVendedor($idVendedor, $pesq);
     
     //Se houver alguma resposta de produtos com aquele nome
     if ( mysqli_num_rows($resultado) > 0) {

@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="styleHome.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/footer-style.css">
   
@@ -39,11 +39,23 @@ require_once "../navbar/navbarCliente.php";
                       while ($registro = mysqli_fetch_assoc($resultado)) {        
                         $idCategoria = $registro["idCategoria"];
                         $categoria = $registro["nomeCategoria"];    
-                        echo "<li>
-                            <a class='dropdown-item dropdown-cat categoria' href='$idCategoria'>$categoria</a>
-                            <ul class='dropdown-menu dropdown-subcategoria' aria-labelledby='navbarDropdown' style='right: 0; z-index: 1001'>
-                                
-                            </ul>
+                        echo "<li class='li-categ'>
+                          <a class='dropdown-item dropdown-cat categ' href='$idCategoria' style='color: black'>$categoria</a>
+                          <ul class='dropdown-menu dropdown-subcategoria' aria-labelledby='navbarDropdown' style='right: 0; z-index: 1001'>";
+
+                          require_once "../../model/categoriaDAO.php";
+                          $resultadoSub = pesquisarPorSubcategoria($idCategoria);
+
+                          while ($registroSub = mysqli_fetch_assoc($resultadoSub)) {
+                            $idSubcategoria = $registroSub["idSubcategoria"];
+                            $nomeSubcategoria = $registroSub["nomeSubcategoria"];
+
+                            echo "<li> 
+                              <a class='dropdown-item subcateg' href='$idSubcategoria' style='color: black'>$nomeSubcategoria</a>
+                              </li>";
+                          }
+
+                          echo "</ul>
                         </li>";
                       }
                     ?>

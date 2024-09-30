@@ -41,11 +41,6 @@ body {
   align-items: center;
 }
 
-.categoria{
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .show {
   opacity: 1;
 }
@@ -126,6 +121,47 @@ body {
   justify-content: center;
   margin-bottom: 2.5rem;
 }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  /* Transforma a lista em um flex container */
+}
+
+nav li {
+  position: relative;
+  /* Posiciona o elemento como referência para o submenu */
+}
+
+.dropdown-subcategoria {
+  display: none;
+  /* Esconde o submenu por padrão */
+  position: absolute;
+  /* Posiciona o submenu absolutamente em relação ao li */
+  top: 0;
+  /* Alinha o topo do submenu com o topo do li */
+  left: 90%;
+  width: 100%;
+  /* Posiciona o submenu à direita do li */
+  background-color: #fff;
+  /* Cor de fundo do submenu (ajuste conforme necessário) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* Adiciona uma sombra para destacar o submenu */
+  max-width: 10rem;
+}
+
+.dropdown-subcategoria li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+.li-categ:hover .dropdown-subcategoria {
+  display: block;
+  /* Mostra o submenu quando o mouse passa sobre o li */
+}
+
 
 
 

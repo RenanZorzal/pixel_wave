@@ -48,6 +48,14 @@ function pesquisar($pesq, $tipo) {
     return $res;
 }
 
+function pesquisarProdutoEmIdVendedor ($vendedor, $pesq) {
+    $conexao = conectarBD();  
+    $sql = "SELECT * from Produto WHERE Vendedor_idVendedor = $vendedor AND nomeProduto LIKE '%$pesq%'";
+
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+    return $res;
+}
+
 function pesquisaProdutoPorNome ($pesq) {
     return pesquisar($pesq, 1);
 }
@@ -62,12 +70,6 @@ function pesquisarProdutoPorID ($pesq) {
 
 function pesquisarProdutoPorIdVendedor ($pesq) {
     return pesquisar($pesq, 4);
-}
-
-function pesquisarProdutoEmIdVendedor ($vendedor, $pesq) {
-    $conexao = conectarBD();  
-    $sql = "SELECT * from Produto WHERE Vendedor_idVendedor = $vendedor AND nomeProduto LIKE '%$pesq%'";
-    return $sql;
 }
 
 function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdEstoque) {
