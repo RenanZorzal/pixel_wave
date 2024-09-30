@@ -40,7 +40,7 @@ function pesquisar($pesq, $tipo) {
         case 3: // Por ID
                 $sql = $sql . " idProduto = '$pesq' ";
                 break;
-        case 4: // Por ID Vemdedor
+        case 4: // Por ID Vendedor
             $sql = $sql . " Vendedor_idVendedor = '$pesq' ";
     }
 

@@ -26,7 +26,7 @@
 require_once "../navbar/navbarVendEmp.php";
 require_once '../../model/produtoDAO.php';
 
-$resultado = pesquisarProdutoPorID(6);
+$resultado = pesquisarProdutoPorID(28);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeProduto"];
 $status = $registro["statusProduto"];

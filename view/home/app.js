@@ -75,6 +75,9 @@ window.onload = function () {
 
 };
 
+
+//  FUNÇÕES DE PESQUISA
+
 $(document).ready(function () {
 
     //Quando clicar no botão Pesquisar
@@ -100,6 +103,23 @@ $(document).ready(function () {
 
         pesquisar(pesq);
 
+    });
+
+
+    //Quando uma categoria for escolhida 
+
+    $('.categoria').on({
+        mouseover: function () {
+            // Obtém o URL do link clicado
+            var href = $(this).attr('href');
+            console.log("O id da categoria é:", href);
+            
+            buscarSubcategorias(href);
+            $(this).next('.dropdown-subcategoria').addClass('show');
+        },
+        mouseout: function () {
+            $(this).next('.dropdown-subcategoria').removeClass('show');
+        }
     });
 
 });
@@ -182,6 +202,48 @@ function pesquisar(pesq){
             var mostrar = "";
             mostrar += "<h4 class='margin'>Erro ao chamar o pesquisar do servidor.</h4>";
             $('#section-resultado').html(mostrar).show();
+        }
+    });
+}
+
+function buscarSubcategorias(cat) {
+    console.log(cat)
+    // Chamar o PHP do servidor com AJAX
+
+    $.ajax({
+        url: '../../control/produto/subcategorias.php',
+        type: 'POST',
+        data: { cat: cat },       // Envio do texto de pesquisa
+        dataType: 'json',
+        success: function (data) {
+            console.log("entrou");
+            // data == dados de retorno no formato JSON
+
+            // Montar o HTML/DIV com os dados de retorno
+            var mostrar = '';
+
+            if (data.erro == "") {
+                // Se NÃO tiver erros
+
+                //    onde i é o índice e obj são os dados do produto
+                data.produtos.forEach(function (obj, i) {
+                    mostrar += "<li> < a class='dropdown-item dropdown-cat categoria' href =" + obj.idSubcategoria + ">" + obj.nomeSubcategoria +"</a ></li >";
+                    //mostrar += "<A href='../controlador/carrinho.php?id=" + obj.idProduto + "'><IMG src='../imagens/add_cart.png' height='30' width='30'></A>";
+                });
+
+
+            } else {
+
+                console.log("ERRO: ", data.erro)
+                // Sem registros no banco
+                //mostrar += "<h4 class='margin'>" + data.erro + "</h4>";
+            }
+
+            // Colocar no DIV "resultado" acima
+            $('.dropdown-subcategoria').html(mostrar).show();
+        },
+        error: function () {
+            console.log("erro total")
         }
     });
 }

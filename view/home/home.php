@@ -32,14 +32,19 @@ require_once "../navbar/navbarCliente.php";
                   <a class="nav-link dropdown-toggle" href="#" id="departmentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="bi bi-list"></i> Departamentos
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
+                  <ul class="dropdown-menu" aria-labelledby="departmentsDropdown" style="position: absolute; z-index: 1000">
                     <?php
                       require "../../model/categoriaDAO.php";
                       $resultado = pesquisarPorCategoria();  
                       while ($registro = mysqli_fetch_assoc($resultado)) {        
-                        $idcategoria = $registro["idCategoria"];
+                        $idCategoria = $registro["idCategoria"];
                         $categoria = $registro["nomeCategoria"];    
-                        echo "<li><a class='dropdown-item dropdown-cat' href='$idCategoria'>$categoria</a></li>";
+                        echo "<li>
+                            <a class='dropdown-item dropdown-cat categoria' href='$idCategoria'>$categoria</a>
+                            <ul class='dropdown-menu dropdown-subcategoria' aria-labelledby='navbarDropdown' style='right: 0; z-index: 1001'>
+                                
+                            </ul>
+                        </li>";
                       }
                     ?>
                   </ul>
