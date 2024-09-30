@@ -64,6 +64,12 @@ function pesquisarProdutoPorIdVendedor ($pesq) {
     return pesquisar($pesq, 4);
 }
 
+function pesquisarProdutoEmIdVendedor ($vendedor, $pesq) {
+    $conexao = conectarBD();  
+    $sql = "SELECT * from Produto WHERE Vendedor_idVendedor = $vendedor AND nomeProduto LIKE '%$pesq%'";
+    return $sql;
+}
+
 function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao, $subcategoria, $condicao, $qtdEstoque) {
     
     $conexao = conectarBD();   
