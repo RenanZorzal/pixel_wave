@@ -5,7 +5,7 @@
     padding: 0;
     color: white;
     display: flex;
-  }
+}
   
 .cima{
     width: 100%;
@@ -19,17 +19,59 @@
     width: 100%;
     height: 80%;
     /*border: 1px solid aqua;*/
-}   
+}  
+
 .esquerdo{
     /*border: 1px solid red;*/
-    width: 70%; 
+    width: 65%; 
     height: 100vh;
+    margin-top: 5rem;
 }
+
+.div-logoCad{
+    width: 62%;
+    display: flex;
+    justify-content: right;
+}
+
+.logo-cadastro{
+    width: 10rem;
+}
+
+.radios{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.div-botao{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.botao{
+    width: 3.5rem;
+    margin-left: 5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .direito{
     /*border: 1px solid green;*/
-    width: 30%; 
+    width: 35%; 
     height: 100vh;
+    display: flex;
+    justify-content: left;
 }
+
+.logo{
+    width: 85%;
+    border-radius: 1.5rem;
+    margin-top: 5rem; 
+}
+
 label{
     color: white;
     

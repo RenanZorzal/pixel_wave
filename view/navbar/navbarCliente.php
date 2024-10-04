@@ -10,7 +10,7 @@
 </head>
 <body>
     
-  <nav class="navbar navbar-expand-lg navbar-estilo">
+  <nav class="navbar navbar-expand-lg navbar-estilo" id="navbar">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
@@ -61,7 +61,7 @@
               </a>
 
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Login</a></li>
+                <li><a class="dropdown-item" href="../login/login.php">Login</a></li>
                 <div class="dropdown-divider"></div>
                 <li><a class="dropdown-item" href="../cadastro/cadastro.php">Registre-se</a></li>
               </ul>

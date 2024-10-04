@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastre-se</title>
-        <link rel="stylesheet" href="cadastro.css">
+        <link rel="stylesheet" href="styleCadastro.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap Icons CSS (opcional, para ícones) -->
@@ -18,12 +18,22 @@
             $mensagem = ''; //ceta a msg de erro como vazia ao início do arquivo
         ?>
 
+
         <div class="esquerdo">
+
+            <div class="div-botao">
+                <img src="button-voltar.png" alt="Botão de Voltar" class="botao">
+            </div>
+
             <div class="cima d-flex align-items-end" style="margin-left: 10%;">
                 <img src="header.png" alt="">
             </div>
 
-            <div style="margin-top: 2%; height: 8%" class="d-flex justify-content-center align-items-center">
+            <div class="div-logoCad">
+                <img src="logo-cadastro.png" alt="" class="logo-cadastro">
+            </div>
+
+            <div style="margin-top: 2%; height: 8%" class="radios">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="formDiv1" onchange="mostrarForm()">
                     <label class="form-check-label" for="inlineRadio1">Vendedor Autonômo</label>
@@ -249,7 +259,7 @@
         </div>
 
         <div class="direito">
-            <img src="arte.png" alt="" style="width: 100%; height: 100vh;" class=img-fluid>
+            <img src="arte.png" alt="" class="img-fluid logo">
         </div>
 
         <?php
@@ -305,6 +315,19 @@
         </div>
 
         <script>
+
+            // Adicionando um evento de clique ao botão
+            const botaoVoltar = document.querySelector('.div-botao');
+
+            botaoVoltar.addEventListener('click', function() {
+
+                // Aqui você define a ação que será executada ao clicar no botão
+                console.log('Botão clicado!');
+
+                // Exemplo de redirecionamento:
+                window.location.href = 'http://localhost/pixel_wave/view/home/home.php';
+            });
+
             function mostrarForm() {
                 // Esconder todos os formulários
                 document.getElementById("formDiv1").style.display = "none";

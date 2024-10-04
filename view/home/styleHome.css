@@ -141,13 +141,13 @@ nav li {
   top: 0;
   /* Alinha o topo do submenu com o topo do li */
   left: 90%;
-  width: 100%;
+  width: 150%;
   /* Posiciona o submenu à direita do li */
   background-color: #fff;
   /* Cor de fundo do submenu (ajuste conforme necessário) */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   /* Adiciona uma sombra para destacar o submenu */
-  max-width: 10rem;
+  max-width: 20rem;
 }
 
 .dropdown-subcategoria li {
