@@ -72,7 +72,6 @@ CREATE TABLE IF NOT EXISTS Subcategoria (
   nomeSubcategoria VARCHAR(45) , 
   Categoria_idCategoria INT NOT NULL,  
   PRIMARY KEY (idSubcategoria),  
-  UNIQUE (nomeSubcategoria),
   FOREIGN KEY (Categoria_idCategoria) REFERENCES Categoria(idCategoria)  
 );
 
