@@ -91,3 +91,31 @@ INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 #delete from nometabela where id = 79(condição desejada); # deleta uma linha afunilada pela condição
 #update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha afunilada pela condição
 #select produto.nomeProduto, subcategoria.idSubcategoria from produto join subcategoria on produto.Subcategoria_idSubcategoria = subcategoria.idSubcategoria and nomeSubcategoria = 'Celulares';
+
+
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 1;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 2;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 3;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 4;
+#update subcategoria set nomeSubcategoria = 'Celular' where idSubcategoria = 5;
+#update subcategoria set nomeSubcategoria = 'Tablets' where idSubcategoria = 6;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 7;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 8;
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 9;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 10;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 11;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 12;
+#update subcategoria set nomeSubcategoria = 'Gabinete' where idSubcategoria = 13;
+#update subcategoria set nomeSubcategoria = 'Armazenamento' where idSubcategoria = 14;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 15;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 16;
+#update subcategoria set nomeSubcategoria = 'Fonte' where idSubcategoria = 17;
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 18;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 19;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 20;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 21;
+#update subcategoria set nomeSubcategoria = 'Gabinete' where idSubcategoria = 22;
+#update subcategoria set nomeSubcategoria = 'Armazenamento' where idSubcategoria = 23;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 24;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 25;
+#update subcategoria set nomeSubcategoria = 'Bateria' where idSubcategoria = 26;
