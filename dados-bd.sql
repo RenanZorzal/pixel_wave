@@ -6,32 +6,32 @@ INSERT INTO Categoria(nomeCategoria) VALUES
 ('Notebook');
 
 INSERT INTO Subcategoria(nomeSubcategoria, Categoria_idCategoria) VALUES
-('Placa de rede dispositivos móveis', 1),
-('Placa de vídeo dispositivos móveis', 1),
-('Memória dispositivos móveis', 1),
-('CPU dispositivos móveis', 1),
-('Celulares dispositivos móveis', 1),
-('Tablets dispositivos móveis', 1),
-('Periféricos dispositivos móveis', 1),
-('Acessórios dispositivos móveis', 1),
-('Placa de rede desktop', 2),
-('Placa de vídeo desktop', 2),
-('Memória desktop', 2),
-('CPU desktop', 2),
-('Gabinete desktop', 2),
-('Armazenamento desktop', 2),
-('Periféricos desktop', 2),
-('Acessórios desktop', 2),
-('Fonte desktop', 2),
-('Placa de rede notebook', 3),
-('Placa de vídeo notebook', 3),
-('Memória notebook', 3),
-('CPU notebook', 3),
-('Gabinete notebook', 3),
-('Armazenamento notebook', 3),
-('Periféricos notebook', 3),
-('Acessórios notebook', 3),
-('Bateria notebook', 3);
+('Placa de rede', 1),
+('Placa de vídeo', 1),
+('Memória', 1),
+('CPU', 1),
+('Celulares', 1),
+('Tablets', 1),
+('Periféricos', 1),
+('Acessórios', 1),
+('Placa de rede', 2),
+('Placa de vídeo', 2),
+('Memória', 2),
+('CPU', 2),
+('Gabinete', 2),
+('Armazenamento', 2),
+('Periféricos', 2),
+('Acessórios', 2),
+('Fonte', 2),
+('Placa de rede ', 3),
+('Placa de vídeo ', 3),
+('Memória ', 3),
+('CPU ', 3),
+('Gabinete ', 3),
+('Armazenamento ', 3),
+('Periféricos ', 3),
+('Acessórios ', 3),
+('Bateria ', 3);
 
 INSERT INTO StatusCompra(StatusCompra) VALUES 
 ('Andamento'),
@@ -60,34 +60,62 @@ INSERT INTO Comprador (nomeComprador, emailComprador, telefoneComprador, data_na
 ('Margarete Alicia', 'paracomprinhasonline@gmail.com', '2211111161', '1979-01-01', '111.222.353-44', null, '123456789');
 
 INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria, condicaoProduto, qtdEstoque) VALUES
-(1, 'Placa de rede dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede dispositivos móveis', 1, 'seminova', 1),
-(2, 'Placa de vídeo dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição placa de vídeo dispositivos móveis', 2, 'seminova', 1),
-(3, 'Memória dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição memória dispositivos móveis', 3, 'seminova', 1),
-(4, 'CPU dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição CPU dispositivos móveis', 4, 'seminova', 1),
+(1, 'Placa de rede', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede', 1, 'seminova', 1),
+(2, 'Placa de vídeo', 'disponível', 2020, 2691.99 , null, 'Descrição placa de vídeo', 2, 'seminova', 1),
+(3, 'Memória', 'disponível', 2020, 2691.99 , null, 'Descrição memória', 3, 'seminova', 1),
+(4, 'CPU', 'disponível', 2020, 2691.99 , null, 'Descrição CPU', 4, 'seminova', 1),
 (1, 'Motorola', 'disponível', 2020, 2691.99 , null, 'Smartphone motorola', 5, 'seminova', 1),
-(5, 'Tablets dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição tablets dispositivos móveis', 6, 'seminova', 1),
-(1, 'Periféricos dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Periféricos dispositivos móveis', 7, 'seminova', 1),
-(4, 'Acessórios dispositivos móveis', 'disponível', 2020, 2691.99 , null, 'Descrição Acessórios dispositivos móveis', 8, 'seminova', 1),
-(5, 'Placa de rede desktop', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede desktop', 9, 'seminova', 1),
+(5, 'Tablets', 'disponível', 2020, 2691.99 , null, 'Descrição tablets', 6, 'seminova', 1),
+(1, 'Periféricos', 'disponível', 2020, 2691.99 , null, 'Descrição Periféricos', 7, 'seminova', 1),
+(4, 'Acessórios', 'disponível', 2020, 2691.99 , null, 'Descrição Acessórios', 8, 'seminova', 1),
+(5, 'Placa de rede', 'disponível', 2020, 2691.99 , null, 'Descrição Placa de rede', 9, 'seminova', 1),
 (2, 'Placa de vídeo', 'disponível', 2020, 5999.99 , null, 'Placa de vídeo para computadores', 10, 'seminova', 700),
-(7, 'Memória desktop', 'disponível', 2020, 23.99 , null, 'Descrição Memória desktop', 11, 'nova', 43),
-(8, 'CPU desktop', 'disponível', 2020, 5999.99 , null, 'Descrição CPU desktop', 12, 'nova', 700),
-(9, 'Gabinete desktop', 'disponível', 2020, 23.99 , null, 'Descrição Gabinete desktop', 13, 'nova', 43),
-(7, 'Armazenamento desktop', 'disponível', 2020, 5999.99 , null, 'Descrição Armazenamento desktop', 14, 'nova', 700),
-(8, 'Periféricos desktop', 'disponível', 2020, 23.99 , null, 'Descrição Periféricos desktop', 15, 'nova', 43),
-(9, 'Acessórios desktop', 'disponível', 2020, 5999.99 , null, 'Descrição Acessórios desktop', 16, 'nova', 700),
-(10, 'Fonte desktop', 'disponível', 2020, 23.99 , null, 'Descrição Fonte desktop', 17, 'nova', 43),
-(7, 'Placa de rede notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Placa de rede notebook', 18, 'nova', 700),
-(8, 'Placa de vídeo notebook', 'disponível', 2020, 23.99 , null, 'Descrição Placa de vídeo notebook', 19, 'nova', 43),
-(2, 'CPU Notebook', 'disponível', 2020, 23.99 , null, 'CPU para mini notebook', 20, 'seminova', 43),
-(6, 'CPU notebook', 'disponível', 2020, 23.99 , null, 'Descrição CPU notebook', 21, 'nova', 43),
-(10, 'Gabinete notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Gabinete notebook', 22, 'nova', 700),
-(3, 'Armazenamento notebook', 'disponível', 2020, 2691.99 , null, 'Descrição Armazenamento notebook', 23, 'seminova', 1),
-(6, 'Periféricos notebook', 'disponível', 2020, 5999.99 , null, 'Descrição Periféricos notebook', 24, 'nova', 700);
+(7, 'Memória', 'disponível', 2020, 23.99 , null, 'Descrição Memória', 11, 'nova', 43),
+(8, 'CPU', 'disponível', 2020, 5999.99 , null, 'Descrição CPU', 12, 'nova', 700),
+(9, 'Gabinete', 'disponível', 2020, 23.99 , null, 'Descrição Gabinete', 13, 'nova', 43),
+(7, 'Armazenamento', 'disponível', 2020, 5999.99 , null, 'Descrição Armazenamento', 14, 'nova', 700),
+(8, 'Periféricos', 'disponível', 2020, 23.99 , null, 'Descrição Periféricos', 15, 'nova', 43),
+(9, 'Acessórios', 'disponível', 2020, 5999.99 , null, 'Descrição Acessórios', 16, 'nova', 700),
+(10, 'Fonte', 'disponível', 2020, 23.99 , null, 'Descrição Fonte', 17, 'nova', 43),
+(7, 'Placa de rede ', 'disponível', 2020, 5999.99 , null, 'Descrição Placa de rede ', 18, 'nova', 700),
+(8, 'Placa de vídeo ', 'disponível', 2020, 23.99 , null, 'Descrição Placa de vídeo ', 19, 'nova', 43),
+(2, 'CPU ', 'disponível', 2020, 23.99 , null, 'CPU para mini ', 20, 'seminova', 43),
+(6, 'CPU ', 'disponível', 2020, 23.99 , null, 'Descrição CPU ', 21, 'nova', 43),
+(10, 'Gabinete ', 'disponível', 2020, 5999.99 , null, 'Descrição Gabinete ', 22, 'nova', 700),
+(3, 'Armazenamento ', 'disponível', 2020, 2691.99 , null, 'Descrição Armazenamento ', 23, 'seminova', 1),
+(6, 'Periféricos ', 'disponível', 2020, 5999.99 , null, 'Descrição Periféricos ', 24, 'nova', 700);
 
 
 
 #select * from nometabela; # mostrar dados da tabela
 #delete from nometabela where id = 79(condição desejada); # deleta uma linha afunilada pela condição
 #update nometabela set coluna = 'informação nova' where id =9233; # muda os dados de uma linha afunilada pela condição
-#select produto.nomeProduto, subcategoria.idSubcategoria from produto join subcategoria on produto.Subcategoria_idSubcategoria = subcategoria.idSubcategoria and nomeSubcategoria = 'Celulares dispositivos móveis';
+#select produto.nomeProduto, subcategoria.idSubcategoria from produto join subcategoria on produto.Subcategoria_idSubcategoria = subcategoria.idSubcategoria and nomeSubcategoria = 'Celulares';
+
+
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 1;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 2;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 3;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 4;
+#update subcategoria set nomeSubcategoria = 'Celular' where idSubcategoria = 5;
+#update subcategoria set nomeSubcategoria = 'Tablets' where idSubcategoria = 6;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 7;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 8;
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 9;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 10;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 11;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 12;
+#update subcategoria set nomeSubcategoria = 'Gabinete' where idSubcategoria = 13;
+#update subcategoria set nomeSubcategoria = 'Armazenamento' where idSubcategoria = 14;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 15;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 16;
+#update subcategoria set nomeSubcategoria = 'Fonte' where idSubcategoria = 17;
+#update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 18;
+#update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 19;
+#update subcategoria set nomeSubcategoria = 'Memória' where idSubcategoria = 20;
+#update subcategoria set nomeSubcategoria = 'CPU' where idSubcategoria = 21;
+#update subcategoria set nomeSubcategoria = 'Gabinete' where idSubcategoria = 22;
+#update subcategoria set nomeSubcategoria = 'Armazenamento' where idSubcategoria = 23;
+#update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 24;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 25;
+#update subcategoria set nomeSubcategoria = 'Bateria' where idSubcategoria = 26;
