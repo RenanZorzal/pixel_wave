@@ -15,19 +15,13 @@ botaoRegistrar.addEventListener('click', function () {
     window.location.href = 'http://localhost/pixel_wave/view/cadastro/cadastro.php';
 });
 
-$(document).ready(function () {
+const botaoVoltar = document.querySelector('.div-botao');
 
+botaoVoltar.addEventListener('click', function () {
 
-    $('.navbar-invisivel').on({
-        mouseover: () => {
-            $('#navbar').stop().slideDown(200);
-        },
-        mouseout: () => {
-            // Adiciona um timeout para ocultar a navbar após 500ms (ajuste o tempo conforme necessário)
-            setTimeout(() => {
-                $('#navbar').slideUp(200);
-            }, 5000);
-        }
-    });
+    // Aqui você define a ação que será executada ao clicar no botão
+    console.log('Botão clicado!');
 
+    // Exemplo de redirecionamento:
+    window.location.href = 'http://localhost/pixel_wave/view/home/home.php';
 });
