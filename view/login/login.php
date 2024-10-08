@@ -29,45 +29,50 @@
         <div class="nomenclaturas">
             <img src="img/logo-site.png" alt="Logo Pixel Wave" class="logo-site">
 
-            <div style="margin-top: 2%; height: 8%" class="radios">
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="formDiv1" onchange="mostrarForm()">
-                    <label class="form-check-label" for="inlineRadio1">Vendedor Autonômo</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="formDiv2" onchange="mostrarForm()" >
-                    <label class="form-check-label" for="inlineRadio2">Empresa</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="formDiv3" onchange="mostrarForm()" >
-                    <label class="form-check-label" for="inlineRadio3">Cliente</label>
-                </div>
-
-            </div>
-
             <div class="formulario-box">
-                <img src="img/login.png" alt="Login" class="login">
 
-                <div class="input-group flex-nowrap input-login">
-                    <span class="input-group-text" id="addon-wrapping">@</span>
-                    <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
-                </div>
+                <form method="post" name="formLogin" action="../../control/login/logar.php">
 
-                <div class="input-senha">
+                    <div style="margin-top: 2%; height: 8%" class="radios">
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Vendedor Autonômo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                            <label class="form-check-label" for="inlineRadio2">Empresa</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                            <label class="form-check-label" for="inlineRadio3">Cliente</label>
+                        </div>
+
+                    </div>
+
+                    <img src="img/login.png" alt="Login" class="login">
+
                     <div class="input-group flex-nowrap input-login">
-                        <span class="input-group-text" id="addon-wrapping"> • </span>
-                        <input type="password" id="inputPassword5" class="form-control" placeholder="Senha" aria-describedby="passwordHelpBlock">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" name="inputEmail" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
-                    
-                    <div id="passwordHelpBlock" class="form-text">
-                    Sua senha deve ter no mínimo 9 caracteres.
-                    </div>
-                </div>
 
-                <div class="input-login">
-                    <a class="botao" href="#">Continuar</a>
-                </div>
+                    <div class="input-senha">
+                        <div class="input-group flex-nowrap input-login">
+                            <span class="input-group-text" id="addon-wrapping"> • </span>
+                            <input type="password" id="inputPassword5" class="form-control" name="inputSenha" placeholder="Senha" aria-describedby="passwordHelpBlock">
+                        </div>
+                        
+                        <div id="passwordHelpBlock" class="form-text">
+                        Sua senha deve ter no mínimo 9 caracteres.
+                        </div>
+                    </div>
+
+                    <div class="input-login">
+                        <button type="submit" class="botao">Continuar</button>
+                    </div>
+                
+                </form>
                 
             </div>
 

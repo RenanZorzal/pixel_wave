@@ -11,7 +11,7 @@
 </head>
 <body>
     
-  <nav class="navbar navbar-expand-lg navbar-estilo" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-estilo Deslog" id="navbar">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">

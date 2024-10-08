@@ -6,8 +6,6 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
         $msgErro = $msgErro . "Informe o nome.<br>";        
     }        
 
-
-
     if (verificarCPF($cpf) == false) {
         $msgErro = $msgErro . "CPF inválida.<br>";
     }
@@ -32,6 +30,7 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     return $msgErro;
 
 }
+
 function validarCampos2($nome, $email, $telefone, $arquivo = null) {
     $msgErro = "";
     
@@ -141,7 +140,6 @@ function verificarSenha($senha1,$senha2){
     }
     return $msgErro;
 }
-
 
 
 

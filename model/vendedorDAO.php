@@ -116,5 +116,20 @@ function excluirVendedor () {
 
 }
 
+function verificarLogin($email, $senha) {
+    $sql = "SELECT * FROM Vendedor WHERE emailVendedor = '$email' and senhaVendedor = '$senha'";
+
+    $conexao = conectarBD();  
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+
+    if (  $registro = mysqli_fetch_assoc($res)  ) {
+        return $registro;        
+    } else {
+        return null;
+    }
+
+}
+
+
 
 ?>

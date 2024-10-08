@@ -18,8 +18,20 @@
 <body>
 
 <?php
-require_once "../navbar/navbarCliente.php";
-//require_once "../navbar/navbarVendEmp.php";
+
+  require_once "../../control/login/validarSessao.php";
+
+  if (  validarSessao(false, false, true) == true ) { // Validar para CLIENTE
+    require_once "../navbar/navbarCliente.php";
+
+  } elseif (validarSessao(true, true, false) == true){ // Validar para VENDEDOR e EMPRESA
+    require_once "../navbar/navbarVendEmp.php";
+
+  } else { //DESLOGADO
+    require_once "../navbar/navbarDeslogado.php";
+    
+  }
+
 ?>
 
 
