@@ -14,9 +14,10 @@
      if (empty($msgErro)) {
          // PASSO 3 - Inserir/Alterar dados no banco
          require_once '../../../model/vendedorDAO.php';
-         
+         session_start();
+         $idValor = $_SESSION["idSessao"];
          // Passa null como arquivo se não for enviado
-         $id = alterarVendedor(1, $nomeVendedorAu, $emailVendedor, $telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
+         $id = alterarVendedor($idValor, $nomeVendedorAu, $emailVendedor, $telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          header("Location:../../../view/perfis/vendedor.php?msg=Vendedor alterado com sucesso.");

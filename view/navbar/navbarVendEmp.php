@@ -62,9 +62,13 @@
               </a>
 
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Login</a></li>
+              <?php
+              $tipo = $_SESSION["tipoSessao"];
+              $perfilUrl = ($tipo == 1) ? "../perfis/vendedor.php" : "../perfis/empresa.php";
+              ?>
+                <li><a class="dropdown-item" href="<?php echo $perfilUrl; ?>">Meu Perfil</a></li>
                 <div class="dropdown-divider"></div>
-                <li><a class="dropdown-item" href="../cadastro/cadastro.php">Registre-se</a></li>
+                <li><a class="dropdown-item" href="../cadastro/cadastro.php">Sair</a></li>
               </ul>
               
 

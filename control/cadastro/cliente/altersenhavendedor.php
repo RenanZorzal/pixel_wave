@@ -5,7 +5,7 @@
      $senha1 = $_POST["senha1"];
      $senha2 = $_POST["senha2"];
 
-
+    
  
      // PASSO 2 - Validação dos dados
      $msgErro = verificarSenha($senha1, $senha2);
@@ -14,7 +14,9 @@
                 
          // ALTERAR
          require_once '../../../model/vendedorDAO.php';
-         $id = alterarSenha (1,$senha1);
+         session_start();
+         $idValor = $_SESSION["idSessao"];
+         $id = alterarSenha ($idValor,$senha1);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

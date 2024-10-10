@@ -62,9 +62,9 @@
               </a>
 
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="../login/login.php">Login</a></li>
+                <li><a class="dropdown-item" href="../perfis/cliente.php">Meu Perfil</a></li>
                 <div class="dropdown-divider"></div>
-                <li><a class="dropdown-item" href="../cadastro/cadastro.php">Registre-se</a></li>
+                <li><a class="dropdown-item" href="../cadastro/cadastro.php">Sair</a></li>
               </ul>
               
 

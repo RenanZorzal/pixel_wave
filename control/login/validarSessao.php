@@ -4,24 +4,28 @@
 // 2 - Empresa
 // 3 - Vendedor
 
-function validarSessao ($vend, $emp, $cli) {
-    if ( isset( $_SESSION["nomeSessao"] ) ) {
+function validarSessao($vend, $emp, $cli) {
+    if (isset($_SESSION["nomeSessao"])) {
         $tipo = $_SESSION["tipoSessao"];
-        $nomeSessao = $_SESSION["nomeSessao"];
 
-        switch ( $tipo ) {
+        switch ($tipo) {
             case 1: // Vendedor
-                return $vend; 
+                return 'vendedor';
             case 2: // Empresa
-                return $emp;                
+                return 'empresa';
             case 3: // Cliente
-                return $cli;              
-        }                
+                return 'cliente';
+            default:
+                return false; // Caso o tipo seja inválido
+        }
     } else {
         // Não LOGADO
         return false;
     }
-
+}
+function getId(){
+    $id = $_SESSION["idSessao"];
+    return $id;
 }
 
 ?>

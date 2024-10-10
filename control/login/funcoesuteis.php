@@ -3,7 +3,7 @@
 function validarLogin($email, $senha) {
     $msgErro = "";
 
-    if (empty($email) == false) {
+    if (empty($email) == true) {
         $msgErro = $msgErro . "Email inválido.<br>";
     }
 

@@ -6,7 +6,7 @@ $email = $_POST["inputEmail"];
 $senha = $_POST["inputSenha"];
 $tipo = $_POST["inlineRadioOptions"];
 
-$msgErro = validarLogin($cpf, $senha);
+$msgErro = validarLogin($email, $senha);
 
 if ( empty($msgErro) ) {
 
