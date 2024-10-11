@@ -17,24 +17,24 @@
 </head>
 <body>
 
-<?php
+  <?php
 
-require_once "../../control/login/validarSessao.php";
+    require_once "../../control/login/validarSessao.php";
 
-session_start();
-$tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
+    session_start();
+    $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
 
-if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
-    require_once "../navbar/navbarCliente.php";
+    if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+        require_once "../navbar/navbarCliente.php";
 
-} elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
-    require_once "../navbar/navbarVendEmp.php";
+    } elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+        require_once "../navbar/navbarVendEmp.php";
 
-} else { // DESLOGADO
-    require_once "../navbar/navbarDeslogado.php";
-}
+    } else { // DESLOGADO
+        require_once "../navbar/navbarDeslogado.php";
+    }
 
-?>
+  ?>
 
 
 <!--Página-->

@@ -31,7 +31,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
+            <a class="nav-link" href="../sobre/sobre.php" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
           </li>
 
           <!--<li class="nav-item">

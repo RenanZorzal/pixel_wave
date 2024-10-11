@@ -17,29 +17,44 @@
 </head>
 <body>
 
-<!--navbar-->
-<?php
-require_once "../navbar/navbarCliente.php";
+    <!--navbar-->
+    <?php
+        require_once "../../control/login/validarSessao.php";
 
-if (isset($_GET["id"])) { 
-    $idEmpresa = $_GET["id"];
-}
+        session_start();
+        $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
 
-require_once '../../model/vendedorDAO.php';
-$resultado = pesquisarVendedorPorID($idEmpresa);
-$registro = mysqli_fetch_assoc($resultado);
-$nome = $registro["nomeVendedor"];
-$desc = $registro["descricaoVendedor"];
-$email = $registro["emailVendedor"];
-$telefone = $registro["telefoneVendedor"];
-$celular = $registro["celularVendedor"];
-$cnpj= $registro["CNPJ_CPF"];
-$razaoSocial = $registro["razaoSocial"];
-$dtNasc = $registro["data_nascimentoVendedor"];
-$inscricaoEstadual = $registro["inscricaoEstadual"];
-$arquivo = $registro["imgVendedor"];
-$fotoImg = base64_encode($arquivo);
-?>
+        if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+            require_once "../navbar/navbarCliente.php";
+
+        } elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+            require_once "../navbar/navbarVendEmp.php";
+
+        } else { // DESLOGADO
+            require_once "../navbar/navbarDeslogado.php";
+        }
+
+
+        if (isset($_GET["id"])) { 
+            $idEmpresa = $_GET["id"];
+        }
+
+        require_once '../../model/vendedorDAO.php';
+        $resultado = pesquisarVendedorPorID($idEmpresa);
+        $registro = mysqli_fetch_assoc($resultado);
+        $nome = $registro["nomeVendedor"];
+        $desc = $registro["descricaoVendedor"];
+        $email = $registro["emailVendedor"];
+        $telefone = $registro["telefoneVendedor"];
+        $celular = $registro["celularVendedor"];
+        $cnpj= $registro["CNPJ_CPF"];
+        $razaoSocial = $registro["razaoSocial"];
+        $dtNasc = $registro["data_nascimentoVendedor"];
+        $inscricaoEstadual = $registro["inscricaoEstadual"];
+        $arquivo = $registro["imgVendedor"];
+        $fotoImg = base64_encode($arquivo);
+    ?>
+    
     <main>
 
         <div class="d-flex justify-content-center align-items-center">
