@@ -1,8 +1,3 @@
-window.onload = function () {
-
-    document.getElementById("navbar").style.display = "none";
-}
-
 // Adicionando um evento de clique ao botão
 const botaoRegistrar = document.querySelector('.div-registre');
 

@@ -18,8 +18,10 @@ if (empty($msgErro)) {
     // PASSO 3 - Inserir/Alterar dados no banco
 
     // ALTERAR
+    session_start();
+    $idValor = $_SESSION["idSessao"];
     require_once '../../../model/empresaDAO.php';
-    $id = alterarEmpresa(2, $nomeEmpresa, $emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
+    $id = alterarEmpresa($idValor, $nomeEmpresa, $emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
 
     // PASSO 4 - Devolver uma mensagem ou página HTML
     header("Location:../../../view/perfis/empresa.php?msg=Empresa alterada com sucesso.");

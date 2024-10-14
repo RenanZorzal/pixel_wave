@@ -32,7 +32,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
+                <a class="nav-link" href="../sobre/sobre.php" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
               </li>
 
               <!--<li class="nav-item">
@@ -163,6 +163,7 @@
     <!-- Segunda Navbar -->
       </div>
 <body>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

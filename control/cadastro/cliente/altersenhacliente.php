@@ -14,7 +14,9 @@
                 
          // ALTERAR
          require_once '../../../model/clienteDAO.php';
-         $id = alterarSenha (1,$senha1);
+         session_start();
+         $idValor = $_SESSION["idSessao"];
+         $id = alterarSenha ($idValor,$senha1);
  
          // PASSO 4 - Devolver uma mensagem ou página HTML
          //header("Location:../../../view/cadastro/concluido.php");

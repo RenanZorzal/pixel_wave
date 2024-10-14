@@ -15,11 +15,30 @@
 -->
 </head>
 <body>
+<?php
 
+require_once "../../control/login/validarSessao.php";
+
+session_start();
+$tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
+
+if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+    require_once "../navbar/navbarCliente.php";
+
+} elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+    require_once "../navbar/navbarVendEmp.php";
+
+} else { // DESLOGADO
+    require_once "../navbar/navbarDeslogado.php";
+}
+$id = $_SESSION["idSessao"];
+?>
 <?php
 require_once "../navbar/navbarCliente.php";
 require_once '../../model/clienteDAO.php';
-$resultado = pesquisarCompradorPorID(1);
+
+
+$resultado = pesquisarCompradorPorID($id);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeComprador"];
 $email = $registro["emailComprador"];

@@ -17,20 +17,23 @@
 </head>
 <body>
 
-<?php
+  <?php
+    require_once "../../control/login/validarSessao.php";
 
-  require_once "../../control/login/validarSessao.php";
-  // Verificar se a sessão está ativa e obter o caminho da navbar
-  $navbar = validarSessao();
+    session_start();
+    $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
 
-  if ($navbar) {
-      require_once $navbar;
-  } else {
-    // Usuário não logado ou tipo de usuário inválido
-    header("Location:../login/login.php?msg=TipoInválido");
-  }
+    if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+        require_once "../navbar/navbarCliente.php";
 
-?>
+    } elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+        require_once "../navbar/navbarVendEmp.php";
+
+    } else { // DESLOGADO
+        require_once "../navbar/navbarDeslogado.php";
+    }
+
+  ?>
 
 
 <!--Página-->

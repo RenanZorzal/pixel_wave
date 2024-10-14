@@ -22,9 +22,10 @@
 
         // ALTERAR
         require_once '../../../model/clienteDAO.php';
-
+        session_start();
+        $idValor = $_SESSION["idSessao"];
         // Passa null para o arquivo caso o usuário não tenha enviado uma nova imagem
-        $id = alterarCliente(1, $nomeCliente, $emailCliente, $telefoneCliente, $dtNascCliente, $arquivoCliente);
+        $id = alterarCliente($idValor, $nomeCliente, $emailCliente, $telefoneCliente, $dtNascCliente, $arquivoCliente);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
         header("Location:../../../view/perfis/cliente.php?msg=Cliente alterado com sucesso.");

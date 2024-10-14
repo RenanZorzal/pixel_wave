@@ -6,7 +6,7 @@ $email = $_POST["inputEmail"];
 $senha = $_POST["inputSenha"];
 $tipo = $_POST["inlineRadioOptions"];
 
-$msgErro = validarLogin($cpf, $senha);
+$msgErro = validarLogin($email, $senha, $tipo);
 
 if ( empty($msgErro) ) {
 
@@ -27,7 +27,7 @@ if ( empty($msgErro) ) {
             header("Location:../../view/home/home.php");
 
         } else {
-            header("Location:../../view/login/login.php?msg=Cliente/senha inválidos!");
+            header("Location:../../view/login/login.php?msgErro= Cliente/senha inválidos! Você já possui cadastro?");
         }
     } else{
 
@@ -46,14 +46,14 @@ if ( empty($msgErro) ) {
             header("Location:../../view/home/home.php");
 
         } else {
-            header("Location:../../view/login/login.php?msg=Vendedor/senha inválidos!");
+            header("Location:../../view/login/login.php?msgErro= Vendedor/senha inválidos! Você já possui cadastro?");
         }
 
     }
 
 
 } else {
-    header("Location:../../view/login/login.php?msg=$msgErro");
+    header("Location:../../view/login/login.php?msgErro=$msgErro");
 }
 
 
