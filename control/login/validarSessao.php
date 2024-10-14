@@ -23,7 +23,6 @@ function validarSessao($vend, $emp, $cli) {
         return false;
     }
 }
-
 function getId(){
     $id = $_SESSION["idSessao"];
     return $id;

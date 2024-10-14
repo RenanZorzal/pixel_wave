@@ -18,6 +18,7 @@
 <body>
 
   <?php
+
     require_once "../../control/login/validarSessao.php";
 
     session_start();
