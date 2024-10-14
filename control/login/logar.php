@@ -10,7 +10,7 @@ $msgErro = validarLogin($cpf, $senha);
 
 if ( empty($msgErro) ) {
 
-    if($tipo == 3){
+    if($tipo == 1){
 
         // Validar no BD
         require_once "../../model/clienteDAO.php";

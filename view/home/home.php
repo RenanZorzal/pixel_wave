@@ -20,16 +20,14 @@
 <?php
 
   require_once "../../control/login/validarSessao.php";
+  // Verificar se a sessão está ativa e obter o caminho da navbar
+  $navbar = validarSessao();
 
-  if (  validarSessao(false, false, true) == true ) { // Validar para CLIENTE
-    require_once "../navbar/navbarCliente.php";
-
-  } elseif (validarSessao(true, true, false) == true){ // Validar para VENDEDOR e EMPRESA
-    require_once "../navbar/navbarVendEmp.php";
-
-  } else { //DESLOGADO
-    require_once "../navbar/navbarDeslogado.php";
-    
+  if ($navbar) {
+      require_once $navbar;
+  } else {
+    // Usuário não logado ou tipo de usuário inválido
+    header("Location:../login/login.php?msg=TipoInválido");
   }
 
 ?>
