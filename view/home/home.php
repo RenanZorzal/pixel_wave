@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,9 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="styleHome.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
-  <link rel="stylesheet" href="../footer/footer-style.css">
-  
-  
+  <link rel="stylesheet" href="../footer/footer-style.css">  
 </head>
 <body>
 
@@ -21,13 +23,12 @@
 
     require_once "../../control/login/validarSessao.php";
 
-    session_start();
     $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
 
-    if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+    if ($tipoSessao == 'cliente') { // Verifica se é CLIENTE
         require_once "../navbar/navbarCliente.php";
 
-    } elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+    } elseif ($tipoSessao == 'vendedor' || $tipoSessao == 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
         require_once "../navbar/navbarVendEmp.php";
 
     } else { // DESLOGADO

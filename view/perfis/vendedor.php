@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,7 +23,6 @@
 
 require_once "../../control/login/validarSessao.php";
 
-session_start();
 $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
 
 if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
