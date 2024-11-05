@@ -1,0 +1,58 @@
+body {
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tableCarrinho{
+    background-color: #F1F4F9;
+    width: 55%;
+    padding: 2rem;
+    margin-top: 5rem;
+    border-radius: 1.5rem;
+    border: 0.2rem solid white;
+}
+
+.header-title{
+    text-decoration: none;
+    color: black;
+    text-align:start;
+}
+
+.header-divisor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 2rem;
+    /*padding: 0.2rem;
+
+    background-color: bisque;
+    border-radius: 1rem;
+    border: 0.2rem solid white;*/
+    
+}
+
+.img-produto{
+    width: 5rem;
+}
+
+.tableCompra {
+    background-color: #F1F4F9;
+    width: 25%;
+    padding: 2rem;
+    margin-top: 5rem;
+    border-radius: 1.5rem;
+    border: 0.2rem solid white;
+}
