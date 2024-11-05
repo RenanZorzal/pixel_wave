@@ -7,8 +7,8 @@
         $conexao = conectarBD();  
 
         $sql = "INSERT INTO VendaCompra (dataHora, nota_fiscal, valorTotal, Comprador_idComprador, StatusCompra_idStatusCompra) "
-                . "VALUES ( NOW(), null, 0.0, $idCliente, 'Andamento') ";
-        
+                . "VALUES ( NOW(), null, 0.0, $idCliente, $idStatusCompra) #1-andamento 2-realizada 3-cancelada 4-a pagar 5-a caminho 6-reembolso";
+
         mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
         $id = mysqli_insert_id($conexao);
         return $id;
