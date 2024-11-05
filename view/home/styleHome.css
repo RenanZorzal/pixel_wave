@@ -162,7 +162,11 @@ nav li {
   /* Mostra o submenu quando o mouse passa sobre o li */
 }
 
-
+.edit{
+  text-decoration: none;
+  color: purple; 
+  text-align: center;
+}
 
 
 

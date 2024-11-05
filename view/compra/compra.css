@@ -21,7 +21,7 @@
 }
 .product-image {
     flex: 1;
-    background: url('https://s.zst.com.br/cms-assets/2021/12/melhor-placa-de-v-deo-barata.webp') no-repeat center center;
+    
     background-size: cover;
     height: 500px; /* Altura da imagem */
 }
@@ -68,6 +68,29 @@
     margin-top: 10px;
 }
 .accordion-button:focus {
-    box-shadow: none;
-    border-color: rgba(0,0,0,.125);
+    box-shadow: none; /* Remove a sombra de foco */
+    border-color: rgba(0, 0, 0, .125); /* Define a cor da borda */
+    outline: none; /* Remove o contorno (geralmente azul) ao clicar */
 }
+/* Remover o foco (azul) e qualquer sombra ao clicar no botão */
+.accordion-button:focus, .accordion-button:active {
+    outline: none !important;         /* Remove a borda padrão de foco */
+    box-shadow: none !important;      /* Remove a sombra (geralmente azul) ao clicar */
+    background-color: transparent !important;   /* Garante fundo transparente ao focar/clicar */
+    color: inherit !important;                  /* Mantém a cor do texto original */
+}
+
+/* Se você quiser uma cor de fundo mais suave ao foco, pode adicionar um fundo customizado */
+.accordion-button:focus {
+    background-color: #f8f9fa !important;  /* Cor clara personalizada ao foco */
+}
+
+/* Garantir que o botão esteja sem alterações de borda após o foco */
+.accordion-button {
+    border: none !important; /* Evita a borda padrão que aparece ao clicar */
+}
+*:focus {
+    outline: none !important;  /* Remove o foco azul */
+    box-shadow: none !important;  /* Remove qualquer sombra (geralmente azul) */
+}
+
