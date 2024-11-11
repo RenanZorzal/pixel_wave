@@ -75,7 +75,7 @@ function pesquisarPorId(id) {
                     mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' class='btn btn-dark'>Adicionar ao Carrinho</a>";
+                    mostrar += "<a class='btn btn-dark' href='../carrinho/carrinho2.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto +"&preco=" + obj.preco + "'>Adicionar ao Carrinho</a>";
                     mostrar += "</div>";
                     mostrar += "</div>";
                     mostrar += "</div>";

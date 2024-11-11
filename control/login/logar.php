@@ -6,6 +6,7 @@ $email = $_POST["inputEmail"];
 $senha = $_POST["inputSenha"];
 $tipo = $_POST["inlineRadioOptions"];
 
+
 $msgErro = validarLogin($email, $senha, $tipo);
 
 if ( empty($msgErro) ) {
@@ -23,6 +24,8 @@ if ( empty($msgErro) ) {
             $_SESSION["nomeSessao"] = $registro["nomeComprador"];
             $_SESSION["idSessao"] = $registro["idComprador"];
             $_SESSION["tipoSessao"] = $tipo;
+            $_SESSION["carrinho"] = array();
+            
             
             header("Location:../../view/home/home.php");
 
@@ -42,6 +45,7 @@ if ( empty($msgErro) ) {
             $_SESSION["nomeSessao"] = $registro["nomeVendedor"];
             $_SESSION["idSessao"] = $registro["idVendedor"];
             $_SESSION["tipoSessao"] = $tipo;
+            $_SESSION["carrinho"] = array();
             
             header("Location:../../view/home/home.php");
 

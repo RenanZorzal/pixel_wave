@@ -7,7 +7,7 @@ botaoRegistrar.addEventListener('click', function () {
     console.log('Botão clicado!');
 
     // Exemplo de redirecionamento:
-    window.location.href = 'http://localhost/pixel_wave/view/cadastro/cadastro.php';
+    window.location.href = '../home/home.php';
 });
 
 const botaoVoltar = document.querySelector('.div-botao');
@@ -18,5 +18,5 @@ botaoVoltar.addEventListener('click', function () {
     console.log('Botão clicado!');
 
     // Exemplo de redirecionamento:
-    window.location.href = 'http://localhost/pixel_wave/view/home/home.php';
+    window.location.href = '../home/home.php';
 });

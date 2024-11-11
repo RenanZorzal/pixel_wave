@@ -101,6 +101,19 @@ function alterarProduto ($id, $nome, $status, $ano, $preco, $arquivo, $descricao
     
     return $id;
 }
+
+function nomeVendedor($id){
+    $conexao = conectarBD();
+    $sql = "SELECT nomeVendedor FROM Vendedor WHERE idVendedor = $id";
+    $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+    if ($row = mysqli_fetch_assoc($res)) {
+        return $row['nomeVendedor'];
+    } else {
+        return null; // Retorna null se não encontrar o vendedor
+    }
+}
+
 function excluirProduto() {
 
 }

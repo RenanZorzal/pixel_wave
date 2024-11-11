@@ -50,15 +50,11 @@ $estoque = $registro["qtdEstoque"];
 $fotoImg = base64_encode($arquivo);
 $vendedor = $registro["Vendedor_idVendedor"];
 
-require_once '../../model/vendedorDAO.php';
-$resultado2 = pesquisarVendedorPorID($vendedor);
-$registro2 = mysqli_fetch_assoc($resultado2);
-$nomeVend= $registro2["nomeVendedor"];
 
-
-
+$nomeVend = nomeVendedor($vendedor);
 
 ?>
+
 <!--Página-->
 <h1 class="h1 d-flex justify-content-center m-4"> <b><?php echo $nome; ?></b></h1>
 <div class="product-container">
@@ -66,7 +62,7 @@ $nomeVend= $registro2["nomeVendedor"];
 
   <div class="product-details ms-5">
       <div class="seller-info">
-          Vendido e entregue por: <a href=""><?php echo $vendedor; ?></a><br>
+          Vendido e entregue por: <a href=""><?php echo $nomeVend; ?></a><br>
           Condição: <?php echo $condicao; ?>
       </div>
 
@@ -90,8 +86,8 @@ $nomeVend= $registro2["nomeVendedor"];
 
 
       <div class="price-sale">
-        
-        <button type="button" class="btn" style="background-color: blueviolet; color: white;"><i class="bi bi-cart-plus"> Adicionar ao Carrinho</i></button>
+       
+      <a class='btn btn-dark' href="../carrinho/carrinho2.php?addID=<?php echo $idProduto; ?>&nome=<?php echo urlencode($nome); ?>&preco=<?php echo urlencode($preco); ?>"><i class="bi bi-cart-plus"> Adicionar ao Carrinho</i></a>
     </div>
 
   </div>

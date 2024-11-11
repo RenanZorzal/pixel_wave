@@ -325,7 +325,7 @@
                 console.log('Botão clicado!');
 
                 // Exemplo de redirecionamento:
-                window.location.href = 'http://localhost/pixel_wave/view/home/home.php';
+                window.location.href = '../home/home.php';
             });
 
             function mostrarForm() {
