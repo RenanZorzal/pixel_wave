@@ -1,5 +1,5 @@
 <?php
-
+    require_once "../../../model/clienteDAO.php";
 function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     $msgErro = "";
     if ( empty($nome) ) {
@@ -18,6 +18,13 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
     }
     */
 
+
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
+    if(validarCPF($cpf) == 1){
+        $msgErro = $msgErro. "CPF já existe!<br>";
+    }
     if ( strlen($senha1) <= 8 ) {
         $msgErro = $msgErro . "A senha deve ter mais que 8 caracteres.<br>";
     }
@@ -34,6 +41,10 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
 function validarCampos2($nome, $email, $telefone, $arquivo = null) {
     $msgErro = "";
     
+
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
     // Valida o nome
     if (empty($nome)) {
         $msgErro .= "Informe o nome.<br>";
@@ -43,6 +54,7 @@ function validarCampos2($nome, $email, $telefone, $arquivo = null) {
     if (validarEmail($email) == false) {
         $msgErro .= "Email inválido.<br>";
     }
+    
 
     // Verifica se um arquivo foi enviado para validar a imagem
     if ($arquivo && $arquivo["error"] != 0) {

@@ -129,7 +129,33 @@ function verificarLogin($email, $senha) {
     }
 
 }
+function verificarEmail($email) {
+    $sql = "SELECT * FROM Vendedor WHERE emailVendedor = '$email'";
 
+    $conexao = conectarBD();  
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+
+    if (  mysqli_num_rows($res) > 0  ) {
+        return 1;        
+    } else {
+        return 0;
+    }
+
+}
+
+function verificarCPF($cpf) {
+    $sql = "SELECT * FROM Vendedor WHERE CNPJ_CPF = '$cpf'";
+
+    $conexao = conectarBD();  
+    $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
+
+    if (  mysqli_num_rows($res) > 0  ) {
+        return 1;        
+    } else {
+        return 0;
+    }
+
+}
 
 
 ?>

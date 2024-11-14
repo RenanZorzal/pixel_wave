@@ -1,5 +1,5 @@
 <?php
-
+    require_once "../../../model/empresaDAO.php";
 function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $senha, $confirmacao_senha) {
     $msgErro = "";
 
@@ -13,10 +13,18 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
         $msgErro = $msgErro . "Informe a o tipo de cadastro.<br>";
     } 
 
+
+
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
+    if ( verificarCNPJ($cnpj) == 1) {
+        $msgErro = $msgErro . "CNPJ Já Existe!.<br>";
+    } 
     if ( empty($email) || validarEmail($email) == false) {
         $msgErro = $msgErro . "Informe seu e-mail no formato correto.<br>";
     } 
-
+ 
     if ( validarCNPJ($cnpj) == false) {
         $msgErro = $msgErro . "CNPJ inválido.<br>";
     } 
@@ -59,7 +67,12 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
 }
 function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $arquivo) {
     $msgErro = "";
-
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
+    if ( verificarCNPJ($cnpj) == 1) {
+        $msgErro = $msgErro . "CNPJ Já Existe!.<br>";
+    } 
     // Validação de campos vazios e formatos
     if (empty($nome) || !validarNome($nome)) {
         $msgErro .= "Informe o seu nome corretamente.<br>";

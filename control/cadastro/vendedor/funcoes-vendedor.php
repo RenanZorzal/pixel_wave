@@ -1,5 +1,5 @@
 <?php
-
+    require_once "../../../model/vendedorDAO.php";
 function validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha, $confirmacao_senha) {
     $msgErro = "";
 
@@ -12,6 +12,15 @@ function validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha
     if ( empty($tipo) ) {
         $msgErro = $msgErro . "Informe a o tipo de cadastro.<br>";
     } 
+
+
+
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
+    if(verificarCPF($cpf) == 1){
+        $msgErro = $msgErro. "CPF já existe!<br>";
+    }
 
     if ( empty($email) || validarEmail($email) == false) {
         $msgErro = $msgErro . "Informe seu e-mail no formato correto.<br>";
@@ -53,7 +62,12 @@ function validarCampos2($nome, $email, $data_nasc, $telefone, $arquivo) {
     $msgErro = "";
 
     // Validação if is empty
-
+    if(verificarEmail($email) == 1){
+        $msgErro = $msgErro. "Email já existe!<br>";
+    }
+    if(verificarCPF($cpf) == 1){
+        $msgErro = $msgErro. "CPF já existe!<br>";
+    }
     if ( empty($nome)) {
         $msgErro = $msgErro . "Informe o seu nome corretamente.<br>";        
     }        
