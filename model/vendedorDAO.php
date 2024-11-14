@@ -157,5 +157,17 @@ function verificarCPF($cpf) {
 
 }
 
+function buscarHistorico($id) {
+    $conexao = conectarBD();
+    
+        $sql = "SELECT * FROM itensvendacompra AS it, produto AS p, vendacompra AS vc, vendedor AS v 
+        WHERE it.Produto_idProduto = p.idProduto AND it.VendaCompra_idVendaCompra = vc.idVendaCompra 
+        AND v.idVendedor = $id AND p.Vendedor_idVendedor = v.idVendedor ORDER BY vc.idVendaCompra;";
+    
+    $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    return $res;
+}
+
+
 
 ?>
