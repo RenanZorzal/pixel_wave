@@ -24,6 +24,8 @@
 		}
 		
 		alterarTotal ( $idVenda, $total);
+
+		atualizarEstoque($idVenda);
 		
 		// Apaga o carrinho da sessão
 		unset( $_SESSION["carrinho"] );
