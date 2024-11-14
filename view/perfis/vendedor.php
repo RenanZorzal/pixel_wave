@@ -124,7 +124,7 @@ $id = $_SESSION["idSessao"];
                     <div class="d-flex flex-column justify-content-center mt-4">
                         <a href="senhavendedor.php" class="text-decoration-none text-center fs-5"
                             style="color: #502779"><u>Alterar senha</u></a>
-                        <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Meus
+                        <a href="historicoVendedor.php" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Meus
                                 anúncios</u></a>
                     </div>
                 </form>
