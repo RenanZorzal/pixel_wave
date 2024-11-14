@@ -116,7 +116,7 @@ echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:im
         <div class="mt-4 d-flex justify-content-center">
             <button type="submit" class="btn justify-content-center fs-5" style="background-color:#502779; color:white">Salvar alterações</button>
             <a href="senhavendedor.php" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Alterar senha</u></a>
-            <a href="#" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Meus anúncios</u></a>
+            <a href="historicoVendedor.php" class="text-decoration-none text-center fs-5 m-3" style="color: #502779"><u>Meus anúncios</u></a>
  
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
