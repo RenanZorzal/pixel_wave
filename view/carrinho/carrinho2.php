@@ -1,6 +1,23 @@
 <?php
 session_start();
 ?>
+<?php
+
+require_once "../../control/login/validarSessao.php";
+
+$tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
+
+if ($tipoSessao == 'cliente') { // Verifica se é CLIENTE
+    
+
+} elseif ($tipoSessao == 'vendedor' || $tipoSessao == 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+    header("Location: ../home/home.php"); 
+
+} else { // DESLOGADO
+    header("Location: ../home/home.php"); 
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

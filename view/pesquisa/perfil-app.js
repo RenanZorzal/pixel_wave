@@ -71,7 +71,6 @@ function pesquisarPorId(id) {
                     mostrar += "</a>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<strike style='color: gray; font-size: 1.2rem; margin-bottom: 0;'> R$ " + obj.precoSemDesconto + "</strike>";
                     mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
