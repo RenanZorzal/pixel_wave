@@ -155,5 +155,15 @@ function excluirCliente () {
 
 }
 
+function buscarHistorico($id) {
+    $conexao = conectarBD();
+    
+        $sql = "SELECT * FROM itensvendacompra AS it, produto AS p, vendacompra AS v, comprador AS c 
+        WHERE it.Produto_idProduto = p.idProduto AND it.VendaCompra_idVendaCompra = v.idVendaCompra 
+        AND c.idComprador = $id AND v.Comprador_idComprador = c.idComprador ORDER BY v.idVendaCompra;";
+    
+    $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    return $res;
+}
 
 ?>

@@ -106,7 +106,7 @@ echo '<img id="image-profile" class="image-profile mt-2 shadow-box" src="data:im
         </div>
         <div class="d-flex flex-column justify-content-center mt-4">
             <a href="senhacliente.php" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Alterar senha</u></a>
-            <a href="#" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Minhas compras</u></a>
+            <a href="historicocliente.php" class="text-decoration-none text-center fs-5" style="color: #502779"><u>Minhas compras</u></a>
         </div>
     </form>
     
