@@ -7,7 +7,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Histórico de Compras</title>
+  <title>Histórico de Vendas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
@@ -43,13 +43,13 @@ require_once '../../model/vendaDAO.php'; // Assumindo que você tem um DAO para 
 
 $idVendedor = $_SESSION["idSessao"]; // Obtém o ID do comprador logado
 
-// Função para buscar o histórico de compras
+// Função para buscar o histórico de vendas
 $resultado = buscarHistorico($idVendedor);
 
 ?>
 
 <div class="container mt-5">
-    <h1 class="text-center" style="color: #502779;"><b>Histórico de Compras</b></h1>
+    <h1 class="text-center" style="color: #502779;"><b>Histórico de Vendas</b></h1>
     <table class="table table-bordered mt-4">
         <thead class="table-dark">
             <tr>
