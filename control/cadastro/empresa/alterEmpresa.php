@@ -13,13 +13,14 @@ $arquivo = isset($_FILES["arquivoEmp"]) && $_FILES["arquivoEmp"]["error"] == 0 ?
 $descricao = $_POST["descEmpresa"];
 
 // PASSO 2 - Validação dos dados
-$msgErro = validarCampos2($nomeEmpresa, $emailEmpresa, $dataAbertura, $telefoneEmp, $celularEmp, $razaosocial, $inscricao, $arquivo);
+session_start();
+$idValor = $_SESSION["idSessao"];
+$msgErro = validarCampos2($nomeEmpresa, $emailEmpresa, $dataAbertura, $telefoneEmp, $celularEmp, $razaosocial, $inscricao, $arquivo, $idValor);
 if (empty($msgErro)) {
     // PASSO 3 - Inserir/Alterar dados no banco
 
     // ALTERAR
-    session_start();
-    $idValor = $_SESSION["idSessao"];
+
     require_once '../../../model/empresaDAO.php';
     $id = alterarEmpresa($idValor, $nomeEmpresa, $emailEmpresa, $telefoneEmp, $celularEmp, $arquivo, $razaosocial, $dataAbertura, $inscricao, $descricao);
 

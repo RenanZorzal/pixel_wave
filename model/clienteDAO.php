@@ -136,6 +136,18 @@ function verificarEmail($email) {
     }
 
 }
+function verificarEmail2($id, $email) {
+    $sql = "SELECT * FROM Comprador WHERE emailComprador = '$email' AND idComprador != '$id'";
+
+    $conexao = conectarBD();  
+    $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+    if (mysqli_num_rows($res) > 0) {
+        return 1; // O email já existe para outro usuário
+    } else {
+        return 0; // O email não existe ou pertence ao usuário atual
+    }
+}
 
 function validarCPF($cpf) {
     $sql = "SELECT * FROM Comprador WHERE CPF = '$cpf'";
