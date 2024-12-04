@@ -38,11 +38,11 @@ function validarCampos($nome, $cpf, $email, $telefone, $senha1, $senha2) {
 
 }
 
-function validarCampos2($nome, $email, $telefone, $arquivo = null) {
+function validarCampos2($nome, $email, $telefone, $arquivo = null, $idValor) {
     $msgErro = "";
     
 
-    if(verificarEmail($email) == 1){
+    if(verificarEmail2($idValor, $email) == 1){
         $msgErro = $msgErro. "Email já existe!<br>";
     }
     // Valida o nome

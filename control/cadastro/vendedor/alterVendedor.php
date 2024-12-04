@@ -10,12 +10,13 @@
      $arquivo = isset($_FILES["arquivoVend"]) && $_FILES["arquivoVend"]["error"] == 0 ? $_FILES["arquivoVend"] : null;
 
      // PASSO 2 - Validação dos dados
-     $msgErro = validarCampos2($nomeVendedorAu, $emailVendedor, $dtNascVendedor, $telefoneVendedor, $arquivo);
+     session_start();
+     $idValor = $_SESSION["idSessao"];
+     $msgErro = validarCampos2($nomeVendedorAu, $emailVendedor, $dtNascVendedor, $telefoneVendedor, $arquivo, $idValor);
      if (empty($msgErro)) {
          // PASSO 3 - Inserir/Alterar dados no banco
          require_once '../../../model/vendedorDAO.php';
-         session_start();
-         $idValor = $_SESSION["idSessao"];
+
          // Passa null como arquivo se não for enviado
          $id = alterarVendedor($idValor, $nomeVendedorAu, $emailVendedor, $telefoneVendedor, $dtNascVendedor, $arquivo, $descricao);
  

@@ -65,9 +65,9 @@ function validarCampos($tipo, $nome, $email, $cnpj, $data_abertura, $telefone, $
     return $msgErro; //retorna todos os erros
 
 }
-function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $arquivo) {
+function validarCampos2($nome, $email, $data_abertura, $telefone, $celular, $razaoSocial, $inscricaoEstadual, $arquivo, $idValor) {
     $msgErro = "";
-    if(verificarEmail($email) == 1){
+    if(verificarEmail2($idValor, $email) == 1){
         $msgErro = $msgErro. "Email já existe!<br>";
     }
     if ( verificarCNPJ($cnpj) == 1) {

@@ -14,16 +14,17 @@
     } else {
         $arquivoCliente = null; // Nenhum arquivo enviado
     }
-
+    session_start();
+    $idValor = $_SESSION["idSessao"];
     // PASSO 2 - Validação dos dados
-    $msgErro = validarCampos2($nomeCliente, $emailCliente, $telefoneCliente, $arquivoCliente);
+    $msgErro = validarCampos2($nomeCliente, $emailCliente, $telefoneCliente, $arquivoCliente, $idValor);
     if (empty($msgErro)) {
         // PASSO 3 - Inserir/Alterar dados no banco
 
         // ALTERAR
         require_once '../../../model/clienteDAO.php';
-        session_start();
-        $idValor = $_SESSION["idSessao"];
+        
+        
         // Passa null para o arquivo caso o usuário não tenha enviado uma nova imagem
         $id = alterarCliente($idValor, $nomeCliente, $emailCliente, $telefoneCliente, $dtNascCliente, $arquivoCliente);
 

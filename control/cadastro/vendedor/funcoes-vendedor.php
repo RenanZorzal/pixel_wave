@@ -58,16 +58,14 @@ function validarCampos($tipo, $nome, $email, $cpf, $data_nasc, $telefone, $senha
     return $msgErro; //retorna todos os erros
 
 }
-function validarCampos2($nome, $email, $data_nasc, $telefone, $arquivo) {
+function validarCampos2($nome, $email, $data_nasc, $telefone, $arquivo, $idValor) {
     $msgErro = "";
 
     // Validação if is empty
-    if(verificarEmail($email) == 1){
+    if(verificarEmail2($idValor, $email) == 1){
         $msgErro = $msgErro. "Email já existe!<br>";
     }
-    if(verificarCPF($cpf) == 1){
-        $msgErro = $msgErro. "CPF já existe!<br>";
-    }
+
     if ( empty($nome)) {
         $msgErro = $msgErro . "Informe o seu nome corretamente.<br>";        
     }        

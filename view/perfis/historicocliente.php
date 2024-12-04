@@ -7,92 +7,111 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Histórico de Compras</title>
+  <title>Histórico de Vendas</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Bootstrap Icons CSS (opcional, para ícones) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../navbar/estilo.css">
-  <link rel="stylesheet" href="../footer/footer-style.css">  
+  <link rel="stylesheet" href="cliente.css">
+  <link rel="stylesheet" href="../footer/footer-style.css">
+  <style>
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta dinamicamente */
+      gap: 20px; /* Espaçamento entre os cards */
+    }
+    .card {
+      height: 100%; /* Garante altura uniforme */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-body {
+      flex-grow: 1; /* Ocupa o espaço restante dentro do card */
+    }
+    .card-footer {
+      text-align: right; /* Alinha o rodapé à direita */
+    }
+  </style>
 </head>
 <body>
 
-
 <?php
-
 require_once "../../control/login/validarSessao.php";
+$tipoSessao = validarSessao(false, false, true);
 
-$tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
-
-if ($tipoSessao === 'cliente') { // Verifica se é CLIENTE
+if ($tipoSessao === 'cliente') {
     require_once "../navbar/navbarCliente.php";
     require_once '../../model/clienteDAO.php';
-
-} elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
+} elseif ($tipoSessao === 'vendedor' || $tipoSessao === 'empresa') {
     require_once "../navbar/navbarVendEmp.php";
-
-} else { // DESLOGADO
+} else {
     require_once "../navbar/navbarDeslogado.php";
 }
 
-$idComprador = $_SESSION["idSessao"]; // Obtém o ID do comprador logado
-
+$idComprador = $_SESSION["idSessao"];
 $resultado = buscarHistorico($idComprador);
 ?>
 
-
-
-<php>
 <div class="container mt-5">
     <h1 class="text-center" style="color: #502779;"><b>Histórico de Compras</b></h1>
-    <table class="table table-bordered mt-4">
-        <thead class="table-dark">
-            <tr>
-                <th>ID da Venda</th>
-                <th>Data</th>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Preço Unitário</th>
-                <th>Preço Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if (mysqli_num_rows($resultado) > 0) {
-                    $vendaAtual = null;
-                    while ($linha = mysqli_fetch_assoc($resultado)) {
-                        $idVenda = $linha['idVendaCompra'];
-    
-                        // Exibir ID e data da venda apenas na primeira linha de cada venda
-                        if ($vendaAtual !== $idVenda) {
-                            $vendaAtual = $idVenda;
-                            echo "<tr>
-                                    <td rowspan='1'>{$linha['idVendaCompra']}</td>
-                                    <td rowspan='1'>{$linha['dataHora']}</td>";
-                        } else {
-                            echo "<tr><td colspan='2'></td>";
-                        }
-    
-                        echo    "<td>{$linha['nomeProduto']}</td>
-                                 <td>{$linha['qtdeItens']}</td>
-                                 <td>R$ {$linha['precoProduto']}</td>
-                                 <td>R$ {$linha['valorTotal']}</td>
-                              </tr>";
+    <div class="card-grid mt-4">
+        <?php
+        if (mysqli_num_rows($resultado) > 0) {
+            $vendaAtual = null;
+            while ($linha = mysqli_fetch_assoc($resultado)) {
+                $idVenda = $linha['idVendaCompra'];
+
+                // Novo card para cada venda
+                if ($vendaAtual !== $idVenda) {
+                    if ($vendaAtual !== null) {
+                        echo '</ul></div><div class="card-footer"><small>Final da compra</small></div></div>'; // Fecha o card anterior
                     }
-                } else {
-                echo "<tr><td colspan='6' class='text-center'>Nenhuma compra encontrada.</td></tr>";
+                    $vendaAtual = $idVenda;
+
+                    echo "<div class='card shadow'>
+                            <div class='card-header bg-dark text-white'>
+                                <h5 class='mb-0'>Compra #{$idVenda}</h5>
+                                <small>Data: {$linha['dataHora']}</small>
+                            </div>
+                            <div class='card-body'>
+                                <h6>Produtos:</h6>
+                                <ul class='list-unstyled'>";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 1){
+                    $status = "Andamento";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 2){
+                    $status = "Realizada";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 3){
+                    $status = "Andamento";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 4){
+                    $status = "Aguardando pagamento";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 5){
+                    $status = "A caminho";
+                }
+                if($linha['StatusCompra_idStatusCompra'] == 6){
+                    $status = "Reembolsado";
+                }
+                // Detalhes dos produtos
+                echo "<li class='mb-2'>
+                        <b>Produto:</b> {$linha['nomeProduto']} <br>
+                        <b>Quantidade:</b> {$linha['qtdeItens']} <br>
+                        <b>Preço Unitário:</b> R$ {$linha['precoProduto']} <br>
+                        <b>Total:</b> R$ {$linha['valorTotal']}<br>
+                        <b>Status:</b>{$status}<br>
+                        ----------
+                      </li>";
             }
-            ?>
-        </tbody>
-    </table>
+            echo '</ul></div><div class="card-footer"><small>Final da venda</small></div></div>'; // Fecha o último card
+        } else {
+            echo "<p class='text-center'>Nenhuma compra encontrada.</p>";
+        }
+        ?>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
