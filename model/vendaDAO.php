@@ -64,7 +64,20 @@
         return true;
     }
 
-
+    function mostrarStatus($idVenda, $idProduto) {
+        $conexao = conectarBD();  
+        $sql = "SELECT * FROM itensvendacompra WHERE VendaCompra_idVendaCompra = $idVenda AND Produto_idProduto = $idProduto";
+    
+        $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+        
+        // Verifica se a consulta retornou alguma linha
+        if ($res && $linha = mysqli_fetch_assoc($res)) {
+            return $linha['Status']; // Retorna o valor do status
+        }
+        
+        return 0; // Retorna um valor padrão caso não haja resultados
+    }
+    
 
 
 
