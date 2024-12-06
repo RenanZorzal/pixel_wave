@@ -119,3 +119,11 @@ INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 #update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 24;
 #update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 25;
 #update subcategoria set nomeSubcategoria = 'Bateria' where idSubcategoria = 26;
+
+#use tcc24ifes;
+#alter table vendacompra add column enderecoComprador varchar(300);
+
+
+
+
+

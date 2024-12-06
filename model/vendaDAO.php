@@ -77,7 +77,12 @@
         
         return 0; // Retorna um valor padrão caso não haja resultados
     }
-    
+    function alterarEndereço ($idComprador, $endereco) {
+        $conexao = conectarBD();  
+        
+        $sql = "UPDATE VendaCompra SET valorTotal = $total WHERE id = $idVenda";
+        mysqli_query($conexao, $sql) or die (mysqli_error($conexao));        
+    }
 
 
 
