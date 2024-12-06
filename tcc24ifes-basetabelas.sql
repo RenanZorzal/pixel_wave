@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS VendaCompra (
   dataHora TIMESTAMP, 
   nota_fiscal VARCHAR(250) , 
   valorTotal FLOAT , 
+  enderecoComprador VARCHAR(300),
   Comprador_idComprador INT NOT NULL,
   StatusCompra_idStatusCompra INT NOT NULL,  
   PRIMARY KEY (idVendaCompra),  
