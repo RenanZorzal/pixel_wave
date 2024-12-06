@@ -87,7 +87,7 @@ $nomeVend = nomeVendedor($vendedor);
 
       <div class="price-sale">
        
-      <a class='btn btn-dark' href="../carrinho/carrinho2.php?addID=<?php echo $idProduto; ?>&nome=<?php echo urlencode($nome); ?>&preco=<?php echo urlencode($preco); ?>"><i class="bi bi-cart-plus"> Adicionar ao Carrinho</i></a>
+      <a class='btn btn-dark' href="../carrinho/carrinho.php?addID=<?php echo $idProduto; ?>&nome=<?php echo urlencode($nome); ?>&preco=<?php echo urlencode($preco); ?>"><i class="bi bi-cart-plus"> Adicionar ao Carrinho</i></a>
     </div>
 
   </div>

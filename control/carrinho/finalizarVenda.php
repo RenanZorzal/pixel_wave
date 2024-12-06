@@ -35,7 +35,7 @@
 
 		header("Location:../../view/home/vendaconfirm.php?msg=Venda realizada com sucesso.");
 	} else {
-		header("Location:../../view/carrinho/carrinho2.php?msg=Não existem produtos.");
+		header("Location:../../view/carrinho/carrinho.php?msg=Não existem produtos.");
 	}
 ?>
 
