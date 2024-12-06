@@ -20,3 +20,4 @@ botaoVoltar.addEventListener('click', function () {
     // Exemplo de redirecionamento:
     window.location.href = '../home/home.php';
 });
+

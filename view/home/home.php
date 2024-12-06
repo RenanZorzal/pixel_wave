@@ -13,7 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="styleHome.css">
+  <link rel="stylesheet" href="homeStyle.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/footer-style.css">  
 
@@ -42,6 +42,11 @@
 
     } else { // DESLOGADO
         require_once "../navbar/navbarDeslogado.php";
+    }
+
+    if(isset($_GET['msgDeslog'])) {
+      $mensagemDeslog = urldecode($_GET['msgDeslog']);
+      //$_SESSION['message'] = $mensagemDeslog; //Armazenando a mensagem na sessão para uso posterior
     }
 
   ?>
@@ -189,61 +194,38 @@
   </ul>
 </div>
 
-<?php
+<!--Modal-->
 
-  // Verifica se há uma mensagem passada via GET
-  $msgDeslog = '';
-
-  if(isset($_GET["msgDeslog"])){
-      $msgDeslog = $_GET["msgDeslog"];
-      //echo "<FONT color=red>$mensagemErro</FONT>";
-  }
-?>
-
-<!-- Modal -->
-  <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" style="color: #FF6565; font-weight: bold">Feedback de Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <?php if (!empty($msgDeslog)) {  // Verifica se tem mensagem de ERRO
-                    echo "<FONT color=#FF6565>$msgDeslog</FONT>";
-                } ?>
-            </div>
-            <!--<div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>-->
-        </div>
+<div class="modal fade" id="modalDeslog" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel" class="modal-title">ATENÇÃO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php if(isset($mensagemDeslog)) { echo $mensagemDeslog; } ?>
+      </div>
+      <div class="modal-footer">
+        <a href="../login/login.php" class="botao">Fazer Login</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
     </div>
   </div>
+</div>
 
-  <?php 
-
-    if (!empty($msgDeslog)) {
-
-        // Exibe o modal se houver uma mensagem de erro
-        echo '<script type="text/javascript">
-                    window.onload = function() {
-                        console.log("modal");
-                        var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
-                        errorModal.show();
-                    }
-                </script>';
-
-        // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
-        echo '<script type="text/javascript">
-                window.onload = function() {
-                    var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
-                    errorModal.show();
-                    history.replaceState(null, "", window.location.href.split("?")[0]);
-                }
-            </script>';
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    if (<?php echo isset($mensagemDeslog) ? 'true' : 'false'; ?>) {
+      $('#modalDeslog').modal('show'); // Abre o modal 'modalDeslog' (atualize o ID se necessário)
     }
 
-  ?>
+    $('#modalDeslog').on('hidden.bs.modal', function (e) {
+      window.location.href = window.location.origin + window.location.pathname;
+    });
+  });
+</script>
 
 <script src="appHome.js"></script>
 

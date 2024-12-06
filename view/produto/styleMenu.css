@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.tela-central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.novo-produto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 80rem;
+    margin: 2.5rem;
+    padding: 1rem;
+    background-color: #e1d0eb;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.novo-produto a {
+    text-decoration: none;
+    color: black;
+}
+
+.mais-img{
+    margin: 1.5rem;
+    width: 3rem;
+}
+
+.pesquisa input{
+    width: 68rem;
+    /* Largura dos inputs */
+    border: none;
+    /* Remove a borda padrão */
+    padding: 1rem;
+    /* Espaçamento interno */
+    border-radius: 1.5rem;
+    /* Borda arredondada */
+    margin-bottom: 1rem;
+    /* Espaçamento abaixo dos inputs */
+    margin-right: 1rem;
+    color: #45474B;
+    /* Cor do texto */
+    background-color: #f7f1fd;
+    font-size: 1rem;
+    /* Tamanho da fonte */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+}
+
+.pesquisa input:focus {
+    outline: 2px solid #c8b9db;
+}
+
+.pesquisa input:hover {
+    outline: 2px solid #c8b9db;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estiliza os botões dentro das seções */
+.pesquisa button {
+    width: 10rem;
+    padding: 0.8rem 1.2rem;
+    /* Espaçamento interno do botão */
+    border: none;
+    /* Remove a borda padrão */
+    border-radius: 1.2rem;
+    /* Borda arredondada */
+    background-color: #5308B4;
+    /* Cor de fundo do botão */
+    color: white;
+    /* Cor do texto do botão */
+    font-size: 1rem;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+}
+
+/* Adiciona efeito hover ao botão de pesquisa */
+.pesquisa button:hover {
+    background-color: #3F0591;
+    /* Muda a cor de fundo ao passar o mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Adiciona uma sombra mais intensa */
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+/* Estiliza a caixa de resultados da pesquisa */
+.resultados-pesquisa {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    width: 70%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    /*background-color: yellowgreen;*/
+}
+
+.img-erro {
+    width: 40rem;
+    margin-top: 3rem;
+    margin-left: 20rem;
+}
