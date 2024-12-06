@@ -54,7 +54,7 @@
           <button class="btn btn-outline-light" id="btnPesquisa" name="btnPesquisa" type="button"><i class="bi bi-search"></i></button>
         </form>
 
-        <a class="nav-link text-light ms-3" href="../carrinho/carrinho2.php"><i class="bi bi-cart3 fs-3"></i></a>
+        <a class="nav-link text-light ms-3" href="../carrinho/carrinho.php"><i class="bi bi-cart3 fs-3"></i></a>
 
         <div class="dropdown ms-3 p-4" style = "margin-right: 5rem;">
           <a class="button-person nav-link dropdown-toggle text-light" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
