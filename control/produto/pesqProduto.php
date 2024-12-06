@@ -1,17 +1,17 @@
 <?php
 
-//Documento para pesquisa de Produtos no Banco de Dados
+// Documento para pesquisa de Produtos no Banco de Dados
 
- // Esse programa é chamado pelo JSON no front-end
+// Esse programa é chamado pelo JSON no front-end
 
-if ( isset($_POST["pesq"])  ) {
+if ( isset($_POST["pesq"]) ) {
     $pesq = $_POST["pesq"];
 
     require_once '../../model/produtoDAO.php';              
     
     $resultado = pesquisaProdutoPorNome($pesq);
     
-    //Se houver alguma resposta de produtos com aquele nome
+    // Se houver alguma resposta de produtos com aquele nome
     if ( mysqli_num_rows($resultado) > 0) {
 
         // Cria um array para armazenar todos os resultados
@@ -36,11 +36,13 @@ if ( isset($_POST["pesq"])  ) {
             $condicao = $row["condicaoProduto"];
             $estoque = $row["qtdEstoque"];
 
-            $registros["produtos"][] = array(
+            // Verifica se o estoque é maior que zero antes de adicionar ao array
+            if ($estoque > 0) {
+                $registros["produtos"][] = array(
                     "idProduto" => $idProduto,
                     "idVendedor" => $idVendedor,
                     "nomeProduto" => $nome,
-                    "statusProdudo" => $status,
+                    "statusProduto" => $status,
                     "ano" => $anoLancamento,
                     "preco" => $preco,
                     "precoSemDesconto" => $precoSemDesconto,
@@ -49,8 +51,8 @@ if ( isset($_POST["pesq"])  ) {
                     "subcategoria" => $subcategoria,
                     "condicao" => $condicao,
                     "estoque" => $estoque
-                    );
-
+                );
+            }
         }
 
         // Envia os dados como JSON (uma lista de produtos)
@@ -61,8 +63,6 @@ if ( isset($_POST["pesq"])  ) {
         header('Content-Type: application/json');
         echo json_encode(['erro' => 'Produto não encontrado.']);
     }
-        
-    
 } else {
     header('Content-Type: application/json');
     echo json_encode(['erro' => 'ERRO ao pesquisar produtos.']);
