@@ -97,7 +97,7 @@ $resultado = buscarHistorico($idComprador);
                 }
                 // Detalhes dos produtos
                 echo "<li class='mb-2'>
-                        <b>Produto:</b> {$linha['nomeProduto']} <br>
+                        <b>Produto:</b> {$linfha['nomeProduto']} <br>
                         <b>Quantidade:</b> {$linha['qtdeItens']} <br>
                         <b>Preço Unitário:</b> R$ {$linha['precoProduto']} <br>
                         <b>Total:</b> R$ {$linha['valorTotal']}<br>

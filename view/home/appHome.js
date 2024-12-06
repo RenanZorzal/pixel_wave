@@ -36,7 +36,17 @@ window.onload = function () {
                     mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<a class='btn btn-dark' href='../carrinho/carrinho.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto +"&preco=" + obj.preco + "'>Adicionar ao Carrinho</a>";
+                    mostrar += "<a class='btn btn-dark' href='../carrinho/carrinho.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto + "&preco=" + obj.preco + "'>Adicionar ao Carrinho</a>";
+                    //$tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
+
+                    //if ($tipoSessao == 'cliente') { // Verifica se é CLIENTE
+                      //  mostrar += "<a class='btn btn-dark' href='../carrinho/carrinho.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto + "&preco=" + obj.preco + "'>Adicionar ao Carrinho</a>";
+                    
+                    //} else {// Verifica se é VENDEDOR ou EMPRESA ou DESLOGADO
+                      //  mostrar += "<a class='btn btn-dark' href='home.php'>Adicionar ao Carrinho</a>";
+
+                    //} 
+
                     mostrar += "</div>";
                     mostrar += "</div>";
                     mostrar += "</div>";

@@ -168,6 +168,28 @@ nav li {
   text-align: center;
 }
 
+.modal-title{
+  color: red;
+}
+
+.botao {
+  width: 7rem;
+  background-color: #855ab9;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: none;
+  border-color: #855ab9;
+}
+
+.botao:hover {
+  background-color: #664094;
+}
 
 
   

@@ -78,6 +78,7 @@ function validarCampos2($nome, $email, $telefone, $arquivo = null, $idValor) {
 
     return $msgErro;
 }
+
 function verificarMaioridade($dataNascimento) {
     // Converte a data de nascimento para o formato DateTime
     $dataNascimento = new DateTime($dataNascimento);
@@ -124,6 +125,7 @@ function verificarCPF($cpf) {
 
     return true;
 }
+
 function validarEmail($email) {
     // Valida o formato do email
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
@@ -141,6 +143,7 @@ function validarNumero($numero) {
     }
 }
 */
+
 function verificarSenha($senha1,$senha2){
     $msgErro = "";
     if ( strlen($senha1) <= 8 ) {

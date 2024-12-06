@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    
+
   <nav class="navbar navbar-expand-lg navbar-estilo">
     <div class="container-fluid">
 
@@ -43,8 +43,8 @@
               Produtos
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="../produto/produto.php">Inserir Novo Produto</a></li>
-              <li><a class="dropdown-item" href="#">Meus Produtos</a></li>
+              <!--<li><a class="dropdown-item" href="../produto/produto.php">Inserir Novo Produto</a></li>-->
+              <li><a class="dropdown-item" href="../produto/menu.php">Meus Produtos</a></li>
             </ul>
           </li>
         </ul>
