@@ -162,7 +162,11 @@
                                     </a>
 
                                     <p>$qtde</p>
-                                    
+                    ";
+                    require_once '../../model/vendaDAO.php';
+                    $estoque = getEstoque($idProduto);
+                    if($_SESSION["carrinho"][$idProduto]["qtde"] < $estoque){
+                        echo "               
                                     <a href='carrinho.php?altID=$idProduto&qtde=1'>
                                         <i class='fas fa-plus sinal'></i>
                                     </a>
@@ -172,6 +176,19 @@
                                 <p class='preco'>R$ $subTotal</p>
                             </div>  
                         </div>";
+                    }
+                    else{
+                        echo "               
+                                    <a href='carrinho.php?Quantidade maior que o estoque'>
+                                        <i class='fas fa-plus sinal'></i>
+                                    </a>
+                                </div>
+                                </div>    
+
+                                <p class='preco'>R$ $subTotal</p>
+                            </div>  
+                        </div>";
+                    }
                 }
             ?>
 
@@ -247,7 +264,7 @@
         
             <div class="section-botao">
 
-                <h6><a href="#">Finalizar Compra</a></h6>
+                <h6><a href="../finalizarcompra/entrega.php">Finalizar Compra</a></h6>
 
             </div>
 

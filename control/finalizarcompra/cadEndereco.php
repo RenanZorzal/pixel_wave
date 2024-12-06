@@ -1,6 +1,6 @@
 <?php
     require "funcoesuteis.php";
-    
+    session_start();
     // PASSO 1 - Receber os campos POST
     $cep = $_POST["cep"];
     $logradouro = $_POST["logradouro"];
@@ -18,16 +18,17 @@
                
         // INSERIR
         require_once '../../model/vendaDAO.php';
-        $endereco = $logradouro +","+ $numero +" "+ $bairro +" "+ $cep +" "+ $cidade +" "+ $estado
-        $id = inserirEndereco ($endereco);
+        $endereco = $logradouro . ", " . $numero . " - " . $bairro . ", " . $cep . ", " . $cidade . " - " . $estado;
+        $idCliente = $_SESSION["idSessao"];
+        alterarEndereço ($idCliente, $endereco);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../../view/produto/produto.php?msg=Produto inserido com sucesso.");
+        header("Location:../../view/finalizarcompra/pix.php?msg=Endereço adicionado com sucesso.");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
         // echo $msgErro;
-        header("Location:../../view/produto/produto.php?msg=$msgErro");
+        header("Location:../../view/finalizarcompra/entrega.php?msg=$msgErro");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }

@@ -101,33 +101,13 @@
         </div>
         <h3 class="mb-3 text-success">Venda Concluída com Sucesso!</h3>
         <p class="message">Sua compra foi finalizada com sucesso. Você receberá um e-mail com os detalhes da sua compra.</p>
-        <a href="home.php" class="btn btn-dark mt-4">Voltar para a Página Inicial</a>
+        <a href="../home/home.php" class="btn btn-dark mt-4">Voltar para a Página Inicial</a>
     </div>
 
 
 
 
-<!--Suporte-->
-<div class="dropup" style="position: fixed; bottom: 20px; right: 30px;">
-  <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-chat-right-fill custom"></i>
-  </button>
-  <ul class="dropdown-menu p-3" style="width: 400px;"> <!-- Adiciona padding p-3 para espaçamento interno -->
-    <!-- Dropdown menu links -->
-    <div class="form-group">
-      <label for="exampleDropdownFormName">Nome</label>
-      <input type="text" class="form-control" id="exampleDropdownFormName" placeholder="Seu nome">
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormEmail">Email</label>
-      <input type="email" class="form-control" id="exampleDropdownFormEmail" placeholder="email@example.com">
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormQuestion">Dúvida</label>
-      <textarea class="form-control" id="exampleDropdownFormQuestion" rows="5" placeholder="Sua dúvida"></textarea>
-    </div>
-  </ul>
-</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

@@ -25,7 +25,7 @@ require_once "../navbar/navbarVendEmp.php";
 <!--Página-->
 <div class="container mt-5">
   <h1>ENDEREÇO DE ENTREGA</h1>
-  <form method="post" action="../../control/endereco/cadEndereco.php" onsubmit="return validarFormulario()">
+  <form method="post" action="../../control/finalizarcompra/cadEndereco.php" onsubmit="return validarFormulario()">
     <div class="row mb-3">
       <div class="col-md-4">
         <label for="cep" class="form-label"><b>CEP</b></label>

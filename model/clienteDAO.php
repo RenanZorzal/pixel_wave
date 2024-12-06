@@ -178,4 +178,5 @@ function buscarHistorico($id) {
     return $res;
 }
 
+
 ?>

@@ -3,11 +3,11 @@
     require_once "a.conexaoBD.php";    
     static $conexao;
 
-    function inserirVenda($idCliente ) {
+    function inserirVenda($idCliente,$endereco ) {
         $conexao = conectarBD();  
 
-        $sql = "INSERT INTO VendaCompra (dataHora, nota_fiscal, valorTotal, Comprador_idComprador, StatusCompra_idStatusCompra) "
-                . "VALUES ( NOW(), null, 0.0, $idCliente, 2 ) ";
+        $sql = "INSERT INTO VendaCompra (dataHora, nota_fiscal, valorTotal, Comprador_idComprador, StatusCompra_idStatusCompra, endereco) "
+                . "VALUES ( NOW(), null, 0.0, $idCliente, 2, '$endereco') ";
         
         mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
         $id = mysqli_insert_id($conexao);
@@ -80,11 +80,70 @@
     function alterarEndereço ($idComprador, $endereco) {
         $conexao = conectarBD();  
         
-        $sql = "UPDATE VendaCompra SET valorTotal = $total WHERE id = $idVenda";
+        $sql = "UPDATE Comprador SET enderecoComprador = '$endereco' WHERE idComprador = $idComprador";
         mysqli_query($conexao, $sql) or die (mysqli_error($conexao));        
     }
 
-
+    function getEndereco($idComprador) {
+        $conexao = conectarBD();  
+        $sql = "SELECT * FROM Comprador WHERE idComprador = $idComprador";
+    
+        $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+        
+        // Verifica se a consulta retornou alguma linha
+        if ($res && $linha = mysqli_fetch_assoc($res)) {
+            return $linha['enderecoComprador']; // Retorna o valor do status
+        }
+        
+    }
+    function getEstoque($idProduto) {
+        $conexao = conectarBD();  
+        $sql = "SELECT * FROM Produto WHERE idProduto = $idProduto";
+    
+        $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+        
+        // Verifica se a consulta retornou alguma linha
+        if ($res && $linha = mysqli_fetch_assoc($res)) {
+            return $linha['qtdEstoque']; // Retorna o valor do status
+        }
+        
+    }
+    function atualizarEstoque2($idProduto, $quantidadeComprada) {
+        $conexao = conectarBD();
+        
+        // Verificar o estoque atual do produto
+        $sqlConsulta = "SELECT qtdEstoque FROM Produto WHERE idProduto = ?";
+        $stmtConsulta = $conexao->prepare($sqlConsulta);
+        $stmtConsulta->bind_param("i", $idProduto);
+        $stmtConsulta->execute();
+        $resultado = $stmtConsulta->get_result();
+        
+        if ($resultado->num_rows > 0) {
+            $linha = $resultado->fetch_assoc();
+            $estoqueAtual = $linha['qtdEstoque'];
+            
+            // Verificar se há estoque suficiente
+            if ($estoqueAtual >= $quantidadeComprada) {
+                // Atualizar o estoque
+                $novoEstoque = $estoqueAtual - $quantidadeComprada;
+                $sqlAtualizar = "UPDATE Produto SET qtdEstoque = ? WHERE idProduto = ?";
+                $stmtAtualizar = $conexao->prepare($sqlAtualizar);
+                $stmtAtualizar->bind_param("ii", $novoEstoque, $idProduto);
+                $stmtAtualizar->execute();
+    
+                if ($stmtAtualizar->affected_rows > 0) {
+                    return true; // Estoque atualizado com sucesso
+                } else {
+                    return false; // Falha na atualização do estoque
+                }
+            } else {
+                // Estoque insuficiente
+                throw new Exception("Estoque insuficiente para o produto ID: $idProduto");
+            }
+        } else {
+            throw new Exception("Produto não encontrado: ID $idProduto");
+        }
+    }
 
 ?>
 
