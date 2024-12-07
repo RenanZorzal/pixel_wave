@@ -77,27 +77,27 @@ $resultado = buscarHistorico($idComprador);
                                 <h6>Produtos:</h6>
                                 <ul class='list-unstyled'>";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 1){
+                if($linha['Status'] == 1){
                     $status = "Andamento";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 2){
+                if($linha['Status'] == 2){
                     $status = "Realizada";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 3){
+                if($linha['Status'] == 3){
                     $status = "Andamento";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 4){
+                if($linha['Status'] == 4){
                     $status = "Aguardando pagamento";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 5){
+                if($linha['Status'] == 5){
                     $status = "A caminho";
                 }
-                if($linha['StatusCompra_idStatusCompra'] == 6){
+                if($linha['Status'] == 6){
                     $status = "Reembolsado";
                 }
                 // Detalhes dos produtos
                 echo "<li class='mb-2'>
-                        <b>Produto:</b> {$linfha['nomeProduto']} <br>
+                        <b>Produto:</b> {$linha['nomeProduto']} <br>
                         <b>Quantidade:</b> {$linha['qtdeItens']} <br>
                         <b>Preço Unitário:</b> R$ {$linha['precoProduto']} <br>
                         <b>Total:</b> R$ {$linha['valorTotal']}<br>

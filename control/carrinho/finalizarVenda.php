@@ -20,8 +20,8 @@
 			$endereco = getEndereco($idCliente);
 			$subTotal = $preco * $qtde;
 			$total = $total + $subTotal;
-		
-			inserirItemVenda($idVenda, $idProduto, $qtde);
+			
+			inserirItemVenda($idVenda, $idProduto, $qtde, 2);
 			
 			// Atualizar o estoque do produto
 			try {

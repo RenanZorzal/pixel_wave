@@ -15,11 +15,11 @@
     }
 
 
-    function inserirItemVenda($idVenda, $idProduto, $qtde){
+    function inserirItemVenda($idVenda, $idProduto, $qtde, $status){
         $conexao = conectarBD();  
 
-        $sql = "INSERT INTO ItensVendaCompra (VendaCompra_idVendaCompra, Produto_idProduto, qtdeItens) "
-                . "VALUES ($idVenda, $idProduto, $qtde)";
+        $sql = "INSERT INTO ItensVendaCompra (VendaCompra_idVendaCompra, Produto_idProduto, qtdeItens, Status) "
+                . "VALUES ($idVenda, $idProduto, $qtde, $status)";
         
         mysqli_query($conexao, $sql) or die (mysqli_error($conexao));
     }

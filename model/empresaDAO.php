@@ -110,7 +110,7 @@ function excluirEmpresa () {
 }
 
 function verificarLogin($email, $senha) {
-    $sql = "SELECT * FROM Vendedor WHERE emailVendedor = '$email' and senhaVendedor = '$senha'";
+    $sql = "SELECT * FROM Vendedor WHERE emailVendedor = '$email' and senhaVendedor = '$senha' and tipoVendedor = 'Pessoa jurídica'";
 
     $conexao = conectarBD();  
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
@@ -150,7 +150,7 @@ function verificarEmail2($id, $email) {
 }
 
 function verificarCNPJ($cnpj) {
-    $sql = "SELECT * FROM Vendedor WHERE CNPJ_CPF = '$cpnj'";
+    $sql = "SELECT * FROM Vendedor WHERE CNPJ_CPF = '$cnpj'";
 
     $conexao = conectarBD();  
     $res = mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );
