@@ -1,5 +1,4 @@
 window.onload = function(){
-    e.preventDefault(e);
     console.log("A página foi carregada!");
 
     let elemento = document.getElementById('section-resultado');
@@ -73,7 +72,10 @@ function pesquisarPorId(id) {
                     mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<a class='btn btn-dark' href='../carrinho/carrinho.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto + "&preco=" + obj.preco + "'>Adicionar ao Carrinho</a>";
+                    mostrar += "<a class='btn' href='alterarproduto.php?idProduto=" + obj.idProduto + "' style='background-color: #886488; color: white;'>";
+                    mostrar += "<img src='editar.png' class='editar-img' alt='Editar'>";
+                    mostrar += "Editar Produto";
+                    mostrar += "</a>";
                     mostrar += "</div>";
                     mostrar += "</div>";
                     mostrar += "</div>";
@@ -99,7 +101,7 @@ function pesquisarPorId(id) {
 
             // Colocar no DIV "resultado" acima
             console.log("Teve resultado")
-            $('#resultado-pecas').html(mostrar).show();
+            $('#section-resultado').html(mostrar).show();
         },
         error: function () {
             console.log("error")
