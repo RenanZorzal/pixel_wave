@@ -124,6 +124,11 @@ main{
     margin-left: 20rem;
 }
 
+.img-nao-encontrado{
+    width: 40rem;
+    margin-top: 3rem;
+}
+
 .resultados-pesquisa {
     width: 85%;
     display: flex;

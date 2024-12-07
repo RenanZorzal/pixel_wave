@@ -49,6 +49,11 @@
       //$_SESSION['message'] = $mensagemDeslog; //Armazenando a mensagem na sessão para uso posterior
     }
 
+    if(isset($_GET['msgVendedor'])) {
+      $mensagemVendedor = urldecode($_GET['msgVendedor']);
+      //$_SESSION['message'] = $mensagemDeslog; //Armazenando a mensagem na sessão para uso posterior
+    }
+
   ?>
 
 
@@ -214,6 +219,26 @@
   </div>
 </div>
 
+<div class="modal fade" id="modalVendedor" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel" class="modal-title">ATENÇÃO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?php if(isset($mensagemVendedor)) { echo $mensagemVendedor; } ?>
+        <br>
+        <br>
+        <p>Deseja ser um cliente? Crie agora sua conta Cliente em nosso site, na aba 'Cadastre-se'!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
@@ -222,6 +247,16 @@
     }
 
     $('#modalDeslog').on('hidden.bs.modal', function (e) {
+      window.location.href = window.location.origin + window.location.pathname;
+    });
+  });
+
+  $(document).ready(function() {
+    if (<?php echo isset($mensagemVendedor) ? 'true' : 'false'; ?>) {
+      $('#modalVendedor').modal('show'); // Abre o modal 'modalDeslog' (atualize o ID se necessário)
+    }
+
+    $('#modalVendedor').on('hidden.bs.modal', function (e) {
       window.location.href = window.location.origin + window.location.pathname;
     });
   });

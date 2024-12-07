@@ -22,6 +22,17 @@
 require_once "../navbar/navbarVendEmp.php";
 ?>
 
+  <header>
+      <div class="voltar">
+          <a href="menu.php">
+              <img src="button-voltar.png" alt="" class="botaoVoltar">
+          </a>
+          <a href="menu.php">
+              <h6>Voltar</h6>
+          </a>
+      </div>
+  </header>
+
 <!--Página-->
 <div class="container mt-5">
   <h1>ANUNCIAR PRODUTO</h1>
@@ -135,17 +146,58 @@ require_once "../navbar/navbarVendEmp.php";
         <button type="submit" class="botao btn btn-primary w-100" style="background-color: #502779; border-color:#502779 ">Avançar</button>
       </div>
     </div>
-  </form>
-
-  <?php
-  // Exibir a mensagem de ERRO caso OCORRA
-  if (isset($_GET["msg"])) {  // Verifica se tem mensagem de ERRO
-    $mensagem = $_GET["msg"];
-    echo "<br><FONT>$mensagem</FONT>";
-  }
-  ?> 
+  </form> 
 </div>
 
+<?php
+    // Verifica se há uma mensagem de erro passada via GET
+    $mensagemErro = '';
+
+    if(isset($_GET["msgErro"])){
+        $mensagemErro = $_GET["msgErro"];
+    }
+  ?>
+
+  <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="color: #FF6565; font-weight: bold">Feedback de Alteração</h5>
+                </div>
+                <div class="modal-body">
+                    <?php if (!empty($mensagemErro)) {  // Verifica se tem mensagem de ERRO
+                        echo "<FONT color=#FF6565>$mensagemErro</FONT>";
+                    } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+          
+  if (!empty($mensagemErro)) {
+
+      // Exibe o modal se houver uma mensagem de erro
+      echo '<script type="text/javascript">
+                  window.onload = function() {
+                      var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                      errorModal.show();
+                  }
+              </script>';
+
+      // Redireciona para a mesma página sem o parâmetro `msg` após mostrar o modal
+      echo '<script type="text/javascript">
+              window.onload = function() {
+                  var errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+                  errorModal.show();
+                  history.replaceState(null, "", window.location.href.split("?")[0]);
+              }
+          </script>';
+  }
+
+?>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

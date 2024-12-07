@@ -183,7 +183,7 @@ function pesquisar(pesq){
                     mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem +"' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center'>";
+                    mostrar += "<a href='../compra/compra.php?id=" + obj.idProduto + "' style='text-decoration: none; color: purple; text-align: center'>";
                     mostrar += "<h3 class='card-title' id='card-body.h3'>"+ obj.nomeProduto +"</h3>";
                     mostrar += "</a>";
                     mostrar += "</div>";
@@ -263,7 +263,7 @@ function pesquisarPorSubcategoria(cat, textLink) {
                     mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem + "' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center'>";
+                    mostrar += "<a href='../compra/compra.php?id=" + obj.idProduto + "' style='text-decoration: none; color: purple; text-align: center'>";
                     mostrar += "<h3 class='card-title' id='card-body.h3'>" + obj.nomeProduto + "</h3>";
                     mostrar += "</a>";
                     mostrar += "</div>";

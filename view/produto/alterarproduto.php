@@ -40,9 +40,20 @@ $condicao = $registro["condicaoProduto"];
 $estoque = $registro["qtdEstoque"];
 ?>
 
+  <header>
+      <div class="voltar">
+          <a href="menu.php">
+              <img src="button-voltar.png" alt="" class="botaoVoltar">
+          </a>
+          <a href="menu.php">
+              <h6>Voltar</h6>
+          </a>
+      </div>
+  </header>
+
 <!--Página-->
 <div class="container mt-5">
-  <h1>ALTERAR PRODUTO</h1>
+  <h1>EDITAR PRODUTO</h1>
   <form method="post" name="formProduto" action="../../control/produto/alterProduto.php?idProduto=<?php echo $idProduto;?>" enctype="multipart/form-data">
     <div class="row mb-3">
       <div class="col-md-8">

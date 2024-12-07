@@ -24,12 +24,12 @@
         $id = inserirProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../../view/produto/produto.php?msg=Produto inserido com sucesso.");
+        header("Location:../../view/produto/menu.php");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
         // echo $msgErro;
-        header("Location:../../view/produto/produto.php?msg=$msgErro");
+        header("Location:../../view/produto/produto.php?msgErro=$msgErro");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }

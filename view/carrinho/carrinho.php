@@ -7,7 +7,7 @@
     if ($tipoSessao == 'cliente') { // Verifica se é CLIENTE
         
     } elseif ($tipoSessao == 'vendedor' || $tipoSessao == 'empresa') { // Verifica se é VENDEDOR ou EMPRESA
-        header("Location: ../home/home.php"); 
+        header("Location: ../home/home.php?msgVendedor=Somente usuários com a conta de 'Cliente' têm acesso à funcionalidade de carrinho."); 
 
     } else { // DESLOGADO
         header("Location: ../home/home.php?msgDeslog=Você só poderá acessar o carrinho ao fazer login."); 
