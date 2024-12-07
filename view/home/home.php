@@ -13,7 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap Icons CSS (opcional, para ícones) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="homeStyle.css">
+  <link rel="stylesheet" href="/view/home/homeStyle.css">
   <link rel="stylesheet" href="../navbar/estilo.css">
   <link rel="stylesheet" href="../footer/footer-style.css">  
 
