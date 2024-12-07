@@ -26,7 +26,10 @@
 require_once "../navbar/navbarVendEmp.php";
 require_once '../../model/produtoDAO.php';
 
-$resultado = pesquisarProdutoPorID($_GET["idProduto"]);
+
+$idProduto = $_GET["idProduto"];
+
+$resultado = pesquisarProdutoPorID($idProduto);
 $registro = mysqli_fetch_assoc($resultado);
 $nome = $registro["nomeProduto"];
 $status = $registro["statusProduto"];
@@ -40,7 +43,7 @@ $estoque = $registro["qtdEstoque"];
 <!--Página-->
 <div class="container mt-5">
   <h1>ALTERAR PRODUTO</h1>
-  <form method="post" name="formProduto" action="../../control/produto/alterProduto.php" enctype="multipart/form-data">
+  <form method="post" name="formProduto" action="../../control/produto/alterProduto.php?idProduto=<?php echo $idProduto;?>" enctype="multipart/form-data">
     <div class="row mb-3">
       <div class="col-md-8">
         <label for="nome" class="form-label"><b>Nome</b></label>
@@ -192,7 +195,7 @@ $estoque = $registro["qtdEstoque"];
                     } ?>
                 </div>
                 <div class="modal-footer">
-                    <a href="../home/home.php" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Continuar</a>
+                    <a href="menu.php" class="btn" style="background-color: rgb(170, 98, 170); color: white;">Continuar</a>
                 </div>
             </div>
         </div>

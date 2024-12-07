@@ -12,6 +12,8 @@
     $status = $_POST["status"];
     $arquivo = $_FILES["arquivo"];
     $estoque = $_POST["quantidade"];
+
+    $idProduto = $_GET["idProduto"];
     
     
     
@@ -24,15 +26,15 @@
                
         // INSERIR
         require_once '../../model/produtoDAO.php';
-        $id = alterarProduto (1, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
+        $id = alterarProduto ($idProduto, $nome, $status, $anoLancamento, $preco, $arquivo, $descricao, $subcategoria , $condicao, $estoque);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../../view/produto/alterarproduto.php?msg=Produto alterado com sucesso.");
+        header("Location:../../view/produto/alterarproduto.php?msg=Produto alterado com sucesso.&idProduto=$idProduto");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
         // echo $msgErro;
-        header("Location:../../view/produto/alterarproduto.php?msgErro=$msgErro");
+        header("Location:../../view/produto/alterarproduto.php?msgErro=$msgErro&idProduto=$idProduto");
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }
