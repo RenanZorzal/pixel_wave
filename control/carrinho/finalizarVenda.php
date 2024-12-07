@@ -32,7 +32,7 @@
 				echo "Erro ao atualizar estoque: " . $e->getMessage();
 			}
 		}
-		
+		alterarTotal ( $idVenda, $total);
 		
 		
 		// Apaga o carrinho da sessão
