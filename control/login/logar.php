@@ -32,6 +32,27 @@ if ( empty($msgErro) ) {
         } else {
             header("Location:../../view/login/login.php?msgErro= Cliente/senha inválidos! Você já possui cadastro?");
         }
+    } elseif($tipo == 2){
+
+        // Validar no BD
+        require_once "../../model/empresaDAO.php";
+        
+        $registro = verificarLogin($email, $senha);
+
+        if ( $registro != null ) {
+            // Logado: inserir na SESSÃO
+            session_start();
+            $_SESSION["nomeSessao"] = $registro["nomeVendedor"];
+            $_SESSION["idSessao"] = $registro["idVendedor"];
+            $_SESSION["tipoSessao"] = $tipo;
+            $_SESSION["carrinho"] = array();
+            
+            header("Location:../../view/home/home.php");
+
+        } else {
+            header("Location:../../view/login/login.php?msgErro= Empresa/senha inválidos! Você já possui cadastro?");
+        }
+
     } else{
 
         // Validar no BD

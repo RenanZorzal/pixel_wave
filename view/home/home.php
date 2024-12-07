@@ -230,7 +230,7 @@
         <?php if(isset($mensagemVendedor)) { echo $mensagemVendedor; } ?>
         <br>
         <br>
-        <p>Deseja ser um cliente? Crie agora sua conta Cliente em nosso site, na aba 'Cadastre-se'!</p>
+        <p>Deseja ser um cliente? Crie agora sua conta Cliente em nosso site, na aba 'Registre-se'!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
