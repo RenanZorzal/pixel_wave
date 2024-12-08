@@ -32,7 +32,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="../sobre/sobre.php" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
+            <a class="nav-link active" href="../perfis/historicocliente.php" style="color: white; margin-right: 2rem">Minhas compras</a>
           </li>
 
           <!--<li class="nav-item">
