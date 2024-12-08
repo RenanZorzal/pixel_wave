@@ -108,7 +108,7 @@ INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 #update subcategoria set nomeSubcategoria = 'Gabinete' where idSubcategoria = 13;
 #update subcategoria set nomeSubcategoria = 'Armazenamento' where idSubcategoria = 14;
 #update subcategoria set nomeSubcategoria = 'Periféricos' where idSubcategoria = 15;
-#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 16;
+#update subcategoria set nomeSubcategoria = 'Acessórios' where idSubcategoria = 16;#a
 #update subcategoria set nomeSubcategoria = 'Fonte' where idSubcategoria = 17;
 #update subcategoria set nomeSubcategoria = 'Placa de rede' where idSubcategoria = 18;
 #update subcategoria set nomeSubcategoria = 'Placa de vídeo' where idSubcategoria = 19;
@@ -122,8 +122,5 @@ INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto,
 
 #use tcc24ifes;
 #alter table vendacompra add column enderecoComprador varchar(300);
-
-
-
-
-
+#alter table itensvendacompra add column Status VARCHAR(45);
+#alter table vendedor add column endereco VARCHAR(300);
