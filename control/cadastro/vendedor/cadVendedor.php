@@ -5,7 +5,7 @@
     // Receber os campos
 
     //POST
-    $tipo = 1;
+    $tipo = "Pessoa física";
     $nome = $_POST["nomeVendedor"];
     $email = $_POST["emailVendedor"];
     $cpf = $_POST["cpfVendedor"];

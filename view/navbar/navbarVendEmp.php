@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +31,7 @@
             <a class="nav-link active" aria-current="page" href="../home/home.php" style="color: white; margin-right: 2rem">Home</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="../sobre/sobre.php" style="color: #dabbf8; margin-right: 2rem">Sobre nós</a>
-          </li>
+
 
           <!--<li class="nav-item">
             <a class="nav-link active" href="../produto/produto.php" style="color: white">Produtos</a>
@@ -45,6 +44,7 @@
             <ul class="dropdown-menu dropdown-menu-dark">
               <!--<li><a class="dropdown-item" href="../produto/produto.php">Inserir Novo Produto</a></li>-->
               <li><a class="dropdown-item" href="../produto/menu.php">Meus Produtos</a></li>
+              <li><a class="dropdown-item" href="../perfis/historicoVendedor.php">Minhas Vendas</a></li>
             </ul>
           </li>
         </ul>

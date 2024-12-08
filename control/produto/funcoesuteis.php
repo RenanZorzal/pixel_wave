@@ -1,5 +1,5 @@
 <?php
-function validarCampos($ano, $descricao, $preco, $arquivo, $estoque,$status, $subcategoria) {
+function validarCampos($ano, $descricao, $preco, $arquivo, $estoque,$status, $subcategoria, $tipoVendedor, $condicao) {
     $msgErro = "";
     if ( $ano < 1900 || $ano > 2025 || $ano = "") {
         $msgErro = $msgErro . "Informe um ano de lançamento válido.<br>";        
@@ -27,13 +27,15 @@ function validarCampos($ano, $descricao, $preco, $arquivo, $estoque,$status, $su
        $msgErro = $msgErro . "Tipo não permitido!";
     }
     if($status == "Sem estoque" && $estoque != 0){
-        $msgErro = "Erro, estoque invalido!";
+        $msgErro = $msgErro . "Erro, estoque invalido!";
     }
     if(empty($subcategoria)){
-        $msgErro = "Erro, escolha uma subcategoria!";
+        $msgErro = $msgErro. "Erro, escolha uma subcategoria!";
         
     }
-    
+    if($tipoVendedor == 1 && $condicao == "nova"){
+        $msgErro = $msgErro . "Apenas empresas podem anunciar produtos novos";
+    }
     return $msgErro;
 
 }

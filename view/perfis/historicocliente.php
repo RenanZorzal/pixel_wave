@@ -58,6 +58,7 @@ $resultado = buscarHistorico($idComprador);
         <?php
         if (mysqli_num_rows($resultado) > 0) {
             $vendaAtual = null;
+            $contador = 1;
             while ($linha = mysqli_fetch_assoc($resultado)) {
                 $idVenda = $linha['idVendaCompra'];
 
@@ -70,12 +71,13 @@ $resultado = buscarHistorico($idComprador);
 
                     echo "<div class='card shadow'>
                             <div class='card-header bg-dark text-white'>
-                                <h5 class='mb-0'>Compra #{$idVenda}</h5>
+                                <h5 class='mb-0'>Compra #{$contador}</h5>
                                 <small>Data: {$linha['dataHora']}</small>
                             </div>
                             <div class='card-body'>
                                 <h6>Produtos:</h6>
                                 <ul class='list-unstyled'>";
+                                $contador = $contador+1;
                 }
                 if($linha['Status'] == 1){
                     $status = "Andamento";
@@ -102,6 +104,7 @@ $resultado = buscarHistorico($idComprador);
                         <b>Preço Unitário:</b> R$ {$linha['precoProduto']} <br>
                         <b>Total:</b> R$ {$linha['valorTotal']}<br>
                         <b>Status:</b>{$status}<br>
+                        <b>Endereço:</b>{$linha['endereco']}<br>
                         ----------
                       </li>";
             }

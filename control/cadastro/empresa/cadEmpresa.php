@@ -5,7 +5,7 @@
     // Receber os campos
 
     //POST
-    $tipo = 2;
+    $tipo = "Pessoa jurídica";
     $nome = $_POST["nomeEmpresa"];
     $email = $_POST["email"];
     $cnpj = $_POST["cnpj"];

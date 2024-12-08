@@ -15,7 +15,7 @@ function inserirProduto($vendedor, $nome, $status, $ano, $preco, $arquivo, $desc
     // Montar SQL
     $sql = "INSERT INTO Produto(Vendedor_idVendedor, nomeProduto, statusProduto, anoProduto, precoProduto, imagemProduto, descricaoProduto, Subcategoria_idSubcategoria,
      condicaoProduto, qtdEstoque) VALUES
-      ('$vendedor', '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', $categoria, '$condicao', '$qtdestoque')";
+      ($vendedor, '$nome', '$status', '$ano', '$preco', '$arquivo', '$descricao', $categoria, '$condicao', '$qtdestoque')";
 
     mysqli_query($conexao, $sql) or die ( mysqli_error($conexao) );     // Inserir no banco
     
@@ -111,6 +111,18 @@ function nomeVendedor($id){
         return $row['nomeVendedor'];
     } else {
         return null; // Retorna null se não encontrar o vendedor
+    }
+}
+function verificarAutonomo($id) {
+    $sql = "SELECT * FROM Vendedor WHERE idVendedor = '$id' AND tipoVendedor = 'Pessoa física'";
+
+    $conexao = conectarBD();  
+    $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+    if (mysqli_num_rows($res) > 0) {
+        return 1; // O email já existe para outro usuário
+    } else {
+        return 0; // O email não existe ou pertence ao usuário atual
     }
 }
 

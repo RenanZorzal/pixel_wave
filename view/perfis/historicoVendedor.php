@@ -55,6 +55,7 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
                 
                 $idProduto = $linha['Produto_idProduto'];
                 $status = (int) mostrarStatus($idVenda, $idProduto);
+                $endereco = $linha['endereco'];
 
                 // Corrigido o switch para maior clareza e evitar duplicações.
                 switch ($status) {
@@ -91,7 +92,8 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
                     <p class="card-text"><b>Preço Unitário:</b> R$ <?php echo number_format($precoUnitario, 2, ',', '.'); ?></p>
                     <p class="card-text"><b>Preço Total:</b> R$ <?php echo number_format($precoTotal, 2, ',', '.'); ?></p>
                     <p class="card-text"><b>Status:</b> <?php echo $statusTexto; ?></p>
-                    <button class="btn btn-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#statusModal" onclick="prepararModal(<?php echo $idVenda; ?>, '<?php echo $statusTexto; ?>')">Atualizar Status</button>
+                    <p class="card-text"><b>Endereço:</b> <?php echo $endereco; ?></p>
+                    <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal" data-bs-target="#statusModal" onclick="prepararModal(<?php echo $idVenda; ?>, '<?php echo $statusTexto; ?>')">Atualizar Status</button>
                 </div>
             </div>
         </div>
@@ -126,7 +128,7 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
               <option value="6">Reembolsado</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary w-100">Salvar</button>
+          <button type="submit" class="btn btn-dark w-100">Salvar</button>
         </form>
       </div>
     </div>

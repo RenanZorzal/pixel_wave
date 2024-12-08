@@ -177,27 +177,7 @@
 
   ?>
 
-<!--Suporte-->
-<div class="dropup" style="position: fixed; bottom: 20px; right: 30px;">
-  <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-chat-right-fill custom"></i>
-  </button>
-  <ul class="dropdown-menu p-3" style="width: 400px;"> <!-- Adiciona padding p-3 para espaçamento interno -->
-    <!-- Dropdown menu links -->
-    <div class="form-group">
-      <label for="exampleDropdownFormName">Nome</label>
-      <input type="text" class="form-control" id="exampleDropdownFormName" placeholder="Seu nome">
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormEmail">Email</label>
-      <input type="email" class="form-control" id="exampleDropdownFormEmail" placeholder="email@example.com">
-    </div>
-    <div class="form-group">
-      <label for="exampleDropdownFormQuestion">Dúvida</label>
-      <textarea class="form-control" id="exampleDropdownFormQuestion" rows="5" placeholder="Sua dúvida"></textarea>
-    </div>
-  </ul>
-</div>
+
 
 <!--Modal-->
 
