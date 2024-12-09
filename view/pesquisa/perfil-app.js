@@ -66,7 +66,7 @@ function pesquisarPorId(id) {
                     mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem + "' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center;'>";
+                    mostrar += "<a href='../compra/compra.php?id=" + obj.idProduto + "' style='text-decoration: none; color: purple; text-align: center;'>";
                     mostrar += "<h3 class='card-title' id='card-body.h3'>" + obj.nomeProduto + "</h3>";
                     mostrar += "</a>";
                     mostrar += "</div>";
@@ -141,7 +141,7 @@ function pesquisarProduto(pesq, id) {
                     mostrar += "<img src='data:image/jpeg;base64, " + obj.imagem + "' class='card-img-top img-card' alt='Imagem do Produto'>";
                     mostrar += "<div class='card-body'>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' style='text-decoration: none; color: purple; text-align: center'>";
+                    mostrar += "<a href='../compra/compra.php?id=" + obj.idProduto + "' style='text-decoration: none; color: purple; text-align: center'>";
                     mostrar += "<h3 class='card-title' id='card-body.h3'>" + obj.nomeProduto + "</h3>";
                     mostrar += "</a>";
                     mostrar += "</div>";
@@ -150,7 +150,7 @@ function pesquisarProduto(pesq, id) {
                     mostrar += "<p><span style='color: purple; font-size: 1.5rem; margin-top: 0;'> R$ " + obj.preco + "</span></p>";
                     mostrar += "</div>";
                     mostrar += "<div>";
-                    mostrar += "<a href='#' class='btn btn-dark'>Adicionar ao Carrinho</a>";
+                    mostrar += "<a href='../carrinho/carrinho.php?addID=" + obj.idProduto + "&nome=" + obj.nomeProduto + "&preco=" + obj.preco + "' class='btn btn-dark'>Adicionar ao Carrinho</a>";
                     mostrar += "</div>";
                     mostrar += "</div>";
                     mostrar += "</div>";

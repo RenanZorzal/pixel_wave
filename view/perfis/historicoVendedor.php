@@ -86,6 +86,7 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">Venda ID: <?php echo $idVenda; ?></h5>
+                    <h5 class="card-title">Produto ID: <?php echo $idProduto; ?></h5>
                     <p class="card-text"><b>Data:</b> <?php echo $dataHora; ?></p>
                     <p class="card-text"><b>Produto:</b> <?php echo $produto; ?></p>
                     <p class="card-text"><b>Quantidade:</b> <?php echo $quantidade; ?></p>
@@ -93,7 +94,12 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
                     <p class="card-text"><b>Preço Total:</b> R$ <?php echo number_format($precoTotal, 2, ',', '.'); ?></p>
                     <p class="card-text"><b>Status:</b> <?php echo $statusTexto; ?></p>
                     <p class="card-text"><b>Endereço:</b> <?php echo $endereco; ?></p>
-                    <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal" data-bs-target="#statusModal" onclick="prepararModal(<?php echo $idVenda; ?>, '<?php echo $statusTexto; ?>')">Atualizar Status</button>
+                    <button class="btn btn-dark btn-sm w-100" 
+    data-bs-toggle="modal" 
+    data-bs-target="#statusModal" 
+    onclick="prepararModal(<?php echo $idVenda; ?>, <?php echo $idProduto; ?>, '<?php echo $statusTexto; ?>')">
+    Atualizar Status
+</button>
                 </div>
             </div>
         </div>
@@ -115,8 +121,9 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="formAtualizarStatus" method="POST" action="atualizarStatus.php">
+        <form id="formAtualizarStatus" method="POST" action="atualizarstatus.php">
           <input type="hidden" name="idVenda" id="idVenda" value="">
+          <input type="hidden" name="idProduto" id="idProduto" value="">
           <div class="mb-3">
             <label for="statusCompra" class="form-label">Novo Status</label>
             <select class="form-select" id="statusCompra" name="statusCompra">
@@ -137,8 +144,9 @@ $resultado = buscarHistorico($idVendedor); // Função para buscar o histórico 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-function prepararModal(idVenda, statusAtual) {
+function prepararModal(idVenda, idProduto, statusAtual) {
     document.getElementById('idVenda').value = idVenda;
+    document.getElementById('idProduto').value = idProduto;
     const statusSelect = document.getElementById('statusCompra');
     for (let i = 0; i < statusSelect.options.length; i++) {
         if (statusSelect.options[i].text === statusAtual) {

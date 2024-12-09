@@ -33,9 +33,11 @@ function validarCampos($ano, $descricao, $preco, $arquivo, $estoque,$status, $su
         $msgErro = $msgErro. "Erro, escolha uma subcategoria!";
         
     }
+
     if($tipoVendedor == 1 && $condicao == "nova"){
         $msgErro = $msgErro . "Apenas empresas podem anunciar produtos novos";
     }
+    
     return $msgErro;
 
 }

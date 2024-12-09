@@ -16,17 +16,17 @@
 </head>
 <body>
 
-  <?php
-    require_once "../../control/login/validarSessao.php";
-    $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
-    if ($tipoSessao == 'cliente') {
-        require_once "../navbar/navbarCliente.php";
-    } elseif ($tipoSessao == 'vendedor' || $tipoSessao == 'empresa') {
-        require_once "../navbar/navbarVendEmp.php";
-    } else {
-        require_once "../navbar/navbarDeslogado.php";
-    }
-  ?>
+<?php
+  require_once "../../control/login/validarSessao.php";
+  $tipoSessao = validarSessao(false, false, true); // Valida a sessão e retorna o tipo
+  if ($tipoSessao == 'cliente') {
+      require_once "../navbar/navbarCliente.php";
+  } elseif ($tipoSessao == 'vendedor' || $tipoSessao == 'empresa') {
+      require_once "../navbar/navbarVendEmp.php";
+  } else {
+      require_once "../navbar/navbarDeslogado.php";
+  }
+?>
 
   <div class="container text-center mt-5">
     <h1 class="mb-4">Pagamento com PIX</h1>
@@ -37,9 +37,9 @@
     </div>
     <p class="text-muted">Descrição: Compra de produtos no Pixel Wave</p>
 
-    <form method="POST" action="../../control/carrinho/finalizarVenda.php">
-                                        <input type="submit" name="btnFinalizar" class="btn btn-dark btn-block btn-lg"></input>
-                                        </form>
+<form method="POST" action="../../control/carrinho/finalizarVenda.php">
+    <input type="submit" name="btnFinalizar" class="btn btn-dark btn-block btn-lg" value="Continuar">
+</form>
   
   </div>
   

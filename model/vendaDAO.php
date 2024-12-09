@@ -66,7 +66,7 @@
 
     function mostrarStatus($idVenda, $idProduto) {
         $conexao = conectarBD();  
-        $sql = "SELECT * FROM itensvendacompra WHERE VendaCompra_idVendaCompra = $idVenda AND Produto_idProduto = $idProduto";
+        $sql = "SELECT * FROM ItensVendaCompra WHERE VendaCompra_idVendaCompra = $idVenda AND Produto_idProduto = $idProduto";
     
         $res = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
         
@@ -146,4 +146,3 @@
     }
 
 ?>
-

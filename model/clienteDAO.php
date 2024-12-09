@@ -170,7 +170,7 @@ function excluirCliente () {
 function buscarHistorico($id) {
     $conexao = conectarBD();
     
-        $sql = "SELECT * FROM itensvendacompra AS it, produto AS p, vendacompra AS v, comprador AS c 
+        $sql = "SELECT * FROM ItensVendaCompra AS it, Produto AS p, VendaCompra AS v, Comprador AS c 
         WHERE it.Produto_idProduto = p.idProduto AND it.VendaCompra_idVendaCompra = v.idVendaCompra 
         AND c.idComprador = $id AND v.Comprador_idComprador = c.idComprador ORDER BY v.idVendaCompra;";
     

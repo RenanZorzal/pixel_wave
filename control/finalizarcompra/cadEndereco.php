@@ -1,6 +1,7 @@
 <?php
-    require "funcoesuteis.php";
     session_start();
+
+    require "funcoesuteis.php";
     // PASSO 1 - Receber os campos POST
     $cep = $_POST["cep"];
     $logradouro = $_POST["logradouro"];
@@ -23,7 +24,7 @@
         alterarEndereço ($idCliente, $endereco);
 
         // PASSO 4 - Devolver uma mensagem ou página HTML
-        header("Location:../../view/finalizarcompra/pix.php?msg=Endereço adicionado com sucesso.");
+        header("Location:../../view/finalizarcompra/pix.php");
        // header("Location:../view/cadastro/cadastro.php?msg=Cliente inserido com sucesso.");
 
     } else {
@@ -32,6 +33,9 @@
         //header("Location:../view/cadastro/cadastro.php?msg=$msgErro");
        
     }
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
     
 
